@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
           <div className="flex items-center space-x-2">
             <BarChart3 className={`w-8 h-8 ${scrolled ? 'text-purple-600' : 'text-white'}`} />
             <span className={`text-xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-              Mental Health Research
+              Beyond the Drink
             </span>
           </div>
 

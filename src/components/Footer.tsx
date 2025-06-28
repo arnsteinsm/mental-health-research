@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <BarChart3 className="w-6 h-6 text-purple-400" />
-              <span className="text-lg font-bold">Mental Health Research</span>
+              <span className="text-lg font-bold">Beyond the Drink</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Evidence-based analysis of European mental health and substance abuse patterns 
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © {currentYear} Mental Health Research Project. Data analysis for public health advocacy.
+              © {currentYear} Beyond the Drink Research Project. Data analysis for public health advocacy.
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
