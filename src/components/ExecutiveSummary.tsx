@@ -1,34 +1,48 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Users, TrendingUp, AlertCircle } from 'lucide-react';
-import { researchData } from '../data/research-data';
+import { BarChart3, Users, TrendingUp, AlertCircle, Database, ExternalLink } from 'lucide-react';
+import { verifiedStats, dataDocumentation } from '../data/verified-calculations';
 
 const ExecutiveSummary: React.FC = () => {
-  // Calculate actual country count from data
-  const countryCount = Array.from(new Set(researchData.map(d => d.country)))
-    .filter(country => country !== 'EU27_2020').length;
-
   const keyStats = [
     {
       icon: <BarChart3 className="w-8 h-8" />,
-      title: "3.7x Higher",
+      title: `${verifiedStats.genderRatio.value}x Higher`,
       subtitle: "Male alcohol mortality",
-      description: "Men consistently show dramatically higher alcohol-related death rates across all European countries.",
-      color: "from-red-500 to-red-600"
+      description: "Men consistently show dramatically higher alcohol-related death rates across all European countries in our dataset.",
+      color: "from-red-500 to-red-600",
+      methodology: verifiedStats.genderRatio.methodology
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "r = 0.76",
+      title: `r = ${verifiedStats.correlation.male?.toFixed(2) || 'N/A'}`,
       subtitle: "Alcohol-Suicide Link (Men)",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
+      methodology: verifiedStats.correlation.methodology
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Hidden Crisis",
       subtitle: "Mental Health Emergency",
       description: "Data reveals alcohol deaths are masking a broader male mental health crisis across Europe.",
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      methodology: "Pattern analysis across gender-stratified mortality data"
+    }
+  ];
+
+  const dataSources = [
+    {
+      title: "Death due to alcoholic abuse, by sex",
+      description: "Age-standardized death rates per 100,000 for alcohol-related causes (ICD-10: F10)",
+      link: "https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en",
+      variable: "alcohol_rate"
+    },
+    {
+      title: "Death due to suicide, by sex", 
+      description: "Age-standardized suicide mortality rates per 100,000 (ICD-10: X60–X84, Y870)",
+      link: "https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en",
+      variable: "suicide_rate"
     }
   ];
 
@@ -46,7 +60,7 @@ const ExecutiveSummary: React.FC = () => {
             The Hidden Crisis
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Analysis of {countryCount} European countries reveals that male alcohol mortality isn't just about drinking—
+            Analysis of {verifiedStats.dataset.countries} European countries reveals that male alcohol mortality isn't just about drinking—
             it's a symptom of a deeper mental health emergency that demands immediate attention.
           </p>
         </motion.div>
@@ -70,18 +84,93 @@ const ExecutiveSummary: React.FC = () => {
               <h4 className="text-lg font-semibold text-blue-600 mb-4">
                 {stat.subtitle}
               </h4>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-3">
                 {stat.description}
               </p>
+              <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded">
+                <strong>Method:</strong> {stat.methodology}
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Core Research Question - Simplified */}
+        {/* Dataset Documentation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-xl p-8 shadow-lg mb-16 border border-gray-100"
+        >
+          <div className="flex items-center mb-6">
+            <Database className="w-8 h-8 text-purple-600 mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">Dataset Documentation</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-6">
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-3">Coverage</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• {verifiedStats.dataset.totalRecords} total data points</li>
+                <li>• {verifiedStats.dataset.countries} European countries</li>
+                <li>• {verifiedStats.dataset.yearRange.start}-{verifiedStats.dataset.yearRange.end} ({verifiedStats.dataset.timeSpan} years)</li>
+                <li>• Gender-stratified: {verifiedStats.dataset.genderSplit.male}M / {verifiedStats.dataset.genderSplit.female}F</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-3">Limitations</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
+                {dataDocumentation.limitations.map((limitation, index) => (
+                  <li key={index}>• {limitation}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <h4 className="font-semibold text-amber-900 mb-2">Transparency Note</h4>
+            <p className="text-sm text-amber-800">
+              All statistics are calculated from the actual dataset and verified for accuracy. 
+              Source: {dataDocumentation.source}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Data Sources */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Primary Data Sources</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {dataSources.map((source, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                <h4 className="font-semibold text-gray-900 mb-3">{source.title}</h4>
+                <p className="text-sm text-gray-600 mb-4">{source.description}</p>
+                <div className="text-xs text-purple-600 bg-purple-50 p-2 rounded mb-3">
+                  <strong>Variable:</strong> {source.variable}
+                </div>
+                <a 
+                  href={source.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  View Dataset <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Core Research Question */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white text-center"
         >
@@ -89,7 +178,7 @@ const ExecutiveSummary: React.FC = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-6">Why This Matters</h3>
           <p className="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
             Every alcohol-related death represents a failure to address underlying mental health needs. 
-            The strong correlation with suicide rates (r=0.76) shows we're treating symptoms, not causes.
+            The strong correlation with suicide rates shows we're treating symptoms, not causes.
           </p>
         </motion.div>
       </div>
