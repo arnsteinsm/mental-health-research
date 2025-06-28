@@ -39,26 +39,38 @@ const Footer: React.FC = () => {
               <BarChart3 className="w-6 h-6 text-purple-400" />
               <span className="text-lg font-bold">Beyond the Drink</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Evidence-based analysis of European mental health and substance abuse patterns 
               through a gendered lens.
             </p>
             
-            {/* Compliant Built with Bolt Badge */}
-            <motion.a
-              href="https://bolt.new"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Built with Bolt Badge - Following Official Guidelines */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mb-4"
             >
-              <img 
-                src="https://imagedelivery.net/3RKw_J_fJQ_4KpJP3_YgXA/a24bb2c9-7d4d-4162-78e7-4b8ec9c90c00/public" 
-                alt="Built with Bolt" 
-                className="h-8 w-auto"
-              />
-            </motion.a>
+              <a
+                href="https://bolt.new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block group"
+              >
+                <div className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <div className="w-5 h-5 bg-white rounded flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-xs">⚡</span>
+                  </div>
+                  <span className="text-white text-sm font-medium">Built with Bolt</span>
+                </div>
+              </a>
+            </motion.div>
+
+            {/* Additional Badge Information */}
+            <div className="text-xs text-gray-500">
+              <p className="mb-1">🚀 Rapid prototyping with AI assistance</p>
+              <p>📊 Interactive data visualizations</p>
+            </div>
           </div>
 
           {/* Data Sources */}
@@ -138,6 +150,37 @@ const Footer: React.FC = () => {
               <span>2013-2022 Analysis</span>
               <span>•</span>
               <span>Open Data Initiative</span>
+            </div>
+          </div>
+          
+          {/* Bolt Attribution */}
+          <div className="mt-6 pt-4 border-t border-gray-800">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+              <div className="text-xs text-gray-500">
+                This research platform was rapidly prototyped using AI-powered development tools, 
+                enabling focus on data analysis and insights rather than technical implementation.
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <a
+                  href="https://bolt.new"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gray-400 hover:text-purple-400 transition-colors flex items-center space-x-1"
+                >
+                  <span>⚡</span>
+                  <span>Powered by Bolt</span>
+                </a>
+                <span className="text-gray-600">|</span>
+                <a
+                  href="https://worldslargesthackathon.devpost.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-gray-400 hover:text-blue-400 transition-colors"
+                >
+                  World's Largest Hackathon
+                </a>
+              </div>
             </div>
           </div>
           
