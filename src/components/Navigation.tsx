@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, BarChart3 } from 'lucide-react';
+import DownloadCTA from './DownloadCTA';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -66,12 +67,15 @@ const Navigation: React.FC = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Download CTA in Header */}
+            <DownloadCTA variant="header" />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
               scrolled 
                 ? 'text-gray-700 hover:bg-gray-100' 
                 : 'text-white hover:bg-white/10'
@@ -87,7 +91,7 @@ const Navigation: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white rounded-lg shadow-lg mt-2 py-4"
+            className="lg:hidden bg-white rounded-lg shadow-lg mt-2 py-4"
           >
             {navItems.map((item) => (
               <button
@@ -98,6 +102,9 @@ const Navigation: React.FC = () => {
                 {item.label}
               </button>
             ))}
+            <div className="px-6 py-3 border-t border-gray-100">
+              <DownloadCTA variant="header" />
+            </div>
           </motion.div>
         )}
       </div>

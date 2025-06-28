@@ -7,6 +7,8 @@ import CorrelationExplanation from './components/CorrelationExplanation';
 import GenderAnalysis from './components/GenderAnalysis';
 import DataTable from './components/DataTable';
 import Conclusions from './components/Conclusions';
+import DownloadCTA from './components/DownloadCTA';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -31,6 +33,15 @@ function App() {
       <div id="conclusions">
         <Conclusions />
       </div>
+      
+      {/* Strategic CTA Placement - Bottom Center */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <DownloadCTA variant="footer" />
+        </div>
+      </section>
+      
+      <Footer />
     </div>
   );
 }
