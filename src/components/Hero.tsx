@@ -1,35 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, AlertTriangle, Info, X } from 'lucide-react';
-import { researchData } from '../data/research-data';
+import { TrendingUp, Users, AlertTriangle, Database } from 'lucide-react';
+import { decadeStats, calculateDecadeGenderRatio, calculateDecadeCorrelations } from '../data/decade-research-data';
 
 const Hero: React.FC = () => {
-  const [showCorrelationTooltip, setShowCorrelationTooltip] = useState(false);
-  const [showGrowthTooltip, setShowGrowthTooltip] = useState(false);
-
-  // Calculate actual dataset statistics
-  const actualStats = {
-    countries: Array.from(new Set(researchData.map(d => d.country))).filter(c => c !== 'EU27_2020').length,
-    years: Array.from(new Set(researchData.map(d => d.year))).sort(),
-    totalRecords: researchData.length,
-    yearRange: (() => {
-      const years = researchData.map(d => parseInt(d.year)).filter(y => !isNaN(y));
-      return { start: Math.min(...years), end: Math.max(...years) };
-    })()
-  };
-
-  // Calculate gender ratio from actual data
-  const calculateGenderRatio = () => {
-    const maleData = researchData.filter(d => d.sex === 'M' && d.country !== 'EU27_2020');
-    const femaleData = researchData.filter(d => d.sex === 'F' && d.country !== 'EU27_2020');
-    
-    const avgMaleRate = maleData.reduce((sum, d) => sum + parseFloat(d.alcohol_rate), 0) / maleData.length;
-    const avgFemaleRate = femaleData.reduce((sum, d) => sum + parseFloat(d.alcohol_rate), 0) / femaleData.length;
-    
-    return (avgMaleRate / avgFemaleRate).toFixed(1);
-  };
-
-  const genderRatio = calculateGenderRatio();
+  const genderRatio = calculateDecadeGenderRatio();
+  const correlations = calculateDecadeCorrelations();
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
@@ -70,49 +46,67 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Men are dying from alcohol at {genderRatio}x the rate of women.<br/>
+            Men are dying from alcohol at {genderRatio.toFixed(1)}x the rate of women.<br/>
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
-          {/* Key Findings Block */}
+          {/* Key Statistics Grid */}
+          <motion.div
+            className="grid md:grid-cols-4 gap-6 mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <Database className="w-8 h-8 text-purple-300 mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold mb-2">Full Decade</h3>
+              <p className="text-purple-200 text-sm">2013-2022 comprehensive analysis across {decadeStats.uniqueCountries.length} countries</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <TrendingUp className="w-8 h-8 text-blue-300 mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold mb-2">Strong Correlation</h3>
+              <p className="text-purple-200 text-sm">r = {correlations.male.toFixed(2)} between alcohol deaths and suicide in men</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <Users className="w-8 h-8 text-green-300 mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold mb-2">Gender Disparity</h3>
+              <p className="text-purple-200 text-sm">{genderRatio.toFixed(1)}x higher male alcohol mortality reveals hidden crisis</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <AlertTriangle className="w-8 h-8 text-red-300 mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold mb-2">Mental Health Link</h3>
+              <p className="text-purple-200 text-sm">Alcohol misuse masks deeper psychological struggles</p>
+            </div>
+          </motion.div>
+
+          {/* Key Finding Block */}
           <motion.div
             className="bg-gradient-to-r from-red-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-12"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <div className="flex items-center justify-center mb-6">
-              <AlertTriangle className="w-6 h-6 text-yellow-400 mr-3" />
-              <h2 className="text-xl font-bold text-yellow-300">Key Findings</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="flex items-center mb-2">
-                  <div className="text-3xl font-bold text-red-300">{genderRatio}x</div>
-                  <button
-                    onClick={() => setShowGrowthTooltip(true)}
-                    className="ml-2 p-1 hover:bg-white/20 rounded-full transition-colors"
-                  >
-                    <Info className="w-4 h-4 text-purple-300" />
-                  </button>
-                </div>
-                <div className="text-sm text-purple-200">Higher male alcohol mortality across {actualStats.countries} European countries</div>
+            <h2 className="text-2xl font-bold mb-4 text-yellow-300">10-Year Analysis Reveals</h2>
+            <p className="text-lg leading-relaxed mb-4">
+              Across a full decade (2013-2022), the pattern is unmistakable: where alcohol deaths rise, 
+              suicide rates follow—especially among men. This stark correlation (r = {correlations.male.toFixed(2)}) 
+              reveals that alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-2xl font-bold text-red-300">{genderRatio.toFixed(1)}x</div>
+                <div className="text-purple-200">Higher male alcohol mortality</div>
               </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="flex items-center mb-2">
-                  <div className="text-3xl font-bold text-red-300">r = 0.76</div>
-                  <button
-                    onClick={() => setShowCorrelationTooltip(true)}
-                    className="ml-2 p-1 hover:bg-white/20 rounded-full transition-colors"
-                  >
-                    <Info className="w-4 h-4 text-purple-300" />
-                  </button>
-                </div>
-                <div className="text-sm text-purple-200">Strong correlation between alcohol deaths and suicide in men</div>
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-2xl font-bold text-red-300">r = {correlations.male.toFixed(2)}</div>
+                <div className="text-purple-200">Alcohol-suicide correlation (men)</div>
               </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold text-red-300 mb-2">{actualStats.yearRange.end - actualStats.yearRange.start + 1} Years</div>
-                <div className="text-sm text-purple-200">Analysis period ({actualStats.yearRange.start}-{actualStats.yearRange.end})</div>
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-2xl font-bold text-red-300">10 Years</div>
+                <div className="text-purple-200">Comprehensive longitudinal study</div>
               </div>
             </div>
           </motion.div>
@@ -121,7 +115,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.8 }}
           >
             <button
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -138,74 +132,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Correlation Tooltip */}
-      {showCorrelationTooltip && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-xl p-6 max-w-md w-full shadow-2xl"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-gray-900">Pearson Correlation (r = 0.76)</h3>
-              <button
-                onClick={() => setShowCorrelationTooltip(false)}
-                className="p-1 hover:bg-gray-100 rounded-full"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="space-y-3 text-gray-700">
-              <p>
-                <strong>What it means:</strong> A correlation coefficient measures how closely two variables move together, from -1 to +1.
-              </p>
-              <div className="bg-blue-50 p-3 rounded-lg">
-                <p className="text-blue-800">
-                  <strong>r = 0.76</strong> indicates a strong positive relationship: where alcohol deaths are high, suicide rates tend to be high too.
-                </p>
-              </div>
-              <p className="text-sm">
-                This suggests alcohol misuse and suicide may share common underlying causes, particularly untreated mental health conditions.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      )}
-
-      {/* Growth Multiple Tooltip */}
-      {showGrowthTooltip && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-xl p-6 max-w-md w-full shadow-2xl"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-gray-900">Gender Ratio Calculation</h3>
-              <button
-                onClick={() => setShowGrowthTooltip(false)}
-                className="p-1 hover:bg-gray-100 rounded-full"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="space-y-3 text-gray-700">
-              <p>
-                <strong>How calculated:</strong> Average male alcohol mortality rate ÷ Average female alcohol mortality rate
-              </p>
-              <div className="bg-red-50 p-3 rounded-lg">
-                <p className="text-red-800">
-                  <strong>{genderRatio}x higher</strong> means men die from alcohol-related causes at {genderRatio} times the rate of women across our dataset.
-                </p>
-              </div>
-              <p className="text-sm">
-                Based on {actualStats.totalRecords} data points from {actualStats.countries} European countries ({actualStats.yearRange.start}-{actualStats.yearRange.end}).
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      )}
     </section>
   );
 };
