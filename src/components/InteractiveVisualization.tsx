@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import * as d3 from 'd3';
 import { decadeResearchData, countryNames } from '../data/decade-research-data';
-import { Filter, BarChart3, Zap, TrendingUp, Calendar, Share2, Copy, Check, ChevronDown, Search } from 'lucide-react';
+import { Filter, BarChart3, Zap, TrendingUp, Calendar, Share2, Copy, Check, ChevronDown, Search, MapPin } from 'lucide-react';
 import LoadingSpinner from './LoadingSpinner';
+import { detectUserCountry, getSuggestedCountries, getPreselectionMessage } from '../utils/geoLocation';
 
 interface DataPoint {
   country: string;
@@ -28,6 +29,8 @@ const InteractiveVisualization: React.FC = () => {
   const [loadError, setLoadError] = useState(false);
   const [countrySearchTerm, setCountrySearchTerm] = useState('');
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const [geoDetected, setGeoDetected] = useState(false);
+  const [geoMessage, setGeoMessage] = useState('');
 
   const metrics = {
     alcohol_rate: { 
@@ -52,23 +55,34 @@ const InteractiveVisualization: React.FC = () => {
     (countryNames[country] || country).toLowerCase().includes(countrySearchTerm.toLowerCase())
   );
 
-  // Simulate loading time
+  // Geo-detection and preselection
   useEffect(() => {
-    const loadData = async () => {
+    const performGeoDetection = async () => {
       setIsLoading(true);
       setLoadError(false);
       
       try {
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Simulate loading time while detecting location
+        const [detectedCountry] = await Promise.all([
+          detectUserCountry(),
+          new Promise(resolve => setTimeout(resolve, 1500)) // Minimum loading time for UX
+        ]);
+        
+        const suggestedCountries = getSuggestedCountries(detectedCountry);
+        const message = getPreselectionMessage(detectedCountry);
+        
+        setSelectedCountries(suggestedCountries);
+        setGeoMessage(message);
+        setGeoDetected(!!detectedCountry);
         setIsLoading(false);
       } catch (error) {
-        console.error('Data loading error:', error);
+        console.error('Geo-detection error:', error);
         setLoadError(true);
         setIsLoading(false);
       }
     };
 
-    loadData();
+    performGeoDetection();
   }, []);
 
   // Generate shareable URL
@@ -565,11 +579,32 @@ const InteractiveVisualization: React.FC = () => {
 
         {isLoading ? (
           <LoadingSpinner 
-            message="Loading decade-long visualizations..." 
+            message="Detecting your location and loading visualizations..." 
             type="chart" 
           />
         ) : (
           <div className="bg-gray-50 rounded-2xl p-8 mb-8">
+            {/* Geo-detection notification */}
+            {geoMessage && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`mb-6 p-4 rounded-lg border ${
+                  geoDetected 
+                    ? 'bg-green-50 border-green-200 text-green-800' 
+                    : 'bg-blue-50 border-blue-200 text-blue-800'
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm font-medium">{geoMessage}</span>
+                  {geoDetected && (
+                    <span className="text-xs opacity-75">(You can change the selection below)</span>
+                  )}
+                </div>
+              </motion.div>
+            )}
+
             {/* Share Button */}
             <div className="flex justify-end mb-6">
               <button
