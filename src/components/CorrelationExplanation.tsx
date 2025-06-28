@@ -150,7 +150,7 @@ const CorrelationExplanation: React.FC = () => {
                   <p className="text-blue-800">
                     <strong>r = {CORRELATION_DISPLAY.male} means:</strong> In countries where alcohol deaths are high, 
                     suicide rates are also high {Math.round(parseFloat(CORRELATION_DISPLAY.male) * 100)}% of the time. 
-                    This is considered a "strong" correlation.
+                    This is considered a "strong\" correlation.
                   </p>
                 </div>
                 
