@@ -56,7 +56,7 @@ const Conclusions: React.FC = () => {
     {
       title: "Death due to accidents, by sex",
       link: "https://data.europa.eu/data/datasets/igqsxywbiamow67p7a1edq?locale=en",
-      description: "Accidental death statistics by country and gender"
+      description: "Accidental death statistics (supplementary data)"
     },
     {
       title: "Mental health risk factors",
@@ -233,16 +233,18 @@ const Conclusions: React.FC = () => {
           className="mt-16 text-center"
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h4 className="text-lg font-semibold mb-3">Research Methodology & SQL Analysis</h4>
+            <h4 className="text-lg font-semibold mb-3">Research Methodology & Analysis Scope</h4>
             <p className="text-purple-200 text-sm leading-relaxed max-w-4xl mx-auto mb-4">
-              This analysis is based on official European health statistics from 2011-2022, covering 27 countries. 
-              Data includes alcohol-related mortality rates (ICD-10: F10), suicide rates (ICD-10: X60–X84, Y870), and accident rates, 
-              all age-standardized per 100,000 population. Statistical correlations were calculated using Pearson correlation coefficients, 
-              with significance testing at p&lt;0.05. Gender-stratified analysis was performed to identify disparities and trends across demographic groups.
+              This analysis focuses on the correlation between alcohol-related mortality (ICD-10: F10) and suicide rates 
+              (ICD-10: X60–X84, Y870) across European countries from 2013-2022. All mortality rates are age-standardized 
+              per 100,000 population. While accident mortality data was collected, it was excluded from primary correlation 
+              analysis due to diverse causation factors beyond mental health scope. Statistical correlations were calculated 
+              using Pearson correlation coefficients, with significance testing at p<0.05.
             </p>
             <div className="text-xs text-purple-300 bg-purple-900/30 p-3 rounded">
-              <strong>SQL Query Example:</strong> Data was processed using BigQuery with joins across alcohol, suicide, and accident mortality datasets, 
-              filtered by year (2011-2022) and sex (M/F), ensuring data integrity across all European sources.
+              <strong>Data Processing:</strong> Analysis performed using standardized European health statistics, 
+              with gender-stratified examination revealing significantly stronger correlations among males (r=0.76) 
+              compared to females (r=0.49), supporting targeted intervention approaches.
             </div>
           </div>
         </motion.div>

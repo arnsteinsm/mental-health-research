@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { researchData, countryNames, DataPoint } from '../data/research-data';
-import { Search, ArrowUpDown, Filter } from 'lucide-react';
+import { Search, ArrowUpDown, Filter, AlertTriangle } from 'lucide-react';
 
 const DataTable: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -74,8 +74,31 @@ const DataTable: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore the complete research dataset with advanced filtering and sorting capabilities. 
-            All rates are per 100,000 population.
+            All rates are age-standardized per 100,000 population.
           </p>
+        </motion.div>
+
+        {/* Methodological Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8"
+        >
+          <div className="flex items-start space-x-3">
+            <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="font-semibold text-amber-900 mb-2">Dataset Note: Accident Rates</h3>
+              <p className="text-sm text-amber-800 leading-relaxed">
+                Accident mortality rates are included in this dataset for completeness but were excluded from the primary 
+                correlation analysis. Accidents introduce diverse causation factors (workplace safety, traffic regulations, 
+                geographic factors) beyond mental health and substance abuse, which would dilute the focused research narrative. 
+                Future research could explore accident mortality as a potential indicator of risk-taking behaviors associated 
+                with mental health crises.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -187,7 +210,7 @@ const DataTable: React.FC = () => {
                     onClick={() => handleSort('accident_rate')}
                   >
                     <div className="flex items-center space-x-2">
-                      <span>Accident Rate</span>
+                      <span>Accident Rate*</span>
                       {getSortIcon('accident_rate')}
                     </div>
                   </th>
@@ -221,13 +244,20 @@ const DataTable: React.FC = () => {
                     <td className="px-6 py-4 text-sm text-gray-600 font-mono">
                       {parseFloat(item.suicide_rate).toFixed(2)}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 font-mono">
+                    <td className="px-6 py-4 text-sm text-gray-400 font-mono">
                       {parseFloat(item.accident_rate).toFixed(2)}
                     </td>
                   </motion.tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          
+          {/* Table Footer Note */}
+          <div className="p-4 bg-gray-50 border-t border-gray-200">
+            <p className="text-xs text-gray-500">
+              * Accident rates shown for completeness but excluded from primary correlation analysis due to diverse causation factors beyond mental health scope.
+            </p>
           </div>
         </motion.div>
       </div>

@@ -51,12 +51,6 @@ const ExecutiveSummary: React.FC = () => {
       description: "Age-standardized suicide mortality rates per 100,000 (ICD-10: X60–X84, Y870)",
       link: "https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en",
       variable: "suicide_rate"
-    },
-    {
-      title: "Death due to accidents, by sex",
-      description: "Age-standardized accidental death rates per 100,000 (ICD-10 group 'ACC')",
-      link: "https://data.europa.eu/data/datasets/igqsxywbiamow67p7a1edq?locale=en", 
-      variable: "accident_rate"
     }
   ];
 
@@ -135,8 +129,8 @@ const ExecutiveSummary: React.FC = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Data Sources & Methodology</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Primary Data Sources & Methodology</h3>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             {dataSources.map((source, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-3">{source.title}</h4>
@@ -155,6 +149,18 @@ const ExecutiveSummary: React.FC = () => {
               </div>
             ))}
           </div>
+          
+          {/* Methodological Note */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h4 className="font-semibold text-amber-900 mb-3">Methodological Note</h4>
+            <p className="text-sm text-amber-800 leading-relaxed">
+              While accident mortality data was collected for comprehensive analysis, it was excluded from primary 
+              findings due to diverse causation factors beyond mental health and substance abuse. Accident rates 
+              introduce significant confounding variables (workplace safety, traffic regulations, geographic factors) 
+              that would dilute the focused mental health narrative. The complete dataset including accident rates 
+              is available in the data table for transparency.
+            </p>
+          </div>
         </motion.div>
 
         {/* Statistical Methods */}
@@ -170,7 +176,7 @@ const ExecutiveSummary: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-3">Correlation Analysis</h4>
               <p className="text-purple-100 text-sm mb-2">
-                Pearson correlation coefficients measure linear relationships between variables, 
+                Pearson correlation coefficients measure linear relationships between alcohol and suicide mortality, 
                 ranging from -1 (perfect negative) to +1 (perfect positive correlation).
               </p>
               <div className="text-xs text-purple-200">

@@ -9,7 +9,7 @@ const InteractiveVisualization: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeSeriesRef = useRef<SVGSVGElement>(null);
   const [selectedCountries, setSelectedCountries] = useState<string[]>(['DE', 'FR', 'UK', 'ES', 'IT']);
-  const [selectedMetric, setSelectedMetric] = useState<'alcohol_rate' | 'suicide_rate' | 'accident_rate'>('alcohol_rate');
+  const [selectedMetric, setSelectedMetric] = useState<'alcohol_rate' | 'suicide_rate'>('alcohol_rate');
   const [selectedYear, setSelectedYear] = useState<string>('2022');
   const [viewMode, setViewMode] = useState<'comparison' | 'timeseries'>('comparison');
   const [genderView, setGenderView] = useState<'separate' | 'combined'>('separate');
@@ -30,12 +30,6 @@ const InteractiveVisualization: React.FC = () => {
       color: '#ef4444', 
       unit: 'per 100k',
       description: 'Age-standardized suicide death rate (ICD-10: X60–X84, Y870)'
-    },
-    accident_rate: { 
-      label: 'Accident Rate', 
-      color: '#f59e0b', 
-      unit: 'per 100k',
-      description: 'Age-standardized accidental death rate (ICD-10 group "ACC")'
     }
   };
 
@@ -516,7 +510,7 @@ const InteractiveVisualization: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Explore gender disparities and temporal trends across {availableCountries.length} European countries. 
-            All rates are age-standardized per 100,000 population for valid comparison.
+            Focus on alcohol-suicide correlations with age-standardized rates per 100,000 population.
           </p>
         </motion.div>
 
@@ -722,7 +716,7 @@ const InteractiveVisualization: React.FC = () => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-2">Gender Disparities</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Across all metrics and countries, men consistently show significantly higher rates than women. 
+                Across both alcohol and suicide metrics, men consistently show significantly higher rates than women. 
                 This pattern is particularly pronounced in alcohol-related mortality, where the gender gap 
                 often exceeds 3:1 ratios.
               </p>

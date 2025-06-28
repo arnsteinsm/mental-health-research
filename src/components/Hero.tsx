@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Analysis of 32 European countries • 5 Eurostat datasets • 10-year longitudinal study
+            Analysis of {countryCount} European countries • 3 core datasets • 10-year longitudinal study
           </motion.div>
 
           <motion.div
