@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                 />
               </a>
             </motion.div>
-
+          </div>
 
           {/* Data Sources */}
           <div className="md:col-span-2">
@@ -154,7 +154,6 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </motion.div>
-      </div>
       </div>
     </footer>
   );
