@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Target, Users, ArrowRight, Download } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
+import ShareButton from './ShareButton';
 
 const Conclusions: React.FC = () => {
   const solutions = [
@@ -98,7 +99,7 @@ const Conclusions: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action with Share Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -112,10 +113,18 @@ const Conclusions: React.FC = () => {
             Men die from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women. This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
           </p>
           
-          <button className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
-            <Download className="w-5 h-5 mr-3" />
-            Download Full Analysis
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
+              <Download className="w-5 h-5 mr-3" />
+              Download Full Analysis
+            </button>
+            
+            <ShareButton variant="inline" />
+          </div>
+
+          <div className="mt-6 text-sm text-purple-200">
+            Help spread awareness • Every share could save a life
+          </div>
         </motion.div>
       </div>
     </section>
