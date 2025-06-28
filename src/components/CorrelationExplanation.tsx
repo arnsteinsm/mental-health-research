@@ -281,9 +281,9 @@ const CorrelationExplanation: React.FC = () => {
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-2">Statistical Results</h5>
                     <ul className="text-gray-700 text-sm space-y-1">
-                      <li>• Males: r = 0.76 (p < 0.001)</li>
-                      <li>• Females: r = 0.49 (p < 0.001)</li>
-                      <li>• Combined: r = 0.68 (p < 0.001)</li>
+                      <li>• Males: r = 0.76 (p &lt; 0.001)</li>
+                      <li>• Females: r = 0.49 (p &lt; 0.001)</li>
+                      <li>• Combined: r = 0.68 (p &lt; 0.001)</li>
                       <li>• Effect size: Large (Cohen's conventions)</li>
                       <li>• 95% CI: [0.71, 0.81] for males</li>
                     </ul>
