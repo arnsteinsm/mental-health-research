@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Database, Calendar, Scale, BarChart3 } from 'lucide-react';
+import { researchData } from '../data/research-data';
 
 const Footer: React.FC = () => {
+  // Calculate actual country count from data
+  const countryCount = Array.from(new Set(researchData.map(d => d.country)))
+    .filter(country => country !== 'EU27_2020').length;
+
   const dataSources = [
     {
       title: "Eurostat Health Database",
@@ -112,7 +117,7 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>32 European Countries</span>
+              <span>{countryCount} European Countries</span>
               <span>•</span>
               <span>2013-2022 Analysis</span>
               <span>•</span>

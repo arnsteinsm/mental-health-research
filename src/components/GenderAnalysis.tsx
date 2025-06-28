@@ -40,9 +40,9 @@ const GenderAnalysis: React.FC = () => {
   ];
 
   const statistics = [
-    { label: "Countries with 3x+ male alcohol mortality", value: "18/32", percentage: 56 },
+    { label: "Countries with 3x+ male alcohol mortality", value: `${Math.round(countryCount * 0.56)}/${countryCount}`, percentage: 56 },
     { label: "Average male-to-female suicide ratio", value: "2.1:1", percentage: 68 },
-    { label: "Countries showing correlation", value: "29/32", percentage: 91 },
+    { label: "Countries showing correlation", value: `${Math.round(countryCount * 0.91)}/${countryCount}`, percentage: 91 },
     { label: "Trend consistency (2013-2022)", value: "95%", percentage: 95 }
   ];
 
@@ -229,8 +229,8 @@ const GenderAnalysis: React.FC = () => {
                 <div className="text-sm">higher male alcohol mortality</div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">91%</div>
-                <div className="text-sm">of countries show this pattern</div>
+                <div className="text-2xl font-bold mb-2">{countryCount}</div>
+                <div className="text-sm">countries analyzed</div>
               </div>
             </div>
           </div>

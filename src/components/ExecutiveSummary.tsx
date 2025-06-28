@@ -33,8 +33,8 @@ const ExecutiveSummary: React.FC = () => {
     {
       icon: <AlertCircle className="w-8 h-8" />,
       title: `${countryCount} Countries`,
-      subtitle: "10-Year Analysis",
-      description: "Comprehensive longitudinal study covering 2013-2022 across diverse European contexts.",
+      subtitle: "10-Year Analysis (2013-2022)",
+      description: "Comprehensive longitudinal study with complete data coverage across diverse European contexts.",
       methodology: "Time-series analysis with standardized mortality rates for cross-country comparison"
     }
   ];
@@ -194,13 +194,13 @@ const ExecutiveSummary: React.FC = () => {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Time Series Analysis</h4>
+              <h4 className="font-semibold mb-3">Data Coverage</h4>
               <p className="text-purple-100 text-sm mb-2">
-                10-year longitudinal analysis (2013-2022) captures trends and patterns 
-                across diverse European socioeconomic contexts.
+                Analysis covers {countryCount} European countries with complete data from 2013-2022, 
+                ensuring robust statistical power and geographic diversity.
               </p>
               <div className="text-xs text-purple-200">
-                <strong>Coverage:</strong> {countryCount} countries, gender-stratified
+                <strong>Scope:</strong> {countryCount} countries, gender-stratified
               </div>
             </div>
           </div>
