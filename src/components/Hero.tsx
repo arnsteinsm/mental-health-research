@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, AlertTriangle, Database } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 
 const Hero: React.FC = () => {
@@ -47,47 +46,15 @@ const Hero: React.FC = () => {
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
-          {/* Key Statistics Grid */}
-          <motion.div
-            className="grid md:grid-cols-4 gap-6 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <Database className="w-8 h-8 text-purple-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Verified Data</h3>
-              <p className="text-purple-200 text-sm">{ACTUAL_DATASET_INFO.totalRecords} records from {ACTUAL_DATASET_INFO.uniqueCountries.length} countries</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <TrendingUp className="w-8 h-8 text-blue-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Strong Correlation</h3>
-              <p className="text-purple-200 text-sm">r = {CORRELATION_DISPLAY.male} between alcohol deaths and suicide in men</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <Users className="w-8 h-8 text-green-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Gender Disparity</h3>
-              <p className="text-purple-200 text-sm">{VERIFIED_GENDER_RATIO}x higher male alcohol mortality reveals hidden crisis</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <AlertTriangle className="w-8 h-8 text-red-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Mental Health Link</h3>
-              <p className="text-purple-200 text-sm">Alcohol misuse masks deeper psychological struggles</p>
-            </div>
-          </motion.div>
-
           {/* Key Finding Block */}
           <motion.div
             className="bg-gradient-to-r from-red-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-12"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
             <h2 className="text-2xl font-bold mb-4 text-yellow-300">The Pattern is Undeniable</h2>
-            <p className="text-lg leading-relaxed mb-4">
+            <p className="text-lg leading-relaxed mb-6">
               Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
               ({ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}) reveals an unmistakable truth: 
               where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRELATION_DISPLAY.male}) 
@@ -113,7 +80,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             <button
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
