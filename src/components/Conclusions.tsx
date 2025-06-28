@@ -239,7 +239,7 @@ const Conclusions: React.FC = () => {
               (ICD-10: X60–X84, Y870) across European countries from 2013-2022. All mortality rates are age-standardized 
               per 100,000 population. While accident mortality data was collected, it was excluded from primary correlation 
               analysis due to diverse causation factors beyond mental health scope. Statistical correlations were calculated 
-              using Pearson correlation coefficients, with significance testing at p<0.05.
+              using Pearson correlation coefficients, with significance testing at p&lt;0.05.
             </p>
             <div className="text-xs text-purple-300 bg-purple-900/30 p-3 rounded">
               <strong>Data Processing:</strong> Analysis performed using standardized European health statistics, 
