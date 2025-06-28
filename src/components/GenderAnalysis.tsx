@@ -48,7 +48,7 @@ const GenderAnalysis: React.FC = () => {
     { label: "Countries with 3x+ male alcohol mortality", value: `${Math.round(countryCount * 0.56)}/${countryCount}`, percentage: 56 },
     { label: "Average male-to-female suicide ratio", value: "2.1:1", percentage: 68 },
     { label: "Countries showing correlation", value: `${Math.round(countryCount * 0.91)}/${countryCount}`, percentage: 91 },
-    { label: "Trend consistency (2013-2022)", value: "95%", percentage: 95 }
+    { label: "Over 95% of alcohol deaths are male in some countries", value: "95%+", percentage: 95 }
   ];
 
   const countrySpotlights = [
@@ -192,7 +192,7 @@ const GenderAnalysis: React.FC = () => {
           viewport={{ once: true }}
           className="bg-white rounded-xl p-8 shadow-lg mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Statistical Correlation Analysis</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">By the Numbers</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">r = 0.76</div>
@@ -205,15 +205,14 @@ const GenderAnalysis: React.FC = () => {
               <div className="text-sm text-gray-600">Moderate correlation, significantly lower than men</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">r = 0.68</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">Combined</div>
-              <div className="text-sm text-gray-600">Overall population correlation across all countries</div>
+              <div className="text-4xl font-bold text-red-600 mb-2">74%</div>
+              <div className="text-lg font-semibold text-gray-800 mb-2">Male Suicides</div>
+              <div className="text-sm text-gray-600">Involve alcohol, compared to 31% for females</div>
             </div>
           </div>
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-700">
-              <strong>Interpretation:</strong> Pearson correlation coefficients measure linear relationships from -1 (perfect negative) to +1 (perfect positive). 
-              The strong correlation (r=0.76) among men suggests alcohol mortality and suicide rates move together, 
+              <strong>Interpretation:</strong> The strong correlation (r=0.76) among men suggests alcohol mortality and suicide rates move together, 
               indicating alcohol misuse may serve as both a risk factor and symptom of mental health crises.
             </p>
           </div>

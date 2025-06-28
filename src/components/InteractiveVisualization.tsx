@@ -359,7 +359,7 @@ const InteractiveVisualization: React.FC = () => {
     return () => clearTimeout(loadingTimeout);
   }, [selectedCountries, selectedMetric, selectedYear, viewMode, genderView, isLoading, loadError]);
 
-  // Time Series Chart with loading state
+  // Time Series Chart with dual lines for gender comparison
   useEffect(() => {
     if (!timeSeriesRef.current || viewMode !== 'timeseries' || isLoading || loadError) return;
 
@@ -374,15 +374,23 @@ const InteractiveVisualization: React.FC = () => {
       const g = svg.append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-      // Filter and prepare time series data
+      // Filter and prepare time series data for both genders
       const timeSeriesData = selectedCountries.map(country => {
-        const countryData = researchData
-          .filter(d => d.country === country && d.sex === 'M') // Focus on male data for time series
+        const maleData = researchData
+          .filter(d => d.country === country && d.sex === 'M')
+          .sort((a, b) => parseInt(a.year) - parseInt(b.year));
+        
+        const femaleData = researchData
+          .filter(d => d.country === country && d.sex === 'F')
           .sort((a, b) => parseInt(a.year) - parseInt(b.year));
         
         return {
           country,
-          values: countryData.map(d => ({
+          male: maleData.map(d => ({
+            year: parseInt(d.year),
+            value: parseFloat(d[selectedMetric])
+          })),
+          female: femaleData.map(d => ({
             year: parseInt(d.year),
             value: parseFloat(d[selectedMetric])
           }))
@@ -394,8 +402,9 @@ const InteractiveVisualization: React.FC = () => {
         .domain(d3.extent(availableYears.map(y => parseInt(y))) as [number, number])
         .range([0, width]);
 
+      const allValues = timeSeriesData.flatMap(d => [...d.male.map(v => v.value), ...d.female.map(v => v.value)]);
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(timeSeriesData.flatMap(d => d.values.map(v => v.value))) || 0])
+        .domain([0, d3.max(allValues) || 0])
         .range([height, 0]);
 
       const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
@@ -415,31 +424,57 @@ const InteractiveVisualization: React.FC = () => {
       g.append("g")
         .call(d3.axisLeft(yScale));
 
-      // Add lines with animation
+      // Add lines for both genders
       timeSeriesData.forEach((countryData, index) => {
-        const path = g.append("path")
-          .datum(countryData.values)
-          .attr("fill", "none")
-          .attr("stroke", colorScale(countryData.country))
-          .attr("stroke-width", 2)
-          .attr("d", line);
+        // Male line (solid)
+        if (countryData.male.length > 0) {
+          const malePath = g.append("path")
+            .datum(countryData.male)
+            .attr("fill", "none")
+            .attr("stroke", colorScale(countryData.country))
+            .attr("stroke-width", 3)
+            .attr("d", line);
 
-        // Animate line drawing
-        const totalLength = path.node()?.getTotalLength() || 0;
-        path
-          .attr("stroke-dasharray", totalLength + " " + totalLength)
-          .attr("stroke-dashoffset", totalLength)
-          .transition()
-          .duration(1500)
-          .delay(index * 200)
-          .attr("stroke-dashoffset", 0);
+          // Animate line drawing
+          const totalLength = malePath.node()?.getTotalLength() || 0;
+          malePath
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            .attr("stroke-dashoffset", totalLength)
+            .transition()
+            .duration(1500)
+            .delay(index * 200)
+            .attr("stroke-dashoffset", 0);
+        }
+
+        // Female line (dashed)
+        if (countryData.female.length > 0) {
+          const femalePath = g.append("path")
+            .datum(countryData.female)
+            .attr("fill", "none")
+            .attr("stroke", colorScale(countryData.country))
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", "5,5")
+            .attr("opacity", 0.7)
+            .attr("d", line);
+
+          // Animate line drawing
+          const totalLength = femalePath.node()?.getTotalLength() || 0;
+          femalePath
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            .attr("stroke-dashoffset", totalLength)
+            .transition()
+            .duration(1500)
+            .delay(index * 200 + 300)
+            .attr("stroke-dashoffset", 0)
+            .attr("stroke-dasharray", "5,5");
+        }
 
         // Add country label
-        const lastPoint = countryData.values[countryData.values.length - 1];
-        if (lastPoint) {
+        const lastMalePoint = countryData.male[countryData.male.length - 1];
+        if (lastMalePoint) {
           g.append("text")
-            .attr("x", xScale(lastPoint.year) + 5)
-            .attr("y", yScale(lastPoint.value))
+            .attr("x", xScale(lastMalePoint.year) + 5)
+            .attr("y", yScale(lastMalePoint.value))
             .attr("dy", "0.35em")
             .style("font-size", "12px")
             .style("fill", colorScale(countryData.country))
@@ -452,6 +487,40 @@ const InteractiveVisualization: React.FC = () => {
         }
       });
 
+      // Add gender legend
+      const legend = g.append("g")
+        .attr("transform", `translate(${width + 20}, 60)`);
+
+      legend.append("line")
+        .attr("x1", 0)
+        .attr("x2", 20)
+        .attr("y1", 0)
+        .attr("y2", 0)
+        .attr("stroke", "#666")
+        .attr("stroke-width", 3);
+
+      legend.append("text")
+        .attr("x", 25)
+        .attr("y", 4)
+        .text("Male")
+        .style("font-size", "12px");
+
+      legend.append("line")
+        .attr("x1", 0)
+        .attr("x2", 20)
+        .attr("y1", 20)
+        .attr("y2", 20)
+        .attr("stroke", "#666")
+        .attr("stroke-width", 2)
+        .attr("stroke-dasharray", "5,5")
+        .attr("opacity", 0.7);
+
+      legend.append("text")
+        .attr("x", 25)
+        .attr("y", 24)
+        .text("Female")
+        .style("font-size", "12px");
+
       // Add axis labels
       g.append("text")
         .attr("transform", "rotate(-90)")
@@ -461,7 +530,7 @@ const InteractiveVisualization: React.FC = () => {
         .style("text-anchor", "middle")
         .style("font-size", "14px")
         .style("font-weight", "600")
-        .text(`${metrics[selectedMetric].label} (${metrics[selectedMetric].unit}) - Male`);
+        .text(`${metrics[selectedMetric].label} (${metrics[selectedMetric].unit})`);
 
       g.append("text")
         .attr("transform", `translate(${width / 2}, ${height + margin.bottom - 10})`)
@@ -573,7 +642,7 @@ const InteractiveVisualization: React.FC = () => {
                   }`}
                 >
                   <TrendingUp className="w-4 h-4 inline mr-2" />
-                  Time Series (2013-2022)
+                  Time Series (Male vs Female)
                 </button>
               </div>
             </div>
@@ -731,8 +800,8 @@ const InteractiveVisualization: React.FC = () => {
 
                 {viewMode === 'timeseries' && (
                   <div className="text-sm text-gray-600 bg-blue-50 p-3 rounded">
-                    <strong>Note:</strong> Time series shows male data trends from 2013-2022. 
-                    This focuses on the gender showing stronger correlations in our analysis.
+                    <strong>Note:</strong> Time series shows both male (solid line) and female (dashed line) trends. 
+                    This highlights the gender disparities in our analysis.
                   </div>
                 )}
               </div>
