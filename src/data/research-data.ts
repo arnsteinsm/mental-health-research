@@ -10,14 +10,14 @@ export interface DataPoint {
   accident_rate: string;
 }
 
-// Process the BigQuery JSON data to match our interface
+// Process the actual BigQuery JSON data to match our interface
 export const researchData: DataPoint[] = bqData.map((row: any) => ({
-  country: row.country || row.Country || row.COUNTRY || '',
-  year: (row.year || row.Year || row.YEAR || '').toString(),
-  sex: (row.sex || row.Sex || row.SEX || 'M') as 'M' | 'F',
-  alcohol_rate: (row.alcohol_rate || row.Alcohol_Rate || row.ALCOHOL_RATE || 0).toString(),
-  suicide_rate: (row.suicide_rate || row.Suicide_Rate || row.SUICIDE_RATE || 0).toString(),
-  accident_rate: (row.accident_rate || row.Accident_Rate || row.ACCIDENT_RATE || 0).toString()
+  country: row.country || '',
+  year: (row.year || '').toString(),
+  sex: (row.sex || 'M') as 'M' | 'F',
+  alcohol_rate: (row.alcohol_rate || 0).toString(),
+  suicide_rate: (row.suicide_rate || 0).toString(),
+  accident_rate: (row.accident_rate || 0).toString()
 }));
 
 export const countryNames: Record<string, string> = {
@@ -58,7 +58,7 @@ export const countryNames: Record<string, string> = {
   'UK': 'United Kingdom'
 };
 
-// Calculate actual dataset statistics
+// Calculate actual dataset statistics from the BigQuery data
 export const datasetStats = {
   totalRecords: researchData.length,
   uniqueCountries: Array.from(new Set(researchData.map(d => d.country))).filter(c => c && c !== 'EU27_2020'),
@@ -76,7 +76,7 @@ export const datasetStats = {
   }
 };
 
-// Calculate Pearson correlation coefficients
+// Calculate Pearson correlation coefficients using actual data
 export const calculateCorrelations = () => {
   const maleData = researchData.filter(d => d.sex === 'M' && d.country !== 'EU27_2020');
   const femaleData = researchData.filter(d => d.sex === 'F' && d.country !== 'EU27_2020');
@@ -113,10 +113,11 @@ export const calculateCorrelations = () => {
 };
 
 // Log the actual dataset information for verification
-console.log('=== ACTUAL DATASET VERIFICATION ===');
+console.log('=== ACTUAL BIGQUERY DATASET VERIFICATION ===');
 console.log('Total records:', datasetStats.totalRecords);
 console.log('Countries:', datasetStats.uniqueCountries.length, datasetStats.uniqueCountries);
 console.log('Years:', datasetStats.uniqueYears);
 console.log('Year range:', datasetStats.yearRange);
 console.log('Gender split:', datasetStats.genderSplit);
 console.log('Correlations:', calculateCorrelations());
+console.log('Sample data:', researchData.slice(0, 3));
