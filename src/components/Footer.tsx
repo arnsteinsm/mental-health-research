@@ -37,14 +37,14 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <BarChart3 className="w-6 h-6 text-purple-400" />
-              <span className="text-lg font-bold">Beyond the Drink</span>
+              <span className="text-lg font-bold">Behind the Drink</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Evidence-based analysis of European mental health and substance abuse patterns 
               through a gendered lens.
             </p>
             
-            {/* Built with Bolt Badge - Following Official Guidelines */}
+            {/* Official Built with Bolt Badge - Black Circle */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -57,12 +57,11 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-block group"
               >
-                <div className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  <div className="w-5 h-5 bg-white rounded flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-xs">⚡</span>
-                  </div>
-                  <span className="text-white text-sm font-medium">Built with Bolt</span>
-                </div>
+                <img 
+                  src="https://raw.githubusercontent.com/kickiniteasy/bolt-hackathon-badge/main/assets/bolt-badge-black-circle.png" 
+                  alt="Built with Bolt" 
+                  className="h-12 w-12 hover:scale-110 transition-transform duration-300"
+                />
               </a>
             </motion.div>
 
@@ -141,7 +140,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © {currentYear} Beyond the Drink Research Project. Data analysis for public health advocacy.
+              © {currentYear} Behind the Drink Research Project. Data analysis for public health advocacy.
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
