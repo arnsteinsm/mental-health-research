@@ -1,0 +1,5650 @@
+[{
+  "country": "AT",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "7.16",
+  "suicide_rate": "21.8",
+  "accident_rate": "1.98"
+}, {
+  "country": "AT",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "26.13",
+  "suicide_rate": "46.02",
+  "accident_rate": "9.2"
+}, {
+  "country": "AT",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.51",
+  "suicide_rate": "23.19",
+  "accident_rate": "1.68"
+}, {
+  "country": "AT",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "25.84",
+  "suicide_rate": "48.76",
+  "accident_rate": "10.11"
+}, {
+  "country": "AT",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "7.19",
+  "suicide_rate": "21.6",
+  "accident_rate": "1.88"
+}, {
+  "country": "AT",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "25.6",
+  "suicide_rate": "46.71",
+  "accident_rate": "9.93"
+}, {
+  "country": "AT",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "7.02",
+  "suicide_rate": "21.58",
+  "accident_rate": "2.12"
+}, {
+  "country": "AT",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "25.29",
+  "suicide_rate": "42.85",
+  "accident_rate": "9.28"
+}, {
+  "country": "AT",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.27",
+  "suicide_rate": "22.4",
+  "accident_rate": "2.11"
+}, {
+  "country": "AT",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "24.19",
+  "suicide_rate": "44.07",
+  "accident_rate": "10.76"
+}, {
+  "country": "AT",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "6.36",
+  "suicide_rate": "20.39",
+  "accident_rate": "1.87"
+}, {
+  "country": "AT",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "22.66",
+  "suicide_rate": "40.41",
+  "accident_rate": "10.12"
+}, {
+  "country": "AT",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.55",
+  "suicide_rate": "20.4",
+  "accident_rate": "2.21"
+}, {
+  "country": "AT",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "23.76",
+  "suicide_rate": "41.03",
+  "accident_rate": "9.65"
+}, {
+  "country": "AT",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.51",
+  "suicide_rate": "20.97",
+  "accident_rate": "2.58"
+}, {
+  "country": "AT",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "23.49",
+  "suicide_rate": "40.76",
+  "accident_rate": "10.35"
+}, {
+  "country": "AT",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "5.16",
+  "suicide_rate": "22.21",
+  "accident_rate": "2.21"
+}, {
+  "country": "AT",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "20.88",
+  "suicide_rate": "45.08",
+  "accident_rate": "9.55"
+}, {
+  "country": "AT",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "4.94",
+  "suicide_rate": "25.03",
+  "accident_rate": "2.19"
+}, {
+  "country": "AT",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "19.95",
+  "suicide_rate": "46.81",
+  "accident_rate": "10.71"
+}, {
+  "country": "AT",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "4.55",
+  "suicide_rate": "22.03",
+  "accident_rate": "2.93"
+}, {
+  "country": "AT",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "21.01",
+  "suicide_rate": "43.84",
+  "accident_rate": "11.32"
+}, {
+  "country": "AT",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.35",
+  "suicide_rate": "23.83",
+  "accident_rate": "2.59"
+}, {
+  "country": "AT",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "22.49",
+  "suicide_rate": "47.32",
+  "accident_rate": "11.28"
+}, {
+  "country": "BE",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "10.87",
+  "suicide_rate": "30.26",
+  "accident_rate": "1.51"
+}, {
+  "country": "BE",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "28.71",
+  "suicide_rate": "51.6",
+  "accident_rate": "5.4"
+}, {
+  "country": "BE",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "9.76",
+  "suicide_rate": "32.7",
+  "accident_rate": "2.1"
+}, {
+  "country": "BE",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "28.96",
+  "suicide_rate": "55.12",
+  "accident_rate": "6.12"
+}, {
+  "country": "BE",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "9.48",
+  "suicide_rate": "31.52",
+  "accident_rate": "2.0"
+}, {
+  "country": "BE",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "26.09",
+  "suicide_rate": "51.38",
+  "accident_rate": "6.32"
+}, {
+  "country": "BE",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "9.88",
+  "suicide_rate": "29.11",
+  "accident_rate": "1.73"
+}, {
+  "country": "BE",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "25.7",
+  "suicide_rate": "51.45",
+  "accident_rate": "5.47"
+}, {
+  "country": "BE",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "9.68",
+  "suicide_rate": "32.86",
+  "accident_rate": "2.06"
+}, {
+  "country": "BE",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "24.69",
+  "suicide_rate": "51.44",
+  "accident_rate": "5.62"
+}, {
+  "country": "BE",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "9.51",
+  "suicide_rate": "29.1",
+  "accident_rate": "1.68"
+}, {
+  "country": "BE",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "25.5",
+  "suicide_rate": "50.08",
+  "accident_rate": "5.48"
+}, {
+  "country": "BE",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "8.55",
+  "suicide_rate": "29.37",
+  "accident_rate": "1.87"
+}, {
+  "country": "BE",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "23.05",
+  "suicide_rate": "46.91",
+  "accident_rate": "6.06"
+}, {
+  "country": "BE",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "8.78",
+  "suicide_rate": "29.7",
+  "accident_rate": "1.48"
+}, {
+  "country": "BE",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "23.97",
+  "suicide_rate": "48.32",
+  "accident_rate": "5.53"
+}, {
+  "country": "BE",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.92",
+  "suicide_rate": "29.4",
+  "accident_rate": "1.51"
+}, {
+  "country": "BE",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "23.28",
+  "suicide_rate": "47.13",
+  "accident_rate": "5.2"
+}, {
+  "country": "BE",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "8.14",
+  "suicide_rate": "28.2",
+  "accident_rate": "1.82"
+}, {
+  "country": "BE",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "23.18",
+  "suicide_rate": "45.86",
+  "accident_rate": "5.65"
+}, {
+  "country": "BE",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "8.09",
+  "suicide_rate": "28.97",
+  "accident_rate": "1.33"
+}, {
+  "country": "BE",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "21.34",
+  "suicide_rate": "47.72",
+  "accident_rate": "5.25"
+}, {
+  "country": "BE",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "9.37",
+  "suicide_rate": "31.47",
+  "accident_rate": "1.61"
+}, {
+  "country": "BE",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "22.04",
+  "suicide_rate": "51.53",
+  "accident_rate": "5.67"
+}, {
+  "country": "BG",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "4.0",
+  "suicide_rate": "10.83",
+  "accident_rate": "0.03"
+}, {
+  "country": "BG",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "17.98",
+  "suicide_rate": "38.11",
+  "accident_rate": "0.46"
+}, {
+  "country": "BG",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "5.1",
+  "suicide_rate": "11.47",
+  "accident_rate": "0.05"
+}, {
+  "country": "BG",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "20.86",
+  "suicide_rate": "41.6",
+  "accident_rate": "0.58"
+}, {
+  "country": "BG",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "17.1",
+  "suicide_rate": "40.86",
+  "accident_rate": "0.35"
+}, {
+  "country": "BG",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "4.24",
+  "suicide_rate": "12.83",
+  "accident_rate": "0.03"
+}, {
+  "country": "BG",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "16.94",
+  "suicide_rate": "41.35",
+  "accident_rate": "0.69"
+}, {
+  "country": "BG",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "4.02",
+  "suicide_rate": "13.19",
+  "accident_rate": "0.14"
+}, {
+  "country": "BG",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "15.74",
+  "suicide_rate": "42.02",
+  "accident_rate": "0.7"
+}, {
+  "country": "BG",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "4.0",
+  "suicide_rate": "11.34",
+  "accident_rate": "0.03"
+}, {
+  "country": "BG",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "15.84",
+  "suicide_rate": "40.74",
+  "accident_rate": "0.69"
+}, {
+  "country": "BG",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "4.15",
+  "suicide_rate": "13.21",
+  "accident_rate": "0.07"
+}, {
+  "country": "BG",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.07",
+  "suicide_rate": "37.19",
+  "accident_rate": "0.49"
+}, {
+  "country": "BG",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.8",
+  "suicide_rate": "12.07",
+  "accident_rate": "0.09"
+}, {
+  "country": "BG",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "15.13",
+  "suicide_rate": "35.5",
+  "accident_rate": "0.84"
+}, {
+  "country": "BG",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "3.13",
+  "suicide_rate": "11.8",
+  "accident_rate": "0.08"
+}, {
+  "country": "BG",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "14.01",
+  "suicide_rate": "36.9",
+  "accident_rate": "0.85"
+}, {
+  "country": "BG",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "3.07",
+  "suicide_rate": "11.24",
+  "accident_rate": "0.15"
+}, {
+  "country": "BG",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "14.14",
+  "suicide_rate": "32.64",
+  "accident_rate": "1.2"
+}, {
+  "country": "BG",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.21",
+  "suicide_rate": "11.49",
+  "accident_rate": "0.24"
+}, {
+  "country": "BG",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "13.59",
+  "suicide_rate": "32.89",
+  "accident_rate": "0.99"
+}, {
+  "country": "BG",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.19",
+  "suicide_rate": "10.7",
+  "accident_rate": "0.03"
+}, {
+  "country": "BG",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "11.7",
+  "suicide_rate": "35.37",
+  "accident_rate": "0.48"
+}, {
+  "country": "CH",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "6.85",
+  "suicide_rate": "26.06",
+  "accident_rate": "1.21"
+}, {
+  "country": "CH",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "20.76",
+  "suicide_rate": "44.47",
+  "accident_rate": "5.11"
+}, {
+  "country": "CH",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.93",
+  "suicide_rate": "25.5",
+  "accident_rate": "1.2"
+}, {
+  "country": "CH",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "20.55",
+  "suicide_rate": "45.88",
+  "accident_rate": "4.04"
+}, {
+  "country": "CH",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "6.94",
+  "suicide_rate": "27.8",
+  "accident_rate": "1.61"
+}, {
+  "country": "CH",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "21.0",
+  "suicide_rate": "44.99",
+  "accident_rate": "4.25"
+}, {
+  "country": "CH",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.61",
+  "suicide_rate": "26.05",
+  "accident_rate": "1.69"
+}, {
+  "country": "CH",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "19.89",
+  "suicide_rate": "43.04",
+  "accident_rate": "4.04"
+}, {
+  "country": "CH",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.54",
+  "suicide_rate": "24.56",
+  "accident_rate": "1.37"
+}, {
+  "country": "CH",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "20.34",
+  "suicide_rate": "45.91",
+  "accident_rate": "4.08"
+}, {
+  "country": "CH",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "6.0",
+  "suicide_rate": "24.79",
+  "accident_rate": "1.22"
+}, {
+  "country": "CH",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "19.18",
+  "suicide_rate": "43.17",
+  "accident_rate": "3.44"
+}, {
+  "country": "CH",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "6.29",
+  "suicide_rate": "24.18",
+  "accident_rate": "1.09"
+}, {
+  "country": "CH",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "19.28",
+  "suicide_rate": "41.53",
+  "accident_rate": "3.53"
+}, {
+  "country": "CH",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "6.56",
+  "suicide_rate": "26.17",
+  "accident_rate": "1.43"
+}, {
+  "country": "CH",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "18.13",
+  "suicide_rate": "43.32",
+  "accident_rate": "3.0"
+}, {
+  "country": "CH",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "6.24",
+  "suicide_rate": "23.9",
+  "accident_rate": "0.98"
+}, {
+  "country": "CH",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "18.3",
+  "suicide_rate": "39.02",
+  "accident_rate": "3.78"
+}, {
+  "country": "CH",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.23",
+  "suicide_rate": "24.08",
+  "accident_rate": "1.26"
+}, {
+  "country": "CH",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.95",
+  "suicide_rate": "39.43",
+  "accident_rate": "3.03"
+}, {
+  "country": "CH",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.36",
+  "suicide_rate": "23.34",
+  "accident_rate": "0.89"
+}, {
+  "country": "CH",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "17.23",
+  "suicide_rate": "39.82",
+  "accident_rate": "3.9"
+}, {
+  "country": "CH",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "5.85",
+  "suicide_rate": "26.67",
+  "accident_rate": "1.25"
+}, {
+  "country": "CH",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "16.42",
+  "suicide_rate": "41.76",
+  "accident_rate": "3.59"
+}, {
+  "country": "CY",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "7.07",
+  "suicide_rate": "46.52",
+  "accident_rate": "0.76"
+}, {
+  "country": "CY",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "0.38",
+  "suicide_rate": "26.94",
+  "accident_rate": "0.32"
+}, {
+  "country": "CY",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "7.54",
+  "suicide_rate": "40.62",
+  "accident_rate": "0.67"
+}, {
+  "country": "CY",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "9.59",
+  "suicide_rate": "52.35",
+  "accident_rate": "1.82"
+}, {
+  "country": "CY",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "6.81",
+  "suicide_rate": "42.39",
+  "accident_rate": "1.56"
+}, {
+  "country": "CY",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "2.03",
+  "suicide_rate": "24.26",
+  "accident_rate": "0.44"
+}, {
+  "country": "CY",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "7.05",
+  "suicide_rate": "47.35",
+  "accident_rate": "0.86"
+}, {
+  "country": "CY",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "6.87",
+  "suicide_rate": "49.15",
+  "accident_rate": "0.52"
+}, {
+  "country": "CY",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "1.27",
+  "suicide_rate": "26.73",
+  "accident_rate": "0.0"
+}, {
+  "country": "CY",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "7.08",
+  "suicide_rate": "49.31",
+  "accident_rate": "0.57"
+}, {
+  "country": "CY",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "1.59",
+  "suicide_rate": "25.84",
+  "accident_rate": "0.51"
+}, {
+  "country": "CY",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "7.69",
+  "suicide_rate": "43.41",
+  "accident_rate": "0.56"
+}, {
+  "country": "CY",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "0.89",
+  "suicide_rate": "27.92",
+  "accident_rate": "0.24"
+}, {
+  "country": "CY",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "8.05",
+  "suicide_rate": "47.91",
+  "accident_rate": "0.53"
+}, {
+  "country": "CY",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "1.64",
+  "suicide_rate": "25.23",
+  "accident_rate": "0.26"
+}, {
+  "country": "CY",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "5.36",
+  "suicide_rate": "46.29",
+  "accident_rate": "0.76"
+}, {
+  "country": "CY",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "1.98",
+  "suicide_rate": "25.53",
+  "accident_rate": "0.24"
+}, {
+  "country": "CY",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "3.47",
+  "suicide_rate": "42.93",
+  "accident_rate": "0.73"
+}, {
+  "country": "CY",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.34",
+  "suicide_rate": "28.82",
+  "accident_rate": "0.0"
+}, {
+  "country": "CY",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "5.96",
+  "suicide_rate": "41.88",
+  "accident_rate": "1.25"
+}, {
+  "country": "CZ",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "4.75",
+  "suicide_rate": "29.69",
+  "accident_rate": "0.39"
+}, {
+  "country": "CZ",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "27.03",
+  "suicide_rate": "64.25",
+  "accident_rate": "2.45"
+}, {
+  "country": "CZ",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "5.18",
+  "suicide_rate": "27.77",
+  "accident_rate": "0.38"
+}, {
+  "country": "CZ",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "28.64",
+  "suicide_rate": "60.55",
+  "accident_rate": "2.41"
+}, {
+  "country": "CZ",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "5.28",
+  "suicide_rate": "25.93",
+  "accident_rate": "0.46"
+}, {
+  "country": "CZ",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "26.84",
+  "suicide_rate": "59.18",
+  "accident_rate": "2.2"
+}, {
+  "country": "CZ",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.46",
+  "suicide_rate": "27.32",
+  "accident_rate": "0.52"
+}, {
+  "country": "CZ",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "24.61",
+  "suicide_rate": "62.31",
+  "accident_rate": "1.85"
+}, {
+  "country": "CZ",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "4.76",
+  "suicide_rate": "28.83",
+  "accident_rate": "0.48"
+}, {
+  "country": "CZ",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "23.12",
+  "suicide_rate": "64.13",
+  "accident_rate": "2.14"
+}, {
+  "country": "CZ",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "4.73",
+  "suicide_rate": "26.55",
+  "accident_rate": "0.4"
+}, {
+  "country": "CZ",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "21.76",
+  "suicide_rate": "57.98",
+  "accident_rate": "2.22"
+}, {
+  "country": "CZ",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.3",
+  "suicide_rate": "24.93",
+  "accident_rate": "0.41"
+}, {
+  "country": "CZ",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "22.19",
+  "suicide_rate": "58.53",
+  "accident_rate": "2.05"
+}, {
+  "country": "CZ",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "4.62",
+  "suicide_rate": "26.32",
+  "accident_rate": "0.43"
+}, {
+  "country": "CZ",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "22.16",
+  "suicide_rate": "58.0",
+  "accident_rate": "2.05"
+}, {
+  "country": "CZ",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "4.43",
+  "suicide_rate": "24.76",
+  "accident_rate": "0.58"
+}, {
+  "country": "CZ",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "19.04",
+  "suicide_rate": "58.49",
+  "accident_rate": "2.69"
+}, {
+  "country": "CZ",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "3.96",
+  "suicide_rate": "24.52",
+  "accident_rate": "0.67"
+}, {
+  "country": "CZ",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "20.71",
+  "suicide_rate": "55.09",
+  "accident_rate": "3.1"
+}, {
+  "country": "CZ",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "4.76",
+  "suicide_rate": "21.54",
+  "accident_rate": "0.63"
+}, {
+  "country": "CZ",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "19.75",
+  "suicide_rate": "50.84",
+  "accident_rate": "3.54"
+}, {
+  "country": "CZ",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.94",
+  "suicide_rate": "21.07",
+  "accident_rate": "0.83"
+}, {
+  "country": "CZ",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "20.98",
+  "suicide_rate": "50.82",
+  "accident_rate": "3.45"
+}, {
+  "country": "DE",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "5.61",
+  "suicide_rate": "17.36",
+  "accident_rate": "2.52"
+}, {
+  "country": "DE",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "20.06",
+  "suicide_rate": "33.86",
+  "accident_rate": "9.36"
+}, {
+  "country": "DE",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "5.82",
+  "suicide_rate": "17.84",
+  "accident_rate": "2.37"
+}, {
+  "country": "DE",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "18.96",
+  "suicide_rate": "33.66",
+  "accident_rate": "9.55"
+}, {
+  "country": "DE",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "5.85",
+  "suicide_rate": "18.25",
+  "accident_rate": "2.76"
+}, {
+  "country": "DE",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "19.18",
+  "suicide_rate": "34.42",
+  "accident_rate": "10.14"
+}, {
+  "country": "DE",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.74",
+  "suicide_rate": "18.36",
+  "accident_rate": "2.57"
+}, {
+  "country": "DE",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "19.33",
+  "suicide_rate": "35.01",
+  "accident_rate": "9.37"
+}, {
+  "country": "DE",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "5.93",
+  "suicide_rate": "19.68",
+  "accident_rate": "2.72"
+}, {
+  "country": "DE",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "18.62",
+  "suicide_rate": "36.31",
+  "accident_rate": "10.02"
+}, {
+  "country": "DE",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "5.37",
+  "suicide_rate": "21.13",
+  "accident_rate": "2.44"
+}, {
+  "country": "DE",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "18.21",
+  "suicide_rate": "38.25",
+  "accident_rate": "10.06"
+}, {
+  "country": "DE",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "4.92",
+  "suicide_rate": "21.62",
+  "accident_rate": "2.27"
+}, {
+  "country": "DE",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.16",
+  "suicide_rate": "40.06",
+  "accident_rate": "9.38"
+}, {
+  "country": "DE",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "4.93",
+  "suicide_rate": "22.61",
+  "accident_rate": "2.31"
+}, {
+  "country": "DE",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "17.25",
+  "suicide_rate": "41.4",
+  "accident_rate": "9.23"
+}, {
+  "country": "DE",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "4.72",
+  "suicide_rate": "22.6",
+  "accident_rate": "2.15"
+}, {
+  "country": "DE",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "16.45",
+  "suicide_rate": "40.94",
+  "accident_rate": "8.67"
+}, {
+  "country": "DE",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "4.85",
+  "suicide_rate": "21.95",
+  "accident_rate": "2.39"
+}, {
+  "country": "DE",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.62",
+  "suicide_rate": "40.31",
+  "accident_rate": "8.78"
+}, {
+  "country": "DE",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "5.09",
+  "suicide_rate": "22.65",
+  "accident_rate": "2.27"
+}, {
+  "country": "DE",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "16.29",
+  "suicide_rate": "42.58",
+  "accident_rate": "8.75"
+}, {
+  "country": "DE",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "5.47",
+  "suicide_rate": "26.1",
+  "accident_rate": "2.44"
+}, {
+  "country": "DE",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "17.88",
+  "suicide_rate": "47.28",
+  "accident_rate": "9.75"
+}, {
+  "country": "DK",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "5.63",
+  "suicide_rate": "22.25",
+  "accident_rate": "5.96"
+}, {
+  "country": "DK",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "17.01",
+  "suicide_rate": "39.73",
+  "accident_rate": "19.72"
+}, {
+  "country": "DK",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "5.9",
+  "suicide_rate": "20.92",
+  "accident_rate": "5.58"
+}, {
+  "country": "DK",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "19.05",
+  "suicide_rate": "36.84",
+  "accident_rate": "20.69"
+}, {
+  "country": "DK",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "5.73",
+  "suicide_rate": "21.39",
+  "accident_rate": "5.95"
+}, {
+  "country": "DK",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "17.59",
+  "suicide_rate": "33.52",
+  "accident_rate": "19.47"
+}, {
+  "country": "DK",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.89",
+  "suicide_rate": "20.0",
+  "accident_rate": "5.0"
+}, {
+  "country": "DK",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "18.37",
+  "suicide_rate": "35.74",
+  "accident_rate": "18.42"
+}, {
+  "country": "DK",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.11",
+  "suicide_rate": "18.47",
+  "accident_rate": "5.23"
+}, {
+  "country": "DK",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "14.62",
+  "suicide_rate": "32.74",
+  "accident_rate": "19.76"
+}, {
+  "country": "DK",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "4.96",
+  "suicide_rate": "18.64",
+  "accident_rate": "5.64"
+}, {
+  "country": "DK",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "15.82",
+  "suicide_rate": "32.63",
+  "accident_rate": "17.73"
+}, {
+  "country": "DK",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.64",
+  "suicide_rate": "18.14",
+  "accident_rate": "4.22"
+}, {
+  "country": "DK",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "15.65",
+  "suicide_rate": "33.78",
+  "accident_rate": "14.52"
+}, {
+  "country": "DK",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.48",
+  "suicide_rate": "19.39",
+  "accident_rate": "3.5"
+}, {
+  "country": "DK",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "15.62",
+  "suicide_rate": "35.08",
+  "accident_rate": "12.91"
+}, {
+  "country": "DK",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "5.15",
+  "suicide_rate": "19.71",
+  "accident_rate": "3.41"
+}, {
+  "country": "DK",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "16.59",
+  "suicide_rate": "36.36",
+  "accident_rate": "11.32"
+}, {
+  "country": "DK",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "5.61",
+  "suicide_rate": "19.13",
+  "accident_rate": "3.85"
+}, {
+  "country": "DK",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "14.93",
+  "suicide_rate": "35.06",
+  "accident_rate": "11.02"
+}, {
+  "country": "DK",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "5.11",
+  "suicide_rate": "19.64",
+  "accident_rate": "3.66"
+}, {
+  "country": "DK",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "14.09",
+  "suicide_rate": "32.1",
+  "accident_rate": "13.38"
+}, {
+  "country": "DK",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.53",
+  "suicide_rate": "21.65",
+  "accident_rate": "3.53"
+}, {
+  "country": "DK",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "15.39",
+  "suicide_rate": "36.0",
+  "accident_rate": "11.76"
+}, {
+  "country": "EE",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "5.44",
+  "suicide_rate": "23.96",
+  "accident_rate": "3.17"
+}, {
+  "country": "EE",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "30.82",
+  "suicide_rate": "100.68",
+  "accident_rate": "12.43"
+}, {
+  "country": "EE",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.16",
+  "suicide_rate": "23.65",
+  "accident_rate": "2.96"
+}, {
+  "country": "EE",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "34.33",
+  "suicide_rate": "103.77",
+  "accident_rate": "13.83"
+}, {
+  "country": "EE",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "6.1",
+  "suicide_rate": "20.94",
+  "accident_rate": "1.41"
+}, {
+  "country": "EE",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "32.28",
+  "suicide_rate": "87.52",
+  "accident_rate": "9.33"
+}, {
+  "country": "EE",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.5",
+  "suicide_rate": "20.76",
+  "accident_rate": "1.13"
+}, {
+  "country": "EE",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "33.64",
+  "suicide_rate": "85.98",
+  "accident_rate": "8.66"
+}, {
+  "country": "EE",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "5.08",
+  "suicide_rate": "20.5",
+  "accident_rate": "1.02"
+}, {
+  "country": "EE",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "29.85",
+  "suicide_rate": "78.17",
+  "accident_rate": "9.82"
+}, {
+  "country": "EE",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "5.1",
+  "suicide_rate": "20.47",
+  "accident_rate": "1.28"
+}, {
+  "country": "EE",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "26.35",
+  "suicide_rate": "77.01",
+  "accident_rate": "9.21"
+}, {
+  "country": "EE",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.31",
+  "suicide_rate": "17.48",
+  "accident_rate": "1.19"
+}, {
+  "country": "EE",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "30.16",
+  "suicide_rate": "74.58",
+  "accident_rate": "9.21"
+}, {
+  "country": "EE",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.8",
+  "suicide_rate": "18.71",
+  "accident_rate": "0.79"
+}, {
+  "country": "EE",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "27.22",
+  "suicide_rate": "70.48",
+  "accident_rate": "7.94"
+}, {
+  "country": "EE",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "5.62",
+  "suicide_rate": "19.2",
+  "accident_rate": "0.81"
+}, {
+  "country": "EE",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "26.36",
+  "suicide_rate": "64.11",
+  "accident_rate": "7.18"
+}, {
+  "country": "EE",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.31",
+  "suicide_rate": "21.6",
+  "accident_rate": "2.86"
+}, {
+  "country": "EE",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "29.32",
+  "suicide_rate": "75.98",
+  "accident_rate": "7.58"
+}, {
+  "country": "EE",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "5.2",
+  "suicide_rate": "27.21",
+  "accident_rate": "1.54"
+}, {
+  "country": "EE",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "24.98",
+  "suicide_rate": "80.87",
+  "accident_rate": "11.89"
+}, {
+  "country": "EE",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.32",
+  "suicide_rate": "24.55",
+  "accident_rate": "1.39"
+}, {
+  "country": "EE",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "25.65",
+  "suicide_rate": "82.5",
+  "accident_rate": "10.9"
+}, {
+  "country": "EL",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "1.43",
+  "suicide_rate": "10.76",
+  "accident_rate": "0.08"
+}, {
+  "country": "EL",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "7.25",
+  "suicide_rate": "35.85",
+  "accident_rate": "0.47"
+}, {
+  "country": "EL",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "7.58",
+  "suicide_rate": "35.8",
+  "accident_rate": "0.42"
+}, {
+  "country": "EL",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "1.87",
+  "suicide_rate": "11.37",
+  "accident_rate": "0.02"
+}, {
+  "country": "EL",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "7.95",
+  "suicide_rate": "35.25",
+  "accident_rate": "0.23"
+}, {
+  "country": "EL",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "1.92",
+  "suicide_rate": "9.23",
+  "accident_rate": "0.01"
+}, {
+  "country": "EL",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "8.42",
+  "suicide_rate": "30.45",
+  "accident_rate": "0.23"
+}, {
+  "country": "EL",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "1.84",
+  "suicide_rate": "12.37",
+  "accident_rate": "0.07"
+}, {
+  "country": "EL",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "7.87",
+  "suicide_rate": "35.9",
+  "accident_rate": "0.56"
+}, {
+  "country": "EL",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "1.41",
+  "suicide_rate": "13.71",
+  "accident_rate": "0.06"
+}, {
+  "country": "EL",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "7.55",
+  "suicide_rate": "36.27",
+  "accident_rate": "0.43"
+}, {
+  "country": "EL",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "1.66",
+  "suicide_rate": "14.46",
+  "accident_rate": "0.12"
+}, {
+  "country": "EL",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "7.71",
+  "suicide_rate": "39.61",
+  "accident_rate": "0.58"
+}, {
+  "country": "EL",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "2.08",
+  "suicide_rate": "14.86",
+  "accident_rate": "0.09"
+}, {
+  "country": "EL",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "8.14",
+  "suicide_rate": "39.11",
+  "accident_rate": "0.4"
+}, {
+  "country": "EL",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "1.55",
+  "suicide_rate": "15.36",
+  "accident_rate": "0.05"
+}, {
+  "country": "EL",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "8.06",
+  "suicide_rate": "38.31",
+  "accident_rate": "0.72"
+}, {
+  "country": "EL",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "1.51",
+  "suicide_rate": "17.38",
+  "accident_rate": "0.2"
+}, {
+  "country": "EL",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "6.86",
+  "suicide_rate": "39.68",
+  "accident_rate": "0.52"
+}, {
+  "country": "EL",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "1.33",
+  "suicide_rate": "18.4",
+  "accident_rate": "0.08"
+}, {
+  "country": "EL",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "7.29",
+  "suicide_rate": "41.53",
+  "accident_rate": "0.83"
+}, {
+  "country": "EL",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "1.6",
+  "suicide_rate": "19.93",
+  "accident_rate": "0.13"
+}, {
+  "country": "EL",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "7.86",
+  "suicide_rate": "42.3",
+  "accident_rate": "1.27"
+}, {
+  "country": "ES",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.06",
+  "suicide_rate": "14.72",
+  "accident_rate": "0.19"
+}, {
+  "country": "ES",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "11.0",
+  "suicide_rate": "30.64",
+  "accident_rate": "1.2"
+}, {
+  "country": "ES",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "3.3",
+  "suicide_rate": "13.53",
+  "accident_rate": "0.22"
+}, {
+  "country": "ES",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "12.28",
+  "suicide_rate": "28.95",
+  "accident_rate": "1.18"
+}, {
+  "country": "ES",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "3.94",
+  "suicide_rate": "14.26",
+  "accident_rate": "0.13"
+}, {
+  "country": "ES",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "12.93",
+  "suicide_rate": "28.69",
+  "accident_rate": "1.1"
+}, {
+  "country": "ES",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "3.94",
+  "suicide_rate": "14.47",
+  "accident_rate": "0.14"
+}, {
+  "country": "ES",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "13.07",
+  "suicide_rate": "29.18",
+  "accident_rate": "1.1"
+}, {
+  "country": "ES",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "3.73",
+  "suicide_rate": "14.99",
+  "accident_rate": "0.13"
+}, {
+  "country": "ES",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "11.93",
+  "suicide_rate": "30.4",
+  "accident_rate": "1.16"
+}, {
+  "country": "ES",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.65",
+  "suicide_rate": "15.24",
+  "accident_rate": "0.13"
+}, {
+  "country": "ES",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "11.74",
+  "suicide_rate": "32.03",
+  "accident_rate": "1.0"
+}, {
+  "country": "ES",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "3.85",
+  "suicide_rate": "15.0",
+  "accident_rate": "0.13"
+}, {
+  "country": "ES",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "11.77",
+  "suicide_rate": "31.56",
+  "accident_rate": "0.91"
+}, {
+  "country": "ES",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.6",
+  "suicide_rate": "14.5",
+  "accident_rate": "0.12"
+}, {
+  "country": "ES",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "11.26",
+  "suicide_rate": "31.15",
+  "accident_rate": "0.93"
+}, {
+  "country": "ES",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "3.54",
+  "suicide_rate": "14.27",
+  "accident_rate": "0.07"
+}, {
+  "country": "ES",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "11.78",
+  "suicide_rate": "31.64",
+  "accident_rate": "0.89"
+}, {
+  "country": "ES",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "3.93",
+  "suicide_rate": "13.9",
+  "accident_rate": "0.11"
+}, {
+  "country": "ES",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "12.46",
+  "suicide_rate": "31.32",
+  "accident_rate": "0.96"
+}, {
+  "country": "ES",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.92",
+  "suicide_rate": "14.77",
+  "accident_rate": "0.1"
+}, {
+  "country": "ES",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "12.53",
+  "suicide_rate": "32.12",
+  "accident_rate": "0.9"
+}, {
+  "country": "ES",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.21",
+  "suicide_rate": "16.32",
+  "accident_rate": "0.16"
+}, {
+  "country": "ES",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "12.9",
+  "suicide_rate": "35.71",
+  "accident_rate": "0.83"
+}, {
+  "country": "EU27_2020",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "5.22",
+  "suicide_rate": "21.64",
+  "accident_rate": "1.2"
+}, {
+  "country": "EU27_2020",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "20.73",
+  "suicide_rate": "46.85",
+  "accident_rate": "5.39"
+}, {
+  "country": "EU27_2020",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "5.22",
+  "suicide_rate": "21.73",
+  "accident_rate": "1.17"
+}, {
+  "country": "EU27_2020",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "20.69",
+  "suicide_rate": "46.28",
+  "accident_rate": "5.34"
+}, {
+  "country": "EU27_2020",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "5.3",
+  "suicide_rate": "21.31",
+  "accident_rate": "1.21"
+}, {
+  "country": "EU27_2020",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "20.28",
+  "suicide_rate": "44.94",
+  "accident_rate": "5.34"
+}, {
+  "country": "EU27_2020",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.15",
+  "suicide_rate": "20.77",
+  "accident_rate": "1.16"
+}, {
+  "country": "EU27_2020",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "19.52",
+  "suicide_rate": "44.22",
+  "accident_rate": "5.2"
+}, {
+  "country": "EU27_2020",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "5.03",
+  "suicide_rate": "21.9",
+  "accident_rate": "1.24"
+}, {
+  "country": "EU27_2020",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "18.75",
+  "suicide_rate": "45.5",
+  "accident_rate": "5.62"
+}, {
+  "country": "EU27_2020",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "4.66",
+  "suicide_rate": "21.79",
+  "accident_rate": "1.21"
+}, {
+  "country": "EU27_2020",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "17.76",
+  "suicide_rate": "45.48",
+  "accident_rate": "5.84"
+}, {
+  "country": "EU27_2020",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "4.65",
+  "suicide_rate": "22.08",
+  "accident_rate": "1.19"
+}, {
+  "country": "EU27_2020",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.21",
+  "suicide_rate": "46.16",
+  "accident_rate": "5.7"
+}, {
+  "country": "EU27_2020",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "4.66",
+  "suicide_rate": "22.11",
+  "accident_rate": "1.2"
+}, {
+  "country": "EU27_2020",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "17.2",
+  "suicide_rate": "45.86",
+  "accident_rate": "5.91"
+}, {
+  "country": "EU27_2020",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "4.43",
+  "suicide_rate": "21.75",
+  "accident_rate": "1.19"
+}, {
+  "country": "EU27_2020",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "16.76",
+  "suicide_rate": "45.1",
+  "accident_rate": "5.89"
+}, {
+  "country": "EU27_2020",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "4.49",
+  "suicide_rate": "21.61",
+  "accident_rate": "1.25"
+}, {
+  "country": "EU27_2020",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.86",
+  "suicide_rate": "44.26",
+  "accident_rate": "6.14"
+}, {
+  "country": "EU27_2020",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "4.55",
+  "suicide_rate": "23.02",
+  "accident_rate": "1.19"
+}, {
+  "country": "EU27_2020",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "16.75",
+  "suicide_rate": "46.8",
+  "accident_rate": "6.06"
+}, {
+  "country": "EU27_2020",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.77",
+  "suicide_rate": "24.46",
+  "accident_rate": "1.29"
+}, {
+  "country": "EU27_2020",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "17.22",
+  "suicide_rate": "49.2",
+  "accident_rate": "6.32"
+}, {
+  "country": "FI",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "7.32",
+  "suicide_rate": "30.71",
+  "accident_rate": "1.3"
+}, {
+  "country": "FI",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "27.63",
+  "suicide_rate": "82.28",
+  "accident_rate": "5.25"
+}, {
+  "country": "FI",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.79",
+  "suicide_rate": "29.92",
+  "accident_rate": "1.35"
+}, {
+  "country": "FI",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "25.29",
+  "suicide_rate": "74.97",
+  "accident_rate": "6.39"
+}, {
+  "country": "FI",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "8.09",
+  "suicide_rate": "28.26",
+  "accident_rate": "1.51"
+}, {
+  "country": "FI",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "25.41",
+  "suicide_rate": "72.62",
+  "accident_rate": "6.34"
+}, {
+  "country": "FI",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "7.01",
+  "suicide_rate": "27.79",
+  "accident_rate": "1.47"
+}, {
+  "country": "FI",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "22.79",
+  "suicide_rate": "68.73",
+  "accident_rate": "7.43"
+}, {
+  "country": "FI",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.2",
+  "suicide_rate": "26.37",
+  "accident_rate": "1.18"
+}, {
+  "country": "FI",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "21.26",
+  "suicide_rate": "64.68",
+  "accident_rate": "6.59"
+}, {
+  "country": "FI",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "6.06",
+  "suicide_rate": "26.37",
+  "accident_rate": "1.41"
+}, {
+  "country": "FI",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "22.98",
+  "suicide_rate": "67.44",
+  "accident_rate": "6.93"
+}, {
+  "country": "FI",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.67",
+  "suicide_rate": "25.22",
+  "accident_rate": "1.46"
+}, {
+  "country": "FI",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "22.89",
+  "suicide_rate": "70.76",
+  "accident_rate": "6.21"
+}, {
+  "country": "FI",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "6.82",
+  "suicide_rate": "26.84",
+  "accident_rate": "1.66"
+}, {
+  "country": "FI",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "22.6",
+  "suicide_rate": "68.81",
+  "accident_rate": "7.09"
+}, {
+  "country": "FI",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "6.51",
+  "suicide_rate": "25.2",
+  "accident_rate": "1.55"
+}, {
+  "country": "FI",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "20.88",
+  "suicide_rate": "62.26",
+  "accident_rate": "7.45"
+}, {
+  "country": "FI",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.85",
+  "suicide_rate": "22.27",
+  "accident_rate": "1.23"
+}, {
+  "country": "FI",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "19.55",
+  "suicide_rate": "63.79",
+  "accident_rate": "5.97"
+}, {
+  "country": "FI",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "8.03",
+  "suicide_rate": "24.0",
+  "accident_rate": "1.27"
+}, {
+  "country": "FI",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "19.53",
+  "suicide_rate": "61.6",
+  "accident_rate": "6.53"
+}, {
+  "country": "FI",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.63",
+  "suicide_rate": "23.92",
+  "accident_rate": "1.59"
+}, {
+  "country": "FI",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "20.43",
+  "suicide_rate": "57.62",
+  "accident_rate": "6.75"
+}, {
+  "country": "FR",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "7.98",
+  "suicide_rate": "28.6",
+  "accident_rate": "1.85"
+}, {
+  "country": "FR",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "27.51",
+  "suicide_rate": "54.5",
+  "accident_rate": "8.14"
+}, {
+  "country": "FR",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.36",
+  "suicide_rate": "28.71",
+  "accident_rate": "1.78"
+}, {
+  "country": "FR",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "25.79",
+  "suicide_rate": "54.78",
+  "accident_rate": "7.9"
+}, {
+  "country": "FR",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "7.25",
+  "suicide_rate": "27.65",
+  "accident_rate": "1.51"
+}, {
+  "country": "FR",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "25.33",
+  "suicide_rate": "52.48",
+  "accident_rate": "7.64"
+}, {
+  "country": "FR",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.66",
+  "suicide_rate": "26.58",
+  "accident_rate": "1.4"
+}, {
+  "country": "FR",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "22.97",
+  "suicide_rate": "51.46",
+  "accident_rate": "7.08"
+}, {
+  "country": "FR",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.27",
+  "suicide_rate": "29.03",
+  "accident_rate": "1.47"
+}, {
+  "country": "FR",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "23.42",
+  "suicide_rate": "55.28",
+  "accident_rate": "6.87"
+}, {
+  "country": "FR",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "5.86",
+  "suicide_rate": "27.38",
+  "accident_rate": "1.51"
+}, {
+  "country": "FR",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "21.95",
+  "suicide_rate": "53.77",
+  "accident_rate": "6.64"
+}, {
+  "country": "FR",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.98",
+  "suicide_rate": "27.83",
+  "accident_rate": "1.37"
+}, {
+  "country": "FR",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "20.77",
+  "suicide_rate": "52.97",
+  "accident_rate": "6.42"
+}, {
+  "country": "FR",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "6.32",
+  "suicide_rate": "25.96",
+  "accident_rate": "1.53"
+}, {
+  "country": "FR",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "21.99",
+  "suicide_rate": "49.96",
+  "accident_rate": "6.88"
+}, {
+  "country": "FR",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "6.15",
+  "suicide_rate": "25.93",
+  "accident_rate": "1.42"
+}, {
+  "country": "FR",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "21.85",
+  "suicide_rate": "49.97",
+  "accident_rate": "6.91"
+}, {
+  "country": "FR",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.4",
+  "suicide_rate": "25.58",
+  "accident_rate": "1.17"
+}, {
+  "country": "FR",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "21.89",
+  "suicide_rate": "48.78",
+  "accident_rate": "6.49"
+}, {
+  "country": "FR",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.17",
+  "suicide_rate": "26.42",
+  "accident_rate": "1.34"
+}, {
+  "country": "FR",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "21.71",
+  "suicide_rate": "50.93",
+  "accident_rate": "6.94"
+}, {
+  "country": "FR",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.37",
+  "suicide_rate": "29.53",
+  "accident_rate": "1.57"
+}, {
+  "country": "FR",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "22.08",
+  "suicide_rate": "55.87",
+  "accident_rate": "7.07"
+}, {
+  "country": "HR",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "7.86",
+  "suicide_rate": "41.07",
+  "accident_rate": "1.13"
+}, {
+  "country": "HR",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "28.0",
+  "suicide_rate": "72.56",
+  "accident_rate": "11.41"
+}, {
+  "country": "HR",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.66",
+  "suicide_rate": "39.47",
+  "accident_rate": "1.48"
+}, {
+  "country": "HR",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "31.58",
+  "suicide_rate": "73.65",
+  "accident_rate": "11.65"
+}, {
+  "country": "HR",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "6.34",
+  "suicide_rate": "40.93",
+  "accident_rate": "1.33"
+}, {
+  "country": "HR",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "28.25",
+  "suicide_rate": "67.05",
+  "accident_rate": "9.56"
+}, {
+  "country": "HR",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "8.02",
+  "suicide_rate": "40.49",
+  "accident_rate": "1.5"
+}, {
+  "country": "HR",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "28.25",
+  "suicide_rate": "69.38",
+  "accident_rate": "9.92"
+}, {
+  "country": "HR",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "8.31",
+  "suicide_rate": "43.17",
+  "accident_rate": "1.26"
+}, {
+  "country": "HR",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "29.01",
+  "suicide_rate": "72.9",
+  "accident_rate": "9.96"
+}, {
+  "country": "HR",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.22",
+  "suicide_rate": "40.99",
+  "accident_rate": "0.96"
+}, {
+  "country": "HR",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "27.1",
+  "suicide_rate": "69.99",
+  "accident_rate": "9.76"
+}, {
+  "country": "HR",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "6.9",
+  "suicide_rate": "35.81",
+  "accident_rate": "0.89"
+}, {
+  "country": "HR",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "24.88",
+  "suicide_rate": "67.22",
+  "accident_rate": "6.89"
+}, {
+  "country": "HR",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "7.09",
+  "suicide_rate": "43.86",
+  "accident_rate": "0.67"
+}, {
+  "country": "HR",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "27.03",
+  "suicide_rate": "74.58",
+  "accident_rate": "9.07"
+}, {
+  "country": "HR",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "5.26",
+  "suicide_rate": "40.89",
+  "accident_rate": "1.72"
+}, {
+  "country": "HR",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "25.67",
+  "suicide_rate": "69.32",
+  "accident_rate": "13.95"
+}, {
+  "country": "HR",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "5.51",
+  "suicide_rate": "35.59",
+  "accident_rate": "1.56"
+}, {
+  "country": "HR",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "22.89",
+  "suicide_rate": "62.55",
+  "accident_rate": "12.31"
+}, {
+  "country": "HR",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "5.6",
+  "suicide_rate": "36.29",
+  "accident_rate": "1.17"
+}, {
+  "country": "HR",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "24.82",
+  "suicide_rate": "65.12",
+  "accident_rate": "15.37"
+}, {
+  "country": "HR",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.03",
+  "suicide_rate": "34.54",
+  "accident_rate": "1.36"
+}, {
+  "country": "HR",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "23.55",
+  "suicide_rate": "64.36",
+  "accident_rate": "15.51"
+}, {
+  "country": "HU",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "10.66",
+  "suicide_rate": "30.23",
+  "accident_rate": "1.01"
+}, {
+  "country": "HU",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "42.18",
+  "suicide_rate": "65.33",
+  "accident_rate": "6.97"
+}, {
+  "country": "HU",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "10.22",
+  "suicide_rate": "29.41",
+  "accident_rate": "0.97"
+}, {
+  "country": "HU",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "42.22",
+  "suicide_rate": "59.96",
+  "accident_rate": "6.11"
+}, {
+  "country": "HU",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "9.28",
+  "suicide_rate": "28.23",
+  "accident_rate": "0.84"
+}, {
+  "country": "HU",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "36.71",
+  "suicide_rate": "57.93",
+  "accident_rate": "6.45"
+}, {
+  "country": "HU",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "8.25",
+  "suicide_rate": "25.34",
+  "accident_rate": "1.01"
+}, {
+  "country": "HU",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "33.93",
+  "suicide_rate": "61.72",
+  "accident_rate": "7.16"
+}, {
+  "country": "HU",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "8.78",
+  "suicide_rate": "26.59",
+  "accident_rate": "0.88"
+}, {
+  "country": "HU",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "32.58",
+  "suicide_rate": "60.79",
+  "accident_rate": "6.32"
+}, {
+  "country": "HU",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "8.21",
+  "suicide_rate": "24.16",
+  "accident_rate": "0.94"
+}, {
+  "country": "HU",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "30.84",
+  "suicide_rate": "59.61",
+  "accident_rate": "7.18"
+}, {
+  "country": "HU",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.22",
+  "suicide_rate": "25.32",
+  "accident_rate": "0.93"
+}, {
+  "country": "HU",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "29.23",
+  "suicide_rate": "62.15",
+  "accident_rate": "6.79"
+}, {
+  "country": "HU",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "6.97",
+  "suicide_rate": "23.84",
+  "accident_rate": "1.17"
+}, {
+  "country": "HU",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "30.37",
+  "suicide_rate": "58.16",
+  "accident_rate": "8.34"
+}, {
+  "country": "HU",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.2",
+  "suicide_rate": "24.7",
+  "accident_rate": "1.26"
+}, {
+  "country": "HU",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "26.97",
+  "suicide_rate": "54.08",
+  "accident_rate": "8.46"
+}, {
+  "country": "HU",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "7.2",
+  "suicide_rate": "20.86",
+  "accident_rate": "1.17"
+}, {
+  "country": "HU",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "30.39",
+  "suicide_rate": "51.42",
+  "accident_rate": "11.37"
+}, {
+  "country": "HU",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.51",
+  "suicide_rate": "20.61",
+  "accident_rate": "1.04"
+}, {
+  "country": "HU",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "27.52",
+  "suicide_rate": "54.58",
+  "accident_rate": "10.11"
+}, {
+  "country": "HU",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "7.3",
+  "suicide_rate": "23.65",
+  "accident_rate": "1.13"
+}, {
+  "country": "HU",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "28.83",
+  "suicide_rate": "53.17",
+  "accident_rate": "10.97"
+}, {
+  "country": "IE",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.96",
+  "suicide_rate": "18.15",
+  "accident_rate": "0.05"
+}, {
+  "country": "IE",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "20.43",
+  "suicide_rate": "38.73",
+  "accident_rate": "0.34"
+}, {
+  "country": "IE",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "4.08",
+  "suicide_rate": "16.31",
+  "accident_rate": "0.08"
+}, {
+  "country": "IE",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "20.44",
+  "suicide_rate": "36.28",
+  "accident_rate": "0.31"
+}, {
+  "country": "IE",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "17.99",
+  "suicide_rate": "32.84",
+  "accident_rate": "0.31"
+}, {
+  "country": "IE",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "3.82",
+  "suicide_rate": "17.53",
+  "accident_rate": "0.27"
+}, {
+  "country": "IE",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "17.95",
+  "suicide_rate": "36.87",
+  "accident_rate": "0.37"
+}, {
+  "country": "IE",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "3.93",
+  "suicide_rate": "15.81",
+  "accident_rate": "0.34"
+}, {
+  "country": "IE",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "15.21",
+  "suicide_rate": "29.81",
+  "accident_rate": "1.09"
+}, {
+  "country": "IE",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.65",
+  "suicide_rate": "14.79",
+  "accident_rate": "0.31"
+}, {
+  "country": "IE",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "15.23",
+  "suicide_rate": "29.36",
+  "accident_rate": "0.79"
+}, {
+  "country": "IE",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "3.2",
+  "suicide_rate": "15.39",
+  "accident_rate": "0.37"
+}, {
+  "country": "IE",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "13.83",
+  "suicide_rate": "31.81",
+  "accident_rate": "0.52"
+}, {
+  "country": "IE",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "4.48",
+  "suicide_rate": "15.91",
+  "accident_rate": "0.04"
+}, {
+  "country": "IE",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "14.46",
+  "suicide_rate": "32.42",
+  "accident_rate": "1.13"
+}, {
+  "country": "IE",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "3.63",
+  "suicide_rate": "15.5",
+  "accident_rate": "0.17"
+}, {
+  "country": "IE",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "12.84",
+  "suicide_rate": "29.77",
+  "accident_rate": "0.91"
+}, {
+  "country": "IE",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "5.2",
+  "suicide_rate": "20.06",
+  "accident_rate": "0.29"
+}, {
+  "country": "IE",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "14.18",
+  "suicide_rate": "37.49",
+  "accident_rate": "0.96"
+}, {
+  "country": "IE",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.64",
+  "suicide_rate": "18.27",
+  "accident_rate": "0.26"
+}, {
+  "country": "IE",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "15.15",
+  "suicide_rate": "34.38",
+  "accident_rate": "0.73"
+}, {
+  "country": "IE",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "3.54",
+  "suicide_rate": "19.92",
+  "accident_rate": "0.57"
+}, {
+  "country": "IE",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "14.14",
+  "suicide_rate": "36.09",
+  "accident_rate": "0.78"
+}, {
+  "country": "IS",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.37",
+  "suicide_rate": "27.57",
+  "accident_rate": "1.11"
+}, {
+  "country": "IS",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "14.29",
+  "suicide_rate": "37.83",
+  "accident_rate": "3.47"
+}, {
+  "country": "IS",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.15",
+  "suicide_rate": "19.24",
+  "accident_rate": "1.42"
+}, {
+  "country": "IS",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "16.71",
+  "suicide_rate": "38.78",
+  "accident_rate": "3.98"
+}, {
+  "country": "IS",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "24.68",
+  "suicide_rate": "46.16",
+  "accident_rate": "6.3"
+}, {
+  "country": "IS",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "21.49",
+  "suicide_rate": "31.71",
+  "accident_rate": "0.68"
+}, {
+  "country": "IS",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "7.51",
+  "suicide_rate": "25.41",
+  "accident_rate": "0.99"
+}, {
+  "country": "IS",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "18.23",
+  "suicide_rate": "32.34",
+  "accident_rate": "5.35"
+}, {
+  "country": "IS",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "2.93",
+  "suicide_rate": "28.83",
+  "accident_rate": "2.02"
+}, {
+  "country": "IS",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "21.66",
+  "suicide_rate": "52.53",
+  "accident_rate": "3.74"
+}, {
+  "country": "IS",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "1.25",
+  "suicide_rate": "26.18",
+  "accident_rate": "0.61"
+}, {
+  "country": "IS",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.57",
+  "suicide_rate": "48.31",
+  "accident_rate": "4.91"
+}, {
+  "country": "IS",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.05",
+  "suicide_rate": "36.19",
+  "accident_rate": "0.0"
+}, {
+  "country": "IS",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "16.83",
+  "suicide_rate": "46.24",
+  "accident_rate": "2.8"
+}, {
+  "country": "IS",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "4.66",
+  "suicide_rate": "30.75",
+  "accident_rate": "1.27"
+}, {
+  "country": "IS",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "17.65",
+  "suicide_rate": "36.83",
+  "accident_rate": "3.34"
+}, {
+  "country": "IS",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "8.53",
+  "suicide_rate": "29.49",
+  "accident_rate": "0.0"
+}, {
+  "country": "IS",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.21",
+  "suicide_rate": "44.8",
+  "accident_rate": "4.63"
+}, {
+  "country": "IS",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.68",
+  "suicide_rate": "26.4",
+  "accident_rate": "0.58"
+}, {
+  "country": "IS",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "12.89",
+  "suicide_rate": "49.07",
+  "accident_rate": "4.14"
+}, {
+  "country": "IS",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.05",
+  "suicide_rate": "28.17",
+  "accident_rate": "1.28"
+}, {
+  "country": "IS",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "14.01",
+  "suicide_rate": "56.96",
+  "accident_rate": "2.03"
+}, {
+  "country": "IT",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "2.6",
+  "suicide_rate": "20.56",
+  "accident_rate": "0.11"
+}, {
+  "country": "IT",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "11.15",
+  "suicide_rate": "39.09",
+  "accident_rate": "0.64"
+}, {
+  "country": "IT",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "2.79",
+  "suicide_rate": "20.04",
+  "accident_rate": "0.13"
+}, {
+  "country": "IT",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "11.2",
+  "suicide_rate": "37.31",
+  "accident_rate": "0.61"
+}, {
+  "country": "IT",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "2.87",
+  "suicide_rate": "19.15",
+  "accident_rate": "0.14"
+}, {
+  "country": "IT",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "11.02",
+  "suicide_rate": "35.33",
+  "accident_rate": "0.54"
+}, {
+  "country": "IT",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "2.74",
+  "suicide_rate": "18.4",
+  "accident_rate": "0.1"
+}, {
+  "country": "IT",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "10.54",
+  "suicide_rate": "34.38",
+  "accident_rate": "0.58"
+}, {
+  "country": "IT",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "2.57",
+  "suicide_rate": "19.18",
+  "accident_rate": "0.13"
+}, {
+  "country": "IT",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "10.16",
+  "suicide_rate": "36.14",
+  "accident_rate": "0.57"
+}, {
+  "country": "IT",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "2.39",
+  "suicide_rate": "19.24",
+  "accident_rate": "0.12"
+}, {
+  "country": "IT",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "9.82",
+  "suicide_rate": "36.65",
+  "accident_rate": "0.65"
+}, {
+  "country": "IT",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "2.5",
+  "suicide_rate": "19.73",
+  "accident_rate": "0.1"
+}, {
+  "country": "IT",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "9.89",
+  "suicide_rate": "37.82",
+  "accident_rate": "0.52"
+}, {
+  "country": "IT",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "2.58",
+  "suicide_rate": "19.0",
+  "accident_rate": "0.12"
+}, {
+  "country": "IT",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "9.32",
+  "suicide_rate": "36.09",
+  "accident_rate": "0.69"
+}, {
+  "country": "IT",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "2.39",
+  "suicide_rate": "18.52",
+  "accident_rate": "0.13"
+}, {
+  "country": "IT",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "9.29",
+  "suicide_rate": "35.81",
+  "accident_rate": "0.62"
+}, {
+  "country": "IT",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "2.3",
+  "suicide_rate": "19.25",
+  "accident_rate": "0.13"
+}, {
+  "country": "IT",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "9.39",
+  "suicide_rate": "34.48",
+  "accident_rate": "0.68"
+}, {
+  "country": "IT",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "2.5",
+  "suicide_rate": "19.7",
+  "accident_rate": "0.15"
+}, {
+  "country": "IT",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "9.73",
+  "suicide_rate": "36.71",
+  "accident_rate": "0.85"
+}, {
+  "country": "IT",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.47",
+  "suicide_rate": "21.41",
+  "accident_rate": "0.12"
+}, {
+  "country": "IT",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "9.81",
+  "suicide_rate": "38.81",
+  "accident_rate": "0.77"
+}, {
+  "country": "LI",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "30.64",
+  "suicide_rate": "104.16",
+  "accident_rate": "17.62"
+}, {
+  "country": "LI",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "14.92",
+  "suicide_rate": "55.15",
+  "accident_rate": "7.06"
+}, {
+  "country": "LI",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "0.0",
+  "suicide_rate": "11.59",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "28.4",
+  "suicide_rate": "60.64",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.38",
+  "suicide_rate": "26.7",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "35.07",
+  "suicide_rate": "37.81",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "15.71",
+  "suicide_rate": "15.86",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "34.7",
+  "suicide_rate": "15.1",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "9.44",
+  "suicide_rate": "21.3",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "22.59",
+  "suicide_rate": "55.45",
+  "accident_rate": "5.14"
+}, {
+  "country": "LI",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "0.0",
+  "suicide_rate": "21.34",
+  "accident_rate": "4.31"
+}, {
+  "country": "LI",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "10.13",
+  "suicide_rate": "18.46",
+  "accident_rate": "4.41"
+}, {
+  "country": "LI",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.38",
+  "suicide_rate": "16.45",
+  "accident_rate": "0.0"
+}, {
+  "country": "LI",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "0.0",
+  "suicide_rate": "23.98",
+  "accident_rate": "0.0"
+}, {
+  "country": "LT",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "11.66",
+  "suicide_rate": "31.53",
+  "accident_rate": "0.25"
+}, {
+  "country": "LT",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "60.97",
+  "suicide_rate": "121.86",
+  "accident_rate": "1.72"
+}, {
+  "country": "LT",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "10.06",
+  "suicide_rate": "31.88",
+  "accident_rate": "0.18"
+}, {
+  "country": "LT",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "56.59",
+  "suicide_rate": "127.86",
+  "accident_rate": "1.96"
+}, {
+  "country": "LT",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "11.7",
+  "suicide_rate": "29.16",
+  "accident_rate": "0.31"
+}, {
+  "country": "LT",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "66.31",
+  "suicide_rate": "120.59",
+  "accident_rate": "1.27"
+}, {
+  "country": "LT",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "9.38",
+  "suicide_rate": "28.04",
+  "accident_rate": "0.16"
+}, {
+  "country": "LT",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "59.02",
+  "suicide_rate": "114.21",
+  "accident_rate": "1.88"
+}, {
+  "country": "LT",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "10.09",
+  "suicide_rate": "30.13",
+  "accident_rate": "0.12"
+}, {
+  "country": "LT",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "56.25",
+  "suicide_rate": "110.69",
+  "accident_rate": "1.33"
+}, {
+  "country": "LT",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.84",
+  "suicide_rate": "27.86",
+  "accident_rate": "0.12"
+}, {
+  "country": "LT",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "54.24",
+  "suicide_rate": "107.86",
+  "accident_rate": "1.89"
+}, {
+  "country": "LT",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "9.12",
+  "suicide_rate": "28.66",
+  "accident_rate": "0.19"
+}, {
+  "country": "LT",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "47.37",
+  "suicide_rate": "99.28",
+  "accident_rate": "1.37"
+}, {
+  "country": "LT",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "8.31",
+  "suicide_rate": "29.72",
+  "accident_rate": "0.05"
+}, {
+  "country": "LT",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "44.38",
+  "suicide_rate": "90.58",
+  "accident_rate": "1.1"
+}, {
+  "country": "LT",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.18",
+  "suicide_rate": "23.36",
+  "accident_rate": "0.14"
+}, {
+  "country": "LT",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "42.82",
+  "suicide_rate": "83.08",
+  "accident_rate": "1.8"
+}, {
+  "country": "LT",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "8.02",
+  "suicide_rate": "26.41",
+  "accident_rate": "0.24"
+}, {
+  "country": "LT",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "38.1",
+  "suicide_rate": "90.99",
+  "accident_rate": "1.26"
+}, {
+  "country": "LT",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "7.51",
+  "suicide_rate": "27.55",
+  "accident_rate": "0.22"
+}, {
+  "country": "LT",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "35.22",
+  "suicide_rate": "89.85",
+  "accident_rate": "1.48"
+}, {
+  "country": "LT",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.15",
+  "suicide_rate": "26.19",
+  "accident_rate": "0.19"
+}, {
+  "country": "LT",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "33.93",
+  "suicide_rate": "85.61",
+  "accident_rate": "1.25"
+}, {
+  "country": "LU",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "7.62",
+  "suicide_rate": "30.8",
+  "accident_rate": "0.42"
+}, {
+  "country": "LU",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "15.42",
+  "suicide_rate": "53.12",
+  "accident_rate": "3.79"
+}, {
+  "country": "LU",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "4.69",
+  "suicide_rate": "29.3",
+  "accident_rate": "1.93"
+}, {
+  "country": "LU",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "17.08",
+  "suicide_rate": "52.83",
+  "accident_rate": "5.94"
+}, {
+  "country": "LU",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "6.53",
+  "suicide_rate": "32.19",
+  "accident_rate": "1.72"
+}, {
+  "country": "LU",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "12.17",
+  "suicide_rate": "55.98",
+  "accident_rate": "10.21"
+}, {
+  "country": "LU",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.22",
+  "suicide_rate": "25.94",
+  "accident_rate": "3.12"
+}, {
+  "country": "LU",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "21.62",
+  "suicide_rate": "43.39",
+  "accident_rate": "6.51"
+}, {
+  "country": "LU",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "8.43",
+  "suicide_rate": "27.09",
+  "accident_rate": "3.56"
+}, {
+  "country": "LU",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "20.69",
+  "suicide_rate": "51.29",
+  "accident_rate": "6.32"
+}, {
+  "country": "LU",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "4.75",
+  "suicide_rate": "30.61",
+  "accident_rate": "1.81"
+}, {
+  "country": "LU",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "14.23",
+  "suicide_rate": "52.22",
+  "accident_rate": "5.2"
+}, {
+  "country": "LU",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.16",
+  "suicide_rate": "19.59",
+  "accident_rate": "3.45"
+}, {
+  "country": "LU",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "14.3",
+  "suicide_rate": "32.02",
+  "accident_rate": "3.91"
+}, {
+  "country": "LU",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.71",
+  "suicide_rate": "24.57",
+  "accident_rate": "3.26"
+}, {
+  "country": "LU",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "12.5",
+  "suicide_rate": "49.05",
+  "accident_rate": "7.4"
+}, {
+  "country": "LU",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.03",
+  "suicide_rate": "26.18",
+  "accident_rate": "1.97"
+}, {
+  "country": "LU",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "17.08",
+  "suicide_rate": "31.73",
+  "accident_rate": "2.87"
+}, {
+  "country": "LU",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "4.43",
+  "suicide_rate": "28.41",
+  "accident_rate": "3.23"
+}, {
+  "country": "LU",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.66",
+  "suicide_rate": "35.56",
+  "accident_rate": "4.84"
+}, {
+  "country": "LU",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.15",
+  "suicide_rate": "26.63",
+  "accident_rate": "1.45"
+}, {
+  "country": "LU",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "9.43",
+  "suicide_rate": "39.22",
+  "accident_rate": "5.88"
+}, {
+  "country": "LU",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.08",
+  "suicide_rate": "21.1",
+  "accident_rate": "2.37"
+}, {
+  "country": "LU",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "12.34",
+  "suicide_rate": "37.08",
+  "accident_rate": "6.03"
+}, {
+  "country": "LV",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "6.24",
+  "suicide_rate": "24.27",
+  "accident_rate": "3.33"
+}, {
+  "country": "LV",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "41.83",
+  "suicide_rate": "97.23",
+  "accident_rate": "16.0"
+}, {
+  "country": "LV",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.4",
+  "suicide_rate": "25.72",
+  "accident_rate": "3.87"
+}, {
+  "country": "LV",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "41.56",
+  "suicide_rate": "97.9",
+  "accident_rate": "13.93"
+}, {
+  "country": "LV",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "5.47",
+  "suicide_rate": "29.05",
+  "accident_rate": "2.57"
+}, {
+  "country": "LV",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "36.99",
+  "suicide_rate": "97.83",
+  "accident_rate": "12.56"
+}, {
+  "country": "LV",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.15",
+  "suicide_rate": "24.54",
+  "accident_rate": "2.57"
+}, {
+  "country": "LV",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "35.45",
+  "suicide_rate": "105.62",
+  "accident_rate": "12.37"
+}, {
+  "country": "LV",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "7.0",
+  "suicide_rate": "23.34",
+  "accident_rate": "3.46"
+}, {
+  "country": "LV",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "35.5",
+  "suicide_rate": "96.86",
+  "accident_rate": "16.62"
+}, {
+  "country": "LV",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "6.62",
+  "suicide_rate": "25.59",
+  "accident_rate": "1.34"
+}, {
+  "country": "LV",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "34.39",
+  "suicide_rate": "87.23",
+  "accident_rate": "11.47"
+}, {
+  "country": "LV",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "5.97",
+  "suicide_rate": "26.59",
+  "accident_rate": "1.62"
+}, {
+  "country": "LV",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "33.16",
+  "suicide_rate": "87.79",
+  "accident_rate": "12.78"
+}, {
+  "country": "LV",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.4",
+  "suicide_rate": "24.79",
+  "accident_rate": "1.92"
+}, {
+  "country": "LV",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "30.81",
+  "suicide_rate": "84.76",
+  "accident_rate": "12.69"
+}, {
+  "country": "LV",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "5.56",
+  "suicide_rate": "21.04",
+  "accident_rate": "1.45"
+}, {
+  "country": "LV",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "26.51",
+  "suicide_rate": "75.95",
+  "accident_rate": "8.68"
+}, {
+  "country": "LV",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "4.74",
+  "suicide_rate": "19.99",
+  "accident_rate": "2.02"
+}, {
+  "country": "LV",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "29.93",
+  "suicide_rate": "76.09",
+  "accident_rate": "11.52"
+}, {
+  "country": "LV",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.32",
+  "suicide_rate": "27.67",
+  "accident_rate": "4.31"
+}, {
+  "country": "LV",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "26.48",
+  "suicide_rate": "87.62",
+  "accident_rate": "21.93"
+}, {
+  "country": "LV",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "3.37",
+  "suicide_rate": "24.84",
+  "accident_rate": "1.61"
+}, {
+  "country": "LV",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "23.41",
+  "suicide_rate": "85.56",
+  "accident_rate": "10.27"
+}, {
+  "country": "MT",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "8.87",
+  "suicide_rate": "31.81",
+  "accident_rate": "0.45"
+}, {
+  "country": "MT",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "11.13",
+  "suicide_rate": "29.84",
+  "accident_rate": "0.53"
+}, {
+  "country": "MT",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "9.63",
+  "suicide_rate": "38.62",
+  "accident_rate": "1.23"
+}, {
+  "country": "MT",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "2.36",
+  "suicide_rate": "12.84",
+  "accident_rate": "0.41"
+}, {
+  "country": "MT",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "16.01",
+  "suicide_rate": "29.31",
+  "accident_rate": "0.38"
+}, {
+  "country": "MT",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "11.43",
+  "suicide_rate": "28.69",
+  "accident_rate": "0.61"
+}, {
+  "country": "MT",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "8.92",
+  "suicide_rate": "36.81",
+  "accident_rate": "0.41"
+}, {
+  "country": "MT",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "1.97",
+  "suicide_rate": "16.48",
+  "accident_rate": "0.0"
+}, {
+  "country": "MT",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "8.55",
+  "suicide_rate": "30.9",
+  "accident_rate": "1.98"
+}, {
+  "country": "MT",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "0.85",
+  "suicide_rate": "13.48",
+  "accident_rate": "0.37"
+}, {
+  "country": "MT",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "7.33",
+  "suicide_rate": "22.8",
+  "accident_rate": "0.84"
+}, {
+  "country": "MT",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "0.38",
+  "suicide_rate": "15.07",
+  "accident_rate": "0.0"
+}, {
+  "country": "MT",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "7.2",
+  "suicide_rate": "27.88",
+  "accident_rate": "0.5"
+}, {
+  "country": "MT",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "2.72",
+  "suicide_rate": "18.01",
+  "accident_rate": "0.0"
+}, {
+  "country": "MT",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "5.06",
+  "suicide_rate": "26.7",
+  "accident_rate": "1.12"
+}, {
+  "country": "MT",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.88",
+  "suicide_rate": "17.5",
+  "accident_rate": "0.51"
+}, {
+  "country": "MT",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "9.09",
+  "suicide_rate": "34.01",
+  "accident_rate": "0.37"
+}, {
+  "country": "MT",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "1.5",
+  "suicide_rate": "24.45",
+  "accident_rate": "0.85"
+}, {
+  "country": "MT",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "9.14",
+  "suicide_rate": "33.08",
+  "accident_rate": "0.82"
+}, {
+  "country": "NL",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "6.14",
+  "suicide_rate": "24.76",
+  "accident_rate": "0.6"
+}, {
+  "country": "NL",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "14.22",
+  "suicide_rate": "37.33",
+  "accident_rate": "2.07"
+}, {
+  "country": "NL",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.83",
+  "suicide_rate": "27.39",
+  "accident_rate": "0.57"
+}, {
+  "country": "NL",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "14.92",
+  "suicide_rate": "39.96",
+  "accident_rate": "2.06"
+}, {
+  "country": "NL",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "6.52",
+  "suicide_rate": "26.58",
+  "accident_rate": "1.17"
+}, {
+  "country": "NL",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "16.48",
+  "suicide_rate": "41.02",
+  "accident_rate": "4.39"
+}, {
+  "country": "NL",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "6.94",
+  "suicide_rate": "27.48",
+  "accident_rate": "1.07"
+}, {
+  "country": "NL",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "15.56",
+  "suicide_rate": "40.96",
+  "accident_rate": "4.28"
+}, {
+  "country": "NL",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.93",
+  "suicide_rate": "30.87",
+  "accident_rate": "1.51"
+}, {
+  "country": "NL",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "16.01",
+  "suicide_rate": "45.82",
+  "accident_rate": "4.43"
+}, {
+  "country": "NL",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.12",
+  "suicide_rate": "32.83",
+  "accident_rate": "1.42"
+}, {
+  "country": "NL",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "15.75",
+  "suicide_rate": "47.15",
+  "accident_rate": "4.67"
+}, {
+  "country": "NL",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.04",
+  "suicide_rate": "33.99",
+  "accident_rate": "1.34"
+}, {
+  "country": "NL",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "15.67",
+  "suicide_rate": "46.72",
+  "accident_rate": "4.64"
+}, {
+  "country": "NL",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "7.47",
+  "suicide_rate": "38.33",
+  "accident_rate": "1.41"
+}, {
+  "country": "NL",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "14.18",
+  "suicide_rate": "51.27",
+  "accident_rate": "5.2"
+}, {
+  "country": "NL",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "6.58",
+  "suicide_rate": "38.69",
+  "accident_rate": "1.25"
+}, {
+  "country": "NL",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "14.69",
+  "suicide_rate": "49.45",
+  "accident_rate": "4.39"
+}, {
+  "country": "NL",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.66",
+  "suicide_rate": "40.24",
+  "accident_rate": "1.13"
+}, {
+  "country": "NL",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "14.51",
+  "suicide_rate": "48.94",
+  "accident_rate": "4.98"
+}, {
+  "country": "NL",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.36",
+  "suicide_rate": "42.25",
+  "accident_rate": "1.19"
+}, {
+  "country": "NL",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "15.04",
+  "suicide_rate": "47.9",
+  "accident_rate": "4.89"
+}, {
+  "country": "NL",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.6",
+  "suicide_rate": "48.1",
+  "accident_rate": "1.29"
+}, {
+  "country": "NL",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "15.23",
+  "suicide_rate": "54.78",
+  "accident_rate": "5.31"
+}, {
+  "country": "NO",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "6.85",
+  "suicide_rate": "32.33",
+  "accident_rate": "1.32"
+}, {
+  "country": "NO",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "18.44",
+  "suicide_rate": "56.72",
+  "accident_rate": "7.98"
+}, {
+  "country": "NO",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "6.01",
+  "suicide_rate": "32.53",
+  "accident_rate": "1.32"
+}, {
+  "country": "NO",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "15.38",
+  "suicide_rate": "54.74",
+  "accident_rate": "5.81"
+}, {
+  "country": "NO",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "7.18",
+  "suicide_rate": "32.71",
+  "accident_rate": "1.67"
+}, {
+  "country": "NO",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "15.45",
+  "suicide_rate": "56.69",
+  "accident_rate": "5.26"
+}, {
+  "country": "NO",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.83",
+  "suicide_rate": "31.64",
+  "accident_rate": "1.3"
+}, {
+  "country": "NO",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "16.3",
+  "suicide_rate": "59.09",
+  "accident_rate": "5.56"
+}, {
+  "country": "NO",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "7.53",
+  "suicide_rate": "30.06",
+  "accident_rate": "1.12"
+}, {
+  "country": "NO",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "15.95",
+  "suicide_rate": "51.46",
+  "accident_rate": "5.1"
+}, {
+  "country": "NO",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.78",
+  "suicide_rate": "30.73",
+  "accident_rate": "0.98"
+}, {
+  "country": "NO",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "16.48",
+  "suicide_rate": "55.44",
+  "accident_rate": "4.96"
+}, {
+  "country": "NO",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.45",
+  "suicide_rate": "29.72",
+  "accident_rate": "1.13"
+}, {
+  "country": "NO",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "15.89",
+  "suicide_rate": "52.98",
+  "accident_rate": "4.59"
+}, {
+  "country": "NO",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "7.73",
+  "suicide_rate": "31.49",
+  "accident_rate": "1.42"
+}, {
+  "country": "NO",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "18.15",
+  "suicide_rate": "56.24",
+  "accident_rate": "4.99"
+}, {
+  "country": "NO",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.0",
+  "suicide_rate": "29.93",
+  "accident_rate": "0.85"
+}, {
+  "country": "NO",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "17.87",
+  "suicide_rate": "49.98",
+  "accident_rate": "3.67"
+}, {
+  "country": "NO",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.51",
+  "suicide_rate": "29.89",
+  "accident_rate": "1.13"
+}, {
+  "country": "NO",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "17.54",
+  "suicide_rate": "49.93",
+  "accident_rate": "4.37"
+}, {
+  "country": "NO",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.52",
+  "suicide_rate": "30.3",
+  "accident_rate": "1.33"
+}, {
+  "country": "NO",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "17.74",
+  "suicide_rate": "48.08",
+  "accident_rate": "4.15"
+}, {
+  "country": "NO",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "6.61",
+  "suicide_rate": "32.09",
+  "accident_rate": "1.18"
+}, {
+  "country": "NO",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "16.55",
+  "suicide_rate": "52.54",
+  "accident_rate": "4.21"
+}, {
+  "country": "PL",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.89",
+  "suicide_rate": "22.37",
+  "accident_rate": "1.16"
+}, {
+  "country": "PL",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "29.73",
+  "suicide_rate": "67.43",
+  "accident_rate": "8.56"
+}, {
+  "country": "PL",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "4.15",
+  "suicide_rate": "22.63",
+  "accident_rate": "1.15"
+}, {
+  "country": "PL",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "30.76",
+  "suicide_rate": "66.77",
+  "accident_rate": "7.73"
+}, {
+  "country": "PL",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "4.26",
+  "suicide_rate": "21.24",
+  "accident_rate": "1.05"
+}, {
+  "country": "PL",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "30.07",
+  "suicide_rate": "61.23",
+  "accident_rate": "6.62"
+}, {
+  "country": "PL",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "4.1",
+  "suicide_rate": "19.94",
+  "accident_rate": "1.01"
+}, {
+  "country": "PL",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "28.28",
+  "suicide_rate": "59.56",
+  "accident_rate": "6.42"
+}, {
+  "country": "PL",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "3.7",
+  "suicide_rate": "19.17",
+  "accident_rate": "1.33"
+}, {
+  "country": "PL",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "26.19",
+  "suicide_rate": "54.39",
+  "accident_rate": "9.78"
+}, {
+  "country": "PL",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.02",
+  "suicide_rate": "18.94",
+  "accident_rate": "1.86"
+}, {
+  "country": "PL",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "22.84",
+  "suicide_rate": "53.31",
+  "accident_rate": "12.73"
+}, {
+  "country": "PL",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "3.04",
+  "suicide_rate": "19.05",
+  "accident_rate": "2.03"
+}, {
+  "country": "PL",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "21.3",
+  "suicide_rate": "54.71",
+  "accident_rate": "14.54"
+}, {
+  "country": "PL",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "2.94",
+  "suicide_rate": "19.21",
+  "accident_rate": "1.99"
+}, {
+  "country": "PL",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "21.53",
+  "suicide_rate": "56.71",
+  "accident_rate": "15.08"
+}, {
+  "country": "PL",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "3.07",
+  "suicide_rate": "18.91",
+  "accident_rate": "2.34"
+}, {
+  "country": "PL",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "21.98",
+  "suicide_rate": "55.62",
+  "accident_rate": "15.56"
+}, {
+  "country": "PL",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "3.01",
+  "suicide_rate": "19.24",
+  "accident_rate": "2.78"
+}, {
+  "country": "PL",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "21.98",
+  "suicide_rate": "55.79",
+  "accident_rate": "18.33"
+}, {
+  "country": "PL",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.32",
+  "suicide_rate": "22.88",
+  "accident_rate": "2.04"
+}, {
+  "country": "PL",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "22.07",
+  "suicide_rate": "60.58",
+  "accident_rate": "15.29"
+}, {
+  "country": "PL",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "3.52",
+  "suicide_rate": "21.3",
+  "accident_rate": "2.32"
+}, {
+  "country": "PL",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "21.48",
+  "suicide_rate": "59.7",
+  "accident_rate": "17.28"
+}, {
+  "country": "PT",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.9",
+  "suicide_rate": "8.8",
+  "accident_rate": "0.3"
+}, {
+  "country": "PT",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "16.73",
+  "suicide_rate": "27.52",
+  "accident_rate": "1.99"
+}, {
+  "country": "PT",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "3.66",
+  "suicide_rate": "7.77",
+  "accident_rate": "0.33"
+}, {
+  "country": "PT",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "18.03",
+  "suicide_rate": "23.58",
+  "accident_rate": "1.65"
+}, {
+  "country": "PT",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "4.1",
+  "suicide_rate": "10.56",
+  "accident_rate": "0.18"
+}, {
+  "country": "PT",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "16.94",
+  "suicide_rate": "30.26",
+  "accident_rate": "1.43"
+}, {
+  "country": "PT",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.1",
+  "suicide_rate": "12.5",
+  "accident_rate": "0.09"
+}, {
+  "country": "PT",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "19.23",
+  "suicide_rate": "34.26",
+  "accident_rate": "1.76"
+}, {
+  "country": "PT",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "5.53",
+  "suicide_rate": "13.85",
+  "accident_rate": "0.18"
+}, {
+  "country": "PT",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "16.75",
+  "suicide_rate": "37.69",
+  "accident_rate": "1.51"
+}, {
+  "country": "PT",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.82",
+  "suicide_rate": "16.43",
+  "accident_rate": "0.18"
+}, {
+  "country": "PT",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "15.44",
+  "suicide_rate": "38.51",
+  "accident_rate": "1.57"
+}, {
+  "country": "PT",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "4.59",
+  "suicide_rate": "18.78",
+  "accident_rate": "0.22"
+}, {
+  "country": "PT",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "16.12",
+  "suicide_rate": "43.13",
+  "accident_rate": "1.44"
+}, {
+  "country": "PT",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "4.24",
+  "suicide_rate": "17.23",
+  "accident_rate": "0.13"
+}, {
+  "country": "PT",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "15.13",
+  "suicide_rate": "41.94",
+  "accident_rate": "1.62"
+}, {
+  "country": "PT",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "3.88",
+  "suicide_rate": "14.02",
+  "accident_rate": "0.19"
+}, {
+  "country": "PT",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "15.04",
+  "suicide_rate": "33.73",
+  "accident_rate": "1.72"
+}, {
+  "country": "PT",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "3.37",
+  "suicide_rate": "16.53",
+  "accident_rate": "0.23"
+}, {
+  "country": "PT",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "14.9",
+  "suicide_rate": "39.92",
+  "accident_rate": "1.98"
+}, {
+  "country": "PT",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "3.46",
+  "suicide_rate": "19.55",
+  "accident_rate": "0.17"
+}, {
+  "country": "PT",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "14.17",
+  "suicide_rate": "46.25",
+  "accident_rate": "1.85"
+}, {
+  "country": "PT",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "3.99",
+  "suicide_rate": "20.3",
+  "accident_rate": "0.19"
+}, {
+  "country": "PT",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "14.73",
+  "suicide_rate": "47.91",
+  "accident_rate": "1.43"
+}, {
+  "country": "RO",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "3.89",
+  "suicide_rate": "18.09",
+  "accident_rate": "0.25"
+}, {
+  "country": "RO",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "23.07",
+  "suicide_rate": "65.37",
+  "accident_rate": "1.26"
+}, {
+  "country": "RO",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "3.42",
+  "suicide_rate": "17.98",
+  "accident_rate": "0.1"
+}, {
+  "country": "RO",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "22.98",
+  "suicide_rate": "64.87",
+  "accident_rate": "1.11"
+}, {
+  "country": "RO",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "3.6",
+  "suicide_rate": "17.08",
+  "accident_rate": "0.14"
+}, {
+  "country": "RO",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "21.78",
+  "suicide_rate": "60.06",
+  "accident_rate": "1.13"
+}, {
+  "country": "RO",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "3.16",
+  "suicide_rate": "16.35",
+  "accident_rate": "0.4"
+}, {
+  "country": "RO",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "20.49",
+  "suicide_rate": "60.01",
+  "accident_rate": "2.67"
+}, {
+  "country": "RO",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "3.32",
+  "suicide_rate": "16.56",
+  "accident_rate": "0.3"
+}, {
+  "country": "RO",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "20.55",
+  "suicide_rate": "58.11",
+  "accident_rate": "2.2"
+}, {
+  "country": "RO",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.06",
+  "suicide_rate": "17.5",
+  "accident_rate": "0.38"
+}, {
+  "country": "RO",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "18.17",
+  "suicide_rate": "60.65",
+  "accident_rate": "2.57"
+}, {
+  "country": "RO",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "3.22",
+  "suicide_rate": "17.23",
+  "accident_rate": "0.32"
+}, {
+  "country": "RO",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.52",
+  "suicide_rate": "62.64",
+  "accident_rate": "2.37"
+}, {
+  "country": "RO",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.11",
+  "suicide_rate": "17.65",
+  "accident_rate": "0.24"
+}, {
+  "country": "RO",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "17.85",
+  "suicide_rate": "64.02",
+  "accident_rate": "2.17"
+}, {
+  "country": "RO",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "2.4",
+  "suicide_rate": "16.94",
+  "accident_rate": "0.42"
+}, {
+  "country": "RO",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "16.48",
+  "suicide_rate": "64.05",
+  "accident_rate": "2.23"
+}, {
+  "country": "RO",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "2.38",
+  "suicide_rate": "14.83",
+  "accident_rate": "0.37"
+}, {
+  "country": "RO",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "16.64",
+  "suicide_rate": "57.58",
+  "accident_rate": "2.21"
+}, {
+  "country": "RO",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "2.59",
+  "suicide_rate": "28.57",
+  "accident_rate": "0.29"
+}, {
+  "country": "RO",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "17.15",
+  "suicide_rate": "82.43",
+  "accident_rate": "2.89"
+}, {
+  "country": "RO",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.64",
+  "suicide_rate": "15.95",
+  "accident_rate": "0.33"
+}, {
+  "country": "RO",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "16.26",
+  "suicide_rate": "59.84",
+  "accident_rate": "2.51"
+}, {
+  "country": "RS",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "9.07",
+  "suicide_rate": "11.88",
+  "accident_rate": "0.31"
+}, {
+  "country": "RS",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "28.99",
+  "suicide_rate": "37.27",
+  "accident_rate": "6.51"
+}, {
+  "country": "RS",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.96",
+  "suicide_rate": "10.71",
+  "accident_rate": "0.54"
+}, {
+  "country": "RS",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "28.6",
+  "suicide_rate": "36.08",
+  "accident_rate": "6.2"
+}, {
+  "country": "RS",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "7.58",
+  "suicide_rate": "10.12",
+  "accident_rate": "0.45"
+}, {
+  "country": "RS",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "28.22",
+  "suicide_rate": "33.3",
+  "accident_rate": "6.91"
+}, {
+  "country": "RS",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "7.19",
+  "suicide_rate": "11.2",
+  "accident_rate": "0.42"
+}, {
+  "country": "RS",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "26.43",
+  "suicide_rate": "33.15",
+  "accident_rate": "7.77"
+}, {
+  "country": "RS",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "7.06",
+  "suicide_rate": "10.89",
+  "accident_rate": "0.46"
+}, {
+  "country": "RS",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "24.76",
+  "suicide_rate": "34.84",
+  "accident_rate": "6.67"
+}, {
+  "country": "RS",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "6.68",
+  "suicide_rate": "9.66",
+  "accident_rate": "0.45"
+}, {
+  "country": "RS",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "21.77",
+  "suicide_rate": "33.02",
+  "accident_rate": "6.41"
+}, {
+  "country": "RS",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "6.27",
+  "suicide_rate": "12.66",
+  "accident_rate": "0.44"
+}, {
+  "country": "RS",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "23.8",
+  "suicide_rate": "35.82",
+  "accident_rate": "7.12"
+}, {
+  "country": "RS",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "5.99",
+  "suicide_rate": "10.66",
+  "accident_rate": "0.5"
+}, {
+  "country": "RS",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "22.18",
+  "suicide_rate": "33.92",
+  "accident_rate": "5.67"
+}, {
+  "country": "RS",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "6.29",
+  "suicide_rate": "11.88",
+  "accident_rate": "0.61"
+}, {
+  "country": "RS",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "21.43",
+  "suicide_rate": "33.84",
+  "accident_rate": "6.0"
+}, {
+  "country": "RS",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "5.58",
+  "suicide_rate": "9.51",
+  "accident_rate": "0.54"
+}, {
+  "country": "RS",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "21.15",
+  "suicide_rate": "30.34",
+  "accident_rate": "6.99"
+}, {
+  "country": "RS",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "5.61",
+  "suicide_rate": "11.38",
+  "accident_rate": "0.42"
+}, {
+  "country": "RS",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "20.93",
+  "suicide_rate": "33.53",
+  "accident_rate": "6.69"
+}, {
+  "country": "RS",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "4.77",
+  "suicide_rate": "9.83",
+  "accident_rate": "1.43"
+}, {
+  "country": "RS",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "18.61",
+  "suicide_rate": "30.1",
+  "accident_rate": "7.52"
+}, {
+  "country": "SE",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "6.88",
+  "suicide_rate": "21.57",
+  "accident_rate": "1.0"
+}, {
+  "country": "SE",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "17.3",
+  "suicide_rate": "45.89",
+  "accident_rate": "4.47"
+}, {
+  "country": "SE",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.16",
+  "suicide_rate": "21.2",
+  "accident_rate": "0.88"
+}, {
+  "country": "SE",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "18.07",
+  "suicide_rate": "44.04",
+  "accident_rate": "3.25"
+}, {
+  "country": "SE",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "7.69",
+  "suicide_rate": "20.6",
+  "accident_rate": "0.93"
+}, {
+  "country": "SE",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "18.64",
+  "suicide_rate": "46.05",
+  "accident_rate": "3.23"
+}, {
+  "country": "SE",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "7.62",
+  "suicide_rate": "21.56",
+  "accident_rate": "0.96"
+}, {
+  "country": "SE",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "17.04",
+  "suicide_rate": "46.05",
+  "accident_rate": "3.91"
+}, {
+  "country": "SE",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "6.85",
+  "suicide_rate": "22.28",
+  "accident_rate": "0.92"
+}, {
+  "country": "SE",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "18.09",
+  "suicide_rate": "48.62",
+  "accident_rate": "3.74"
+}, {
+  "country": "SE",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.14",
+  "suicide_rate": "21.49",
+  "accident_rate": "0.87"
+}, {
+  "country": "SE",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "16.5",
+  "suicide_rate": "45.09",
+  "accident_rate": "3.74"
+}, {
+  "country": "SE",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.01",
+  "suicide_rate": "21.63",
+  "accident_rate": "1.27"
+}, {
+  "country": "SE",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "17.45",
+  "suicide_rate": "45.52",
+  "accident_rate": "3.6"
+}, {
+  "country": "SE",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "7.71",
+  "suicide_rate": "22.57",
+  "accident_rate": "0.93"
+}, {
+  "country": "SE",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "17.98",
+  "suicide_rate": "47.58",
+  "accident_rate": "4.42"
+}, {
+  "country": "SE",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.99",
+  "suicide_rate": "20.73",
+  "accident_rate": "1.13"
+}, {
+  "country": "SE",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "17.66",
+  "suicide_rate": "43.11",
+  "accident_rate": "5.16"
+}, {
+  "country": "SE",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.73",
+  "suicide_rate": "21.45",
+  "accident_rate": "1.26"
+}, {
+  "country": "SE",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "17.3",
+  "suicide_rate": "42.94",
+  "accident_rate": "4.76"
+}, {
+  "country": "SE",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "6.94",
+  "suicide_rate": "22.38",
+  "accident_rate": "1.43"
+}, {
+  "country": "SE",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "17.41",
+  "suicide_rate": "42.38",
+  "accident_rate": "4.94"
+}, {
+  "country": "SE",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "7.07",
+  "suicide_rate": "21.83",
+  "accident_rate": "1.22"
+}, {
+  "country": "SE",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "18.04",
+  "suicide_rate": "45.08",
+  "accident_rate": "4.55"
+}, {
+  "country": "SI",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "8.16",
+  "suicide_rate": "35.55",
+  "accident_rate": "2.13"
+}, {
+  "country": "SI",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "39.25",
+  "suicide_rate": "82.24",
+  "accident_rate": "11.64"
+}, {
+  "country": "SI",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "7.48",
+  "suicide_rate": "36.62",
+  "accident_rate": "2.04"
+}, {
+  "country": "SI",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "39.57",
+  "suicide_rate": "65.5",
+  "accident_rate": "14.44"
+}, {
+  "country": "SI",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "8.25",
+  "suicide_rate": "33.58",
+  "accident_rate": "3.66"
+}, {
+  "country": "SI",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "37.14",
+  "suicide_rate": "66.36",
+  "accident_rate": "16.57"
+}, {
+  "country": "SI",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "5.88",
+  "suicide_rate": "30.64",
+  "accident_rate": "2.93"
+}, {
+  "country": "SI",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "33.44",
+  "suicide_rate": "54.97",
+  "accident_rate": "17.9"
+}, {
+  "country": "SI",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "8.36",
+  "suicide_rate": "29.39",
+  "accident_rate": "4.2"
+}, {
+  "country": "SI",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "36.15",
+  "suicide_rate": "64.83",
+  "accident_rate": "22.93"
+}, {
+  "country": "SI",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "7.12",
+  "suicide_rate": "29.86",
+  "accident_rate": "3.48"
+}, {
+  "country": "SI",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "30.7",
+  "suicide_rate": "64.34",
+  "accident_rate": "26.22"
+}, {
+  "country": "SI",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "7.42",
+  "suicide_rate": "37.1",
+  "accident_rate": "5.48"
+}, {
+  "country": "SI",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "34.71",
+  "suicide_rate": "70.23",
+  "accident_rate": "28.92"
+}, {
+  "country": "SI",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "7.21",
+  "suicide_rate": "38.64",
+  "accident_rate": "5.31"
+}, {
+  "country": "SI",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "28.56",
+  "suicide_rate": "64.55",
+  "accident_rate": "29.74"
+}, {
+  "country": "SI",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "7.78",
+  "suicide_rate": "37.25",
+  "accident_rate": "5.51"
+}, {
+  "country": "SI",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "30.8",
+  "suicide_rate": "67.07",
+  "accident_rate": "40.25"
+}, {
+  "country": "SI",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "6.28",
+  "suicide_rate": "48.55",
+  "accident_rate": "5.35"
+}, {
+  "country": "SI",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "29.7",
+  "suicide_rate": "76.58",
+  "accident_rate": "31.43"
+}, {
+  "country": "SI",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "8.26",
+  "suicide_rate": "51.55",
+  "accident_rate": "5.44"
+}, {
+  "country": "SI",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "33.29",
+  "suicide_rate": "75.88",
+  "accident_rate": "27.18"
+}, {
+  "country": "SI",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "7.15",
+  "suicide_rate": "58.68",
+  "accident_rate": "6.62"
+}, {
+  "country": "SI",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "30.52",
+  "suicide_rate": "89.3",
+  "accident_rate": "25.91"
+}, {
+  "country": "SK",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "2.43",
+  "suicide_rate": "15.98",
+  "accident_rate": "0.35"
+}, {
+  "country": "SK",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "20.48",
+  "suicide_rate": "56.71",
+  "accident_rate": "4.16"
+}, {
+  "country": "SK",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "2.65",
+  "suicide_rate": "29.07",
+  "accident_rate": "0.52"
+}, {
+  "country": "SK",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "21.08",
+  "suicide_rate": "74.42",
+  "accident_rate": "3.59"
+}, {
+  "country": "SK",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "3.12",
+  "suicide_rate": "33.14",
+  "accident_rate": "0.4"
+}, {
+  "country": "SK",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "22.94",
+  "suicide_rate": "82.36",
+  "accident_rate": "2.59"
+}, {
+  "country": "SK",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "2.97",
+  "suicide_rate": "23.37",
+  "accident_rate": "0.9"
+}, {
+  "country": "SK",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "20.34",
+  "suicide_rate": "61.65",
+  "accident_rate": "5.41"
+}, {
+  "country": "SK",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "2.98",
+  "suicide_rate": "21.35",
+  "accident_rate": "0.57"
+}, {
+  "country": "SK",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "16.66",
+  "suicide_rate": "63.66",
+  "accident_rate": "4.77"
+}, {
+  "country": "SK",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "2.15",
+  "suicide_rate": "20.67",
+  "accident_rate": "0.69"
+}, {
+  "country": "SK",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "13.69",
+  "suicide_rate": "57.03",
+  "accident_rate": "4.94"
+}, {
+  "country": "SK",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "2.41",
+  "suicide_rate": "18.89",
+  "accident_rate": "0.79"
+}, {
+  "country": "SK",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "13.06",
+  "suicide_rate": "58.33",
+  "accident_rate": "4.8"
+}, {
+  "country": "SK",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "2.76",
+  "suicide_rate": "21.07",
+  "accident_rate": "0.6"
+}, {
+  "country": "SK",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "13.85",
+  "suicide_rate": "57.08",
+  "accident_rate": "6.38"
+}, {
+  "country": "SK",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "2.01",
+  "suicide_rate": "22.49",
+  "accident_rate": "1.25"
+}, {
+  "country": "SK",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "12.78",
+  "suicide_rate": "57.67",
+  "accident_rate": "8.17"
+}, {
+  "country": "SK",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "1.78",
+  "suicide_rate": "13.95",
+  "accident_rate": "0.5"
+}, {
+  "country": "SK",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "13.16",
+  "suicide_rate": "44.04",
+  "accident_rate": "7.45"
+}, {
+  "country": "SK",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "2.36",
+  "suicide_rate": "15.41",
+  "accident_rate": "0.46"
+}, {
+  "country": "SK",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "13.64",
+  "suicide_rate": "43.66",
+  "accident_rate": "5.99"
+}, {
+  "country": "SK",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.34",
+  "suicide_rate": "14.88",
+  "accident_rate": "0.45"
+}, {
+  "country": "SK",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "13.48",
+  "suicide_rate": "47.66",
+  "accident_rate": "5.28"
+}, {
+  "country": "TR",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "0.83",
+  "suicide_rate": "17.49",
+  "accident_rate": "0.01"
+}, {
+  "country": "TR",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "2.87",
+  "suicide_rate": "36.03",
+  "accident_rate": "0.23"
+}, {
+  "country": "TR",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "1.1",
+  "suicide_rate": "16.39",
+  "accident_rate": "0.03"
+}, {
+  "country": "TR",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "3.4",
+  "suicide_rate": "34.21",
+  "accident_rate": "0.24"
+}, {
+  "country": "TR",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "1.34",
+  "suicide_rate": "21.12",
+  "accident_rate": "0.01"
+}, {
+  "country": "TR",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "4.49",
+  "suicide_rate": "47.47",
+  "accident_rate": "0.19"
+}, {
+  "country": "TR",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "1.17",
+  "suicide_rate": "21.94",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "3.77",
+  "suicide_rate": "45.59",
+  "accident_rate": "0.1"
+}, {
+  "country": "TR",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "3.48",
+  "suicide_rate": "45.05",
+  "accident_rate": "0.09"
+}, {
+  "country": "TR",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "1.13",
+  "suicide_rate": "19.53",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "4.33",
+  "suicide_rate": "46.76",
+  "accident_rate": "0.07"
+}, {
+  "country": "TR",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "1.56",
+  "suicide_rate": "18.51",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "6.06",
+  "suicide_rate": "46.12",
+  "accident_rate": "0.08"
+}, {
+  "country": "TR",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "2.05",
+  "suicide_rate": "17.22",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "7.15",
+  "suicide_rate": "41.54",
+  "accident_rate": "0.09"
+}, {
+  "country": "TR",
+  "year": "2019",
+  "sex": "F",
+  "alcohol_rate": "1.96",
+  "suicide_rate": "14.13",
+  "accident_rate": "0.01"
+}, {
+  "country": "TR",
+  "year": "2019",
+  "sex": "M",
+  "alcohol_rate": "7.25",
+  "suicide_rate": "32.07",
+  "accident_rate": "0.04"
+}, {
+  "country": "TR",
+  "year": "2020",
+  "sex": "F",
+  "alcohol_rate": "2.22",
+  "suicide_rate": "13.82",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2020",
+  "sex": "M",
+  "alcohol_rate": "7.86",
+  "suicide_rate": "35.53",
+  "accident_rate": "0.08"
+}, {
+  "country": "TR",
+  "year": "2021",
+  "sex": "F",
+  "alcohol_rate": "2.27",
+  "suicide_rate": "14.08",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2021",
+  "sex": "M",
+  "alcohol_rate": "8.44",
+  "suicide_rate": "34.56",
+  "accident_rate": "0.07"
+}, {
+  "country": "TR",
+  "year": "2022",
+  "sex": "F",
+  "alcohol_rate": "2.44",
+  "suicide_rate": "15.11",
+  "accident_rate": "0.0"
+}, {
+  "country": "TR",
+  "year": "2022",
+  "sex": "M",
+  "alcohol_rate": "8.05",
+  "suicide_rate": "37.18",
+  "accident_rate": "0.05"
+}, {
+  "country": "UK",
+  "year": "2011",
+  "sex": "F",
+  "alcohol_rate": "2.8",
+  "suicide_rate": "16.81",
+  "accident_rate": "0.74"
+}, {
+  "country": "UK",
+  "year": "2011",
+  "sex": "M",
+  "alcohol_rate": "10.84",
+  "suicide_rate": "30.17",
+  "accident_rate": "1.97"
+}, {
+  "country": "UK",
+  "year": "2012",
+  "sex": "F",
+  "alcohol_rate": "2.91",
+  "suicide_rate": "16.94",
+  "accident_rate": "0.7"
+}, {
+  "country": "UK",
+  "year": "2012",
+  "sex": "M",
+  "alcohol_rate": "11.8",
+  "suicide_rate": "30.52",
+  "accident_rate": "1.81"
+}, {
+  "country": "UK",
+  "year": "2013",
+  "sex": "F",
+  "alcohol_rate": "2.98",
+  "suicide_rate": "17.96",
+  "accident_rate": "0.56"
+}, {
+  "country": "UK",
+  "year": "2013",
+  "sex": "M",
+  "alcohol_rate": "11.97",
+  "suicide_rate": "31.98",
+  "accident_rate": "1.74"
+}, {
+  "country": "UK",
+  "year": "2014",
+  "sex": "F",
+  "alcohol_rate": "3.17",
+  "suicide_rate": "17.99",
+  "accident_rate": "0.78"
+}, {
+  "country": "UK",
+  "year": "2014",
+  "sex": "M",
+  "alcohol_rate": "11.24",
+  "suicide_rate": "32.29",
+  "accident_rate": "1.87"
+}, {
+  "country": "UK",
+  "year": "2015",
+  "sex": "F",
+  "alcohol_rate": "3.41",
+  "suicide_rate": "19.34",
+  "accident_rate": "0.73"
+}, {
+  "country": "UK",
+  "year": "2015",
+  "sex": "M",
+  "alcohol_rate": "11.53",
+  "suicide_rate": "35.89",
+  "accident_rate": "2.03"
+}, {
+  "country": "UK",
+  "year": "2016",
+  "sex": "F",
+  "alcohol_rate": "3.33",
+  "suicide_rate": "19.54",
+  "accident_rate": "0.78"
+}, {
+  "country": "UK",
+  "year": "2016",
+  "sex": "M",
+  "alcohol_rate": "11.31",
+  "suicide_rate": "36.29",
+  "accident_rate": "2.03"
+}, {
+  "country": "UK",
+  "year": "2017",
+  "sex": "F",
+  "alcohol_rate": "3.32",
+  "suicide_rate": "20.35",
+  "accident_rate": "0.89"
+}, {
+  "country": "UK",
+  "year": "2017",
+  "sex": "M",
+  "alcohol_rate": "11.79",
+  "suicide_rate": "37.66",
+  "accident_rate": "2.21"
+}, {
+  "country": "UK",
+  "year": "2018",
+  "sex": "F",
+  "alcohol_rate": "3.81",
+  "suicide_rate": "21.14",
+  "accident_rate": "0.94"
+}, {
+  "country": "UK",
+  "year": "2018",
+  "sex": "M",
+  "alcohol_rate": "12.93",
+  "suicide_rate": "38.35",
+  "accident_rate": "2.22"
+}]
