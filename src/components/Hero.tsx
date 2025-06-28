@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, AlertTriangle, Database } from 'lucide-react';
+import { TrendingUp, Users, AlertTriangle } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Hero: React.FC = () => {
@@ -30,90 +30,73 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto text-center"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Alcohol, Mental Health, and Societal Impact
+            Behind the Drink
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-purple-200 mb-8 leading-relaxed"
+            className="text-2xl md:text-3xl text-purple-200 mb-12 leading-relaxed font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            A Gendered Lens on European Data (2013-2022)
+            Men are dying from alcohol at 3.7x the rate of women.<br/>
+            This isn't just about drinking—it's about mental health.
           </motion.p>
 
+          {/* TL;DR Block */}
           <motion.div
-            className="text-sm text-purple-300 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Analysis of {countryCount} European countries • 3 core datasets • 10-year longitudinal study
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-4 gap-6 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <Database className="w-8 h-8 text-purple-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Comprehensive Data</h3>
-              <p className="text-purple-200 text-sm">Age-standardized mortality rates from official Eurostat sources</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <TrendingUp className="w-8 h-8 text-blue-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Decade Analysis</h3>
-              <p className="text-purple-200 text-sm">10-year time series revealing evolving patterns and trends</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <Users className="w-8 h-8 text-green-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Gender Disparities</h3>
-              <p className="text-purple-200 text-sm">Stark differences in mental health vulnerabilities by sex</p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <AlertTriangle className="w-8 h-8 text-red-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Critical Correlations</h3>
-              <p className="text-purple-200 text-sm">Strong statistical relationships between alcohol and suicide mortality</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+            className="bg-gradient-to-r from-red-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-12"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <h2 className="text-2xl font-bold mb-4 text-yellow-300">Key Finding</h2>
-            <p className="text-lg leading-relaxed mb-4">
-              "This stark disparity reveals that alcohol misuse is not merely a substance abuse issue but a reflection of deeper mental health vulnerabilities, particularly for men."
-            </p>
-            <div className="text-sm text-purple-200">
-              <strong>Correlation Analysis:</strong> Men show r = 0.76 between alcohol and suicide mortality (strong positive correlation)
+            <div className="flex items-center justify-center mb-4">
+              <AlertTriangle className="w-6 h-6 text-yellow-400 mr-3" />
+              <h2 className="text-xl font-bold text-yellow-300">Key Finding</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-3xl font-bold text-red-300 mb-2">3.7x</div>
+                <div className="text-sm text-purple-200">Higher male alcohol mortality across {countryCount} European countries</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-3xl font-bold text-red-300 mb-2">r = 0.76</div>
+                <div className="text-sm text-purple-200">Strong correlation between alcohol deaths and suicide in men</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-3xl font-bold text-red-300 mb-2">8 Years</div>
+                <div className="text-sm text-purple-200">Comprehensive analysis revealing hidden mental health crisis</div>
+              </div>
             </div>
           </motion.div>
 
-          <motion.button
-            className="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            onClick={() => document.getElementById('executive-summary')?.scrollIntoView({ behavior: 'smooth' })}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Explore the Research
-          </motion.button>
+            <button
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              onClick={() => document.getElementById('visualization')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Explore the Data
+            </button>
+            <button
+              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold py-4 px-8 rounded-full hover:bg-white/20 transition-all duration-300"
+              onClick={() => document.getElementById('conclusions')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Jump to Solutions
+            </button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

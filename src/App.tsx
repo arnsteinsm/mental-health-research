@@ -5,10 +5,7 @@ import ExecutiveSummary from './components/ExecutiveSummary';
 import InteractiveVisualization from './components/InteractiveVisualization';
 import CorrelationExplanation from './components/CorrelationExplanation';
 import GenderAnalysis from './components/GenderAnalysis';
-import DataTable from './components/DataTable';
 import Conclusions from './components/Conclusions';
-import Bibliography from './components/Bibliography';
-import DownloadCTA from './components/DownloadCTA';
 import Footer from './components/Footer';
 
 function App() {
@@ -28,23 +25,9 @@ function App() {
       <div id="gender-analysis">
         <GenderAnalysis />
       </div>
-      <div id="data-table">
-        <DataTable />
-      </div>
       <div id="conclusions">
         <Conclusions />
       </div>
-      <div id="bibliography">
-        <Bibliography />
-      </div>
-      
-      {/* Strategic CTA Placement - Bottom Center */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <DownloadCTA variant="footer" />
-        </div>
-      </section>
-      
       <Footer />
     </div>
   );
