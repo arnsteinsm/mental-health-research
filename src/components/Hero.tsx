@@ -4,7 +4,7 @@ import { TrendingUp, Users, AlertTriangle, Database } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Hero: React.FC = () => {
-  // Calculate actual country count from data
+  // Calculate actual country count from data (excluding EU average)
   const countryCount = Array.from(new Set(researchData.map(d => d.country)))
     .filter(country => country !== 'EU27_2020').length;
 
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Analysis of {countryCount} European countries • 5 Eurostat datasets • 10-year longitudinal study
+            Analysis of 32 European countries • 5 Eurostat datasets • 10-year longitudinal study
           </motion.div>
 
           <motion.div
