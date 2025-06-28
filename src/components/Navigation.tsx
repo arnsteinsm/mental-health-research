@@ -17,11 +17,10 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { label: 'Summary', href: '#executive-summary' },
+    { label: 'Overview', href: '#executive-summary' },
     { label: 'Data', href: '#visualization' },
-    { label: 'Correlation', href: '#correlation' },
     { label: 'Analysis', href: '#gender-analysis' },
-    { label: 'Conclusions', href: '#conclusions' }
+    { label: 'Solutions', href: '#conclusions' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -43,7 +42,6 @@ const Navigation: React.FC = () => {
           : 'bg-transparent'
       }`}
       style={{
-        // Ensure backdrop-filter is properly supported
         backdropFilter: scrolled ? 'blur(12px) saturate(150%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(12px) saturate(150%)' : 'none',
       }}
@@ -59,7 +57,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -72,7 +70,6 @@ const Navigation: React.FC = () => {
               </button>
             ))}
             
-            {/* Download CTA in Header */}
             <DownloadCTA variant="header" />
           </div>
 

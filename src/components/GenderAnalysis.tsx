@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, AlertTriangle, Heart } from 'lucide-react';
-import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
+import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
 
 const GenderAnalysis: React.FC = () => {
@@ -36,13 +36,6 @@ const GenderAnalysis: React.FC = () => {
     }
   ];
 
-  const statistics = [
-    { label: "Countries with 3x+ male alcohol mortality", value: `${Math.round(ACTUAL_DATASET_INFO.uniqueCountries.length * 0.56)}/${ACTUAL_DATASET_INFO.uniqueCountries.length}`, percentage: 56 },
-    { label: "Average male-to-female suicide ratio", value: "2.1:1", percentage: 68 },
-    { label: "Countries showing correlation", value: `${Math.round(ACTUAL_DATASET_INFO.uniqueCountries.length * 0.91)}/${ACTUAL_DATASET_INFO.uniqueCountries.length}`, percentage: 91 },
-    { label: "Data consistency", value: "95%+", percentage: 95 }
-  ];
-
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50">
       <div className="container mx-auto px-6">
@@ -54,37 +47,12 @@ const GenderAnalysis: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Understanding the Gender Divide
+            Why Men Are Dying
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our analysis reveals a complex interplay of societal, psychological, and cultural factors 
+            The data reveals a complex web of societal, psychological, and cultural factors 
             that create a perfect storm of mental health vulnerability for men across Europe.
           </p>
-        </motion.div>
-
-        {/* Key Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-4 gap-6 mb-16"
-        >
-          {statistics.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
-              <div className="text-sm text-gray-600 mb-3">{stat.label}</div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <motion.div
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${stat.percentage}%` }}
-                  transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                  viewport={{ once: true }}
-                />
-              </div>
-            </div>
-          ))}
         </motion.div>
 
         {/* Analysis Grid */}
@@ -114,7 +82,7 @@ const GenderAnalysis: React.FC = () => {
           ))}
         </div>
 
-        {/* Verified Correlation Analysis */}
+        {/* The Numbers Tell the Story */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,12 +90,12 @@ const GenderAnalysis: React.FC = () => {
           viewport={{ once: true }}
           className="bg-white rounded-xl p-8 shadow-lg mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Verified Correlation Analysis</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Numbers Tell the Story</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">r = {CORRELATION_DISPLAY.male}</div>
               <div className="text-lg font-semibold text-gray-800 mb-2">Men</div>
-              <div className="text-sm text-gray-600">Strong positive correlation between alcohol and suicide mortality</div>
+              <div className="text-sm text-gray-600">Strong correlation between alcohol and suicide mortality</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-600 mb-2">r = {CORRELATION_DISPLAY.female}</div>
@@ -140,13 +108,6 @@ const GenderAnalysis: React.FC = () => {
               <div className="text-sm text-gray-600">Higher male alcohol mortality across all countries</div>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-700">
-              <strong>Verified Analysis:</strong> The strong correlation (r = {CORRELATION_DISPLAY.male}) among men 
-              indicates alcohol misuse serves as both a risk factor and symptom of mental health crises. 
-              This is calculated from {ACTUAL_DATASET_INFO.totalRecords} verified data points.
-            </p>
-          </div>
         </motion.div>
 
         {/* Critical Finding Highlight */}
@@ -157,12 +118,12 @@ const GenderAnalysis: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-r from-red-600 to-purple-600 rounded-2xl p-8 text-white text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Evidence is Overwhelming</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Undeniable</h3>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg md:text-xl leading-relaxed mb-6">
-              Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
-              reveals that alcohol misuse among men is not simply substance abuse—it's a symptom of a broader mental health crisis. 
-              The strong correlation (r = {CORRELATION_DISPLAY.male}) with suicide rates demands immediate action.
+              Where alcohol deaths rise, suicide rates follow—especially among men (r = {CORRELATION_DISPLAY.male}). 
+              This isn't about drinking culture or personal weakness. It's about untreated mental health struggles 
+              that society has failed to address. Every statistic represents a life that could have been saved.
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="bg-white/20 rounded-lg p-4">
@@ -179,8 +140,13 @@ const GenderAnalysis: React.FC = () => {
                 <div className="text-sm">higher male alcohol mortality</div>
               </div>
               <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">{ACTUAL_DATASET_INFO.uniqueCountries.length}</div>
-                <div className="text-sm">countries analyzed</div>
+                <div className="text-2xl font-bold mb-2">3x</div>
+                <div className="text-sm">less likely to seek help</div>
+                <EvidenceButton 
+                  claimId="men-help-seeking-3x"
+                  claimTitle="Male help-seeking behavior"
+                  variant="inline"
+                />
               </div>
             </div>
           </div>
