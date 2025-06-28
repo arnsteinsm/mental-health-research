@@ -1,12 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, AlertTriangle, Database } from 'lucide-react';
-import { decadeStats, calculateDecadeGenderRatio, calculateDecadeCorrelations } from '../data/decade-research-data';
+import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 
 const Hero: React.FC = () => {
-  const genderRatio = calculateDecadeGenderRatio();
-  const correlations = calculateDecadeCorrelations();
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -46,7 +43,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Men are dying from alcohol at {genderRatio.toFixed(1)}x the rate of women.<br/>
+            Men are dying from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women.<br/>
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
@@ -59,20 +56,20 @@ const Hero: React.FC = () => {
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <Database className="w-8 h-8 text-purple-300 mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold mb-2">Full Decade</h3>
-              <p className="text-purple-200 text-sm">2013-2022 comprehensive analysis across {decadeStats.uniqueCountries.length} countries</p>
+              <h3 className="text-lg font-semibold mb-2">Verified Data</h3>
+              <p className="text-purple-200 text-sm">{ACTUAL_DATASET_INFO.totalRecords} records from {ACTUAL_DATASET_INFO.uniqueCountries.length} countries</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <TrendingUp className="w-8 h-8 text-blue-300 mb-4 mx-auto" />
               <h3 className="text-lg font-semibold mb-2">Strong Correlation</h3>
-              <p className="text-purple-200 text-sm">r = {correlations.male.toFixed(2)} between alcohol deaths and suicide in men</p>
+              <p className="text-purple-200 text-sm">r = {CORRELATION_DISPLAY.male} between alcohol deaths and suicide in men</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <Users className="w-8 h-8 text-green-300 mb-4 mx-auto" />
               <h3 className="text-lg font-semibold mb-2">Gender Disparity</h3>
-              <p className="text-purple-200 text-sm">{genderRatio.toFixed(1)}x higher male alcohol mortality reveals hidden crisis</p>
+              <p className="text-purple-200 text-sm">{VERIFIED_GENDER_RATIO}x higher male alcohol mortality reveals hidden crisis</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
@@ -89,24 +86,25 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <h2 className="text-2xl font-bold mb-4 text-yellow-300">10-Year Analysis Reveals</h2>
+            <h2 className="text-2xl font-bold mb-4 text-yellow-300">The Pattern is Undeniable</h2>
             <p className="text-lg leading-relaxed mb-4">
-              Across a full decade (2013-2022), the pattern is unmistakable: where alcohol deaths rise, 
-              suicide rates follow—especially among men. This stark correlation (r = {correlations.male.toFixed(2)}) 
-              reveals that alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
+              Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
+              ({ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}) reveals an unmistakable truth: 
+              where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRELATION_DISPLAY.male}) 
+              shows alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
             </p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">{genderRatio.toFixed(1)}x</div>
+                <div className="text-2xl font-bold text-red-300">{VERIFIED_GENDER_RATIO}x</div>
                 <div className="text-purple-200">Higher male alcohol mortality</div>
               </div>
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">r = {correlations.male.toFixed(2)}</div>
+                <div className="text-2xl font-bold text-red-300">r = {CORRELATION_DISPLAY.male}</div>
                 <div className="text-purple-200">Alcohol-suicide correlation (men)</div>
               </div>
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">10 Years</div>
-                <div className="text-purple-200">Comprehensive longitudinal study</div>
+                <div className="text-2xl font-bold text-red-300">{ACTUAL_DATASET_INFO.uniqueCountries.length}</div>
+                <div className="text-purple-200">European countries analyzed</div>
               </div>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HelpCircle, TrendingUp, AlertCircle, Calculator, X } from 'lucide-react';
+import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 
 const CorrelationExplanation: React.FC = () => {
   const [showExplainer, setShowExplainer] = useState(false);
@@ -50,7 +51,7 @@ const CorrelationExplanation: React.FC = () => {
             className="inline-flex items-center mt-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
           >
             <HelpCircle className="w-4 h-4 mr-2" />
-            What does r = 0.76 mean?
+            What does r = {CORRELATION_DISPLAY.male} mean?
           </button>
         </motion.div>
 
@@ -101,19 +102,19 @@ const CorrelationExplanation: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Gender Divide</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-5xl font-bold text-red-600 mb-2">0.76</div>
+              <div className="text-5xl font-bold text-red-600 mb-2">{CORRELATION_DISPLAY.male}</div>
               <div className="text-lg font-semibold text-gray-800 mb-2">Men</div>
               <div className="text-sm text-gray-600">Strong correlation - alcohol and suicide move together</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-purple-600 mb-2">0.49</div>
+              <div className="text-5xl font-bold text-purple-600 mb-2">{CORRELATION_DISPLAY.female}</div>
               <div className="text-lg font-semibold text-gray-800 mb-2">Women</div>
               <div className="text-sm text-gray-600">Moderate correlation - less pronounced pattern</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">56%</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">Stronger</div>
-              <div className="text-sm text-gray-600">Male correlation is 56% stronger than female</div>
+              <div className="text-5xl font-bold text-blue-600 mb-2">{VERIFIED_GENDER_RATIO}x</div>
+              <div className="text-lg font-semibold text-gray-800 mb-2">Gender Gap</div>
+              <div className="text-sm text-gray-600">Higher male alcohol mortality rate</div>
             </div>
           </div>
         </motion.div>
@@ -129,7 +130,7 @@ const CorrelationExplanation: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 flex items-center">
                   <Calculator className="w-6 h-6 mr-3 text-blue-600" />
-                  Understanding r = 0.76
+                  Understanding r = {CORRELATION_DISPLAY.male}
                 </h3>
                 <button
                   onClick={() => setShowExplainer(false)}
@@ -147,8 +148,9 @@ const CorrelationExplanation: React.FC = () => {
                 
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="text-blue-800">
-                    <strong>r = 0.76 means:</strong> In countries where alcohol deaths are high, 
-                    suicide rates are also high 76% of the time. This is considered a "strong\" correlation.
+                    <strong>r = {CORRELATION_DISPLAY.male} means:</strong> In countries where alcohol deaths are high, 
+                    suicide rates are also high {Math.round(parseFloat(CORRELATION_DISPLAY.male) * 100)}% of the time. 
+                    This is considered a "strong" correlation.
                   </p>
                 </div>
                 

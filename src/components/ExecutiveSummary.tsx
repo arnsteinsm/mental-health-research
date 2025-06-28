@@ -1,36 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, Users, TrendingUp, AlertCircle, Database, ExternalLink } from 'lucide-react';
-import { decadeStats, calculateDecadeGenderRatio, calculateDecadeCorrelations } from '../data/decade-research-data';
+import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 
 const ExecutiveSummary: React.FC = () => {
-  const genderRatio = calculateDecadeGenderRatio();
-  const correlations = calculateDecadeCorrelations();
-
   const keyStats = [
     {
       icon: <BarChart3 className="w-8 h-8" />,
-      title: `${genderRatio.toFixed(1)}x Higher`,
+      title: `${VERIFIED_GENDER_RATIO}x Higher`,
       subtitle: "Male alcohol mortality",
-      description: "Men consistently show dramatically higher alcohol-related death rates across all European countries over the full decade.",
+      description: "Men consistently show dramatically higher alcohol-related death rates across all European countries in our analysis.",
       color: "from-red-500 to-red-600",
-      methodology: "Average male alcohol mortality rate divided by average female rate across 2013-2022"
+      methodology: "Average male alcohol mortality rate divided by average female rate across all data points"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: `r = ${correlations.male.toFixed(2)}`,
+      title: `r = ${CORRELATION_DISPLAY.male}`,
       subtitle: "Alcohol-Suicide Link (Men)",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
       color: "from-purple-500 to-purple-600",
-      methodology: "Pearson correlation coefficient calculated across 10-year longitudinal dataset"
+      methodology: "Pearson correlation coefficient calculated from verified dataset"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Hidden Crisis",
       subtitle: "Mental Health Emergency",
-      description: "Decade-long analysis reveals alcohol deaths are masking a broader male mental health crisis across Europe.",
+      description: "Analysis reveals alcohol deaths are masking a broader male mental health crisis across Europe.",
       color: "from-blue-500 to-blue-600",
-      methodology: "Pattern analysis across gender-stratified mortality data (2013-2022)"
+      methodology: "Pattern analysis across gender-stratified mortality data"
     }
   ];
 
@@ -63,7 +60,8 @@ const ExecutiveSummary: React.FC = () => {
             The Hidden Crisis
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            A decade-long analysis (2013-2022) of {decadeStats.uniqueCountries.length} European countries reveals that male alcohol mortality isn't just about drinking—
+            Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
+            ({ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}) reveals that male alcohol mortality isn't just about drinking—
             it's a symptom of a deeper mental health emergency that demands immediate attention.
           </p>
         </motion.div>
@@ -107,35 +105,36 @@ const ExecutiveSummary: React.FC = () => {
         >
           <div className="flex items-center mb-6">
             <Database className="w-8 h-8 text-purple-600 mr-3" />
-            <h3 className="text-2xl font-bold text-gray-900">Comprehensive Dataset</h3>
+            <h3 className="text-2xl font-bold text-gray-900">Verified Dataset</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-6">
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Coverage</h4>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• {decadeStats.totalRecords.toLocaleString()} total data points</li>
-                <li>• {decadeStats.uniqueCountries.length} European countries</li>
-                <li>• {decadeStats.yearRange.start}-{decadeStats.yearRange.end} (full decade)</li>
-                <li>• Gender-stratified: {decadeStats.genderSplit.male.toLocaleString()}M / {decadeStats.genderSplit.female.toLocaleString()}F</li>
+                <li>• {ACTUAL_DATASET_INFO.totalRecords.toLocaleString()} total data points</li>
+                <li>• {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries</li>
+                <li>• {ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end} period</li>
+                <li>• Gender-stratified: {ACTUAL_DATASET_INFO.genderSplit.male}M / {ACTUAL_DATASET_INFO.genderSplit.female}F</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Key Findings</h4>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Strong male correlation: r = {correlations.male.toFixed(2)}</li>
-                <li>• Moderate female correlation: r = {correlations.female.toFixed(2)}</li>
-                <li>• {genderRatio.toFixed(1)}x gender disparity in alcohol mortality</li>
-                <li>• Consistent patterns across all 10 years</li>
+                <li>• Male correlation: r = {CORRELATION_DISPLAY.male}</li>
+                <li>• Female correlation: r = {CORRELATION_DISPLAY.female}</li>
+                <li>• {VERIFIED_GENDER_RATIO}x gender disparity in alcohol mortality</li>
+                <li>• Consistent patterns across all countries</li>
               </ul>
             </div>
           </div>
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <h4 className="font-semibold text-green-900 mb-2">Longitudinal Strength</h4>
+            <h4 className="font-semibold text-green-900 mb-2">Data Integrity</h4>
             <p className="text-sm text-green-800">
-              This comprehensive 10-year analysis provides robust statistical power and reveals persistent patterns 
-              that demand policy intervention. The consistency across the full decade strengthens our conclusions.
+              All statistics are calculated from the verified BigQuery dataset (bquxjob_32b9847_197b3606c2f.json). 
+              The correlation coefficient r = {CORRELATION_DISPLAY.male} for men represents a strong positive relationship 
+              between alcohol mortality and suicide rates.
             </p>
           </div>
         </motion.div>
@@ -179,11 +178,11 @@ const ExecutiveSummary: React.FC = () => {
           className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white text-center"
         >
           <AlertCircle className="w-12 h-12 text-yellow-300 mx-auto mb-6" />
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">A Decade of Evidence</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Evidence is Clear</h3>
           <p className="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
-            Ten years of data across {decadeStats.uniqueCountries.length} countries reveals an undeniable truth: 
+            {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} countries reveal an undeniable truth: 
             every alcohol-related death represents a failure to address underlying mental health needs. 
-            The strong correlation (r = {correlations.male.toFixed(2)}) with suicide rates shows we're treating symptoms, not causes.
+            The strong correlation (r = {CORRELATION_DISPLAY.male}) with suicide rates shows we're treating symptoms, not causes.
           </p>
         </motion.div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, ArrowRight, Download } from 'lucide-react';
+import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 
 const Conclusions: React.FC = () => {
   const solutions = [
@@ -41,7 +42,7 @@ const Conclusions: React.FC = () => {
             What the Data Demands
           </h2>
           <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-            The correlation is clear. The crisis is real. 
+            The correlation is clear (r = {CORRELATION_DISPLAY.male}). The crisis is real. 
             These evidence-based approaches offer a path forward.
           </p>
         </motion.div>
@@ -94,8 +95,8 @@ const Conclusions: React.FC = () => {
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Clear</h3>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
-            Our analysis reveals a hidden crisis: alcohol-related deaths among men correlate strongly with suicide rates (r=0.76). 
-            This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
+            Our analysis reveals a hidden crisis: alcohol-related deaths among men correlate strongly with suicide rates (r = {CORRELATION_DISPLAY.male}). 
+            Men die from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women. This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
           </p>
           
           <button className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
