@@ -21,9 +21,7 @@ const Navigation: React.FC = () => {
     { label: 'Data', href: '#visualization' },
     { label: 'Correlation', href: '#correlation' },
     { label: 'Analysis', href: '#gender-analysis' },
-    { label: 'Dataset', href: '#data-table' },
-    { label: 'Conclusions', href: '#conclusions' },
-    { label: 'Sources', href: '#bibliography' }
+    { label: 'Conclusions', href: '#conclusions' }
   ];
 
   const scrollToSection = (href: string) => {
@@ -41,9 +39,14 @@ const Navigation: React.FC = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          ? 'bg-white/80 backdrop-blur-md backdrop-saturate-150 shadow-lg border-b border-white/20' 
           : 'bg-transparent'
       }`}
+      style={{
+        // Ensure backdrop-filter is properly supported
+        backdropFilter: scrolled ? 'blur(12px) saturate(150%)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(12px) saturate(150%)' : 'none',
+      }}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -78,7 +81,7 @@ const Navigation: React.FC = () => {
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               scrolled 
-                ? 'text-gray-700 hover:bg-gray-100' 
+                ? 'text-gray-700 hover:bg-gray-100/50' 
                 : 'text-white hover:bg-white/10'
             }`}
           >
@@ -92,18 +95,22 @@ const Navigation: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden bg-white rounded-lg shadow-lg mt-2 py-4"
+            className="lg:hidden bg-white/90 backdrop-blur-md backdrop-saturate-150 rounded-lg shadow-lg mt-2 py-4 border border-white/20"
+            style={{
+              backdropFilter: 'blur(12px) saturate(150%)',
+              WebkitBackdropFilter: 'blur(12px) saturate(150%)',
+            }}
           >
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="block w-full text-left px-6 py-3 text-gray-700 hover:bg-gray-50/50 transition-colors"
               >
                 {item.label}
               </button>
             ))}
-            <div className="px-6 py-3 border-t border-gray-100">
+            <div className="px-6 py-3 border-t border-gray-100/50">
               <DownloadCTA variant="header" />
             </div>
           </motion.div>
