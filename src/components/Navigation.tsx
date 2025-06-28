@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-md backdrop-saturate-150 shadow-lg border-b border-white/20' 
+          ? 'bg-white/70 backdrop-blur-md backdrop-saturate-150 shadow-lg border-b border-white/20' 
           : 'bg-transparent'
       }`}
       style={{
@@ -95,7 +95,7 @@ const Navigation: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden bg-white/90 backdrop-blur-md backdrop-saturate-150 rounded-lg shadow-lg mt-2 py-4 border border-white/20"
+            className="lg:hidden bg-white/85 backdrop-blur-md backdrop-saturate-150 rounded-lg shadow-lg mt-2 py-4 border border-white/20"
             style={{
               backdropFilter: 'blur(12px) saturate(150%)',
               WebkitBackdropFilter: 'blur(12px) saturate(150%)',
