@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Database, Calendar, Scale, BarChart3 } from 'lucide-react';
+import { ExternalLink, Github, Database, Calendar, Scale, BarChart3, Zap } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Footer: React.FC = () => {
@@ -39,10 +39,23 @@ const Footer: React.FC = () => {
               <BarChart3 className="w-6 h-6 text-purple-400" />
               <span className="text-lg font-bold">Beyond the Drink</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Evidence-based analysis of European mental health and substance abuse patterns 
               through a gendered lens.
             </p>
+            
+            {/* Built with Bolt Badge */}
+            <motion.a
+              href="https://bolt.new"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white text-sm font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Zap className="w-4 h-4 mr-2" />
+              Built with Bolt
+            </motion.a>
           </div>
 
           {/* Data Sources */}
