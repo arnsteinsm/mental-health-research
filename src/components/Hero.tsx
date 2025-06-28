@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
+import { CORRECTED_DISPLAY } from '../data/actual-dataset-verification';
 
 const Hero: React.FC = () => {
   return (
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Men are dying from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women.<br/>
+            Men are dying from alcohol at {CORRECTED_DISPLAY.genderRatio}x the rate of women.<br/>
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
@@ -55,22 +55,22 @@ const Hero: React.FC = () => {
           >
             <h2 className="text-2xl font-bold mb-4 text-yellow-300">The Pattern is Undeniable</h2>
             <p className="text-lg leading-relaxed mb-6">
-              Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
-              (2013-2022) reveals an unmistakable truth: 
-              where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRELATION_DISPLAY.male}) 
+              Analysis of {CORRECTED_DISPLAY.totalRecords} data points from {CORRECTED_DISPLAY.countries} European countries 
+              ({CORRECTED_DISPLAY.yearRange}) reveals an unmistakable truth: 
+              where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRECTED_DISPLAY.maleCorrelation}) 
               shows alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
             </p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">{VERIFIED_GENDER_RATIO}x</div>
+                <div className="text-2xl font-bold text-red-300">{CORRECTED_DISPLAY.genderRatio}x</div>
                 <div className="text-purple-200">Higher male alcohol mortality</div>
               </div>
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">r = {CORRELATION_DISPLAY.male}</div>
+                <div className="text-2xl font-bold text-red-300">r = {CORRECTED_DISPLAY.maleCorrelation}</div>
                 <div className="text-purple-200">Alcohol-suicide correlation (men)</div>
               </div>
               <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">{ACTUAL_DATASET_INFO.uniqueCountries.length}</div>
+                <div className="text-2xl font-bold text-red-300">{CORRECTED_DISPLAY.countries}</div>
                 <div className="text-purple-200">European countries analyzed</div>
               </div>
             </div>
