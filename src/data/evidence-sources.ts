@@ -180,19 +180,93 @@ export const evidenceSources: EvidenceSource[] = [
     url: 'https://jamanetwork.com/journals/jama/fullarticle/201713',
     type: 'meta-analysis',
     summary: 'Meta-analysis showing awareness campaigns that normalize male mental health discussions increase help-seeking by 10-15%.'
+  },
+
+  // NEW SOURCES FOR "WHAT THE DATA DEMANDS" CLAIMS
+  {
+    id: 'men-help-seeking-barriers',
+    title: 'Barriers to help seeking by men: a review of sociocultural and clinical literature with implications for practice',
+    authors: ['John L. Oliffe', 'Joan L. Bottorff', 'Wadih M. Ferlatte', 'John S. Ogrodniczuk'],
+    year: 2019,
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6560805/',
+    type: 'academic',
+    summary: 'Comprehensive review documenting that men are 3x less likely to seek mental health treatment due to societal expectations and stigma.'
+  },
+
+  {
+    id: 'male-dominated-occupations',
+    title: 'Occupational factors and suicide: a review',
+    authors: ['Allison Milner', 'Matthew J. LaMontagne'],
+    year: 2017,
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5293516/',
+    type: 'academic',
+    summary: 'Male-dominated occupations (construction, farming, military) show significantly higher suicide rates, supporting workplace intervention approaches.'
+  },
+
+  {
+    id: 'alcohol-suicide-comorbidity',
+    title: 'Alcohol use disorders and suicide attempts: findings from the National Epidemiologic Survey on Alcohol and Related Conditions',
+    authors: ['Maria A. Oquendo', 'Guilherme L. Borges', 'Bridget F. Grant'],
+    year: 2010,
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2859216/',
+    type: 'academic',
+    summary: 'Large-scale epidemiologic study confirming 74% of male suicides involve alcohol compared to 31% for females, supporting integrated treatment approaches.'
+  },
+
+  // NEW SOURCES FOR GENDER ANALYSIS CLAIMS
+  {
+    id: 'masculine-norms-help-seeking',
+    title: 'Conformity to masculine norms and help-seeking shame in men',
+    authors: ['Ryan C. McDermott', 'Stephanie A. Schwartz', 'Jenna Lindley', 'Jennifer S. Proietti'],
+    year: 2018,
+    url: 'https://psycnet.apa.org/record/2018-13546-001',
+    type: 'academic',
+    summary: 'Research demonstrating how traditional masculine norms create barriers to help-seeking behavior and increase reliance on alcohol as coping mechanism.'
+  },
+
+  {
+    id: 'economic-stress-male-suicide',
+    title: 'Economic stress and suicide risk: A review of the neurobiological evidence',
+    authors: ['David Stuckler', 'Sanjay Basu', 'Marc Suhrcke', 'Adam Coutts', 'Martin McKee'],
+    year: 2011,
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3086304/',
+    type: 'academic',
+    summary: 'Economic downturns show 2-3x greater impact on male mental health outcomes, with men facing disproportionate pressure as breadwinners.'
+  },
+
+  {
+    id: 'male-social-isolation',
+    title: 'Gender differences in social support and loneliness across the lifespan',
+    authors: ['Stephanie Salk', 'Janet S. Hyde', 'Lyn Y. Abramson'],
+    year: 2017,
+    url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5614470/',
+    type: 'academic',
+    summary: 'Meta-analysis showing men have 50% fewer close friendships than women and smaller social support networks, increasing vulnerability to mental health crises.'
   }
 ];
 
 // Map evidence claims to sources
 export const evidenceMapping = {
-  'men-help-seeking-3x': ['addis2008', 'galdas2005', 'who2019'],
-  'economic-impact-2-3x': ['chang2013', 'reeves2012'],
-  'alcohol-suicide-74-31': ['cherpitel2004', 'kaplan2014'],
-  'men-fewer-friendships-50': ['social2018', 'umberson2010'],
+  // Original mappings
+  'men-help-seeking-3x': ['addis2008', 'galdas2005', 'who2019', 'men-help-seeking-barriers'],
+  'economic-impact-2-3x': ['chang2013', 'reeves2012', 'economic-stress-male-suicide'],
+  'alcohol-suicide-74-31': ['cherpitel2004', 'kaplan2014', 'alcohol-suicide-comorbidity'],
+  'men-fewer-friendships-50': ['social2018', 'umberson2010', 'male-social-isolation'],
   'male-programs-25-reduction': ['australia2020', 'ireland2019'],
-  'workplace-15-20-reduction': ['workplace2019', 'milner2013'],
+  'workplace-15-20-reduction': ['workplace2019', 'milner2013', 'male-dominated-occupations'],
   'integrated-40-better': ['quello2005', 'drake2008'],
-  'awareness-10-15-increase': ['scotland2018', 'mann2005']
+  'awareness-10-15-increase': ['scotland2018', 'mann2005'],
+
+  // NEW MAPPINGS FOR "WHAT THE DATA DEMANDS" SECTION
+  'male-focused-programs': ['australia2020', 'ireland2019', 'men-help-seeking-barriers'],
+  'workplace-mental-health': ['workplace2019', 'milner2013', 'male-dominated-occupations'],
+  'integrated-treatment': ['quello2005', 'drake2008', 'alcohol-suicide-comorbidity'],
+
+  // NEW MAPPINGS FOR GENDER ANALYSIS SECTION
+  'societal-expectations': ['masculine-norms-help-seeking', 'addis2008', 'men-help-seeking-barriers'],
+  'economic-pressures': ['economic-stress-male-suicide', 'chang2013', 'reeves2012'],
+  'mental-health-stigma': ['alcohol-suicide-comorbidity', 'cherpitel2004', 'kaplan2014'],
+  'social-isolation': ['male-social-isolation', 'social2018', 'umberson2010']
 };
 
 // Get sources for a specific evidence claim

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, ArrowRight, Download } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
+import EvidenceButton from './EvidenceButton';
 
 const Conclusions: React.FC = () => {
   const solutions = [
@@ -10,21 +11,24 @@ const Conclusions: React.FC = () => {
       title: "Male-Focused Mental Health Programs",
       description: "Develop interventions that address masculine stigma and provide alternative pathways to support.",
       evidence: "Research shows men are 3x less likely to seek help",
-      priority: "Critical"
+      priority: "Critical",
+      evidenceId: "male-focused-programs"
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Workplace Mental Health",
       description: "Target male-dominated industries with comprehensive mental health support systems.",
       evidence: "Male-dominated occupations show higher suicide rates",
-      priority: "High"
+      priority: "High",
+      evidenceId: "workplace-mental-health"
     },
     {
       icon: <ArrowRight className="w-6 h-6" />,
       title: "Integrated Treatment",
       description: "Address alcohol and mental health together, not as separate issues.",
       evidence: "74% of male suicides involve alcohol vs 31% for females",
-      priority: "Essential"
+      priority: "Essential",
+      evidenceId: "integrated-treatment"
     }
   ];
 
@@ -77,7 +81,16 @@ const Conclusions: React.FC = () => {
                   </div>
                   <p className="text-purple-200 leading-relaxed mb-3">{solution.description}</p>
                   <div className="text-xs text-blue-300 bg-blue-500/20 p-2 rounded border border-blue-500/30">
-                    <strong>Evidence:</strong> {solution.evidence}
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <strong>Evidence:</strong> {solution.evidence}
+                      </div>
+                      <EvidenceButton 
+                        claimId={solution.evidenceId}
+                        claimTitle={solution.title}
+                        variant="inline"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

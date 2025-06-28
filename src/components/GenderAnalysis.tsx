@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, AlertTriangle, Heart } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO, ACTUAL_DATASET_INFO } from '../data/correlation-verification';
+import EvidenceButton from './EvidenceButton';
 
 const GenderAnalysis: React.FC = () => {
   const insights = [
@@ -9,25 +10,29 @@ const GenderAnalysis: React.FC = () => {
       icon: <Users className="w-8 h-8" />,
       title: "Societal Expectations",
       description: "Traditional masculine norms discourage help-seeking behavior, leading men to self-medicate with alcohol rather than seek professional mental health support.",
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      evidenceId: "societal-expectations"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Economic Pressures",
       description: "Men face disproportionate pressure as primary breadwinners, with economic stress correlating strongly with both alcohol misuse and suicide rates.",
-      color: "from-purple-500 to-purple-600"
+      color: "from-purple-500 to-purple-600",
+      evidenceId: "economic-pressures"
     },
     {
       icon: <AlertTriangle className="w-8 h-8" />,
       title: "Mental Health Stigma",
       description: "The stigma around male mental health creates a dangerous cycle where alcohol becomes the primary coping mechanism for emotional distress.",
-      color: "from-red-500 to-red-600"
+      color: "from-red-500 to-red-600",
+      evidenceId: "mental-health-stigma"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Social Isolation",
       description: "Men report fewer close friendships and support networks, making them more vulnerable to mental health crises and substance abuse.",
-      color: "from-green-500 to-green-600"
+      color: "from-green-500 to-green-600",
+      evidenceId: "social-isolation"
     }
   ];
 
@@ -97,7 +102,14 @@ const GenderAnalysis: React.FC = () => {
                 {insight.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">{insight.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{insight.description}</p>
+              <p className="text-gray-600 leading-relaxed mb-4">{insight.description}</p>
+              <div className="flex items-center justify-end">
+                <EvidenceButton 
+                  claimId={insight.evidenceId}
+                  claimTitle={insight.title}
+                  variant="block"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -156,6 +168,11 @@ const GenderAnalysis: React.FC = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-2">74%</div>
                 <div className="text-sm">of male suicides involve alcohol</div>
+                <EvidenceButton 
+                  claimId="alcohol-suicide-74-31"
+                  claimTitle="Alcohol involvement in male suicide"
+                  variant="inline"
+                />
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-2">{VERIFIED_GENDER_RATIO}x</div>
