@@ -4,8 +4,14 @@ import path from 'node:path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: path.resolve(__dirname, '.'),
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      }
+    }
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
