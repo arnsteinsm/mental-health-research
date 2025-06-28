@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Database, Calendar, Scale, BarChart3, Zap } from 'lucide-react';
+import { ExternalLink, Github, Database, Calendar, Scale, BarChart3 } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Footer: React.FC = () => {
@@ -44,17 +44,20 @@ const Footer: React.FC = () => {
               through a gendered lens.
             </p>
             
-            {/* Built with Bolt Badge */}
+            {/* Compliant Built with Bolt Badge */}
             <motion.a
               href="https://bolt.new"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white text-sm font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              className="inline-block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Zap className="w-4 h-4 mr-2" />
-              Built with Bolt
+              <img 
+                src="https://imagedelivery.net/3RKw_J_fJQ_4KpJP3_YgXA/a24bb2c9-7d4d-4162-78e7-4b8ec9c90c00/public" 
+                alt="Built with Bolt" 
+                className="h-8 w-auto"
+              />
             </motion.a>
           </div>
 
