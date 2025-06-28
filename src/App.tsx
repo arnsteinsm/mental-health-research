@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
+import CorrectedHero from './components/CorrectedHero';
+import DataIntegrityWarning from './components/DataIntegrityWarning';
+import FactCheckReport from './components/FactCheckReport';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import InteractiveVisualization from './components/InteractiveVisualization';
 import CorrelationExplanation from './components/CorrelationExplanation';
@@ -14,7 +16,17 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <Hero />
+      <CorrectedHero />
+      
+      {/* Data Integrity Warning - Prominent Placement */}
+      <div id="data-integrity">
+        <DataIntegrityWarning />
+      </div>
+      
+      {/* Complete Fact-Check Report */}
+      <FactCheckReport />
+      
+      {/* Original Components - Now with Corrected Data */}
       <div id="executive-summary">
         <ExecutiveSummary />
       </div>
