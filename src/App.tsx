@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import ActualFactCheck from './components/ActualFactCheck';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import InteractiveVisualization from './components/InteractiveVisualization';
 import CorrelationExplanation from './components/CorrelationExplanation';
@@ -16,12 +15,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      
-      {/* Actual Dataset Fact-Check - Using Correct BigQuery Data */}
-      <div id="fact-check">
-        <ActualFactCheck />
-      </div>
-      
       <div id="executive-summary">
         <ExecutiveSummary />
       </div>
