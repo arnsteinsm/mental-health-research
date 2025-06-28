@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Target, Users, ArrowRight, Share2, Download, ExternalLink, Database } from 'lucide-react';
+import EvidenceButton from './EvidenceButton';
 
 const Conclusions: React.FC = () => {
   const recommendations = [
@@ -9,28 +10,32 @@ const Conclusions: React.FC = () => {
       title: "Targeted Mental Health Programs",
       description: "Develop male-specific mental health interventions that address the stigma around help-seeking behavior and provide alternative pathways to support.",
       priority: "High",
-      evidence: "Countries with male-focused programs show 25% reduction in alcohol mortality"
+      evidence: "Countries with male-focused programs show 25% reduction in alcohol mortality",
+      evidenceId: "male-programs-25-reduction"
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Workplace Mental Health Initiatives",
       description: "Implement comprehensive workplace mental health programs that specifically address male-dominated industries and economic stress factors.",
       priority: "High",
-      evidence: "Workplace interventions reduce male suicide rates by 15-20%"
+      evidence: "Workplace interventions reduce male suicide rates by 15-20%",
+      evidenceId: "workplace-15-20-reduction"
     },
     {
       icon: <Lightbulb className="w-6 h-6" />,
       title: "Reframe Alcohol Treatment",
       description: "Shift alcohol treatment approaches to address underlying mental health conditions rather than focusing solely on substance abuse.",
       priority: "Medium",
-      evidence: "Integrated treatment shows 40% better outcomes than substance-only approaches"
+      evidence: "Integrated treatment shows 40% better outcomes than substance-only approaches",
+      evidenceId: "integrated-40-better"
     },
     {
       icon: <Share2 className="w-6 h-6" />,
       title: "Public Awareness Campaigns",
       description: "Launch campaigns that normalize male mental health discussions and promote healthy coping mechanisms as alternatives to alcohol.",
       priority: "Medium",
-      evidence: "Awareness campaigns correlate with 10-15% increase in help-seeking behavior"
+      evidence: "Awareness campaigns correlate with 10-15% increase in help-seeking behavior",
+      evidenceId: "awareness-10-15-increase"
     }
   ];
 
@@ -155,7 +160,16 @@ const Conclusions: React.FC = () => {
                     </div>
                     <p className="text-purple-200 leading-relaxed mb-3">{rec.description}</p>
                     <div className="text-xs text-green-300 bg-green-500/20 p-2 rounded border border-green-500/30">
-                      <strong>Evidence:</strong> {rec.evidence}
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <strong>Evidence:</strong> {rec.evidence}
+                        </div>
+                        <EvidenceButton 
+                          claimId={rec.evidenceId}
+                          claimTitle={rec.title}
+                          variant="inline"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -239,7 +253,7 @@ const Conclusions: React.FC = () => {
               (ICD-10: X60–X84, Y870) across European countries from 2013-2022. All mortality rates are age-standardized 
               per 100,000 population. While accident mortality data was collected, it was excluded from primary correlation 
               analysis due to diverse causation factors beyond mental health scope. Statistical correlations were calculated 
-              using Pearson correlation coefficients, with significance testing at p&lt;0.05.
+              using Pearson correlation coefficients, with significance testing at p<0.05.
             </p>
             <div className="text-xs text-purple-300 bg-purple-900/30 p-3 rounded">
               <strong>Data Processing:</strong> Analysis performed using standardized European health statistics, 

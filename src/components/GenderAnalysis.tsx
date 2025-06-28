@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, AlertTriangle, Heart, ExternalLink } from 'lucide-react';
 import { researchData } from '../data/research-data';
+import EvidenceButton from './EvidenceButton';
 
 const GenderAnalysis: React.FC = () => {
   // Calculate actual country count from data
@@ -14,28 +15,32 @@ const GenderAnalysis: React.FC = () => {
       title: "Societal Expectations",
       description: "Traditional masculine norms discourage help-seeking behavior, leading men to self-medicate with alcohol rather than seek professional mental health support.",
       color: "from-blue-500 to-blue-600",
-      evidence: "Men are 3x less likely to seek mental health treatment despite higher suicide rates"
+      evidence: "Men are 3x less likely to seek mental health treatment despite higher suicide rates",
+      evidenceId: "men-help-seeking-3x"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Economic Pressures",
       description: "Men face disproportionate pressure as primary breadwinners, with economic stress correlating strongly with both alcohol misuse and suicide rates.",
       color: "from-purple-500 to-purple-600",
-      evidence: "Economic downturns show 2-3x greater impact on male mental health outcomes"
+      evidence: "Economic downturns show 2-3x greater impact on male mental health outcomes",
+      evidenceId: "economic-impact-2-3x"
     },
     {
       icon: <AlertTriangle className="w-8 h-8" />,
       title: "Mental Health Stigma",
       description: "The stigma around male mental health creates a dangerous cycle where alcohol becomes the primary coping mechanism for emotional distress.",
       color: "from-red-500 to-red-600",
-      evidence: "74% of male suicides involve alcohol, compared to 31% for females"
+      evidence: "74% of male suicides involve alcohol, compared to 31% for females",
+      evidenceId: "alcohol-suicide-74-31"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Social Isolation",
       description: "Men report fewer close friendships and support networks, making them more vulnerable to mental health crises and substance abuse.",
       color: "from-green-500 to-green-600",
-      evidence: "Men have 50% fewer close friendships than women on average"
+      evidence: "Men have 50% fewer close friendships than women on average",
+      evidenceId: "men-fewer-friendships-50"
     }
   ];
 
@@ -52,8 +57,8 @@ const GenderAnalysis: React.FC = () => {
       flag: "🇦🇹",
       insight: "Austria's alcohol policy promotes responsible drinking through national guidelines (max 24g/day for men) and health equity projects. The gradual decline in male alcohol mortality aligns with these public health efforts.",
       sources: [
-        { title: "National Drinking Guidelines – Austria", link: "#" },
-        { title: "Health Equity Pilot Project – Austria", link: "#" }
+        { title: "National Drinking Guidelines – Austria", link: "https://www.sozialministerium.at/Themen/Gesundheit/Drogen-und-Sucht/Alkohol.html" },
+        { title: "Health Equity Pilot Project – Austria", link: "https://www.euro.who.int/en/countries/austria" }
       ]
     },
     {
@@ -61,8 +66,8 @@ const GenderAnalysis: React.FC = () => {
       flag: "🇪🇪",
       insight: "Estonia shows some of Europe's highest male alcohol and suicide rates. The Green Paper on Alcohol Policy (2013) and Mental Health Action Plan (2023–26) represent evidence-led responses to clear health data signals.",
       sources: [
-        { title: "Green Paper on Alcohol Policy – Estonia", link: "#" },
-        { title: "OECD Commentary on Estonia's Mental Health Strategy", link: "#" }
+        { title: "Green Paper on Alcohol Policy – Estonia", link: "https://www.riigiteataja.ee/en/" },
+        { title: "OECD Commentary on Estonia's Mental Health Strategy", link: "https://www.oecd.org/health/estonia-health-system-review-9789264302204-en.htm" }
       ]
     }
   ];
@@ -127,8 +132,17 @@ const GenderAnalysis: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">{insight.title}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">{insight.description}</p>
-              <div className="text-sm text-blue-600 bg-blue-50 p-3 rounded">
-                <strong>Evidence:</strong> {insight.evidence}
+              <div className="text-sm text-blue-600 bg-blue-50 p-3 rounded border border-blue-200">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <strong>Evidence:</strong> {insight.evidence}
+                  </div>
+                  <EvidenceButton 
+                    claimId={insight.evidenceId}
+                    claimTitle={insight.title}
+                    variant="inline"
+                  />
+                </div>
               </div>
             </motion.div>
           ))}
@@ -157,6 +171,8 @@ const GenderAnalysis: React.FC = () => {
                     <a 
                       key={idx}
                       href={source.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors"
                     >
                       {source.title} <ExternalLink className="w-3 h-3 ml-1" />
@@ -223,6 +239,11 @@ const GenderAnalysis: React.FC = () => {
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-2">74%</div>
                 <div className="text-sm">of male suicides involve alcohol</div>
+                <EvidenceButton 
+                  claimId="alcohol-suicide-74-31"
+                  claimTitle="Alcohol involvement in male suicide"
+                  variant="inline"
+                />
               </div>
               <div className="bg-white/20 rounded-lg p-4">
                 <div className="text-2xl font-bold mb-2">3.7x</div>

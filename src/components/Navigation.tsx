@@ -22,7 +22,8 @@ const Navigation: React.FC = () => {
     { label: 'Correlation', href: '#correlation' },
     { label: 'Analysis', href: '#gender-analysis' },
     { label: 'Dataset', href: '#data-table' },
-    { label: 'Conclusions', href: '#conclusions' }
+    { label: 'Conclusions', href: '#conclusions' },
+    { label: 'Sources', href: '#bibliography' }
   ];
 
   const scrollToSection = (href: string) => {

@@ -7,6 +7,7 @@ import CorrelationExplanation from './components/CorrelationExplanation';
 import GenderAnalysis from './components/GenderAnalysis';
 import DataTable from './components/DataTable';
 import Conclusions from './components/Conclusions';
+import Bibliography from './components/Bibliography';
 import DownloadCTA from './components/DownloadCTA';
 import Footer from './components/Footer';
 
@@ -32,6 +33,9 @@ function App() {
       </div>
       <div id="conclusions">
         <Conclusions />
+      </div>
+      <div id="bibliography">
+        <Bibliography />
       </div>
       
       {/* Strategic CTA Placement - Bottom Center */}
