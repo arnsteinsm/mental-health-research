@@ -148,7 +148,7 @@ const CorrelationExplanation: React.FC = () => {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="text-blue-800">
                     <strong>r = 0.76 means:</strong> In countries where alcohol deaths are high, 
-                    suicide rates are also high 76% of the time. This is considered a "strong" correlation.
+                    suicide rates are also high 76% of the time. This is considered a "strong\" correlation.
                   </p>
                 </div>
                 
