@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               through a gendered lens.
             </p>
             
-            {/* Official Built with Bolt Badge - Black Circle */}
+            {/* Official Built with Bolt Badge - White Circle from Public Folder */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 className="inline-block group"
               >
                 <img 
-                  src="https://raw.githubusercontent.com/kickiniteasy/bolt-hackathon-badge/main/assets/bolt-badge-black-circle.png" 
+                  src="/white_circle_360x360.svg" 
                   alt="Built with Bolt" 
                   className="h-12 w-12 hover:scale-110 transition-transform duration-300"
                 />
