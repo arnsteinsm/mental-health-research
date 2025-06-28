@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
   ];
 
   const currentYear = new Date().getFullYear();
-  const lastUpdated = "December 2024";
+  const lastUpdated = "June 2025";
 
   return (
     <footer className="bg-gray-900 text-white py-12">
