@@ -61,7 +61,7 @@ const ExecutiveSummary: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
-            ({ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}) reveals that male alcohol mortality isn't just about drinking—
+            (2013-2022) reveals that male alcohol mortality isn't just about drinking—
             it's a symptom of a deeper mental health emergency that demands immediate attention.
           </p>
         </motion.div>
@@ -114,7 +114,7 @@ const ExecutiveSummary: React.FC = () => {
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• {ACTUAL_DATASET_INFO.totalRecords.toLocaleString()} total data points</li>
                 <li>• {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries</li>
-                <li>• {ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end} period</li>
+                <li>• 2013-2022 decade analysis</li>
                 <li>• Gender-stratified: {ACTUAL_DATASET_INFO.genderSplit.male}M / {ACTUAL_DATASET_INFO.genderSplit.female}F</li>
               </ul>
             </div>

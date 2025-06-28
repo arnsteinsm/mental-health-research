@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4 text-yellow-300">The Pattern is Undeniable</h2>
             <p className="text-lg leading-relaxed mb-6">
               Analysis of {ACTUAL_DATASET_INFO.totalRecords} data points from {ACTUAL_DATASET_INFO.uniqueCountries.length} European countries 
-              ({ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}) reveals an unmistakable truth: 
+              (2013-2022) reveals an unmistakable truth: 
               where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRELATION_DISPLAY.male}) 
               shows alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
             </p>
