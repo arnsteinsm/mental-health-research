@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Users, TrendingUp, AlertCircle, Database, ExternalLink, Target, Lightbulb } from 'lucide-react';
+import { BarChart3, Users, TrendingUp, AlertCircle, Database, ExternalLink } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const ExecutiveSummary: React.FC = () => {
@@ -8,45 +8,49 @@ const ExecutiveSummary: React.FC = () => {
   const countryCount = Array.from(new Set(researchData.map(d => d.country)))
     .filter(country => country !== 'EU27_2020').length;
 
-  const keyFindings = [
+  const keyStats = [
     {
-      icon: <AlertCircle className="w-8 h-8" />,
-      title: "3.7x Higher Risk",
-      subtitle: "Male alcohol mortality vs. female",
-      insight: "Men consistently show dramatically higher alcohol-related death rates across all European countries.",
-      color: "from-red-500 to-red-600"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Strong Correlation",
-      subtitle: "r = 0.76 (alcohol-suicide link)",
-      insight: "Where alcohol deaths rise, suicide rates follow—especially among men.",
-      color: "from-purple-500 to-purple-600"
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "3.7x Higher",
+      subtitle: "Male alcohol-related mortality rates",
+      description: "Men consistently show significantly higher alcohol-related death rates across all European countries studied.",
+      methodology: "Age-standardized death rates per 100,000 population (ICD-10: F10)"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Hidden Crisis",
-      subtitle: "Mental health, not just addiction",
-      insight: "Alcohol misuse serves as self-medication for untreated mental health conditions.",
-      color: "from-blue-500 to-blue-600"
+      title: "2.1x Higher",
+      subtitle: "Male suicide rates",
+      description: "The gender gap in suicide rates correlates strongly with alcohol misuse patterns.",
+      methodology: "Age-standardized suicide death rates per 100,000 (ICD-10: X60–X84, Y870)"
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "r = 0.76",
+      subtitle: "Alcohol-Suicide Correlation (Men)",
+      description: "Strong positive correlation between alcohol mortality and suicide rates among men across Europe.",
+      methodology: "Pearson correlation coefficient measuring linear relationship strength"
+    },
+    {
+      icon: <AlertCircle className="w-8 h-8" />,
+      title: `${countryCount} Countries`,
+      subtitle: "10-Year Analysis (2013-2022)",
+      description: "Comprehensive longitudinal study with complete data coverage across diverse European contexts.",
+      methodology: "Time-series analysis with standardized mortality rates for cross-country comparison"
     }
   ];
 
-  const actionableInsights = [
+  const dataSources = [
     {
-      icon: <Target className="w-6 h-6" />,
-      title: "Target Male Mental Health",
-      description: "Develop male-specific interventions addressing help-seeking barriers"
+      title: "Death due to alcoholic abuse, by sex",
+      description: "Age-standardized death rates per 100,000 for alcohol-related causes (ICD-10: F10)",
+      link: "https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en",
+      variable: "alcohol_rate"
     },
     {
-      icon: <Lightbulb className="w-6 h-6" />,
-      title: "Reframe Treatment Approach",
-      description: "Address underlying mental health, not just substance abuse"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Workplace Integration",
-      description: "Implement mental health programs in male-dominated industries"
+      title: "Death due to suicide, by sex", 
+      description: "Age-standardized suicide mortality rates per 100,000 (ICD-10: X60–X84, Y870)",
+      link: "https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en",
+      variable: "suicide_rate"
     }
   ];
 
@@ -61,62 +65,63 @@ const ExecutiveSummary: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            The Crisis Revealed
+            Executive Summary
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Analysis of {countryCount} European countries reveals a profound gender disparity 
-            pointing to a critical mental health crisis affecting men.
+            Our analysis of European health data from 2013-2022 reveals profound gender disparities 
+            in alcohol-related mortality and suicide rates, pointing to a critical mental health crisis 
+            that disproportionately affects men.
           </p>
         </motion.div>
 
-        {/* Key Findings - Visual Impact */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {keyFindings.map((finding, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {keyStats.map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden"
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
             >
-              <div className={`bg-gradient-to-br ${finding.color} rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow duration-300`}>
-                <div className="mb-6">
-                  {finding.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-2">
-                  {finding.title}
-                </h3>
-                <h4 className="text-lg font-semibold mb-4 opacity-90">
-                  {finding.subtitle}
-                </h4>
-                <p className="text-sm leading-relaxed opacity-90">
-                  {finding.insight}
-                </p>
+              <div className="text-blue-600 mb-4">
+                {stat.icon}
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                {stat.title}
+              </h3>
+              <h4 className="text-lg font-semibold text-blue-600 mb-3">
+                {stat.subtitle}
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                {stat.description}
+              </p>
+              <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded">
+                <strong>Method:</strong> {stat.methodology}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Core Research Question - Simplified */}
+        {/* Research Question */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 shadow-lg mb-16 border border-gray-100"
+          className="bg-white rounded-xl p-8 shadow-lg mb-16 border border-gray-100"
         >
-          <div className="text-center">
-            <Database className="w-12 h-12 text-purple-600 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Research Question</h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              How do alcohol-related mortality patterns reflect broader mental health vulnerabilities 
-              across European men, and what does this reveal about societal support systems?
-            </p>
+          <div className="flex items-center mb-6">
+            <Database className="w-8 h-8 text-purple-600 mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">Core Research Question</h3>
           </div>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            How do alcohol-related mortality trends reflect broader patterns of mental health and societal risk — 
+            particularly through a gendered lens — across Europe from 2013 to 2022?
+          </p>
         </motion.div>
 
-        {/* Actionable Insights */}
+        {/* Data Sources */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,52 +129,78 @@ const ExecutiveSummary: React.FC = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Immediate Action Points</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {actionableInsights.map((insight, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-purple-100 rounded-lg mr-3">
-                    {insight.icon}
-                  </div>
-                  <h4 className="font-semibold text-gray-900">{insight.title}</h4>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Primary Data Sources & Methodology</h3>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {dataSources.map((source, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+                <h4 className="font-semibold text-gray-900 mb-3">{source.title}</h4>
+                <p className="text-sm text-gray-600 mb-4">{source.description}</p>
+                <div className="text-xs text-purple-600 bg-purple-50 p-2 rounded mb-3">
+                  <strong>Variable:</strong> {source.variable}
                 </div>
-                <p className="text-gray-600 text-sm">{insight.description}</p>
+                <a 
+                  href={source.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  View Dataset <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
               </div>
             ))}
           </div>
+          
+          {/* Methodological Note */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h4 className="font-semibold text-amber-900 mb-3">Methodological Note</h4>
+            <p className="text-sm text-amber-800 leading-relaxed">
+              While accident mortality data was collected for comprehensive analysis, it was excluded from primary 
+              findings due to diverse causation factors beyond mental health and substance abuse. Accident rates 
+              introduce significant confounding variables (workplace safety, traffic regulations, geographic factors) 
+              that would dilute the focused mental health narrative. The complete dataset including accident rates 
+              is available in the data table for transparency.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Data Transparency - Condensed */}
+        {/* Statistical Methods */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white text-center"
+          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white"
         >
-          <h3 className="text-2xl font-bold mb-6">Methodology & Data Sources</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-2xl font-bold mb-6">Statistical Methodology</h3>
+          <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h4 className="font-semibold mb-3">Data Coverage</h4>
-              <div className="text-purple-100 text-sm space-y-1">
-                <div>• {countryCount} European countries</div>
-                <div>• Age-standardized mortality rates</div>
-                <div>• Gender-stratified analysis</div>
-                <div>• Pearson correlation analysis</div>
+              <h4 className="font-semibold mb-3">Correlation Analysis</h4>
+              <p className="text-purple-100 text-sm mb-2">
+                Pearson correlation coefficients measure linear relationships between alcohol and suicide mortality, 
+                ranging from -1 (perfect negative) to +1 (perfect positive correlation).
+              </p>
+              <div className="text-xs text-purple-200">
+                <strong>Results:</strong> Men r=0.76, Women r=0.49, Combined r=0.68
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Primary Sources</h4>
-              <div className="text-purple-100 text-sm space-y-2">
-                <a href="https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
-                  <ExternalLink className="w-3 h-3 mr-1" />
-                  Eurostat Alcohol Mortality
-                </a>
-                <a href="https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-white transition-colors">
-                  <ExternalLink className="w-3 h-3 mr-1" />
-                  Eurostat Suicide Data
-                </a>
+              <h4 className="font-semibold mb-3">Age Standardization</h4>
+              <p className="text-purple-100 text-sm mb-2">
+                All mortality rates are age-standardized per 100,000 population to enable 
+                valid cross-country and temporal comparisons.
+              </p>
+              <div className="text-xs text-purple-200">
+                <strong>Standard:</strong> European Standard Population
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Data Coverage</h4>
+              <p className="text-purple-100 text-sm mb-2">
+                Analysis covers {countryCount} European countries with complete data from 2013-2022, 
+                ensuring robust statistical power and geographic diversity.
+              </p>
+              <div className="text-xs text-purple-200">
+                <strong>Scope:</strong> {countryCount} countries, gender-stratified
               </div>
             </div>
           </div>
