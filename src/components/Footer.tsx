@@ -155,6 +155,7 @@ const Footer: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      </div>
     </footer>
   );
 };
