@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import * as d3 from 'd3';
 import { researchData, countryNames, DataPoint } from '../data/research-data';
-import { Filter, BarChart3, Zap, TrendingUp, Calendar, Share2, Copy, Check } from 'lucide-react';
+import { Filter, BarChart3, Zap, TrendingUp, Calendar, Share2, Copy, Check, ChevronDown, Search } from 'lucide-react';
 import LoadingSpinner from './LoadingSpinner';
 
 const InteractiveVisualization: React.FC = () => {
@@ -17,6 +17,8 @@ const InteractiveVisualization: React.FC = () => {
   const [linkCopied, setLinkCopied] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
+  const [countrySearchTerm, setCountrySearchTerm] = useState('');
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
   const metrics = {
     alcohol_rate: { 
@@ -38,6 +40,11 @@ const InteractiveVisualization: React.FC = () => {
     .sort();
 
   const availableYears = Array.from(new Set(researchData.map(d => d.year))).sort();
+
+  // Filter countries based on search term
+  const filteredCountries = availableCountries.filter(country =>
+    (countryNames[country] || country).toLowerCase().includes(countrySearchTerm.toLowerCase())
+  );
 
   // Simulate loading time and check for data
   useEffect(() => {
@@ -143,16 +150,18 @@ const InteractiveVisualization: React.FC = () => {
           
           if (!maleData || !femaleData) return null;
           
-          // Approximate 50-50 gender split for combined rate
-          const combinedRate = (parseFloat(maleData[selectedMetric]) + parseFloat(femaleData[selectedMetric])) / 2;
+          // Use actual population-weighted average (approximately 51% male, 49% female)
+          const maleRate = parseFloat(maleData[selectedMetric]);
+          const femaleRate = parseFloat(femaleData[selectedMetric]);
+          const combinedRate = (maleRate * 0.51) + (femaleRate * 0.49);
           
           return {
             country,
             year: selectedYear,
             sex: 'Combined' as const,
             [selectedMetric]: combinedRate.toString(),
-            alcohol_rate: '',
-            suicide_rate: '',
+            alcohol_rate: combinedRate.toString(),
+            suicide_rate: combinedRate.toString(),
             accident_rate: ''
           };
         }).filter(Boolean) as DataPoint[];
@@ -570,31 +579,92 @@ const InteractiveVisualization: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-8">
-              {/* Country Selection */}
+              {/* Country Selection - Improved */}
               <div>
                 <label className="flex items-center text-lg font-semibold text-gray-700 mb-4">
                   <Filter className="w-5 h-5 mr-2" />
                   Select Countries ({availableCountries.length} available)
                 </label>
-                <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto">
-                  {availableCountries.map(country => (
-                    <label key={country} className="flex items-center space-x-2 text-sm">
-                      <input
-                        type="checkbox"
-                        checked={selectedCountries.includes(country)}
-                        onChange={(e) => {
-                          if (e.target.checked) {
-                            setSelectedCountries([...selectedCountries, country]);
-                          } else {
-                            setSelectedCountries(selectedCountries.filter(c => c !== country));
-                          }
-                        }}
-                        className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                      />
-                      <span>{countryNames[country] || country}</span>
-                    </label>
-                  ))}
+                
+                {/* Search Input */}
+                <div className="relative mb-3">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <input
+                    type="text"
+                    placeholder="Search countries..."
+                    value={countrySearchTerm}
+                    onChange={(e) => setCountrySearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  />
                 </div>
+
+                {/* Dropdown Toggle */}
+                <button
+                  onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                  className="w-full flex items-center justify-between px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-700">
+                    {selectedCountries.length} countries selected
+                  </span>
+                  <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Scrollable Country List */}
+                {isCountryDropdownOpen && (
+                  <div className="mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                    <div className="p-2">
+                      <div className="grid grid-cols-1 gap-1">
+                        {filteredCountries.map(country => (
+                          <label key={country} className="flex items-center space-x-2 text-sm p-2 hover:bg-gray-50 rounded cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={selectedCountries.includes(country)}
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelectedCountries([...selectedCountries, country]);
+                                } else {
+                                  setSelectedCountries(selectedCountries.filter(c => c !== country));
+                                }
+                              }}
+                              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <span className="flex-1">{countryNames[country] || country}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                    {filteredCountries.length === 0 && (
+                      <div className="p-4 text-center text-gray-500 text-sm">
+                        No countries found matching "{countrySearchTerm}"
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Selected Countries Summary */}
+                {selectedCountries.length > 0 && (
+                  <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+                    <div className="text-xs text-blue-800 font-medium mb-2">Selected Countries:</div>
+                    <div className="flex flex-wrap gap-1">
+                      {selectedCountries.slice(0, 3).map(country => (
+                        <span key={country} className="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                          {countryNames[country] || country}
+                          <button
+                            onClick={() => setSelectedCountries(selectedCountries.filter(c => c !== country))}
+                            className="ml-1 text-blue-600 hover:text-blue-800"
+                          >
+                            ×
+                          </button>
+                        </span>
+                      ))}
+                      {selectedCountries.length > 3 && (
+                        <span className="text-xs text-blue-600">
+                          +{selectedCountries.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Metric Selection */}
@@ -695,7 +765,7 @@ const InteractiveVisualization: React.FC = () => {
                     </span>
                   </div>
                   <p className="text-sm text-gray-700">
-                    <strong>{metrics[selectedMetric].label}:</strong> {hoveredData[selectedMetric]} {metrics[selectedMetric].unit}
+                    <strong>{metrics[selectedMetric].label}:</strong> {parseFloat(hoveredData[selectedMetric]).toFixed(2)} {metrics[selectedMetric].unit}
                   </p>
                   <p className="text-xs text-gray-500 mt-1">Year: {hoveredData.year}</p>
                 </div>

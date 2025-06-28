@@ -82,35 +82,6 @@ const CorrelationExplanation: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Audience Selector */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
-          <div className="bg-white rounded-xl p-2 shadow-lg">
-            {audiences.map((audience) => (
-              <button
-                key={audience.id}
-                onClick={() => setActiveAudience(audience.id as any)}
-                className={`flex items-center px-6 py-3 rounded-lg transition-all duration-300 ${
-                  activeAudience === audience.id
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 hover:bg-gray-50'
-                }`}
-              >
-                {audience.icon}
-                <div className="ml-3 text-left">
-                  <div className="font-semibold">{audience.label}</div>
-                  <div className="text-xs opacity-75">{audience.description}</div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Real-World Impact */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -151,7 +122,7 @@ const CorrelationExplanation: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Audience-Specific Content */}
+        {/* What is Correlation Section with Audience Selector */}
         <motion.div
           key={activeAudience}
           initial={{ opacity: 0, x: 20 }}
@@ -159,6 +130,29 @@ const CorrelationExplanation: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-2xl p-8 shadow-lg mb-16"
         >
+          {/* Audience Selector - Now inside the section */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-100 rounded-xl p-2 shadow-sm">
+              {audiences.map((audience) => (
+                <button
+                  key={audience.id}
+                  onClick={() => setActiveAudience(audience.id as any)}
+                  className={`flex items-center px-4 py-3 rounded-lg transition-all duration-300 mr-2 last:mr-0 ${
+                    activeAudience === audience.id
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {audience.icon}
+                  <div className="ml-3 text-left">
+                    <div className="font-semibold text-sm">{audience.label}</div>
+                    <div className="text-xs opacity-75">{audience.description}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
           {activeAudience === 'general' && (
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -287,9 +281,9 @@ const CorrelationExplanation: React.FC = () => {
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-2">Statistical Results</h5>
                     <ul className="text-gray-700 text-sm space-y-1">
-                      <li>• Males: r = 0.76 (p &lt; 0.001)</li>
-                      <li>• Females: r = 0.49 (p &lt; 0.001)</li>
-                      <li>• Combined: r = 0.68 (p &lt; 0.001)</li>
+                      <li>• Males: r = 0.76 (p < 0.001)</li>
+                      <li>• Females: r = 0.49 (p < 0.001)</li>
+                      <li>• Combined: r = 0.68 (p < 0.001)</li>
                       <li>• Effect size: Large (Cohen's conventions)</li>
                       <li>• 95% CI: [0.71, 0.81] for males</li>
                     </ul>
