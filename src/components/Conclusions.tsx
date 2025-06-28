@@ -8,21 +8,21 @@ const Conclusions: React.FC = () => {
       icon: <Target className="w-6 h-6" />,
       title: "Male-Focused Mental Health Programs",
       description: "Develop interventions that address masculine stigma and provide alternative pathways to support.",
-      impact: "25% reduction in alcohol mortality",
+      evidence: "Research shows men are 3x less likely to seek help",
       priority: "Critical"
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Workplace Mental Health",
       description: "Target male-dominated industries with comprehensive mental health support systems.",
-      impact: "15-20% reduction in suicide rates",
+      evidence: "Male-dominated occupations show higher suicide rates",
       priority: "High"
     },
     {
       icon: <ArrowRight className="w-6 h-6" />,
       title: "Integrated Treatment",
       description: "Address alcohol and mental health together, not as separate issues.",
-      impact: "40% better outcomes",
+      evidence: "74% of male suicides involve alcohol vs 31% for females",
       priority: "Essential"
     }
   ];
@@ -38,11 +38,11 @@ const Conclusions: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Solutions That Work
+            What the Data Demands
           </h2>
           <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-            The data shows the problem. Research shows the solutions. 
-            Now we need the will to act.
+            The correlation is clear. The crisis is real. 
+            These evidence-based approaches offer a path forward.
           </p>
         </motion.div>
 
@@ -75,8 +75,8 @@ const Conclusions: React.FC = () => {
                     </span>
                   </div>
                   <p className="text-purple-200 leading-relaxed mb-3">{solution.description}</p>
-                  <div className="text-xs text-green-300 bg-green-500/20 p-2 rounded border border-green-500/30">
-                    <strong>Proven Impact:</strong> {solution.impact}
+                  <div className="text-xs text-blue-300 bg-blue-500/20 p-2 rounded border border-blue-500/30">
+                    <strong>Evidence:</strong> {solution.evidence}
                   </div>
                 </div>
               </div>
@@ -92,10 +92,10 @@ const Conclusions: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">Every Day of Delay Costs Lives</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Clear</h3>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
-            This research provides a roadmap for addressing Europe's hidden mental health crisis. 
-            The correlation is clear, the solutions are proven—now we need action.
+            Our analysis reveals a hidden crisis: alcohol-related deaths among men correlate strongly with suicide rates (r=0.76). 
+            This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
           </p>
           
           <button className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
