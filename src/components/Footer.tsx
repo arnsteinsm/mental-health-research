@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span>{countryCount} European Countries</span>
               <span>•</span>
-              <span>2011-2018 Analysis</span>
+              <span>2011-2022 Analysis</span>
               <span>•</span>
               <span>Open Data Initiative</span>
             </div>
