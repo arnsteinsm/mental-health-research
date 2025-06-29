@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { AlertCircle, AlertTriangle, BarChart3, Database, TrendingUp } from 'lucide-react';
 import type React from 'react';
-import { calculateCorrelations, calculateGenderRatio, countryNames } from '../data';
+import { calculateCorrelations, calculateGenderRatio, countryNames, datasetStats } from '../data';
 import { useResearchData } from '../services/data-service';
 
 const ExecutiveSummary: React.FC = () => {
@@ -138,7 +138,7 @@ const ExecutiveSummary: React.FC = () => {
             <div className="flex-1">
               <h3 className="font-semibold text-amber-800">Data Completeness Notice</h3>
               <p className="mt-2 text-sm text-amber-700">
-                This analysis includes <strong>783 mortality records</strong> from 34 European
+                This analysis includes <strong>{datasetStats.totalRecords} mortality records</strong> from 34 European
                 countries (2011-2022). Data completeness is <strong>95.9%</strong> with{' '}
                 <strong>33 missing combinations</strong> primarily affecting female records and
                 small countries (UK missing 2019-2022 due to Brexit, Liechtenstein and Malta have
