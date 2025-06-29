@@ -48,7 +48,8 @@ const InteractiveVisualization: React.FC = () => {
   };
 
   const availableCountries = Object.keys(countryNames);
-  const availableYears = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'];
+  // Updated to show full dataset range: 2011-2022
+  const availableYears = ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'];
 
   // Filter countries based on search term
   const filteredCountries = availableCountries.filter(country =>
@@ -382,9 +383,9 @@ const InteractiveVisualization: React.FC = () => {
         };
       });
 
-      // Create scales
+      // Create scales - Updated to show full range 2011-2022
       const xScale = d3.scaleLinear()
-        .domain([2013, 2022])
+        .domain([2011, 2022])
         .range([0, width]);
 
       const allValues = timeSeriesData.flatMap(d => [...d.male.map(v => v.value), ...d.female.map(v => v.value)]);
@@ -572,7 +573,7 @@ const InteractiveVisualization: React.FC = () => {
             Interactive Data Exploration
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Explore the full decade (2013-2022) of data across {availableCountries.length} European countries. 
+            Explore the full dataset (2011-2022) across {availableCountries.length} European countries. 
             Discover gender disparities and temporal trends with age-standardized rates per 100,000 population.
           </p>
         </motion.div>
@@ -806,8 +807,9 @@ const InteractiveVisualization: React.FC = () => {
 
                 {viewMode === 'timeseries' && (
                   <div className="text-sm text-gray-600 bg-blue-50 p-3 rounded">
-                    <strong>Note:</strong> Time series shows both male (solid line) and female (dashed line) trends. 
-                    This highlights the gender disparities in our analysis.
+                    <strong>Note:</strong> Time series shows both male (solid line) and female (dashed line) trends 
+                    across the full dataset period (2011-2022). This highlights the persistent gender disparities 
+                    throughout the entire analysis period.
                   </div>
                 )}
               </div>
@@ -856,20 +858,22 @@ const InteractiveVisualization: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-r from-red-50 to-purple-50 rounded-xl p-6 border border-red-200"
         >
-          <h3 className="text-xl font-bold text-gray-900 mb-3">Decade-Long Insights</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Full Dataset Insights (2011-2022)</h3>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <h4 className="font-semibold text-gray-800 mb-2">Persistent Gender Disparities</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Across the full decade (2013-2022), men consistently show dramatically higher rates in both 
-                alcohol and suicide metrics. This pattern persists across all countries and years.
+                Across the complete 12-year dataset (2011-2022), men consistently show dramatically higher rates in both 
+                alcohol and suicide metrics. This pattern persists across all countries and years, demonstrating the 
+                systemic nature of this crisis.
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-gray-800 mb-2">Strong Correlation Evidence</h4>
               <p className="text-gray-700 text-sm leading-relaxed">
-                The decade-long dataset strengthens our correlation findings, showing that where alcohol 
-                deaths are high, suicide rates follow—particularly among men (r = 0.76).
+                The extended dataset strengthens our correlation findings, showing that where alcohol 
+                deaths are high, suicide rates follow—particularly among men. This relationship remains 
+                consistent throughout the entire analysis period.
               </p>
             </div>
           </div>
