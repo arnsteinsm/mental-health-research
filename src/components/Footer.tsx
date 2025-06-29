@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Database, BarChart3 } from 'lucide-react';
-import { ACTUAL_DATASET_INFO } from '../data/actual-dataset-verification';
+import { ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 
 const Footer: React.FC = () => {
   // Use verified dataset information
