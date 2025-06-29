@@ -191,10 +191,6 @@ const Footer: React.FC = () => {
               Data analysis for public health advocacy • Built with Bolt
             </div>
             
-            {/* NEW: Updated CTA heading */}
-            <div className="text-sm text-purple-300 font-medium">
-              Your Voice Can Change the Data
-            </div>
           </div>
           
           <div className="mt-4 text-xs text-gray-500 text-center">
