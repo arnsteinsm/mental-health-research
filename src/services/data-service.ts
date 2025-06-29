@@ -127,7 +127,7 @@ export { countryNames };
 // Export dataset stats for backward compatibility
 export const datasetStats = {
   totalRecords: 0, // Will be populated by useDatasetStats hook
-  countries: Object.keys(countryNames),
+  countries: [], // Will be populated by useDatasetStats hook
   years: [], // Will be populated by useDatasetStats hook
   yearRange: { start: 2011, end: 2022 },
   genderSplit: { male: 0, female: 0 }
