@@ -37,25 +37,14 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-2xl md:text-3xl text-purple-200 mb-8 leading-relaxed font-medium"
+            className="text-2xl md:text-3xl text-purple-200 mb-12 leading-relaxed font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Alcohol-related deaths reveal a hidden mental health crisis—especially among men.
+            Men are dying from alcohol at {CORRECTED_DISPLAY.genderRatio}x the rate of women.<br/>
+            This isn't just about drinking—it's about mental health.
           </motion.p>
-
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <p className="text-lg text-purple-100 leading-relaxed">
-              Men are dying from alcohol at <strong className="text-yellow-300">{CORRECTED_DISPLAY.genderRatio}x the rate of women</strong> across Europe. 
-              This isn't just about drinking—our analysis reveals the mental health signals often missed.
-            </p>
-          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"

@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import InteractiveVisualization from './components/InteractiveVisualization';
 import GenderAnalysis from './components/GenderAnalysis';
-import ImpactStatement from './components/ImpactStatement';
 import Conclusions from './components/Conclusions';
 import Footer from './components/Footer';
 import ShareButton from './components/ShareButton';
@@ -24,7 +23,6 @@ function App() {
       <div id="gender-analysis">
         <GenderAnalysis />
       </div>
-      <ImpactStatement />
       <div id="conclusions">
         <Conclusions />
       </div>
