@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Megaphone, Share2 } from 'lucide-react';
 import type React from 'react';
+import { calculateGenderRatio, datasetStats } from '../data';
+import { useResearchData } from '../services/data-service';
 
 interface CallToActionProps {
   variant?: 'header' | 'footer';
@@ -10,11 +12,19 @@ interface CallToActionProps {
 }
 
 const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', className = '' }) => {
+  // Get live data and calculate ratio
+  const { data: researchData = [] } = useResearchData();
+  const genderRatio =
+    researchData.length > 0
+      ? calculateGenderRatio(researchData)
+      : datasetStats.genderRatios.averageRatio;
+  const displayRatio = Math.round(genderRatio * 10) / 10;
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
         title: 'Behind the Drink: European Mental Health Crisis',
-        text: 'Men are dying from alcohol at 3.7x the rate of women. This analysis reveals the hidden mental health crisis.',
+        text: `Men are dying from alcohol at ${displayRatio}x the rate of women. This analysis reveals the hidden mental health crisis.`,
         url: window.location.href,
       });
     } else {

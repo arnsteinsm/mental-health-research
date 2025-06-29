@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Check, Copy, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
+import { calculateGenderRatio, datasetStats } from '../data';
+import { useResearchData } from '../services/data-service';
 
 interface ShareButtonProps {
   variant?: 'floating' | 'inline';
@@ -12,8 +14,16 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  // Get live data and calculate ratio
+  const { data: researchData = [] } = useResearchData();
+  const genderRatio =
+    researchData.length > 0
+      ? calculateGenderRatio(researchData)
+      : datasetStats.genderRatios.averageRatio;
+  const displayRatio = Math.round(genderRatio * 10) / 10;
+
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const title = 'Behind the Drink: Men are dying from alcohol at 3.7x the rate of women';
+  const title = `Behind the Drink: Men are dying from alcohol at ${displayRatio}x the rate of women`;
   const description =
     "This isn't just about drinking—it's about mental health. New analysis reveals the hidden crisis behind European alcohol mortality data.";
 

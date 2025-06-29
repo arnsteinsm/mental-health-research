@@ -1,3 +1,5 @@
+// src/data/index.ts
+
 // Mental Health Research Data - Hybrid JSON Architecture
 // Lightning-fast static JSON with optional edge functions
 
@@ -118,6 +120,37 @@ export const datasetStats = {
     female: femaleRecords,
     ratio: Number.parseFloat((maleRecords / femaleRecords).toFixed(2)),
   },
+  completeness: {
+    totalPossible: countries.length * years.length * 2, // 34 countries * 12 years * 2 genders
+    totalActual: aggrData.length,
+    missingCount: countries.length * years.length * 2 - aggrData.length,
+    completenessRate: Number.parseFloat(
+      ((aggrData.length / (countries.length * years.length * 2)) * 100).toFixed(1)
+    ),
+    missingFemaleMultiplier: Number.parseFloat(
+      (
+        (countries.length * years.length - femaleRecords) /
+        (countries.length * years.length - maleRecords)
+      ).toFixed(2)
+    ),
+  },
+  populationWeights: {
+    // Calculate average population weights from the data
+    maleWeight: Number.parseFloat(
+      (
+        maleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0) /
+        (maleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0) +
+          femaleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0))
+      ).toFixed(3)
+    ),
+    femaleWeight: Number.parseFloat(
+      (
+        femaleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0) /
+        (maleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0) +
+          femaleData.reduce((sum, d) => sum + Number.parseFloat(d.population_over_15), 0))
+      ).toFixed(3)
+    ),
+  },
   correlations: {
     male: {
       alcoholSuicide: Number.parseFloat(
@@ -145,7 +178,7 @@ export const datasetStats = {
 
 // Correlation display constants for UI components
 export const CORRELATION_DISPLAY = {
-  correlation: `Strong Positive Correlation (r=${datasetStats.correlations.overall.alcoholSuicide})`,
+  correlation: `Strong Positive Correlation (r=${datasetStats.correlations.overall.alcoholSuicide.toFixed(2)})`,
   strength: 'statistically significant',
   countries: `${datasetStats.countries.length} European countries`,
 };

@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { countryNames } from '../data';
+import { countryNames, datasetStats } from '../data';
 import { useResearchData } from '../services/data-service';
 import { useGeoDetection } from '../services/geo-service';
 import LoadingSpinner from './LoadingSpinner';
@@ -168,7 +168,9 @@ const InteractiveVisualization: React.FC = () => {
 
           const maleRate = Number.parseFloat(maleData[selectedMetric]);
           const femaleRate = Number.parseFloat(femaleData[selectedMetric]);
-          const combinedRate = maleRate * 0.51 + femaleRate * 0.49;
+          const combinedRate =
+            maleRate * datasetStats.populationWeights.maleWeight +
+            femaleRate * datasetStats.populationWeights.femaleWeight;
 
           return {
             country,

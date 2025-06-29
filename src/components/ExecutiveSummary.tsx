@@ -1,3 +1,5 @@
+// src/components/ExecutiveSummary.tsx
+
 import { motion } from 'framer-motion';
 import { AlertCircle, AlertTriangle, BarChart3, Database, TrendingUp } from 'lucide-react';
 import type React from 'react';
@@ -11,14 +13,22 @@ const ExecutiveSummary: React.FC = () => {
   // Calculate live statistics from actual data
   const totalRecords = researchData.length;
   const totalCountries = Object.keys(countryNames).length;
-  const genderRatio = researchData.length > 0 ? calculateGenderRatio(researchData) : 3.7;
+  const genderRatio =
+    researchData.length > 0
+      ? calculateGenderRatio(researchData)
+      : datasetStats.genderRatios.averageRatio;
   const correlations =
     researchData.length > 0
       ? calculateCorrelations(researchData)
-      : { male: 0.76, female: 0.45, combined: 0.68 };
+      : {
+          male: datasetStats.correlations.male.alcoholSuicide,
+          female: datasetStats.correlations.female.alcoholSuicide,
+          overall: datasetStats.correlations.overall.alcoholSuicide,
+        };
 
-  // Round values for display
+  // Round values for display - use overall correlation (strongest evidence)
   const displayRatio = Math.round(genderRatio * 10) / 10;
+  const displayOverallCorr = Math.round(correlations.overall * 100) / 100;
   const displayMaleCorr = Math.round(correlations.male * 100) / 100;
   const displayFemaleCorr = Math.round(correlations.female * 100) / 100;
   const keyStats = [
@@ -33,12 +43,12 @@ const ExecutiveSummary: React.FC = () => {
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: `r = ${displayMaleCorr}`,
+      title: `r = ${displayOverallCorr}`,
       subtitle: 'Statistically linked to suicide',
       description:
         'Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.',
       microExplanation:
-        'Pearson correlation between alcohol mortality and suicide rates (2011-2022, men only)',
+        'Pearson correlation between alcohol mortality and suicide rates (2011-2022, overall)',
       color: 'from-purple-500 to-purple-600',
     },
     {
@@ -65,8 +75,9 @@ const ExecutiveSummary: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Hidden Crisis</h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Analysis of {totalRecords} mortality records from {totalCountries} European countries
-            (2011-2022) reveals that male alcohol mortality isn't just about drinking— it's a
-            symptom of a deeper mental health emergency.
+            (2011-2022) reveals a strong correlation (r={displayOverallCorr}) between alcohol and
+            suicide mortality, driven primarily by male patterns. This isn't just about drinking—
+            it's a male mental health emergency.
           </p>
         </motion.div>
 
@@ -122,6 +133,7 @@ const ExecutiveSummary: React.FC = () => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Key Findings</h4>
               <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Overall correlation: r = {displayOverallCorr} (driven by male patterns)</li>
                 <li>• Male correlation: r = {displayMaleCorr} (strong)</li>
                 <li>• Female correlation: r = {displayFemaleCorr} (moderate)</li>
                 <li>• {displayRatio}x gender disparity in alcohol mortality</li>
@@ -138,16 +150,19 @@ const ExecutiveSummary: React.FC = () => {
             <div className="flex-1">
               <h3 className="font-semibold text-amber-800">Data Completeness Notice</h3>
               <p className="mt-2 text-sm text-amber-700">
-                This analysis includes <strong>{datasetStats.totalRecords} mortality records</strong> from 34 European
-                countries (2011-2022). Data completeness is <strong>95.9%</strong> with{' '}
-                <strong>33 missing combinations</strong> primarily affecting female records and
-                small countries (UK missing 2019-2022 due to Brexit, Liechtenstein and Malta have
-                gaps due to small populations). Missing data is 3.13× more likely to be female
+                This analysis includes{' '}
+                <strong>{datasetStats.totalRecords} mortality records</strong> from {totalCountries}{' '}
+                European countries (2011-2022). Data completeness is{' '}
+                <strong>{datasetStats.completeness.completenessRate}%</strong> with{' '}
+                <strong>{datasetStats.completeness.missingCount} missing combinations</strong>{' '}
+                primarily affecting female records and small countries (UK missing 2019-2022 due to
+                Brexit, Liechtenstein and Malta have gaps due to small populations). Missing data is{' '}
+                {datasetStats.completeness.missingFemaleMultiplier}× more likely to be female
                 records.
               </p>
               <p className="mt-2 text-sm text-amber-700">
-                <strong>For rigorous analysis:</strong> Consider using only the 25 complete
-                countries (600 records, 100% coverage).
+                <strong>For rigorous analysis:</strong> Consider using only complete countries with
+                full coverage.
                 <strong>For maximum sample:</strong> Use all countries with missing data notation as
                 shown.
               </p>

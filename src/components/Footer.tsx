@@ -83,11 +83,8 @@ const Footer: React.FC = () => {
                 <h5 className="text-white font-medium text-sm mb-2">Key Findings</h5>
                 <ul className="text-gray-400 text-xs space-y-1">
                   <li>
-                    •{' '}
-                    <strong className="text-white underline decoration-red-500 decoration-4">
-                      Strong correlation (r={correlations.male.toFixed(2)})
-                    </strong>{' '}
-                    between alcohol and suicide mortality (men)
+                    • Strong correlation (r={correlations.overall.toFixed(2)}) between alcohol and
+                    suicide mortality
                   </li>
                   <li>• Men show {genderRatio}x higher alcohol-related death rates than women</li>
                   <li>• Consistent patterns across all {countryCount} European countries</li>

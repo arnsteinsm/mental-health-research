@@ -1,6 +1,8 @@
+// src/components/Hero.tsx
+
 import { motion } from 'framer-motion';
 import type React from 'react';
-import { calculateGenderRatio } from '../data';
+import { calculateGenderRatio, datasetStats } from '../data';
 import { useResearchData } from '../services/data-service';
 
 const Hero: React.FC = () => {
@@ -8,7 +10,10 @@ const Hero: React.FC = () => {
   const { data: researchData = [] } = useResearchData();
 
   // Calculate live gender ratio from actual data
-  const genderRatio = researchData.length > 0 ? calculateGenderRatio(researchData) : 3.7;
+  const genderRatio =
+    researchData.length > 0
+      ? calculateGenderRatio(researchData)
+      : datasetStats.genderRatios.averageRatio;
   const displayRatio = Math.round(genderRatio * 10) / 10; // Round to 1 decimal
 
   return (
@@ -50,7 +55,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Alcohol-related deaths reveal a hidden mental health crisis — especially among men.
+            Alcohol-related deaths reveal a hidden mental health crisis, especially among men.
             <br />
             <span className="text-yellow-300">
               Men are dying at {displayRatio}x the rate of women.
