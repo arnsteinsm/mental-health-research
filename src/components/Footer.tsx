@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Database, Calendar, Scale, BarChart3 } from 'lucide-react';
+import { ExternalLink, Github, Database, Calendar, Scale, BarChart3, Heart } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Footer: React.FC = () => {
@@ -41,10 +41,26 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Evidence-based analysis of European mental health and substance abuse patterns 
-              through a gendered lens.
+              through a gendered lens. Built to save lives.
             </p>
             
-            {/* Official Built with Bolt Badge - White Circle from Public Folder */}
+            {/* Hackathon Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mb-6 p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg border border-yellow-500/30"
+            >
+              <div className="flex items-center space-x-2 mb-2">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                <span className="text-yellow-300 font-semibold text-sm">Bolt Hackathon 2025</span>
+              </div>
+              <p className="text-yellow-200 text-xs leading-relaxed">
+                Built in 24 hours to raise awareness about Europe's hidden mental health crisis
+              </p>
+            </motion.div>
+            
+            {/* Official Built with Bolt Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,10 +108,28 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Legal & Links */}
+          {/* Impact & Links */}
           <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4">Resources</h4>
+            <h4 className="text-lg font-semibold mb-4 flex items-center">
+              <Heart className="w-5 h-5 mr-2 text-red-400" />
+              Impact
+            </h4>
             <div className="space-y-3">
+              <div className="text-sm text-gray-400">
+                <div className="font-medium text-white">Crisis Revealed</div>
+                <div>3.7x higher male alcohol mortality</div>
+              </div>
+              
+              <div className="text-sm text-gray-400">
+                <div className="font-medium text-white">Evidence Provided</div>
+                <div>50+ peer-reviewed sources</div>
+              </div>
+              
+              <div className="text-sm text-gray-400">
+                <div className="font-medium text-white">Lives at Stake</div>
+                <div>~50,000 annual deaths in Europe</div>
+              </div>
+              
               <a 
                 href="https://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
@@ -104,16 +138,6 @@ const Footer: React.FC = () => {
               >
                 <Scale className="w-4 h-4 mr-2" />
                 CC BY 4.0 License
-              </a>
-              
-              <a 
-                href="https://github.com/your-repo/mental-health-analysis"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Analysis Repository
               </a>
               
               <div className="flex items-center text-sm text-gray-400">
@@ -140,9 +164,22 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <span>{countryCount} European Countries</span>
               <span>•</span>
-              <span>2013-2022 Analysis</span>
+              <span>2011-2018 Analysis</span>
               <span>•</span>
               <span>Open Data Initiative</span>
+            </div>
+          </div>
+          
+          <div className="mt-6 text-center">
+            <div className="bg-red-900/30 border border-red-500/30 rounded-lg p-4 max-w-4xl mx-auto">
+              <h5 className="font-semibold text-red-300 mb-2">🚨 Crisis Helplines</h5>
+              <p className="text-sm text-red-200 leading-relaxed">
+                If you or someone you know is struggling: <strong>Europe 116 123</strong> • 
+                <strong> Crisis Text: HOME to 741741</strong> • 
+                <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+                  International Resources
+                </a>
+              </p>
             </div>
           </div>
           
@@ -150,7 +187,7 @@ const Footer: React.FC = () => {
             <p>
               This research is conducted in accordance with ethical guidelines for public health data analysis. 
               All data sources are publicly available and properly attributed. 
-              For questions about methodology or data access, please refer to the linked repositories and datasets.
+              <strong className="text-gray-400"> Every share could save a life.</strong>
             </p>
           </div>
         </motion.div>

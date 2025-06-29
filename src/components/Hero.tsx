@@ -95,6 +95,23 @@ const Hero: React.FC = () => {
               Jump to Solutions
             </button>
           </motion.div>
+
+          {/* Hackathon Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="mt-12 flex justify-center"
+          >
+            <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 backdrop-blur-sm border border-yellow-400/30 rounded-full px-6 py-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                <span className="text-yellow-200 font-medium text-sm">
+                  Built for Bolt Hackathon 2025 • Saving Lives Through Data
+                </span>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
