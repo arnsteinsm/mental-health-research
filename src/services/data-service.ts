@@ -32,27 +32,28 @@ export interface NestedData {
 }
 
 // Smart Data Service - all client-side, blazing fast
+// biome-ignore lint/complexity/noStaticOnlyClass: Static class pattern works well for data utilities
 export class DataService {
   private static data: EnhancedDataPoint[] = aggrData as EnhancedDataPoint[];
 
   // Get all data instantly
   static getAll(): EnhancedDataPoint[] {
-    return this.data;
+    return DataService.data;
   }
 
   // Filter by country
   static getByCountry(country: string): EnhancedDataPoint[] {
-    return this.data.filter((d) => d.country === country);
+    return DataService.data.filter((d) => d.country === country);
   }
 
   // Filter by year
   static getByYear(year: string): EnhancedDataPoint[] {
-    return this.data.filter((d) => d.year === year);
+    return DataService.data.filter((d) => d.year === year);
   }
 
   // Filter by sex
   static getBySex(sex: 'M' | 'F'): EnhancedDataPoint[] {
-    return this.data.filter((d) => d.sex === sex);
+    return DataService.data.filter((d) => d.sex === sex);
   }
 
   // Complex filtering
@@ -61,14 +62,14 @@ export class DataService {
     years?: string[];
     sex?: 'M' | 'F' | 'both';
   }): EnhancedDataPoint[] {
-    let filtered = this.data;
+    let filtered = DataService.data;
 
     if (filters.countries?.length) {
-      filtered = filtered.filter((d) => filters.countries!.includes(d.country));
+      filtered = filtered.filter((d) => filters.countries?.includes(d.country));
     }
 
     if (filters.years?.length) {
-      filtered = filtered.filter((d) => filters.years!.includes(d.year));
+      filtered = filtered.filter((d) => filters.years?.includes(d.year));
     }
 
     if (filters.sex && filters.sex !== 'both') {
@@ -82,7 +83,7 @@ export class DataService {
   static getNestedData(): NestedData {
     const nested: NestedData = {};
 
-    this.data.forEach((record) => {
+    DataService.data.forEach((record) => {
       if (!nested[record.country]) nested[record.country] = {};
       if (!nested[record.country][record.year]) nested[record.country][record.year] = {};
 
@@ -96,7 +97,7 @@ export class DataService {
     });
 
     // Add totals (T) for each country/year combination
-    this.addTotalsToNested(nested);
+    DataService.addTotalsToNested(nested);
 
     return nested;
   }
@@ -155,21 +156,21 @@ export class DataService {
 
   // Get available countries
   static getAvailableCountries(): string[] {
-    return [...new Set(this.data.map((d) => d.country))].sort();
+    return [...new Set(DataService.data.map((d) => d.country))].sort();
   }
 
   // Get available years
   static getAvailableYears(): string[] {
-    return [...new Set(this.data.map((d) => d.year))].sort();
+    return [...new Set(DataService.data.map((d) => d.year))].sort();
   }
 
   // Get dataset statistics
   static getDatasetStats() {
-    const countries = this.getAvailableCountries();
-    const years = this.getAvailableYears();
+    const countries = DataService.getAvailableCountries();
+    const years = DataService.getAvailableYears();
 
     return {
-      totalRecords: this.data.length,
+      totalRecords: DataService.data.length,
       uniqueCountries: countries.length,
       countries,
       years,
@@ -178,8 +179,8 @@ export class DataService {
         end: Math.max(...years.map((y) => Number.parseInt(y, 10))),
       },
       genderSplit: {
-        male: this.data.filter((d) => d.sex === 'M').length,
-        female: this.data.filter((d) => d.sex === 'F').length,
+        male: DataService.data.filter((d) => d.sex === 'M').length,
+        female: DataService.data.filter((d) => d.sex === 'F').length,
       },
     };
   }

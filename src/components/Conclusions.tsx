@@ -1,7 +1,7 @@
 // src/components/Conclusions.tsx
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Megaphone, Share2, Target, Users } from 'lucide-react';
+import { ArrowRight, Target, Users } from 'lucide-react';
 import type React from 'react';
 import { CORRELATION_DISPLAY } from '../data';
 import EvidenceButton from './EvidenceButton';

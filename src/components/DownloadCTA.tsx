@@ -1,7 +1,7 @@
 // src/components/DownloadCTA.tsx
 
 import { motion } from 'framer-motion';
-import { BookOpen, Megaphone, Share2 } from 'lucide-react';
+import { Megaphone, Share2 } from 'lucide-react';
 import type React from 'react';
 
 interface CallToActionProps {
@@ -34,7 +34,7 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
         <button
           type="button"
           onClick={handleShare}
-          className="inline-flex items-center px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="inline-flex items-center px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
         >
           <Share2 className="w-4 h-4 mr-2" />
           Share Research
@@ -53,43 +53,33 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
     >
       <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
         <Megaphone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Your Voice Can Change the Data</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Your voice can{' '}
+          <strong className="underline decoration-red-500 decoration-4">change</strong> the data
+        </h3>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          This research provides a roadmap for addressing one of Europe's most pressing but hidden
-          health crises. Help raise awareness about this critical mental health crisis. Share this
-          research with policymakers, healthcare professionals, and advocates working on mental
-          health initiatives.
+          This analysis reveals an urgent but overlooked public health crisis in Europe. By
+          uncovering the gendered patterns behind alcohol-related deaths and mental health, we can
+          drive more targeted, evidence-based interventions.
         </p>
-
-        <div className="grid md:grid-cols-3 gap-4 mb-6 text-sm">
-          <div className="bg-blue-50 p-3 rounded-lg">
-            <div className="font-semibold text-blue-900">Evidence-Based</div>
-            <div className="text-blue-700">Peer-reviewed sources</div>
-          </div>
-          <div className="bg-purple-50 p-3 rounded-lg">
-            <div className="font-semibold text-purple-900">Open Access</div>
-            <div className="text-purple-700">Free to share & cite</div>
-          </div>
-          <div className="bg-green-50 p-3 rounded-lg">
-            <div className="font-semibold text-green-900">Action-Oriented</div>
-            <div className="text-green-700">Policy recommendations</div>
-          </div>
-        </div>
+        <h4 className="font-bold text-gray-600 mb-6 leading-relaxed">
+          <em>Behind every statistic is a life.</em>
+        </h4>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Share this with policymakers, health professionals, and mental health advocates. Your
+          voice can help shift policy, save lives, and elevate mental health as a societal priority.
+        </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             type="button"
             onClick={handleShare}
-            className="inline-flex items-center px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
           >
             <Share2 className="w-5 h-5 mr-3" />
             Share This Research
           </button>
         </div>
-
-        <p className="text-xs text-gray-500 mt-4">
-          Every share helps raise awareness about this critical public health issue
-        </p>
       </div>
     </motion.div>
   );

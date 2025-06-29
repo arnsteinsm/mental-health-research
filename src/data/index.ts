@@ -63,6 +63,7 @@ const femaleRecords = aggrData.filter((d) => d.sex === 'F').length;
 const maleData = aggrData.filter((d) => d.sex === 'M');
 const femaleData = aggrData.filter((d) => d.sex === 'F');
 
+// biome-ignore lint/suspicious/noExplicitAny: Generic correlation function needs to access dynamic properties
 function calculateCorrelation(data: any[], field1: string, field2: string): number {
   const pairs = data.map((d) => [Number.parseFloat(d[field1]), Number.parseFloat(d[field2])]);
   const validPairs = pairs.filter(([x, y]) => !Number.isNaN(x) && !Number.isNaN(y));
@@ -142,66 +143,52 @@ export const datasetStats = {
   },
 };
 
-// Research insights and metadata
-export const researchMetadata = {
-  title: 'European Mental Health and Alcohol Mortality Analysis',
-  description:
-    'Comprehensive analysis of alcohol-related and suicide mortality rates across 34 European countries (2011-2022)',
-  source: 'Hybrid JSON Architecture (Lightning Fast)',
-  dataSource: 'BigQuery → Enhanced JSON',
-  totalRecords: aggrData.length,
-  coverage: {
-    countries: countries.length,
-    years: years.length,
-    timespan: `${years[0]}-${years[years.length - 1]}`,
-  },
-  methodology: 'Age-standardized mortality rates per 100,000 population',
-  lastUpdated: new Date().toISOString().split('T')[0],
-  performance: 'Sub-millisecond access after initial load',
-};
-
 // Correlation display constants for UI components
 export const CORRELATION_DISPLAY = {
-  male: datasetStats.correlations.male.alcoholSuicide.toFixed(3),
-  female: datasetStats.correlations.female.alcoholSuicide.toFixed(3),
-  overall: datasetStats.correlations.overall.alcoholSuicide.toFixed(3),
+  correlation: `Strong Positive Correlation (r=${datasetStats.correlations.overall.alcoholSuicide})`,
+  strength: 'statistically significant',
+  countries: `${datasetStats.countries.length} European countries`,
 };
 
 // Helper functions for components
 export function calculateGenderRatio(data: EnhancedDataPoint[]): number {
-  const maleData = data.filter((d) => d.sex === 'M');
-  const femaleData = data.filter((d) => d.sex === 'F');
+  const maleDeaths = data
+    .filter((d) => d.sex === 'M')
+    .reduce((sum, d) => sum + Number.parseFloat(d.est_alcohol_deaths), 0);
 
-  if (maleData.length === 0 || femaleData.length === 0) return 0;
+  const femaleDeaths = data
+    .filter((d) => d.sex === 'F')
+    .reduce((sum, d) => sum + Number.parseFloat(d.est_alcohol_deaths), 0);
 
-  const avgMaleAlcohol =
-    maleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) / maleData.length;
-  const avgFemaleAlcohol =
-    femaleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) / femaleData.length;
-
-  return avgFemaleAlcohol > 0 ? avgMaleAlcohol / avgFemaleAlcohol : 0;
+  return Number.parseFloat((maleDeaths / femaleDeaths).toFixed(1));
 }
 
 export function calculateCorrelations(data: EnhancedDataPoint[]): {
+  overall: number;
   male: number;
   female: number;
-  combined: number;
 } {
-  const maleData = data.filter((d) => d.sex === 'M');
-  const femaleData = data.filter((d) => d.sex === 'F');
+  const overallCorr = calculateCorrelation(data, 'alcohol_rate', 'suicide_rate');
+  const maleCorr = calculateCorrelation(
+    data.filter((d) => d.sex === 'M'),
+    'alcohol_rate',
+    'suicide_rate'
+  );
+  const femaleCorr = calculateCorrelation(
+    data.filter((d) => d.sex === 'F'),
+    'alcohol_rate',
+    'suicide_rate'
+  );
 
   return {
-    male: calculateCorrelation(maleData, 'alcohol_rate', 'suicide_rate'),
-    female: calculateCorrelation(femaleData, 'alcohol_rate', 'suicide_rate'),
-    combined: calculateCorrelation(data, 'alcohol_rate', 'suicide_rate'),
+    overall: Number.parseFloat(overallCorr.toFixed(2)),
+    male: Number.parseFloat(maleCorr.toFixed(2)),
+    female: Number.parseFloat(femaleCorr.toFixed(2)),
   };
 }
 
-// Export the raw data for direct access
+// Export the raw data
 export { aggrData };
-
-// Legacy compatibility - keep existing exports
-export const mentalHealthData = aggrData;
 
 // Console logging for development
 if (import.meta.env.DEV) {

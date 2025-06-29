@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Target, Users } from 'lucide-react';
 import type React from 'react';
-import { CORRECTED_DISPLAY } from '../data';
+import { datasetStats } from '../services/data-service';
 
 const ImpactStatement: React.FC = () => {
   const coreMetrics = [
@@ -19,7 +19,7 @@ const ImpactStatement: React.FC = () => {
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: `${CORRECTED_DISPLAY.countries} Countries`,
+      title: `${datasetStats.countries.length} Countries`,
       subtitle: 'Consistent patterns across Europe',
       description: 'The crisis transcends borders and cultures',
     },

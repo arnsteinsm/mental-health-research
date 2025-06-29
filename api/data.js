@@ -1,176 +1,249 @@
-// api/data.js - Vercel Edge Function
-// Serves your beautiful JSON with flexible server-side querying
+// api/data.js
+// Mental Health & Alcohol Mortality Data API
 
 import aggrData from '../src/data/aggr_data.json';
+import { countryNames } from '../src/data/index.ts';
 
-export default function handler(req, res) {
-  // Enable CORS for your frontend
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-  
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-  
-  const { country, year, sex, format, limit } = req.query;
-  
-  try {
-    let filtered = [...aggrData];
-    
-    // Apply filters
-    if (country) {
-      const countries = Array.isArray(country) ? country : [country];
-      filtered = filtered.filter(d => countries.includes(d.country));
-    }
-    
-    if (year) {
-      const years = Array.isArray(year) ? year : [year];
-      filtered = filtered.filter(d => years.includes(d.year));
-    }
-    
-    if (sex && sex !== 'both') {
-      filtered = filtered.filter(d => d.sex === sex);
-    }
-    
-    // Apply limit
-    if (limit) {
-      const limitNum = Number.parseInt(limit, 10);
-      if (!isNaN(limitNum) && limitNum > 0) {
-        filtered = filtered.slice(0, limitNum);
-      }
-    }
-    
-    // Format response
-    if (format === 'nested') {
-      const nested = createNestedStructure(filtered);
-      return res.status(200).json(nested);
-    }
-    
-    if (format === 'stats') {
-      const stats = calculateStats(filtered);
-      return res.status(200).json(stats);
-    }
-    
-    // Default: return filtered array
-    res.status(200).json({
-      data: filtered,
-      count: filtered.length,
-      filters: { country, year, sex, format, limit }
-    });
-    
-  } catch (error) {
-    console.error('API Error:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-}
-
-// Helper: Create nested Country -> Year -> Sex structure
-function createNestedStructure(data) {
+// Transform flat data into nested structure for API responses
+function createNestedData() {
   const nested = {};
-  
-  data.forEach(record => {
+
+  aggrData.forEach((record) => {
     if (!nested[record.country]) nested[record.country] = {};
     if (!nested[record.country][record.year]) nested[record.country][record.year] = {};
-    
+
     nested[record.country][record.year][record.sex] = {
-      alcohol_rate: record.alcohol_rate,
-      suicide_rate: record.suicide_rate,
-      population_over_15: record.population_over_15,
-      est_alcohol_deaths: record.est_alcohol_deaths,
-      est_suicide_deaths: record.est_suicide_deaths
+      alcohol_rate: Number.parseFloat(record.alcohol_rate),
+      suicide_rate: Number.parseFloat(record.suicide_rate),
+      population_over_15: Number.parseInt(record.population_over_15),
+      est_alcohol_deaths: Number.parseFloat(record.est_alcohol_deaths),
+      est_suicide_deaths: Number.parseFloat(record.est_suicide_deaths),
     };
   });
-  
-  // Add totals (T) for each country/year
-  addTotalsToNested(nested);
-  
-  return nested;
-}
 
-// Helper: Add calculated totals
-function addTotalsToNested(nested) {
-  Object.keys(nested).forEach(country => {
-    Object.keys(nested[country]).forEach(year => {
+  // Add totals (T) for each country/year
+  Object.keys(nested).forEach((country) => {
+    Object.keys(nested[country]).forEach((year) => {
       const yearData = nested[country][year];
-      const maleData = yearData.M;
-      const femaleData = yearData.F;
-      
-      if (maleData && femaleData) {
-        const malePopulation = Number.parseFloat(maleData.population_over_15);
-        const femalePopulation = Number.parseFloat(femaleData.population_over_15);
-        const totalPopulation = malePopulation + femalePopulation;
-        
-        // Weighted averages for rates
-        const maleAlcoholRate = Number.parseFloat(maleData.alcohol_rate);
-        const femaleAlcoholRate = Number.parseFloat(femaleData.alcohol_rate);
-        const maleSuicideRate = Number.parseFloat(maleData.suicide_rate);
-        const femaleSuicideRate = Number.parseFloat(femaleData.suicide_rate);
-        
-        const totalAlcoholRate = (
-          (maleAlcoholRate * malePopulation + femaleAlcoholRate * femalePopulation) / totalPopulation
-        ).toFixed(2);
-        
-        const totalSuicideRate = (
-          (maleSuicideRate * malePopulation + femaleSuicideRate * femalePopulation) / totalPopulation
-        ).toFixed(2);
-        
-        // Sum estimated deaths
-        const totalAlcoholDeaths = (
-          Number.parseFloat(maleData.est_alcohol_deaths) + Number.parseFloat(femaleData.est_alcohol_deaths)
-        ).toFixed(1);
-        
-        const totalSuicideDeaths = (
-          Number.parseFloat(maleData.est_suicide_deaths) + Number.parseFloat(femaleData.est_suicide_deaths)
-        ).toFixed(1);
-        
+      const M = yearData.M;
+      const F = yearData.F;
+
+      if (M && F) {
+        const totalPop = M.population_over_15 + F.population_over_15;
+
         yearData.T = {
-          alcohol_rate: totalAlcoholRate,
-          suicide_rate: totalSuicideRate,
-          population_over_15: totalPopulation.toString(),
-          est_alcohol_deaths: totalAlcoholDeaths,
-          est_suicide_deaths: totalSuicideDeaths
+          alcohol_rate: Number.parseFloat(
+            (
+              (M.alcohol_rate * M.population_over_15 + F.alcohol_rate * F.population_over_15) /
+              totalPop
+            ).toFixed(2)
+          ),
+          suicide_rate: Number.parseFloat(
+            (
+              (M.suicide_rate * M.population_over_15 + F.suicide_rate * F.population_over_15) /
+              totalPop
+            ).toFixed(2)
+          ),
+          population_over_15: totalPop,
+          est_alcohol_deaths: Number.parseFloat(
+            (M.est_alcohol_deaths + F.est_alcohol_deaths).toFixed(1)
+          ),
+          est_suicide_deaths: Number.parseFloat(
+            (M.est_suicide_deaths + F.est_suicide_deaths).toFixed(1)
+          ),
         };
       }
     });
   });
+
+  return nested;
 }
 
-// Helper: Calculate statistics
-function calculateStats(data) {
-  const countries = [...new Set(data.map(d => d.country))];
-  const years = [...new Set(data.map(d => d.year))].sort();
-  
+const nestedData = createNestedData();
+const availableCountries = Object.keys(nestedData).sort();
+const availableYears = [...new Set(aggrData.map((d) => d.year))].sort();
+
+// Calculate summary statistics
+function calculateSummary(filters = {}) {
+  let filteredData = aggrData;
+
+  if (filters.country) {
+    filteredData = filteredData.filter((d) => d.country === filters.country);
+  }
+  if (filters.sex) {
+    filteredData = filteredData.filter((d) => d.sex === filters.sex);
+  }
+  if (filters.year) {
+    filteredData = filteredData.filter((d) => d.year === filters.year);
+  }
+
+  if (filteredData.length === 0) return null;
+
+  const alcoholRates = filteredData.map((d) => Number.parseFloat(d.alcohol_rate));
+  const suicideRates = filteredData.map((d) => Number.parseFloat(d.suicide_rate));
+
   return {
-    totalRecords: data.length,
-    uniqueCountries: countries.length,
-    countries: countries.sort(),
-    years,
-    yearRange: {
-      start: Math.min(...years.map(y => Number.parseInt(y, 10))),
-      end: Math.max(...years.map(y => Number.parseInt(y, 10)))
+    records: filteredData.length,
+    alcohol_rate: {
+      average: Number.parseFloat(
+        (alcoholRates.reduce((a, b) => a + b, 0) / alcoholRates.length).toFixed(2)
+      ),
+      min: Math.min(...alcoholRates),
+      max: Math.max(...alcoholRates),
     },
-    genderSplit: {
-      male: data.filter(d => d.sex === 'M').length,
-      female: data.filter(d => d.sex === 'F').length
+    suicide_rate: {
+      average: Number.parseFloat(
+        (suicideRates.reduce((a, b) => a + b, 0) / suicideRates.length).toFixed(2)
+      ),
+      min: Math.min(...suicideRates),
+      max: Math.max(...suicideRates),
     },
-    avgAlcoholRate: {
-      male: calculateAverage(data.filter(d => d.sex === 'M'), 'alcohol_rate'),
-      female: calculateAverage(data.filter(d => d.sex === 'F'), 'alcohol_rate')
+    total_estimated_deaths: {
+      alcohol: Number.parseFloat(
+        filteredData.reduce((sum, d) => sum + Number.parseFloat(d.est_alcohol_deaths), 0).toFixed(1)
+      ),
+      suicide: Number.parseFloat(
+        filteredData.reduce((sum, d) => sum + Number.parseFloat(d.est_suicide_deaths), 0).toFixed(1)
+      ),
     },
-    avgSuicideRate: {
-      male: calculateAverage(data.filter(d => d.sex === 'M'), 'suicide_rate'),
-      female: calculateAverage(data.filter(d => d.sex === 'F'), 'suicide_rate')
-    }
   };
 }
 
-// Helper: Calculate average
-function calculateAverage(data, field) {
-  const values = data.map(d => Number.parseFloat(d[field])).filter(v => !isNaN(v));
-  return values.length > 0 ? (values.reduce((a, b) => a + b, 0) / values.length).toFixed(2) : 0;
-} 
+// Main API handler
+export default function handler(req, res) {
+  const { method, url } = req;
+  const path = new URL(url, `http://${req.headers.host}`).pathname;
+  const searchParams = new URL(url, `http://${req.headers.host}`).searchParams;
+
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    // Route handling
+    if (path === '/') {
+      return res.json({
+        message: 'Behind the Drink API - Mental Health & Alcohol Dataset',
+        version: '1.0.0',
+        description: 'European mental health and alcohol mortality data (2011-2022)',
+        endpoints: {
+          '/': 'API information',
+          '/countries': 'List available countries',
+          '/data/:country': 'Get all data for a country',
+          '/data/:country/:year': 'Get data for country and year',
+          '/summary': 'Dataset statistics',
+          '/metadata': 'Dataset metadata',
+        },
+        documentation: 'https://behind-the-drink.xyz',
+        source: 'Hybrid JSON Architecture - Lightning Fast',
+      });
+    }
+
+    if (path === '/countries') {
+      return res.json({
+        countries: availableCountries,
+        count: availableCountries.length,
+        names: countryNames,
+      });
+    }
+
+    if (path === '/metadata') {
+      return res.json({
+        dataset: {
+          title: 'European Mental Health and Alcohol Mortality Analysis',
+          description: 'Age-standardized mortality rates per 100,000 population',
+          coverage: {
+            countries: availableCountries.length,
+            years: availableYears.length,
+            timespan: `${availableYears[0]}-${availableYears[availableYears.length - 1]}`,
+            total_records: aggrData.length,
+          },
+          methodology: 'BigQuery → Enhanced JSON',
+          last_updated: new Date().toISOString().split('T')[0],
+          license: 'CC BY 4.0',
+        },
+      });
+    }
+
+    if (path === '/summary') {
+      const country = searchParams.get('country');
+      const sex = searchParams.get('sex');
+      const year = searchParams.get('year');
+
+      const summary = calculateSummary({ country, sex, year });
+
+      if (!summary) {
+        return res.status(404).json({ error: 'No data found for specified filters' });
+      }
+
+      return res.json({
+        filters: { country, sex, year },
+        summary,
+      });
+    }
+
+    // Handle /data/:country and /data/:country/:year
+    const dataMatch = path.match(/^\/data\/([A-Z]{2})(?:\/(\d{4}))?$/);
+    if (dataMatch) {
+      const [, country, year] = dataMatch;
+
+      if (!nestedData[country]) {
+        return res.status(404).json({
+          error: `Country '${country}' not found`,
+          available_countries: availableCountries,
+        });
+      }
+
+      if (year) {
+        if (!nestedData[country][year]) {
+          return res.status(404).json({
+            error: `Data for ${country} in ${year} not found`,
+            available_years: Object.keys(nestedData[country]).sort(),
+          });
+        }
+
+        return res.json({
+          country,
+          country_name: countryNames[country] || country,
+          year,
+          data: nestedData[country][year],
+        });
+      }
+
+      return res.json({
+        country,
+        country_name: countryNames[country] || country,
+        years: Object.keys(nestedData[country]).sort(),
+        data: nestedData[country],
+      });
+    }
+
+    // 404 for unknown routes
+    return res.status(404).json({
+      error: 'Endpoint not found',
+      available_endpoints: [
+        '/',
+        '/countries',
+        '/data/:country',
+        '/data/:country/:year',
+        '/summary',
+        '/metadata',
+      ],
+    });
+  } catch (error) {
+    console.error('API Error:', error);
+    return res.status(500).json({
+      error: 'Internal server error',
+      message: error.message,
+    });
+  }
+}

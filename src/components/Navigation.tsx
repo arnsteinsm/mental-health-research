@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { BarChart3, Menu, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 import CallToAction from './DownloadCTA';
 
 const Navigation: React.FC = () => {

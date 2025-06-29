@@ -6,7 +6,7 @@ import { useResearchData } from '../services/data-service';
 
 const ExecutiveSummary: React.FC = () => {
   // Get live data from Supabase
-  const { data: researchData = [], isLoading } = useResearchData();
+  const { data: researchData = [] } = useResearchData();
 
   // Calculate live statistics from actual data
   const totalRecords = researchData.length;
@@ -37,7 +37,8 @@ const ExecutiveSummary: React.FC = () => {
       subtitle: 'Statistically linked to suicide',
       description:
         'Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.',
-      microExplanation: `Pearson correlation between alcohol mortality and suicide rates (2011-2022, men only)`,
+      microExplanation:
+        'Pearson correlation between alcohol mortality and suicide rates (2011-2022, men only)',
       color: 'from-purple-500 to-purple-600',
     },
     {
