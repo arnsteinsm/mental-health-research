@@ -30,7 +30,6 @@ function App() {
       {/* Strategic CTA Placement - Bottom Center */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <p>YO</p>
           <CallToAction variant="footer" />
         </div>
       </section>
