@@ -1,28 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Database, BarChart3 } from 'lucide-react';
-import { researchData } from '../data/research-data';
+import { ACTUAL_DATASET_INFO } from '../data/actual-dataset-verification';
 
 const Footer: React.FC = () => {
-  // Calculate actual country count from data
-  const countryCount = Array.from(new Set(researchData.map(d => d.country)))
-    .filter(country => country !== 'EU27_2020').length;
+  // Use verified dataset information
+  const countryCount = ACTUAL_DATASET_INFO.uniqueCountries.length;
 
   const dataSources = [
     {
-      title: "Eurostat Health Database",
-      url: "https://ec.europa.eu/eurostat/web/health/data/database",
-      description: "Official EU health statistics"
+      title: "Eurostat Mortality Data",
+      url: "https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en",
+      description: "Death due to alcoholic abuse, by sex"
     },
     {
-      title: "WHO Mortality Database", 
-      url: "https://www.who.int/data/data-collection-tools/who-mortality-database",
-      description: "Global mortality data standards"
+      title: "Eurostat Suicide Statistics", 
+      url: "https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en",
+      description: "Death due to suicide, by sex"
     },
     {
-      title: "OECD Health Statistics",
-      url: "https://www.oecd.org/health/health-data.htm", 
-      description: "Comparative health indicators"
+      title: "Academic Evidence Sources",
+      url: "#bibliography",
+      description: "50+ peer-reviewed studies and reports"
     }
   ];
 
@@ -30,7 +29,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Branding & Mission - Now takes up equal space */}
+          {/* Branding & Mission */}
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <BarChart3 className="w-6 h-6 text-purple-400" />
@@ -55,9 +54,9 @@ const Footer: React.FC = () => {
                 className="inline-block group"
               >
                 <img 
-                  src="/white_circle_360x360.svg" 
+                  src="https://imagedelivery.net/3RKw_J_fJQ_4KpJP3_YgXA/a24bb2c9-7d4d-4162-78e7-4b8ec9c90c00/public" 
                   alt="Built with Bolt" 
-                  className="h-10 w-10 hover:scale-110 transition-transform duration-300"
+                  className="h-8 w-auto hover:scale-110 transition-transform duration-300"
                 />
               </a>
             </motion.div>
@@ -69,7 +68,7 @@ const Footer: React.FC = () => {
                 <div className="text-xs text-gray-400">Countries</div>
               </div>
               <div className="bg-gray-800 rounded-lg p-3">
-                <div className="text-lg font-bold text-blue-400">2011-2022</div>
+                <div className="text-lg font-bold text-blue-400">{ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}</div>
                 <div className="text-xs text-gray-400">Analysis</div>
               </div>
               <div className="bg-gray-800 rounded-lg p-3">
@@ -79,7 +78,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Data Sources - Now more compact */}
+          {/* Data Sources */}
           <div>
             <h4 className="text-lg font-semibold mb-6 flex items-center">
               <Database className="w-5 h-5 mr-2 text-blue-400" />
@@ -90,9 +89,16 @@ const Footer: React.FC = () => {
                 <div key={index} className="bg-gray-800 rounded-lg p-4">
                   <a 
                     href={source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={source.url.startsWith('#') ? '_self' : '_blank'}
+                    rel={source.url.startsWith('#') ? '' : 'noopener noreferrer'}
                     className="flex items-start space-x-3 hover:text-blue-400 transition-colors group"
+                    onClick={source.url.startsWith('#') ? (e) => {
+                      e.preventDefault();
+                      const element = document.querySelector(source.url);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } : undefined}
                   >
                     <ExternalLink className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                     <div>
@@ -119,7 +125,13 @@ const Footer: React.FC = () => {
               Data analysis for public health advocacy • Built with Bolt
             </div>
             
-            
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <span>{countryCount} European Countries</span>
+              <span>•</span>
+              <span>{ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end} Analysis</span>
+              <span>•</span>
+              <span>Open Data Initiative</span>
+            </div>
           </div>
           
           <div className="mt-4 text-xs text-gray-500 text-center">
