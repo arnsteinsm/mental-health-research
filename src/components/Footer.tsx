@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
               <span>•</span>
               <span>2011-2022 Analysis</span>
               <span>•</span>
-              <span>Open Data Initiative</span>
+              <span>CC BY 4.0 License</span>
             </div>
           </div>
           
