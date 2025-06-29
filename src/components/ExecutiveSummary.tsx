@@ -8,24 +8,21 @@ const ExecutiveSummary: React.FC = () => {
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: `${CORRECTED_DISPLAY.genderRatio}x Higher`,
-      subtitle: "Male alcohol deaths across Europe",
-      explanation: "Men consistently die at dramatically higher rates",
+      subtitle: "Alcohol mortality is disproportionately male",
       description: "Men die from alcohol at dramatically higher rates across all European countries.",
       color: "from-red-500 to-red-600"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: `r = ${CORRECTED_DISPLAY.maleCorrelation}`,
-      subtitle: "Strong statistical link between alcohol use and suicide rates",
-      explanation: "Where alcohol deaths rise, suicide follows",
+      subtitle: "Statistically linked to suicide",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <AlertCircle className="w-8 h-8" />,
       title: "Hidden Crisis",
-      subtitle: "Mental health signals often missed in treatment",
-      explanation: "Alcohol deaths mask deeper psychological struggles",
+      subtitle: "Mental health signals are often missed",
       description: "Analysis reveals alcohol deaths are masking a broader male mental health crisis.",
       color: "from-blue-500 to-blue-600"
     }
@@ -67,12 +64,9 @@ const ExecutiveSummary: React.FC = () => {
               <h3 className="text-3xl font-bold text-gray-900 mb-2">
                 {stat.title}
               </h3>
-              <h4 className="text-lg font-semibold text-blue-600 mb-3">
+              <h4 className="text-lg font-semibold text-blue-600 mb-4">
                 {stat.subtitle}
               </h4>
-              <div className="text-sm font-medium text-gray-700 mb-3 bg-blue-50 px-3 py-2 rounded-lg">
-                {stat.explanation}
-              </div>
               <p className="text-gray-600 leading-relaxed">
                 {stat.description}
               </p>
