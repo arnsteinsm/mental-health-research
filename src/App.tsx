@@ -2,10 +2,8 @@ import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import ExecutiveSummary from './components/ExecutiveSummary';
-import DataInsights from './components/DataInsights';
 import InteractiveVisualization from './components/InteractiveVisualization';
 import GenderAnalysis from './components/GenderAnalysis';
-import SolutionsFocus from './components/SolutionsFocus';
 import Conclusions from './components/Conclusions';
 import Footer from './components/Footer';
 import ShareButton from './components/ShareButton';
@@ -19,17 +17,11 @@ function App() {
       <div id="executive-summary">
         <ExecutiveSummary />
       </div>
-      <div id="data-insights">
-        <DataInsights />
-      </div>
       <div id="visualization">
         <InteractiveVisualization />
       </div>
       <div id="gender-analysis">
         <GenderAnalysis />
-      </div>
-      <div id="solutions">
-        <SolutionsFocus />
       </div>
       <div id="conclusions">
         <Conclusions />
