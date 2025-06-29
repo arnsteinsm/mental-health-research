@@ -125,13 +125,6 @@ const Footer: React.FC = () => {
               Data analysis for public health advocacy • Built with Bolt
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>{countryCount} European Countries</span>
-              <span>•</span>
-              <span>{ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end} Analysis</span>
-              <span>•</span>
-              <span>Open Data Initiative</span>
-            </div>
           </div>
           
           <div className="mt-4 text-xs text-gray-500 text-center">
