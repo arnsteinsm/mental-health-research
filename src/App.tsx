@@ -7,6 +7,7 @@ import GenderAnalysis from './components/GenderAnalysis';
 import Conclusions from './components/Conclusions';
 import Footer from './components/Footer';
 import ShareButton from './components/ShareButton';
+import CallToAction from './components/DownloadCTA';
 
 function App() {
   return (
@@ -25,6 +26,14 @@ function App() {
       <div id="conclusions">
         <Conclusions />
       </div>
+      
+      {/* Strategic CTA Placement - Bottom Center */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <CallToAction variant="footer" />
+        </div>
+      </section>
+      
       <Footer />
       
       {/* Floating Share Button */}

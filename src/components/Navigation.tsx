@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, BarChart3 } from 'lucide-react';
-import DownloadCTA from './DownloadCTA';
+import CallToAction from './DownloadCTA';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +70,7 @@ const Navigation: React.FC = () => {
               </button>
             ))}
             
-            <DownloadCTA variant="header" />
+            <CallToAction variant="header" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,7 +108,7 @@ const Navigation: React.FC = () => {
               </button>
             ))}
             <div className="px-6 py-3 border-t border-gray-100/50">
-              <DownloadCTA variant="header" />
+              <CallToAction variant="header" />
             </div>
           </motion.div>
         )}

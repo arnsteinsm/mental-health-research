@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, FileText, Check, ExternalLink } from 'lucide-react';
+import { Share2, ExternalLink, BookOpen } from 'lucide-react';
 
-interface DownloadCTAProps {
+interface CallToActionProps {
   variant?: 'header' | 'footer';
   className?: string;
 }
 
-const DownloadCTA: React.FC<DownloadCTAProps> = ({ variant = 'header', className = '' }) => {
-  const [isDownloading, setIsDownloading] = useState(false);
-  const [downloadComplete, setDownloadComplete] = useState(false);
-
-  const handleDownload = async () => {
-    setIsDownloading(true);
-    
-    // Simulate download process
-    setTimeout(() => {
-      setIsDownloading(false);
-      setDownloadComplete(true);
-      
-      // Reset after 3 seconds
-      setTimeout(() => setDownloadComplete(false), 3000);
-      
-      // In a real implementation, this would trigger the actual download
-      console.log('Downloading full analysis report...');
-    }, 2000);
+const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', className = '' }) => {
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Behind the Drink: European Mental Health Crisis',
+        text: 'Men are dying from alcohol at 3.7x the rate of women. This analysis reveals the hidden mental health crisis.',
+        url: window.location.href
+      });
+    } else {
+      // Fallback to copying URL
+      navigator.clipboard.writeText(window.location.href);
+    }
   };
 
   if (variant === 'header') {
@@ -36,36 +30,12 @@ const DownloadCTA: React.FC<DownloadCTAProps> = ({ variant = 'header', className
         className={`${className}`}
       >
         <button
-          onClick={handleDownload}
-          disabled={isDownloading}
-          className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={handleShare}
+          className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
-          {downloadComplete ? (
-            <>
-              <Check className="w-4 h-4 mr-2" />
-              Downloaded!
-            </>
-          ) : isDownloading ? (
-            <>
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-4 h-4 mr-2"
-              >
-                <Download />
-              </motion.div>
-              Preparing...
-            </>
-          ) : (
-            <>
-              <Download className="w-4 h-4 mr-2" />
-              Beyond the Numbers
-            </>
-          )}
+          <Share2 className="w-4 h-4 mr-2" />
+          Share Research
         </button>
-        <div className="text-xs text-gray-600 mt-1 text-center">
-          Full analysis with detailed insights
-        </div>
       </motion.div>
     );
   }
@@ -79,66 +49,56 @@ const DownloadCTA: React.FC<DownloadCTAProps> = ({ variant = 'header', className
       className={`text-center ${className}`}
     >
       <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
-        <FileText className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+        <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          Beyond the Numbers: Complete Analysis
+          Spread Awareness
         </h3>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Download the comprehensive report with detailed methodology, additional visualizations, 
-          policy recommendations, and statistical appendices. Perfect for researchers, policymakers, 
-          and advocates working on mental health initiatives.
+          Help raise awareness about this critical mental health crisis. Share this research 
+          with policymakers, healthcare professionals, and advocates working on mental health initiatives.
         </p>
         
         <div className="grid md:grid-cols-3 gap-4 mb-6 text-sm">
           <div className="bg-blue-50 p-3 rounded-lg">
-            <div className="font-semibold text-blue-900">40+ Pages</div>
-            <div className="text-blue-700">Comprehensive analysis</div>
+            <div className="font-semibold text-blue-900">Evidence-Based</div>
+            <div className="text-blue-700">Peer-reviewed sources</div>
           </div>
           <div className="bg-purple-50 p-3 rounded-lg">
-            <div className="font-semibold text-purple-900">15+ Charts</div>
-            <div className="text-purple-700">Additional visualizations</div>
+            <div className="font-semibold text-purple-900">Open Access</div>
+            <div className="text-purple-700">Free to share & cite</div>
           </div>
           <div className="bg-green-50 p-3 rounded-lg">
-            <div className="font-semibold text-green-900">Open Access</div>
-            <div className="text-green-700">CC BY 4.0 License</div>
+            <div className="font-semibold text-green-900">Action-Oriented</div>
+            <div className="text-green-700">Policy recommendations</div>
           </div>
         </div>
 
-        <button
-          onClick={handleDownload}
-          disabled={isDownloading}
-          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {downloadComplete ? (
-            <>
-              <Check className="w-5 h-5 mr-3" />
-              Report Downloaded Successfully!
-            </>
-          ) : isDownloading ? (
-            <>
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-5 h-5 mr-3"
-              >
-                <Download />
-              </motion.div>
-              Preparing Download...
-            </>
-          ) : (
-            <>
-              <Download className="w-5 h-5 mr-3" />
-              Download Full Analysis (PDF, 2.3MB)
-            </>
-          )}
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={handleShare}
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            <Share2 className="w-5 h-5 mr-3" />
+            Share This Research
+          </button>
+          
+          <a
+            href="https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+          >
+            <ExternalLink className="w-5 h-5 mr-3" />
+            View Source Data
+          </a>
+        </div>
         
-        <p className="text-xs text-gray-500 mt-3">
-          By downloading, you agree to cite this research appropriately in any derivative works
+        <p className="text-xs text-gray-500 mt-4">
+          Every share helps raise awareness about this critical public health issue
         </p>
       </div>
     </motion.div>
   );
 };
 
-export default DownloadCTA;
+export default CallToAction;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Users, ArrowRight, Download } from 'lucide-react';
+import { Target, Users, ArrowRight, Share2 } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
 import ShareButton from './ShareButton';
@@ -114,12 +114,17 @@ const Conclusions: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
-              <Download className="w-5 h-5 mr-3" />
-              Download Full Analysis
-            </button>
-            
             <ShareButton variant="inline" />
+            
+            <a
+              href="https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg"
+            >
+              <Share2 className="w-5 h-5 mr-3" />
+              View Source Data
+            </a>
           </div>
 
           <div className="mt-6 text-sm text-purple-200">
