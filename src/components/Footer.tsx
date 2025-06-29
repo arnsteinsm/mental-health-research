@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { BarChart3, Database, ExternalLink, FileText } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
-import { calculateCorrelations, calculateGenderRatio } from '../data';
+import { calculateCorrelations, calculateGenderRatio, datasetStats } from '../data';
 import { evidenceSources } from '../data/evidence-sources';
-import { datasetStats, useResearchData } from '../services/data-service';
+import { useResearchData } from '../services/data-service';
 import EvidenceModal from './EvidenceModal';
 
 const Footer: React.FC = () => {
@@ -17,9 +17,19 @@ const Footer: React.FC = () => {
   const countryCount = datasetStats.countries.length;
   const [isEvidenceModalOpen, setIsEvidenceModalOpen] = useState(false);
 
-  // Calculate real statistics from live data
-  const correlations = calculateCorrelations(researchData);
-  const genderRatio = calculateGenderRatio(researchData);
+  // Calculate real statistics from live data with fallbacks
+  const correlations =
+    researchData.length > 0
+      ? calculateCorrelations(researchData)
+      : {
+          overall: datasetStats.correlations.overall.alcoholSuicide,
+          male: datasetStats.correlations.male.alcoholSuicide,
+          female: datasetStats.correlations.female.alcoholSuicide,
+        };
+  const genderRatio =
+    researchData.length > 0
+      ? calculateGenderRatio(researchData)
+      : datasetStats.genderRatios.averageRatio;
 
   const evidenceCount = evidenceSources.length;
   const academicSources = evidenceSources.filter((s) => s.type === 'academic').length;

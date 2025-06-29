@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Target, Users } from 'lucide-react';
 import type React from 'react';
-import { CORRELATION_DISPLAY } from '../data';
+import { datasetStats } from '../data';
 import EvidenceButton from './EvidenceButton';
 
 const Conclusions: React.FC = () => {
@@ -48,7 +48,7 @@ const Conclusions: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">What the Data Demands</h2>
           <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-            The correlation is clear (r = {CORRELATION_DISPLAY.male}). The crisis is real. These
+            The correlation is clear (r = {datasetStats.correlations.male.alcoholSuicide}). The crisis is real. These
             evidence-based approaches offer a path forward.
           </p>
         </motion.div>
