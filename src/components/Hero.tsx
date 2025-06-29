@@ -4,7 +4,7 @@ import { calculateGenderRatio } from '../data';
 import { useResearchData } from '../services/data-service';
 
 const Hero: React.FC = () => {
-  // Get live data from Supabase
+  // Get live data from the data service
   const { data: researchData = [] } = useResearchData();
 
   // Calculate live gender ratio from actual data

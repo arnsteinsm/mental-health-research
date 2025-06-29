@@ -340,7 +340,7 @@ const InteractiveVisualization: React.FC = () => {
         .attr('opacity', 0.5);
       legend.append('text').attr('x', 20).attr('y', 37).text('Female').style('font-size', '12px');
     }
-  }, [viewMode, selectedCountries, selectedMetric, selectedYear, genderView]);
+  }, [viewMode, selectedCountries, selectedMetric, selectedYear, genderView, researchData]);
 
   // Time Series Chart
   useEffect(() => {
@@ -506,7 +506,7 @@ const InteractiveVisualization: React.FC = () => {
       .style('font-size', '14px')
       .style('font-weight', '600')
       .text('Year');
-  }, [viewMode, selectedCountries, selectedMetric]);
+  }, [viewMode, selectedCountries, selectedMetric, researchData]);
 
   if (geoError) {
     console.error('Geo-detection failed:', geoError);
