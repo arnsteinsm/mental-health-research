@@ -44,26 +44,7 @@ const Footer: React.FC = () => {
               through a gendered lens. Built to save lives.
             </p>
             
-            {/* Official Built with Bolt Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mb-4"
-            >
-              <a
-                href="https://bolt.new"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block group"
-              >
-                <img 
-                  src="/white_circle_360x360.svg" 
-                  alt="Built with Bolt" 
-                  className="h-12 w-12 hover:scale-110 transition-transform duration-300"
-                />
-              </a>
-            </motion.div>
+           
           </div>
 
           {/* Data Sources */}
@@ -103,7 +84,27 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              Data analysis for public health advocacy • Built with Bolt
+              Data analysis for public health advocacy • Built with Bolt.
+               {/* Official Built with Bolt Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mb-4"
+            >
+              <a
+                href="https://bolt.new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block group"
+              >
+                <img 
+                  src="/white_circle_360x360.svg" 
+                  alt="Built with Bolt" 
+                  className="h-12 w-12 hover:scale-110 transition-transform duration-300"
+                />
+              </a>
+            </motion.div>
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
