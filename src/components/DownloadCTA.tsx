@@ -82,15 +82,7 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
             Share This Research
           </button>
           
-          <a
-            href="https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
-          >
-            <ExternalLink className="w-5 h-5 mr-3" />
-            View Source Data
-          </a>
+
         </div>
         
         <p className="text-xs text-gray-500 mt-4">
