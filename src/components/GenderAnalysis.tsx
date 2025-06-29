@@ -68,9 +68,9 @@ const GenderAnalysis: React.FC = () => {
             className="bg-amber-50 border border-amber-200 rounded-xl p-6 max-w-3xl mx-auto"
           >
             <div className="flex items-center justify-center mb-3">
-              <ArrowRight className="w-5 h-5 text-amber-600 mr-2 transform rotate-45" />
+
               <span className="font-semibold text-amber-900">Critical Understanding</span>
-              <ArrowRight className="w-5 h-5 text-amber-600 ml-2 transform -rotate-45" />
+
             </div>
             <p className="text-amber-800 text-sm leading-relaxed">
               These four factors don't operate in isolation—they're deeply interconnected. 
