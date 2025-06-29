@@ -16,7 +16,8 @@ import {
 } from 'lucide-react';
 import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { countryNames, useResearchData } from '../services/data-service';
+import { countryNames } from '../data';
+import { useResearchData } from '../services/data-service';
 import { useGeoDetection } from '../services/geo-service';
 import LoadingSpinner from './LoadingSpinner';
 
