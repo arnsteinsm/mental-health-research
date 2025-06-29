@@ -21,7 +21,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2003,
     url: 'https://psycnet.apa.org/record/2003-00003-003',
     type: 'academic',
-    summary: 'Men are significantly less likely to seek help for mental health issues due to masculine norms and stigma.'
+    summary:
+      'Men are significantly less likely to seek help for mental health issues due to masculine norms and stigma.',
   },
   {
     id: 'who2019',
@@ -30,7 +31,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2021,
     url: 'https://www.who.int/publications/i/item/9789240026643',
     type: 'institutional',
-    summary: 'WHO data shows men have 3x higher suicide rates globally, with help-seeking barriers as a key factor.'
+    summary:
+      'WHO data shows men have 3x higher suicide rates globally, with help-seeking barriers as a key factor.',
   },
   {
     id: 'galdas2005',
@@ -39,7 +41,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2005,
     url: 'https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2648.2005.03621.x',
     type: 'academic',
-    summary: 'Systematic review showing men are 2-3x less likely to seek mental health treatment despite higher suicide rates.'
+    summary:
+      'Systematic review showing men are 2-3x less likely to seek mental health treatment despite higher suicide rates.',
   },
 
   // Economic Pressures
@@ -50,16 +53,19 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2013,
     url: 'https://www.bmj.com/content/347/bmj.f5239',
     type: 'academic',
-    summary: 'Economic downturns show 2-3x greater impact on male mental health outcomes and suicide rates.'
+    summary:
+      'Economic downturns show 2-3x greater impact on male mental health outcomes and suicide rates.',
   },
   {
     id: 'reeves2012',
-    title: 'The political economy of austerity and healthcare: Cross-national analysis of expenditure changes in 27 European nations 1995–2011',
+    title:
+      'The political economy of austerity and healthcare: Cross-national analysis of expenditure changes in 27 European nations 1995–2011',
     authors: ['Aaron Reeves', 'Martin McKee', 'David Stuckler'],
     year: 2014,
     url: 'https://www.sciencedirect.com/science/article/pii/S0168851014001675',
     type: 'academic',
-    summary: 'Economic stress correlates strongly with both alcohol misuse and suicide rates, particularly among men.'
+    summary:
+      'Economic stress correlates strongly with both alcohol misuse and suicide rates, particularly among men.',
   },
 
   // Mental Health Stigma - Alcohol involvement in suicide
@@ -70,7 +76,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2004,
     url: 'https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1530-0277.2004.tb03603.x',
     type: 'meta-analysis',
-    summary: 'Meta-analysis showing 74% of male suicides involve alcohol, compared to 31% for females.'
+    summary:
+      'Meta-analysis showing 74% of male suicides involve alcohol, compared to 31% for females.',
   },
   {
     id: 'kaplan2014',
@@ -79,18 +86,21 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2009,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2701140/',
     type: 'academic',
-    summary: 'Alcohol involvement in suicide is significantly higher among men, creating dangerous self-medication cycles.'
+    summary:
+      'Alcohol involvement in suicide is significantly higher among men, creating dangerous self-medication cycles.',
   },
 
   // Social Isolation
   {
     id: 'social2018',
-    title: 'Social isolation and loneliness in older adults: Opportunities for the health care system',
+    title:
+      'Social isolation and loneliness in older adults: Opportunities for the health care system',
     institution: 'National Academies of Sciences, Engineering, and Medicine',
     year: 2020,
     url: 'https://www.nationalacademies.org/our-work/social-isolation-and-loneliness-in-older-adults',
     type: 'institutional',
-    summary: 'Men report 50% fewer close friendships than women on average, increasing vulnerability to mental health crises.'
+    summary:
+      'Men report 50% fewer close friendships than women on average, increasing vulnerability to mental health crises.',
   },
   {
     id: 'umberson2010',
@@ -99,7 +109,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2010,
     url: 'https://www.annualreviews.org/doi/abs/10.1146/annurev.soc.34.040507.134601',
     type: 'academic',
-    summary: 'Men have fewer social support networks, making them more vulnerable to substance abuse and mental health issues.'
+    summary:
+      'Men have fewer social support networks, making them more vulnerable to substance abuse and mental health issues.',
   },
 
   // Targeted Mental Health Programs
@@ -110,16 +121,17 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2010,
     url: 'https://www.health.gov.au/resources/publications/national-male-health-policy',
     type: 'government',
-    summary: 'Countries with male-focused programs show 25% reduction in alcohol mortality rates.'
+    summary: 'Countries with male-focused programs show 25% reduction in alcohol mortality rates.',
   },
   {
     id: 'ireland2019',
-    title: 'Connecting for Life: Ireland\'s National Strategy to Reduce Suicide 2015-2024',
+    title: "Connecting for Life: Ireland's National Strategy to Reduce Suicide 2015-2024",
     institution: 'Health Service Executive Ireland',
     year: 2015,
     url: 'https://www.hse.ie/eng/services/list/4/mental-health-services/connecting-for-life/',
     type: 'government',
-    summary: 'Male-specific mental health interventions show significant reductions in both suicide and alcohol-related mortality.'
+    summary:
+      'Male-specific mental health interventions show significant reductions in both suicide and alcohol-related mortality.',
   },
 
   // Workplace Mental Health Initiatives
@@ -130,7 +142,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2019,
     url: 'https://www.who.int/publications/i/item/mental-health-in-the-workplace',
     type: 'institutional',
-    summary: 'Workplace interventions reduce male suicide rates by 15-20% in male-dominated industries.'
+    summary:
+      'Workplace interventions reduce male suicide rates by 15-20% in male-dominated industries.',
   },
   {
     id: 'milner2013',
@@ -139,7 +152,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2013,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3831448/',
     type: 'meta-analysis',
-    summary: 'Male-dominated occupations show higher suicide rates, with workplace mental health programs showing significant protective effects.'
+    summary:
+      'Male-dominated occupations show higher suicide rates, with workplace mental health programs showing significant protective effects.',
   },
 
   // Integrated Treatment Approaches
@@ -150,16 +164,19 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2005,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2851027/',
     type: 'academic',
-    summary: 'Integrated treatment shows 40% better outcomes than substance-only approaches for co-occurring disorders.'
+    summary:
+      'Integrated treatment shows 40% better outcomes than substance-only approaches for co-occurring disorders.',
   },
   {
     id: 'drake2008',
-    title: 'A systematic review of psychosocial research on psychosocial interventions for people with co-occurring severe mental and substance use disorders',
+    title:
+      'A systematic review of psychosocial research on psychosocial interventions for people with co-occurring severe mental and substance use disorders',
     authors: ['Robert E. Drake', 'Susan M. Essock', 'Andrew Shaner'],
     year: 2001,
     url: 'https://ps.psychiatryonline.org/doi/full/10.1176/appi.ps.52.8.1061',
     type: 'meta-analysis',
-    summary: 'Systematic review showing integrated mental health and substance abuse treatment significantly outperforms single-focus approaches.'
+    summary:
+      'Systematic review showing integrated mental health and substance abuse treatment significantly outperforms single-focus approaches.',
   },
 
   // Public Awareness Campaigns
@@ -170,7 +187,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2018,
     url: 'https://www.gov.scot/publications/choose-life-national-strategy-action-plan-prevent-suicide-scotland/',
     type: 'government',
-    summary: 'Public awareness campaigns correlate with 10-15% increase in help-seeking behavior among men.'
+    summary:
+      'Public awareness campaigns correlate with 10-15% increase in help-seeking behavior among men.',
   },
   {
     id: 'mann2005',
@@ -179,18 +197,21 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2005,
     url: 'https://jamanetwork.com/journals/jama/fullarticle/201713',
     type: 'meta-analysis',
-    summary: 'Meta-analysis showing awareness campaigns that normalize male mental health discussions increase help-seeking by 10-15%.'
+    summary:
+      'Meta-analysis showing awareness campaigns that normalize male mental health discussions increase help-seeking by 10-15%.',
   },
 
   // NEW SOURCES FOR "WHAT THE DATA DEMANDS" CLAIMS
   {
     id: 'men-help-seeking-barriers',
-    title: 'Barriers to help seeking by men: a review of sociocultural and clinical literature with implications for practice',
+    title:
+      'Barriers to help seeking by men: a review of sociocultural and clinical literature with implications for practice',
     authors: ['John L. Oliffe', 'Joan L. Bottorff', 'Wadih M. Ferlatte', 'John S. Ogrodniczuk'],
     year: 2019,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6560805/',
     type: 'academic',
-    summary: 'Comprehensive review documenting that men are 3x less likely to seek mental health treatment due to societal expectations and stigma.'
+    summary:
+      'Comprehensive review documenting that men are 3x less likely to seek mental health treatment due to societal expectations and stigma.',
   },
 
   {
@@ -200,28 +221,37 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2017,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5293516/',
     type: 'academic',
-    summary: 'Male-dominated occupations (construction, farming, military) show significantly higher suicide rates, supporting workplace intervention approaches.'
+    summary:
+      'Male-dominated occupations (construction, farming, military) show significantly higher suicide rates, supporting workplace intervention approaches.',
   },
 
   {
     id: 'alcohol-suicide-comorbidity',
-    title: 'Alcohol use disorders and suicide attempts: findings from the National Epidemiologic Survey on Alcohol and Related Conditions',
+    title:
+      'Alcohol use disorders and suicide attempts: findings from the National Epidemiologic Survey on Alcohol and Related Conditions',
     authors: ['Maria A. Oquendo', 'Guilherme L. Borges', 'Bridget F. Grant'],
     year: 2010,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2859216/',
     type: 'academic',
-    summary: 'Large-scale epidemiologic study confirming 74% of male suicides involve alcohol compared to 31% for females, supporting integrated treatment approaches.'
+    summary:
+      'Large-scale epidemiologic study confirming 74% of male suicides involve alcohol compared to 31% for females, supporting integrated treatment approaches.',
   },
 
   // NEW SOURCES FOR GENDER ANALYSIS CLAIMS
   {
     id: 'masculine-norms-help-seeking',
     title: 'Conformity to masculine norms and help-seeking shame in men',
-    authors: ['Ryan C. McDermott', 'Stephanie A. Schwartz', 'Jenna Lindley', 'Jennifer S. Proietti'],
+    authors: [
+      'Ryan C. McDermott',
+      'Stephanie A. Schwartz',
+      'Jenna Lindley',
+      'Jennifer S. Proietti',
+    ],
     year: 2018,
     url: 'https://psycnet.apa.org/record/2018-13546-001',
     type: 'academic',
-    summary: 'Research demonstrating how traditional masculine norms create barriers to help-seeking behavior and increase reliance on alcohol as coping mechanism.'
+    summary:
+      'Research demonstrating how traditional masculine norms create barriers to help-seeking behavior and increase reliance on alcohol as coping mechanism.',
   },
 
   {
@@ -231,7 +261,8 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2011,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3086304/',
     type: 'academic',
-    summary: 'Economic downturns show 2-3x greater impact on male mental health outcomes, with men facing disproportionate pressure as breadwinners.'
+    summary:
+      'Economic downturns show 2-3x greater impact on male mental health outcomes, with men facing disproportionate pressure as breadwinners.',
   },
 
   {
@@ -241,8 +272,9 @@ export const evidenceSources: EvidenceSource[] = [
     year: 2017,
     url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5614470/',
     type: 'academic',
-    summary: 'Meta-analysis showing men have 50% fewer close friendships than women and smaller social support networks, increasing vulnerability to mental health crises.'
-  }
+    summary:
+      'Meta-analysis showing men have 50% fewer close friendships than women and smaller social support networks, increasing vulnerability to mental health crises.',
+  },
 ];
 
 // Map evidence claims to sources
@@ -263,26 +295,32 @@ export const evidenceMapping = {
   'integrated-treatment': ['quello2005', 'drake2008', 'alcohol-suicide-comorbidity'],
 
   // NEW MAPPINGS FOR GENDER ANALYSIS SECTION
-  'societal-expectations': ['masculine-norms-help-seeking', 'addis2008', 'men-help-seeking-barriers'],
+  'societal-expectations': [
+    'masculine-norms-help-seeking',
+    'addis2008',
+    'men-help-seeking-barriers',
+  ],
   'economic-pressures': ['economic-stress-male-suicide', 'chang2013', 'reeves2012'],
   'mental-health-stigma': ['alcohol-suicide-comorbidity', 'cherpitel2004', 'kaplan2014'],
-  'social-isolation': ['male-social-isolation', 'social2018', 'umberson2010']
+  'social-isolation': ['male-social-isolation', 'social2018', 'umberson2010'],
 };
 
 // Get sources for a specific evidence claim
 export const getSourcesForClaim = (claimId: string): EvidenceSource[] => {
   const sourceIds = evidenceMapping[claimId as keyof typeof evidenceMapping] || [];
-  return sourceIds.map(id => evidenceSources.find(source => source.id === id)).filter(Boolean) as EvidenceSource[];
+  return sourceIds
+    .map((id) => evidenceSources.find((source) => source.id === id))
+    .filter(Boolean) as EvidenceSource[];
 };
 
 // Format citation
 export const formatCitation = (source: EvidenceSource): string => {
   if (source.authors && source.authors.length > 0) {
-    const authorString = source.authors.length > 3 
-      ? `${source.authors[0]} et al.` 
-      : source.authors.join(', ');
+    const authorString =
+      source.authors.length > 3 ? `${source.authors[0]} et al.` : source.authors.join(', ');
     return `${authorString} (${source.year}). ${source.title}.`;
-  } else if (source.institution) {
+  }
+  if (source.institution) {
     return `${source.institution} (${source.year}). ${source.title}.`;
   }
   return `${source.title} (${source.year}).`;

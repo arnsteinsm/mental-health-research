@@ -1,24 +1,38 @@
-import React from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import ExecutiveSummary from './components/ExecutiveSummary';
-import InteractiveVisualization from './components/InteractiveVisualization';
-import GenderAnalysis from './components/GenderAnalysis';
+// src/App.tsx
+
+import { UmamiAnalytics } from '@giof/react-umami';
+import { lazy, Suspense } from 'react';
 import Conclusions from './components/Conclusions';
-import Footer from './components/Footer';
-import ShareButton from './components/ShareButton';
 import CallToAction from './components/DownloadCTA';
+import ExecutiveSummary from './components/ExecutiveSummary';
+import Footer from './components/Footer';
+import GenderAnalysis from './components/GenderAnalysis';
+import Hero from './components/Hero';
+import LoadingSpinner from './components/LoadingSpinner';
+import Navigation from './components/Navigation';
+import ShareButton from './components/ShareButton';
+
+// Lazy load heavy components
+const InteractiveVisualization = lazy(() => import('./components/InteractiveVisualization'));
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <UmamiAnalytics
+        websiteId="e8ebe905-8944-4f81-9438-71a9d911a58c"
+        src="https://umami.marjala.com/script.js"
+        dryRun={import.meta.env.VITE_UMAMI_DRY_RUN === 'true'}
+        debug={import.meta.env.VITE_UMAMI_DEBUG === 'true'}
+      />
       <Navigation />
       <Hero />
       <div id="executive-summary">
         <ExecutiveSummary />
       </div>
       <div id="visualization">
-        <InteractiveVisualization />
+        <Suspense fallback={<LoadingSpinner />}>
+          <InteractiveVisualization />
+        </Suspense>
       </div>
       <div id="gender-analysis">
         <GenderAnalysis />
@@ -26,16 +40,16 @@ function App() {
       <div id="conclusions">
         <Conclusions />
       </div>
-      
+
       {/* Strategic CTA Placement - Bottom Center */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <CallToAction variant="footer" />
         </div>
       </section>
-      
+
       <Footer />
-      
+
       {/* Floating Share Button */}
       <ShareButton variant="floating" />
     </div>

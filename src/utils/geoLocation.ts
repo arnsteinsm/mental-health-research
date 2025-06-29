@@ -9,50 +9,50 @@ export interface CountryInfo {
 
 // European country mapping with neighbors
 export const europeanCountries: Record<string, CountryInfo> = {
-  'AT': { code: 'AT', name: 'Austria', neighbors: ['DE', 'CH', 'IT', 'SI', 'HU', 'CZ', 'SK'] },
-  'BE': { code: 'BE', name: 'Belgium', neighbors: ['NL', 'DE', 'FR'] },
-  'BG': { code: 'BG', name: 'Bulgaria', neighbors: ['RO', 'RS', 'EL', 'TR'] },
-  'CH': { code: 'CH', name: 'Switzerland', neighbors: ['DE', 'AT', 'IT', 'FR'] },
-  'CY': { code: 'CY', name: 'Cyprus', neighbors: ['EL', 'TR'] },
-  'CZ': { code: 'CZ', name: 'Czech Republic', neighbors: ['DE', 'AT', 'SK', 'PL'] },
-  'DE': { code: 'DE', name: 'Germany', neighbors: ['DK', 'PL', 'CZ', 'AT', 'CH', 'FR', 'BE', 'NL'] },
-  'DK': { code: 'DK', name: 'Denmark', neighbors: ['DE', 'SE', 'NO'] },
-  'EE': { code: 'EE', name: 'Estonia', neighbors: ['LV', 'FI'] },
-  'EL': { code: 'EL', name: 'Greece', neighbors: ['BG', 'MK', 'AL', 'TR', 'CY'] },
-  'ES': { code: 'ES', name: 'Spain', neighbors: ['FR', 'PT'] },
-  'FI': { code: 'FI', name: 'Finland', neighbors: ['SE', 'NO', 'EE'] },
-  'FR': { code: 'FR', name: 'France', neighbors: ['ES', 'CH', 'IT', 'DE', 'BE'] },
-  'HR': { code: 'HR', name: 'Croatia', neighbors: ['SI', 'HU', 'RS', 'BA'] },
-  'HU': { code: 'HU', name: 'Hungary', neighbors: ['AT', 'SK', 'RO', 'RS', 'HR', 'SI'] },
-  'IE': { code: 'IE', name: 'Ireland', neighbors: ['UK'] },
-  'IS': { code: 'IS', name: 'Iceland', neighbors: ['NO', 'DK'] },
-  'IT': { code: 'IT', name: 'Italy', neighbors: ['FR', 'CH', 'AT', 'SI'] },
-  'LT': { code: 'LT', name: 'Lithuania', neighbors: ['LV', 'PL', 'BY'] },
-  'LU': { code: 'LU', name: 'Luxembourg', neighbors: ['BE', 'FR', 'DE'] },
-  'LV': { code: 'LV', name: 'Latvia', neighbors: ['EE', 'LT'] },
-  'MT': { code: 'MT', name: 'Malta', neighbors: ['IT'] },
-  'NL': { code: 'NL', name: 'Netherlands', neighbors: ['DE', 'BE'] },
-  'NO': { code: 'NO', name: 'Norway', neighbors: ['SE', 'FI', 'DK', 'IS'] },
-  'PL': { code: 'PL', name: 'Poland', neighbors: ['DE', 'CZ', 'SK', 'LT'] },
-  'PT': { code: 'PT', name: 'Portugal', neighbors: ['ES'] },
-  'RO': { code: 'RO', name: 'Romania', neighbors: ['HU', 'RS', 'BG'] },
-  'RS': { code: 'RS', name: 'Serbia', neighbors: ['HU', 'RO', 'BG', 'HR'] },
-  'SE': { code: 'SE', name: 'Sweden', neighbors: ['NO', 'FI', 'DK'] },
-  'SI': { code: 'SI', name: 'Slovenia', neighbors: ['AT', 'IT', 'HR', 'HU'] },
-  'SK': { code: 'SK', name: 'Slovakia', neighbors: ['CZ', 'AT', 'HU', 'PL'] },
-  'TR': { code: 'TR', name: 'Turkey', neighbors: ['BG', 'EL', 'CY'] },
-  'UK': { code: 'UK', name: 'United Kingdom', neighbors: ['IE', 'FR', 'BE', 'NL'] }
+  AT: { code: 'AT', name: 'Austria', neighbors: ['DE', 'CH', 'IT', 'SI', 'HU', 'CZ', 'SK'] },
+  BE: { code: 'BE', name: 'Belgium', neighbors: ['NL', 'DE', 'FR'] },
+  BG: { code: 'BG', name: 'Bulgaria', neighbors: ['RO', 'RS', 'EL', 'TR'] },
+  CH: { code: 'CH', name: 'Switzerland', neighbors: ['DE', 'AT', 'IT', 'FR'] },
+  CY: { code: 'CY', name: 'Cyprus', neighbors: ['EL', 'TR'] },
+  CZ: { code: 'CZ', name: 'Czech Republic', neighbors: ['DE', 'AT', 'SK', 'PL'] },
+  DE: { code: 'DE', name: 'Germany', neighbors: ['DK', 'PL', 'CZ', 'AT', 'CH', 'FR', 'BE', 'NL'] },
+  DK: { code: 'DK', name: 'Denmark', neighbors: ['DE', 'SE', 'NO'] },
+  EE: { code: 'EE', name: 'Estonia', neighbors: ['LV', 'FI'] },
+  EL: { code: 'EL', name: 'Greece', neighbors: ['BG', 'MK', 'AL', 'TR', 'CY'] },
+  ES: { code: 'ES', name: 'Spain', neighbors: ['FR', 'PT'] },
+  FI: { code: 'FI', name: 'Finland', neighbors: ['SE', 'NO', 'EE'] },
+  FR: { code: 'FR', name: 'France', neighbors: ['ES', 'CH', 'IT', 'DE', 'BE'] },
+  HR: { code: 'HR', name: 'Croatia', neighbors: ['SI', 'HU', 'RS', 'BA'] },
+  HU: { code: 'HU', name: 'Hungary', neighbors: ['AT', 'SK', 'RO', 'RS', 'HR', 'SI'] },
+  IE: { code: 'IE', name: 'Ireland', neighbors: ['UK'] },
+  IS: { code: 'IS', name: 'Iceland', neighbors: ['NO', 'DK'] },
+  IT: { code: 'IT', name: 'Italy', neighbors: ['FR', 'CH', 'AT', 'SI'] },
+  LT: { code: 'LT', name: 'Lithuania', neighbors: ['LV', 'PL', 'BY'] },
+  LU: { code: 'LU', name: 'Luxembourg', neighbors: ['BE', 'FR', 'DE'] },
+  LV: { code: 'LV', name: 'Latvia', neighbors: ['EE', 'LT'] },
+  MT: { code: 'MT', name: 'Malta', neighbors: ['IT'] },
+  NL: { code: 'NL', name: 'Netherlands', neighbors: ['DE', 'BE'] },
+  NO: { code: 'NO', name: 'Norway', neighbors: ['SE', 'FI', 'DK', 'IS'] },
+  PL: { code: 'PL', name: 'Poland', neighbors: ['DE', 'CZ', 'SK', 'LT'] },
+  PT: { code: 'PT', name: 'Portugal', neighbors: ['ES'] },
+  RO: { code: 'RO', name: 'Romania', neighbors: ['HU', 'RS', 'BG'] },
+  RS: { code: 'RS', name: 'Serbia', neighbors: ['HU', 'RO', 'BG', 'HR'] },
+  SE: { code: 'SE', name: 'Sweden', neighbors: ['NO', 'FI', 'DK'] },
+  SI: { code: 'SI', name: 'Slovenia', neighbors: ['AT', 'IT', 'HR', 'HU'] },
+  SK: { code: 'SK', name: 'Slovakia', neighbors: ['CZ', 'AT', 'HU', 'PL'] },
+  TR: { code: 'TR', name: 'Turkey', neighbors: ['BG', 'EL', 'CY'] },
+  UK: { code: 'UK', name: 'United Kingdom', neighbors: ['IE', 'FR', 'BE', 'NL'] },
 };
 
 // Fallback mapping for common country codes to our dataset codes
 const countryCodeMapping: Record<string, string> = {
-  'GB': 'UK',
-  'GR': 'EL',
-  'BY': 'BY', // Belarus (not in our dataset but might be detected)
-  'UA': 'UA', // Ukraine (not in our dataset but might be detected)
-  'MK': 'MK', // North Macedonia (not in our dataset but might be detected)
-  'AL': 'AL', // Albania (not in our dataset but might be detected)
-  'BA': 'BA', // Bosnia (not in our dataset but might be detected)
+  GB: 'UK',
+  GR: 'EL',
+  BY: 'BY', // Belarus (not in our dataset but might be detected)
+  UA: 'UA', // Ukraine (not in our dataset but might be detected)
+  MK: 'MK', // North Macedonia (not in our dataset but might be detected)
+  AL: 'AL', // Albania (not in our dataset but might be detected)
+  BA: 'BA', // Bosnia (not in our dataset but might be detected)
 };
 
 // Get user's country using multiple detection methods
@@ -123,7 +123,7 @@ const getCountryFromTimezone = (timezone: string): string | null => {
     'Europe/Ljubljana': 'SI',
     'Europe/Bratislava': 'SK',
     'Europe/Istanbul': 'TR',
-    'Europe/London': 'UK'
+    'Europe/London': 'UK',
   };
 
   return timezoneMap[timezone] || null;
@@ -135,9 +135,9 @@ const getCountryFromIP = async (): Promise<string | null> => {
     // Use ipapi.co (free, no API key required, HTTPS)
     const response = await fetch('https://ipapi.co/country_code/', {
       method: 'GET',
-      headers: { 'Accept': 'text/plain' }
+      headers: { Accept: 'text/plain' },
     });
-    
+
     if (response.ok) {
       const countryCode = (await response.text()).trim().toUpperCase();
       return countryCodeMapping[countryCode] || countryCode;
@@ -145,7 +145,7 @@ const getCountryFromIP = async (): Promise<string | null> => {
   } catch (error) {
     console.log('IP geolocation failed:', error);
   }
-  
+
   return null;
 };
 
@@ -163,30 +163,30 @@ const getCountryFromLanguage = (): string | null => {
 
   // Map language codes to likely countries
   const languageMap: Record<string, string> = {
-    'de': 'DE',
-    'fr': 'FR',
-    'es': 'ES',
-    'it': 'IT',
-    'nl': 'NL',
-    'pl': 'PL',
-    'pt': 'PT',
-    'sv': 'SE',
-    'da': 'DK',
-    'no': 'NO',
-    'fi': 'FI',
-    'el': 'EL',
-    'hu': 'HU',
-    'cs': 'CZ',
-    'sk': 'SK',
-    'sl': 'SI',
-    'hr': 'HR',
-    'bg': 'BG',
-    'ro': 'RO',
-    'et': 'EE',
-    'lv': 'LV',
-    'lt': 'LT',
-    'mt': 'MT',
-    'tr': 'TR'
+    de: 'DE',
+    fr: 'FR',
+    es: 'ES',
+    it: 'IT',
+    nl: 'NL',
+    pl: 'PL',
+    pt: 'PT',
+    sv: 'SE',
+    da: 'DK',
+    no: 'NO',
+    fi: 'FI',
+    el: 'EL',
+    hu: 'HU',
+    cs: 'CZ',
+    sk: 'SK',
+    sl: 'SI',
+    hr: 'HR',
+    bg: 'BG',
+    ro: 'RO',
+    et: 'EE',
+    lv: 'LV',
+    lt: 'LT',
+    mt: 'MT',
+    tr: 'TR',
   };
 
   return languageMap[parts[0]] || null;
@@ -201,11 +201,11 @@ export const getSuggestedCountries = (detectedCountry: string | null): string[] 
 
   const country = europeanCountries[detectedCountry];
   const suggestions = [detectedCountry];
-  
+
   // Add 3-4 neighboring countries
-  const neighbors = country.neighbors.filter(code => europeanCountries[code]);
+  const neighbors = country.neighbors.filter((code) => europeanCountries[code]);
   suggestions.push(...neighbors.slice(0, 4));
-  
+
   // If we don't have enough neighbors, add some major European countries
   if (suggestions.length < 5) {
     const majorCountries = ['DE', 'FR', 'ES', 'IT', 'PL', 'UK'];
@@ -222,7 +222,7 @@ export const getSuggestedCountries = (detectedCountry: string | null): string[] 
 // Get a friendly message about the preselection
 export const getPreselectionMessage = (detectedCountry: string | null): string => {
   if (!detectedCountry || !europeanCountries[detectedCountry]) {
-    return "Showing major European countries";
+    return 'Showing major European countries';
   }
 
   const countryName = europeanCountries[detectedCountry].name;

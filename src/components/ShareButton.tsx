@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Share2, Copy, Check, Twitter, Linkedin, Facebook, Mail, ExternalLink } from 'lucide-react';
+import { Check, Copy, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface ShareButtonProps {
   variant?: 'floating' | 'inline';
@@ -12,8 +13,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
   const [copied, setCopied] = useState(false);
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const title = "Behind the Drink: Men are dying from alcohol at 3.7x the rate of women";
-  const description = "This isn't just about drinking—it's about mental health. New analysis reveals the hidden crisis behind European alcohol mortality data.";
+  const title = 'Behind the Drink: Men are dying from alcohol at 3.7x the rate of women';
+  const description =
+    "This isn't just about drinking—it's about mental health. New analysis reveals the hidden crisis behind European alcohol mortality data.";
 
   const shareOptions = [
     {
@@ -28,32 +30,41 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
           console.error('Failed to copy link:', err);
         }
       },
-      color: copied ? 'text-green-600' : 'text-gray-600'
+      color: copied ? 'text-green-600' : 'text-gray-600',
     },
     {
       name: 'Twitter',
       icon: <Twitter className="w-4 h-4" />,
       action: () => {
         const tweetText = `${title}\n\n${description}\n\n${currentUrl}`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`, '_blank');
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-500'
+      color: 'text-blue-500',
     },
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-4 h-4" />,
       action: () => {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`, '_blank');
+        window.open(
+          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-700'
+      color: 'text-blue-700',
     },
     {
       name: 'Facebook',
       icon: <Facebook className="w-4 h-4" />,
       action: () => {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, '_blank');
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       name: 'Email',
@@ -63,8 +74,8 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         const body = encodeURIComponent(`${description}\n\nRead the full analysis: ${currentUrl}`);
         window.open(`mailto:?subject=${subject}&body=${body}`);
       },
-      color: 'text-gray-600'
-    }
+      color: 'text-gray-600',
+    },
   ];
 
   if (variant === 'floating') {
@@ -73,7 +84,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 2, duration: 0.5, type: "spring" }}
+          transition={{ delay: 2, duration: 0.5, type: 'spring' }}
         >
           {/* Share Options */}
           {isOpen && (
@@ -88,8 +99,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
                 Share This Research
               </div>
               <div className="space-y-2">
-                {shareOptions.map((option, index) => (
+                {shareOptions.map((option, _index) => (
                   <button
+                    type="button"
                     key={option.name}
                     onClick={option.action}
                     className={`w-full flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors ${option.color}`}
@@ -110,7 +122,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
           {/* Main Share Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110"
+            className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -125,8 +137,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
   return (
     <div className={`relative ${className}`}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        className="inline-flex items-center px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
       >
         <Share2 className="w-5 h-5 mr-2" />
         Share This Research
@@ -140,8 +153,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         >
           <div className="text-sm font-semibold text-gray-900 mb-3">Share this analysis</div>
           <div className="grid grid-cols-2 gap-2">
-            {shareOptions.map((option, index) => (
+            {shareOptions.map((option, _index) => (
               <button
+                type="button"
                 key={option.name}
                 onClick={() => {
                   option.action();
