@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Men are dying from alcohol at {CORRECTED_DISPLAY.genderRatio}x the rate of women.<br/>
-            This isn't just about drinking—it's about mental health.
+            Alcohol-related deaths reveal a hidden mental health crisis — especially among men.<br/>
+            <span className="text-yellow-300">Men are dying at {CORRECTED_DISPLAY.genderRatio}x the rate of women.</span>
           </motion.p>
 
           <motion.div

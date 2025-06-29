@@ -51,7 +51,7 @@ const GenderAnalysis: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Men Are Dying
+            Understanding Male Vulnerability
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
             The data reveals a complex web of interconnected factors that create a perfect storm 

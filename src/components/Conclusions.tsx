@@ -8,7 +8,7 @@ const Conclusions: React.FC = () => {
   const solutions = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Male-Focused Mental Health Programs",
+      title: "Reach At-Risk Men Sooner",
       description: "Develop interventions that address masculine stigma and provide alternative pathways to support.",
       evidence: "Research shows men are 3x less likely to seek help",
       priority: "Critical",
@@ -16,7 +16,7 @@ const Conclusions: React.FC = () => {
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Workplace Mental Health",
+      title: "Support Mental Health at Work",
       description: "Target male-dominated industries with comprehensive mental health support systems.",
       evidence: "Male-dominated occupations show higher suicide rates",
       priority: "High",
@@ -24,7 +24,7 @@ const Conclusions: React.FC = () => {
     },
     {
       icon: <ArrowRight className="w-6 h-6" />,
-      title: "Integrated Treatment",
+      title: "Combine Health, Policy, and Community Support",
       description: "Address alcohol and mental health together, not as separate issues.",
       evidence: "74% of male suicides involve alcohol vs 31% for females",
       priority: "Essential",
