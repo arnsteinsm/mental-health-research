@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Users, Target, AlertTriangle } from 'lucide-react';
+import { Heart, Users, Target } from 'lucide-react';
 import { CORRECTED_DISPLAY } from '../data/actual-dataset-verification';
 
 const ImpactStatement: React.FC = () => {
@@ -45,7 +45,7 @@ const ImpactStatement: React.FC = () => {
         </motion.div>
 
         {/* Core Impact Metrics - Clean and Focused */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8">
           {coreMetrics.map((metric, index) => (
             <motion.div
               key={index}
@@ -64,34 +64,6 @@ const ImpactStatement: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Single Powerful Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
-        >
-          <div className="flex items-center justify-center mb-6">
-            <AlertTriangle className="w-8 h-8 text-yellow-400 mr-3" />
-            <h3 className="text-2xl md:text-3xl font-bold">This Research Could Save Lives</h3>
-          </div>
-          
-          <p className="text-lg mb-8 max-w-3xl mx-auto leading-relaxed">
-            We've uncovered a hidden crisis where alcohol deaths mask a deeper mental health emergency. 
-            The pattern is undeniable across {CORRECTED_DISPLAY.countries} European countries. 
-            Every share, every policy change, every conversation sparked by this research brings us closer to saving lives.
-          </p>
-          
-          <div className="bg-white/20 rounded-xl p-6 max-w-2xl mx-auto">
-            <div className="text-sm font-semibold mb-3">Built for Bolt Hackathon 2025</div>
-            <div className="text-xs text-purple-200 leading-relaxed">
-              Demonstrating how modern web technologies can create impactful, 
-              data-driven narratives that drive social change. Built in 24 hours to save lives.
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
