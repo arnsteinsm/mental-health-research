@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Users, ArrowRight, Share2 } from 'lucide-react';
+import { Target, Users, ArrowRight, Share2, ExternalLink } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
-import ShareButton from './ShareButton';
 
 const Conclusions: React.FC = () => {
   const solutions = [
@@ -99,7 +98,7 @@ const Conclusions: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action with Share Button */}
+        {/* SINGLE Consolidated Call to Action - Combines both "Pattern is Clear" and "Spread Awareness" */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -113,16 +112,57 @@ const Conclusions: React.FC = () => {
             Men die from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women. This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
           </p>
           
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="text-2xl font-bold mb-2">74%</div>
+              <div className="text-sm">of male suicides involve alcohol</div>
+              <EvidenceButton 
+                claimId="alcohol-suicide-74-31"
+                claimTitle="Alcohol involvement in male suicide"
+                variant="inline"
+              />
+            </div>
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="text-2xl font-bold mb-2">{VERIFIED_GENDER_RATIO}x</div>
+              <div className="text-sm">higher male alcohol mortality</div>
+            </div>
+            <div className="bg-white/20 rounded-lg p-4">
+              <div className="text-2xl font-bold mb-2">3x</div>
+              <div className="text-sm">less likely to seek help</div>
+              <EvidenceButton 
+                claimId="men-help-seeking-3x"
+                claimTitle="Male help-seeking behavior"
+                variant="inline"
+              />
+            </div>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <ShareButton variant="inline" />
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: 'Behind the Drink: European Mental Health Crisis',
+                    text: 'Men are dying from alcohol at 3.7x the rate of women. This analysis reveals the hidden mental health crisis.',
+                    url: window.location.href
+                  });
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                }
+              }}
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg"
+            >
+              <Share2 className="w-5 h-5 mr-3" />
+              Share This Research
+            </button>
             
             <a
               href="https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-purple-600 transition-colors transform hover:scale-105"
             >
-              <Share2 className="w-5 h-5 mr-3" />
+              <ExternalLink className="w-5 h-5 mr-3" />
               View Source Data
             </a>
           </div>
