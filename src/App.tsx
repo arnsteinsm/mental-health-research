@@ -3,7 +3,6 @@
 import { UmamiAnalytics } from '@giof/react-umami';
 import { lazy, Suspense } from 'react';
 import Conclusions from './components/Conclusions';
-import DataMigrationPanel from './components/DataMigrationPanel';
 import CallToAction from './components/DownloadCTA';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import Footer from './components/Footer';
@@ -17,9 +16,6 @@ import ShareButton from './components/ShareButton';
 const InteractiveVisualization = lazy(() => import('./components/InteractiveVisualization'));
 
 function App() {
-  // Show migration panel in development
-  const showMigrationPanel = import.meta.env.DEV;
-
   return (
     <div className="min-h-screen bg-white">
       <UmamiAnalytics
@@ -30,16 +26,7 @@ function App() {
       />
       <Navigation />
       <Hero />
-      
-      {/* Development Migration Panel */}
-      {showMigrationPanel && (
-        <section className="py-16 bg-yellow-50">
-          <div className="container mx-auto px-6">
-            <DataMigrationPanel />
-          </div>
-        </section>
-      )}
-      
+
       <div id="executive-summary">
         <ExecutiveSummary />
       </div>

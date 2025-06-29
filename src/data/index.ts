@@ -1,19 +1,9 @@
-// Mental Health Research Data - Supabase Integration
-// Migrated from JSON to Supabase for better reliability and scalability
+// Mental Health Research Data - Hybrid JSON Architecture
+// Lightning-fast static JSON with optional edge functions
 
-import { useDatasetStats } from '../services/data-service';
+import aggrData from './aggr_data.json';
 
-// Types (kept for backward compatibility)
-export interface DataPoint {
-  country: string;
-  year: string;
-  sex: 'M' | 'F';
-  alcohol_rate: string;
-  suicide_rate: string;
-  accident_rate: string;
-}
-
-// Country code to name mapping (ISO 3166-1 alpha-2)
+// European country codes to full names mapping
 export const countryNames: Record<string, string> = {
   AT: 'Austria',
   BE: 'Belgium',
@@ -51,167 +41,186 @@ export const countryNames: Record<string, string> = {
   UK: 'United Kingdom',
 };
 
-// Calculate correlations between alcohol and suicide rates
-export const calculateCorrelations = (data: DataPoint[]) => {
-  const pearsonCorrelation = (x: number[], y: number[]): number => {
-    const n = x.length;
-    if (n !== y.length || n === 0) return 0;
+// Enhanced data point interface matching aggr_data.json
+export interface EnhancedDataPoint {
+  country: string;
+  year: string;
+  sex: 'M' | 'F';
+  alcohol_rate: string;
+  suicide_rate: string;
+  population_over_15: string;
+  est_alcohol_deaths: string;
+  est_suicide_deaths: string;
+}
 
-    const sumX = x.reduce((a, b) => a + b, 0);
-    const sumY = y.reduce((a, b) => a + b, 0);
-    const sumXY = x.reduce((sum, xi, i) => sum + xi * y[i], 0);
-    const sumX2 = x.reduce((sum, xi) => sum + xi * xi, 0);
-    const sumY2 = y.reduce((sum, yi) => sum + yi * yi, 0);
+// Calculate dataset statistics from the JSON data
+const countries = [...new Set(aggrData.map((d) => d.country))];
+const years = [...new Set(aggrData.map((d) => d.year))].sort();
+const maleRecords = aggrData.filter((d) => d.sex === 'M').length;
+const femaleRecords = aggrData.filter((d) => d.sex === 'F').length;
 
-    const numerator = n * sumXY - sumX * sumY;
-    const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
+// Calculate correlations
+const maleData = aggrData.filter((d) => d.sex === 'M');
+const femaleData = aggrData.filter((d) => d.sex === 'F');
 
-    return denominator === 0 ? 0 : numerator / denominator;
-  };
+function calculateCorrelation(data: any[], field1: string, field2: string): number {
+  const pairs = data.map((d) => [Number.parseFloat(d[field1]), Number.parseFloat(d[field2])]);
+  const validPairs = pairs.filter(([x, y]) => !Number.isNaN(x) && !Number.isNaN(y));
 
-  const maleData = data.filter((d) => d.sex === 'M');
-  const femaleData = data.filter((d) => d.sex === 'F');
+  if (validPairs.length < 2) return 0;
 
-  const maleAlcoholRates = maleData.map((d) => parseFloat(d.alcohol_rate));
-  const maleSuicideRates = maleData.map((d) => parseFloat(d.suicide_rate));
-  const femaleAlcoholRates = femaleData.map((d) => parseFloat(d.alcohol_rate));
-  const femaleSuicideRates = femaleData.map((d) => parseFloat(d.suicide_rate));
+  const n = validPairs.length;
+  const sumX = validPairs.reduce((sum, [x]) => sum + x, 0);
+  const sumY = validPairs.reduce((sum, [, y]) => sum + y, 0);
+  const sumXY = validPairs.reduce((sum, [x, y]) => sum + x * y, 0);
+  const sumX2 = validPairs.reduce((sum, [x]) => sum + x * x, 0);
+  const sumY2 = validPairs.reduce((sum, [, y]) => sum + y * y, 0);
 
-  return {
-    male: pearsonCorrelation(maleAlcoholRates, maleSuicideRates),
-    female: pearsonCorrelation(femaleAlcoholRates, femaleSuicideRates),
-    combined: pearsonCorrelation(
-      [...maleAlcoholRates, ...femaleAlcoholRates],
-      [...maleSuicideRates, ...femaleSuicideRates]
-    ),
-  };
-};
+  const numerator = n * sumXY - sumX * sumY;
+  const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
 
-// Calculate gender ratio (male rate / female rate)
-export const calculateGenderRatio = (data: DataPoint[]): number => {
-  const maleData = data.filter((d) => d.sex === 'M');
-  const femaleData = data.filter((d) => d.sex === 'F');
+  return denominator === 0 ? 0 : numerator / denominator;
+}
 
-  const avgMaleRate =
-    maleData.reduce((sum, d) => sum + parseFloat(d.alcohol_rate), 0) / maleData.length;
-  const avgFemaleRate =
-    femaleData.reduce((sum, d) => sum + parseFloat(d.alcohol_rate), 0) / femaleData.length;
+// Calculate gender ratios
+const genderRatios = countries.map((country) => {
+  const countryMaleData = maleData.filter((d) => d.country === country);
+  const countryFemaleData = femaleData.filter((d) => d.country === country);
 
-  return avgMaleRate / avgFemaleRate;
-};
+  if (countryMaleData.length === 0 || countryFemaleData.length === 0) return { country, ratio: 0 };
 
-// Get data for specific filters
-export const getFilteredData = (data: DataPoint[], filters: {
-  countries?: string[];
-  years?: string[];
-  sex?: 'M' | 'F' | 'both';
-}) => {
-  return data.filter((d) => {
-    if (filters.countries && !filters.countries.includes(d.country)) return false;
-    if (filters.years && !filters.years.includes(d.year)) return false;
-    if (filters.sex && filters.sex !== 'both' && d.sex !== filters.sex) return false;
-    return true;
-  });
-};
-
-// Get available years for a country
-export const getCountryYears = (data: DataPoint[], countryCode: string): string[] => {
-  return Array.from(
-    new Set(data.filter((d) => d.country === countryCode).map((d) => d.year))
-  ).sort();
-};
-
-// Get summary statistics for a country
-export const getCountryStats = (data: DataPoint[], countryCode: string) => {
-  const countryData = data.filter((d) => d.country === countryCode);
-  const maleData = countryData.filter((d) => d.sex === 'M');
-  const femaleData = countryData.filter((d) => d.sex === 'F');
-
-  const calculateAvg = (data: DataPoint[], field: keyof DataPoint) => {
-    const values = data
-      .map((d) => parseFloat(d[field] as string))
-      .filter((v) => !isNaN(v));
-    return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
-  };
+  const avgMaleAlcohol =
+    countryMaleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) /
+    countryMaleData.length;
+  const avgFemaleAlcohol =
+    countryFemaleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) /
+    countryFemaleData.length;
 
   return {
-    country: countryCode,
-    name: countryNames[countryCode] || countryCode,
-    years: getCountryYears(data, countryCode),
+    country,
+    ratio:
+      avgFemaleAlcohol > 0 ? Number.parseFloat((avgMaleAlcohol / avgFemaleAlcohol).toFixed(1)) : 0,
+  };
+});
+
+// Dataset metadata and statistics
+export const datasetStats = {
+  totalRecords: aggrData.length,
+  countries: countries.sort(),
+  years,
+  yearRange: {
+    start: Math.min(...years.map((y) => Number.parseInt(y, 10))),
+    end: Math.max(...years.map((y) => Number.parseInt(y, 10))),
+  },
+  genderSplit: {
+    male: maleRecords,
+    female: femaleRecords,
+    ratio: Number.parseFloat((maleRecords / femaleRecords).toFixed(2)),
+  },
+  correlations: {
     male: {
-      avgAlcoholRate: calculateAvg(maleData, 'alcohol_rate'),
-      avgSuicideRate: calculateAvg(maleData, 'suicide_rate'),
-      avgAccidentRate: calculateAvg(maleData, 'accident_rate'),
+      alcoholSuicide: Number.parseFloat(
+        calculateCorrelation(maleData, 'alcohol_rate', 'suicide_rate').toFixed(3)
+      ),
     },
     female: {
-      avgAlcoholRate: calculateAvg(femaleData, 'alcohol_rate'),
-      avgSuicideRate: calculateAvg(femaleData, 'suicide_rate'),
-      avgAccidentRate: calculateAvg(femaleData, 'accident_rate'),
+      alcoholSuicide: Number.parseFloat(
+        calculateCorrelation(femaleData, 'alcohol_rate', 'suicide_rate').toFixed(3)
+      ),
     },
-  };
-};
-
-// Default display constants (will be updated by components using real data)
-export const CORRECTED_DISPLAY = {
-  totalRecords: 0, // Will be populated from Supabase
-  countries: Object.keys(countryNames).length,
-  yearRange: '2011-2022',
-  correlationMale: 0.76,
-  correlationFemale: 0.45,
-  correlationCombined: 0.68,
-  maleCorrelation: 0.76, // Legacy property name
-  femaleCorrelation: 0.45, // Legacy property name
-  genderRatio: 3.7,
-  description: 'Comprehensive European mental health and alcohol mortality analysis',
-};
-
-export const CORRELATION_DISPLAY = {
-  strength: 'Strong',
-  value: 0.68,
-  male: 0.76,
-  female: 0.45,
-  significance: 'Statistically significant',
-  interpretation: 'Strong positive correlation indicates significant relationship between alcohol and suicide mortality',
-};
-
-export const ACTUAL_DATASET_INFO = {
-  source: 'Supabase Database (migrated from BigQuery)',
-  filename: 'mental_health_data table',
-  totalRecords: 0, // Will be populated from Supabase
-  countries: Object.keys(countryNames),
-  uniqueCountries: Object.keys(countryNames).length,
-  years: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
-  yearRange: {
-    start: 2011,
-    end: 2022,
+    overall: {
+      alcoholSuicide: Number.parseFloat(
+        calculateCorrelation(aggrData, 'alcohol_rate', 'suicide_rate').toFixed(3)
+      ),
+    },
   },
-  dataTypes: ['alcohol_rate', 'suicide_rate', 'accident_rate'],
+  genderRatios: {
+    byCountry: genderRatios,
+    averageRatio: Number.parseFloat(
+      (genderRatios.reduce((sum, { ratio }) => sum + ratio, 0) / genderRatios.length).toFixed(1)
+    ),
+  },
+};
+
+// Research insights and metadata
+export const researchMetadata = {
+  title: 'European Mental Health and Alcohol Mortality Analysis',
+  description:
+    'Comprehensive analysis of alcohol-related and suicide mortality rates across 34 European countries (2011-2022)',
+  source: 'Hybrid JSON Architecture (Lightning Fast)',
+  dataSource: 'BigQuery → Enhanced JSON',
+  totalRecords: aggrData.length,
+  coverage: {
+    countries: countries.length,
+    years: years.length,
+    timespan: `${years[0]}-${years[years.length - 1]}`,
+  },
   methodology: 'Age-standardized mortality rates per 100,000 population',
-  lastUpdated: '2024',
+  lastUpdated: new Date().toISOString().split('T')[0],
+  performance: 'Sub-millisecond access after initial load',
 };
 
-// Hook to get updated dataset stats
-export const useUpdatedDatasetInfo = () => {
-  const { data: stats } = useDatasetStats();
-  
-  if (stats) {
-    return {
-      ...ACTUAL_DATASET_INFO,
-      totalRecords: stats.totalRecords,
-      countries: stats.countries,
-      uniqueCountries: stats.uniqueCountries,
-      years: stats.years,
-      yearRange: stats.yearRange,
-    };
-  }
-  
-  return ACTUAL_DATASET_INFO;
+// Correlation display constants for UI components
+export const CORRELATION_DISPLAY = {
+  male: datasetStats.correlations.male.alcoholSuicide.toFixed(3),
+  female: datasetStats.correlations.female.alcoholSuicide.toFixed(3),
+  overall: datasetStats.correlations.overall.alcoholSuicide.toFixed(3),
 };
 
-// Log migration information
-console.log('=== MENTAL HEALTH RESEARCH DATASET ===');
-console.log('Source: Supabase Database (mental_health_data table)');
-console.log('Migration: JSON → Supabase completed');
-console.log('Countries supported:', Object.keys(countryNames).length);
-console.log('Expected year range: 2011-2022');
-console.log('Data will be fetched from Supabase on component mount');
+// Helper functions for components
+export function calculateGenderRatio(data: EnhancedDataPoint[]): number {
+  const maleData = data.filter((d) => d.sex === 'M');
+  const femaleData = data.filter((d) => d.sex === 'F');
+
+  if (maleData.length === 0 || femaleData.length === 0) return 0;
+
+  const avgMaleAlcohol =
+    maleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) / maleData.length;
+  const avgFemaleAlcohol =
+    femaleData.reduce((sum, d) => sum + Number.parseFloat(d.alcohol_rate), 0) / femaleData.length;
+
+  return avgFemaleAlcohol > 0 ? avgMaleAlcohol / avgFemaleAlcohol : 0;
+}
+
+export function calculateCorrelations(data: EnhancedDataPoint[]): {
+  male: number;
+  female: number;
+  combined: number;
+} {
+  const maleData = data.filter((d) => d.sex === 'M');
+  const femaleData = data.filter((d) => d.sex === 'F');
+
+  return {
+    male: calculateCorrelation(maleData, 'alcohol_rate', 'suicide_rate'),
+    female: calculateCorrelation(femaleData, 'alcohol_rate', 'suicide_rate'),
+    combined: calculateCorrelation(data, 'alcohol_rate', 'suicide_rate'),
+  };
+}
+
+// Export the raw data for direct access
+export { aggrData };
+
+// Legacy compatibility - keep existing exports
+export const mentalHealthData = aggrData;
+
+// Console logging for development
+if (import.meta.env.DEV) {
+  console.log('📊 Mental Health Research Data Loaded');
+  console.log(
+    `📈 ${datasetStats.totalRecords} records across ${datasetStats.countries.length} countries`
+  );
+  console.log('⚡ Source: Hybrid JSON Architecture (Lightning Fast)');
+  console.log('🚀 Performance: Sub-millisecond access');
+  console.log('');
+  console.log('🔍 Quick Stats:');
+  console.log(`   Countries: ${datasetStats.countries.length}`);
+  console.log(`   Years: ${datasetStats.yearRange.start}-${datasetStats.yearRange.end}`);
+  console.log(
+    `   Male/Female Records: ${datasetStats.genderSplit.male}/${datasetStats.genderSplit.female}`
+  );
+  console.log(
+    `   Overall Alcohol-Suicide Correlation: ${datasetStats.correlations.overall.alcoholSuicide}`
+  );
+  console.log('');
+  console.log('💡 Data access: import { aggrData, DataService } from "./services/data-service"');
+}

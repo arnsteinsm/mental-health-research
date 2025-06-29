@@ -2,52 +2,216 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { countryNames } from '../data';
-import {
-  fetchMentalHealthData,
-  fetchFilteredMentalHealthData,
-  fetchCountryData,
-  fetchDatasetStats,
-  type MentalHealthData
-} from './supabase-data-service';
+import aggrData from '../data/aggr_data.json';
 
-// Transform Supabase data to match existing interface
-export interface DataPoint {
+// Enhanced data types matching the new JSON structure
+export interface EnhancedDataPoint {
   country: string;
   year: string;
   sex: 'M' | 'F';
   alcohol_rate: string;
   suicide_rate: string;
-  accident_rate: string;
+  population_over_15: string;
+  est_alcohol_deaths: string;
+  est_suicide_deaths: string;
 }
 
-// Transform Supabase data to legacy format
-const transformSupabaseData = (data: MentalHealthData[]): DataPoint[] => {
-  return data.map(item => ({
-    country: item.country,
-    year: item.year.toString(),
-    sex: item.sex,
-    alcohol_rate: item.alcohol_rate.toString(),
-    suicide_rate: item.suicide_rate.toString(),
-    accident_rate: item.accident_rate.toString()
-  }));
-};
+// Nested data structure: Country -> Year -> Sex -> Data
+export interface NestedData {
+  [country: string]: {
+    [year: string]: {
+      [sex: string]: {
+        alcohol_rate: string;
+        suicide_rate: string;
+        population_over_15: string;
+        est_alcohol_deaths: string;
+        est_suicide_deaths: string;
+      };
+    };
+  };
+}
 
-// Custom hook for complete research data using TanStack Query
+// Smart Data Service - all client-side, blazing fast
+export class DataService {
+  private static data: EnhancedDataPoint[] = aggrData as EnhancedDataPoint[];
+
+  // Get all data instantly
+  static getAll(): EnhancedDataPoint[] {
+    return this.data;
+  }
+
+  // Filter by country
+  static getByCountry(country: string): EnhancedDataPoint[] {
+    return this.data.filter((d) => d.country === country);
+  }
+
+  // Filter by year
+  static getByYear(year: string): EnhancedDataPoint[] {
+    return this.data.filter((d) => d.year === year);
+  }
+
+  // Filter by sex
+  static getBySex(sex: 'M' | 'F'): EnhancedDataPoint[] {
+    return this.data.filter((d) => d.sex === sex);
+  }
+
+  // Complex filtering
+  static getFiltered(filters: {
+    countries?: string[];
+    years?: string[];
+    sex?: 'M' | 'F' | 'both';
+  }): EnhancedDataPoint[] {
+    let filtered = this.data;
+
+    if (filters.countries?.length) {
+      filtered = filtered.filter((d) => filters.countries!.includes(d.country));
+    }
+
+    if (filters.years?.length) {
+      filtered = filtered.filter((d) => filters.years!.includes(d.year));
+    }
+
+    if (filters.sex && filters.sex !== 'both') {
+      filtered = filtered.filter((d) => d.sex === filters.sex);
+    }
+
+    return filtered;
+  }
+
+  // Create nested structure: Country -> Year -> Sex -> Data
+  static getNestedData(): NestedData {
+    const nested: NestedData = {};
+
+    this.data.forEach((record) => {
+      if (!nested[record.country]) nested[record.country] = {};
+      if (!nested[record.country][record.year]) nested[record.country][record.year] = {};
+
+      nested[record.country][record.year][record.sex] = {
+        alcohol_rate: record.alcohol_rate,
+        suicide_rate: record.suicide_rate,
+        population_over_15: record.population_over_15,
+        est_alcohol_deaths: record.est_alcohol_deaths,
+        est_suicide_deaths: record.est_suicide_deaths,
+      };
+    });
+
+    // Add totals (T) for each country/year combination
+    this.addTotalsToNested(nested);
+
+    return nested;
+  }
+
+  // Add calculated totals (T) to nested data
+  private static addTotalsToNested(nested: NestedData): void {
+    Object.keys(nested).forEach((country) => {
+      Object.keys(nested[country]).forEach((year) => {
+        const yearData = nested[country][year];
+        const maleData = yearData.M;
+        const femaleData = yearData.F;
+
+        if (maleData && femaleData) {
+          const malePopulation = Number.parseFloat(maleData.population_over_15);
+          const femalePopulation = Number.parseFloat(femaleData.population_over_15);
+          const totalPopulation = malePopulation + femalePopulation;
+
+          // Weighted averages for rates
+          const maleAlcoholRate = Number.parseFloat(maleData.alcohol_rate);
+          const femaleAlcoholRate = Number.parseFloat(femaleData.alcohol_rate);
+          const maleSuicideRate = Number.parseFloat(maleData.suicide_rate);
+          const femaleSuicideRate = Number.parseFloat(femaleData.suicide_rate);
+
+          const totalAlcoholRate = (
+            (maleAlcoholRate * malePopulation + femaleAlcoholRate * femalePopulation) /
+            totalPopulation
+          ).toFixed(2);
+
+          const totalSuicideRate = (
+            (maleSuicideRate * malePopulation + femaleSuicideRate * femalePopulation) /
+            totalPopulation
+          ).toFixed(2);
+
+          // Sum estimated deaths
+          const totalAlcoholDeaths = (
+            Number.parseFloat(maleData.est_alcohol_deaths) +
+            Number.parseFloat(femaleData.est_alcohol_deaths)
+          ).toFixed(1);
+
+          const totalSuicideDeaths = (
+            Number.parseFloat(maleData.est_suicide_deaths) +
+            Number.parseFloat(femaleData.est_suicide_deaths)
+          ).toFixed(1);
+
+          yearData.T = {
+            alcohol_rate: totalAlcoholRate,
+            suicide_rate: totalSuicideRate,
+            population_over_15: totalPopulation.toString(),
+            est_alcohol_deaths: totalAlcoholDeaths,
+            est_suicide_deaths: totalSuicideDeaths,
+          };
+        }
+      });
+    });
+  }
+
+  // Get available countries
+  static getAvailableCountries(): string[] {
+    return [...new Set(this.data.map((d) => d.country))].sort();
+  }
+
+  // Get available years
+  static getAvailableYears(): string[] {
+    return [...new Set(this.data.map((d) => d.year))].sort();
+  }
+
+  // Get dataset statistics
+  static getDatasetStats() {
+    const countries = this.getAvailableCountries();
+    const years = this.getAvailableYears();
+
+    return {
+      totalRecords: this.data.length,
+      uniqueCountries: countries.length,
+      countries,
+      years,
+      yearRange: {
+        start: Math.min(...years.map((y) => Number.parseInt(y, 10))),
+        end: Math.max(...years.map((y) => Number.parseInt(y, 10))),
+      },
+      genderSplit: {
+        male: this.data.filter((d) => d.sex === 'M').length,
+        female: this.data.filter((d) => d.sex === 'F').length,
+      },
+    };
+  }
+}
+
+// TanStack Query hooks - instant access, no network calls!
 export const useResearchData = () => {
   return useQuery({
     queryKey: ['research-data'],
     queryFn: async () => {
-      const data = await fetchMentalHealthData();
-      return transformSupabaseData(data);
+      console.log('🚀 Lightning-fast JSON access - no API calls!');
+      return DataService.getAll();
     },
-    staleTime: 30 * 60 * 1000, // 30 minutes - research data doesn't change often
-    gcTime: 60 * 60 * 1000, // 1 hour cache time
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+    staleTime: Number.POSITIVE_INFINITY, // Data never changes
+    gcTime: Number.POSITIVE_INFINITY, // Keep forever in memory
   });
 };
 
-// Custom hook for filtered data
+// Nested data hook
+export const useNestedData = () => {
+  return useQuery({
+    queryKey: ['nested-data'],
+    queryFn: async () => {
+      console.log('🏗️ Building nested structure with totals...');
+      return DataService.getNestedData();
+    },
+    staleTime: Number.POSITIVE_INFINITY,
+    gcTime: Number.POSITIVE_INFINITY,
+  });
+};
+
+// Filtered data hook
 export const useFilteredData = (filters: {
   countries?: string[];
   years?: string[];
@@ -56,79 +220,87 @@ export const useFilteredData = (filters: {
   return useQuery({
     queryKey: ['filtered-data', filters],
     queryFn: async () => {
-      const supabaseFilters = {
-        countries: filters.countries,
-        years: filters.years?.map(y => parseInt(y)),
-        sex: filters.sex === 'both' ? undefined : filters.sex
-      };
-      
-      const data = await fetchFilteredMentalHealthData(supabaseFilters);
-      return transformSupabaseData(data);
+      console.log('🔍 Client-side filtering:', filters);
+      return DataService.getFiltered(filters);
     },
-    staleTime: 15 * 60 * 1000, // 15 minutes
-    gcTime: 30 * 60 * 1000, // 30 minutes cache
+    staleTime: Number.POSITIVE_INFINITY,
+    gcTime: 5 * 60 * 1000, // 5 minutes for filtered results
   });
 };
 
-// Custom hook for country statistics
+// Country stats hook
 export const useCountryStats = (countryCode: string) => {
   return useQuery({
     queryKey: ['country-stats', countryCode],
     queryFn: async () => {
-      const data = await fetchCountryData(countryCode);
-      const transformedData = transformSupabaseData(data);
-      
-      // Calculate statistics from the data
-      const maleData = transformedData.filter(d => d.sex === 'M');
-      const femaleData = transformedData.filter(d => d.sex === 'F');
+      const data = DataService.getByCountry(countryCode);
 
-      const calculateAvg = (data: DataPoint[], field: keyof DataPoint) => {
+      // Calculate statistics from the data
+      const maleData = data.filter((d) => d.sex === 'M');
+      const femaleData = data.filter((d) => d.sex === 'F');
+
+      const calculateAvg = (data: EnhancedDataPoint[], field: keyof EnhancedDataPoint) => {
         const values = data
-          .map(d => parseFloat(d[field] as string))
-          .filter(v => !isNaN(v));
+          .map((d) => Number.parseFloat(d[field] as string))
+          .filter((v) => !Number.isNaN(v));
         return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
       };
 
       return {
         country: countryCode,
         name: countryNames[countryCode] || countryCode,
-        years: [...new Set(transformedData.map(d => d.year))].sort(),
+        years: [...new Set(data.map((d) => d.year))].sort(),
         male: {
           avgAlcoholRate: calculateAvg(maleData, 'alcohol_rate'),
           avgSuicideRate: calculateAvg(maleData, 'suicide_rate'),
-          avgAccidentRate: calculateAvg(maleData, 'accident_rate'),
+          totalPopulation: maleData.reduce(
+            (sum, d) => sum + Number.parseFloat(d.population_over_15),
+            0
+          ),
         },
         female: {
           avgAlcoholRate: calculateAvg(femaleData, 'alcohol_rate'),
           avgSuicideRate: calculateAvg(femaleData, 'suicide_rate'),
-          avgAccidentRate: calculateAvg(femaleData, 'accident_rate'),
+          totalPopulation: femaleData.reduce(
+            (sum, d) => sum + Number.parseFloat(d.population_over_15),
+            0
+          ),
         },
       };
     },
-    staleTime: 60 * 60 * 1000, // 1 hour - country stats are stable
-    gcTime: 2 * 60 * 60 * 1000, // 2 hours cache
+    staleTime: Number.POSITIVE_INFINITY,
+    gcTime: 10 * 60 * 1000, // 10 minutes
     enabled: !!countryCode,
   });
 };
 
-// Custom hook for dataset statistics
+// Dataset statistics hook
 export const useDatasetStats = () => {
   return useQuery({
     queryKey: ['dataset-stats'],
-    queryFn: fetchDatasetStats,
-    staleTime: 60 * 60 * 1000, // 1 hour
-    gcTime: 2 * 60 * 60 * 1000, // 2 hours cache
+    queryFn: async () => {
+      console.log('📊 Computing dataset statistics...');
+      return DataService.getDatasetStats();
+    },
+    staleTime: Number.POSITIVE_INFINITY,
+    gcTime: Number.POSITIVE_INFINITY,
   });
 };
 
-// Export data utilities for components
+// Export utilities
 export { countryNames };
+
+// Legacy compatibility
+export interface DataPoint extends EnhancedDataPoint {}
 
 // Export dataset stats for backward compatibility
 export const datasetStats = {
-  totalRecords: 0, // Will be populated by useDatasetStats hook
-  countries: [], // Will be populated by useDatasetStats hook
-  years: [], // Will be populated by useDatasetStats hook
+  totalRecords: aggrData.length,
+  countries: DataService.getAvailableCountries(),
+  years: DataService.getAvailableYears(),
   yearRange: { start: 2011, end: 2022 },
-  genderSplit: { male: 0, female: 0 }
+  genderSplit: {
+    male: aggrData.filter((d) => d.sex === 'M').length,
+    female: aggrData.filter((d) => d.sex === 'F').length,
+  },
 };

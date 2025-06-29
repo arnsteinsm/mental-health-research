@@ -1,5 +1,7 @@
+// src/components/DownloadCTA.tsx
+
 import { motion } from 'framer-motion';
-import { BookOpen, Share2 } from 'lucide-react';
+import { BookOpen, Megaphone, Share2 } from 'lucide-react';
 import type React from 'react';
 
 interface CallToActionProps {
@@ -50,12 +52,13 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
       className={`text-center ${className}`}
     >
       <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
-        <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+        <Megaphone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Your Voice Can Change the Data</h3>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Help raise awareness about this critical mental health crisis. Share this research with
-          policymakers, healthcare professionals, and advocates working on mental health
-          initiatives.
+          This research provides a roadmap for addressing one of Europe's most pressing but hidden
+          health crises. Help raise awareness about this critical mental health crisis. Share this
+          research with policymakers, healthcare professionals, and advocates working on mental
+          health initiatives.
         </p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-6 text-sm">
