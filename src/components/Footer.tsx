@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Database, Calendar, Scale, BarChart3, Heart } from 'lucide-react';
+import { ExternalLink, Github, Database, Calendar, Scale, BarChart3 } from 'lucide-react';
 import { researchData } from '../data/research-data';
 
 const Footer: React.FC = () => {
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Branding */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
@@ -91,45 +91,6 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Impact & Links */}
-          <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 flex items-center">
-              <Heart className="w-5 h-5 mr-2 text-red-400" />
-              Impact
-            </h4>
-            <div className="space-y-3">
-              <div className="text-sm text-gray-400">
-                <div className="font-medium text-white">Crisis Revealed</div>
-                <div>3.7x higher male alcohol mortality</div>
-              </div>
-              
-              <div className="text-sm text-gray-400">
-                <div className="font-medium text-white">Evidence Provided</div>
-                <div>50+ peer-reviewed sources</div>
-              </div>
-              
-              <div className="text-sm text-gray-400">
-                <div className="font-medium text-white">Lives at Stake</div>
-                <div>~50,000 annual deaths in Europe</div>
-              </div>
-              
-              <a 
-                href="https://creativecommons.org/licenses/by/4.0/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                <Scale className="w-4 h-4 mr-2" />
-                CC BY 4.0 License
-              </a>
-              
-              <div className="flex items-center text-sm text-gray-400">
-                <Calendar className="w-4 h-4 mr-2" />
-                Updated {lastUpdated}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -151,29 +112,6 @@ const Footer: React.FC = () => {
               <span>2011-2018 Analysis</span>
               <span>•</span>
               <span>Open Data Initiative</span>
-            </div>
-          </div>
-          
-          <div className="mt-6 text-center">
-            <div className="bg-red-900/30 border border-red-500/30 rounded-lg p-4 max-w-4xl mx-auto">
-              <h5 className="font-semibold text-red-300 mb-2">🚨 Crisis Helplines</h5>
-              <div className="text-sm text-red-200 leading-relaxed space-y-1">
-                <p>
-                  <strong>UK/Ireland:</strong> 116 123 (Samaritans) • 
-                  <strong> Germany:</strong> 0800 111 0 111 • 
-                  <strong> France:</strong> 3114
-                </p>
-                <p>
-                  <strong>Netherlands:</strong> 113 • 
-                  <strong> Spain:</strong> 717 003 717 • 
-                  <strong> Italy:</strong> 800 86 00 22
-                </p>
-                <p>
-                  <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
-                    Find helplines for all countries →
-                  </a>
-                </p>
-              </div>
             </div>
           </div>
           
