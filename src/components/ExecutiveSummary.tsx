@@ -18,7 +18,7 @@ const ExecutiveSummary: React.FC = () => {
       title: `r = ${CORRECTED_DISPLAY.maleCorrelation}`,
       subtitle: "Statistically linked to suicide",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
-      microExplanation: `Pearson correlation between alcohol mortality and suicide rates (${CORRECTED_DISPLAY.yearRange}, all countries/sexes combined)`,
+      microExplanation: `Pearson correlation between alcohol mortality and suicide rates (${CORRECTED_DISPLAY.yearRange}, men only)`,
       color: "from-purple-500 to-purple-600"
     },
     {
