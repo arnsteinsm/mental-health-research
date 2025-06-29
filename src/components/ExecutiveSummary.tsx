@@ -8,22 +8,22 @@ const ExecutiveSummary: React.FC = () => {
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: `${CORRECTED_DISPLAY.genderRatio}x Higher`,
-      subtitle: "Male alcohol mortality",
-      description: "Men die from alcohol at dramatically higher rates across all European countries.",
+      subtitle: "Alcohol mortality is disproportionately male",
+      description: "Men consistently show dramatically higher alcohol-related death rates across all European countries studied.",
       color: "from-red-500 to-red-600"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: `r = ${CORRECTED_DISPLAY.maleCorrelation}`,
-      subtitle: "Alcohol-Suicide Link",
+      subtitle: "Statistically linked to suicide",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <AlertCircle className="w-8 h-8" />,
       title: "Hidden Crisis",
-      subtitle: "Mental Health Emergency",
-      description: "Analysis reveals alcohol deaths are masking a broader male mental health crisis.",
+      subtitle: "Mental health signals are often missed",
+      description: "Analysis reveals alcohol deaths are masking a broader male mental health emergency.",
       color: "from-blue-500 to-blue-600"
     }
   ];
