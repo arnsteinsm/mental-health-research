@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
 import type React from 'react';
-import { CORRECTED_DISPLAY } from '../data';
+import { calculateGenderRatio } from '../data';
+import { useResearchData } from '../services/data-service';
 
 const Hero: React.FC = () => {
+  // Get live data from Supabase
+  const { data: researchData = [] } = useResearchData();
+
+  // Calculate live gender ratio from actual data
+  const genderRatio = researchData.length > 0 ? calculateGenderRatio(researchData) : 3.7;
+  const displayRatio = Math.round(genderRatio * 10) / 10; // Round to 1 decimal
+
   return (
     <section className="relative min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -45,7 +53,7 @@ const Hero: React.FC = () => {
             Alcohol-related deaths reveal a hidden mental health crisis — especially among men.
             <br />
             <span className="text-yellow-300">
-              Men are dying at {CORRECTED_DISPLAY.genderRatio}x the rate of women.
+              Men are dying at {displayRatio}x the rate of women.
             </span>
           </motion.p>
 

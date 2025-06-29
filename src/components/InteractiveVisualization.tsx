@@ -64,11 +64,7 @@ const InteractiveVisualization: React.FC = () => {
   } = useGeoDetection(enableGeoDetection);
 
   // TanStack Query data fetching
-  const {
-    data: decadeResearchData = [],
-    isLoading: isDataLoading,
-    error: dataError,
-  } = useResearchData();
+  const { data: researchData = [], isLoading: isDataLoading, error: dataError } = useResearchData();
 
   // Auto-apply geo-detection results when available
   useEffect(() => {
@@ -157,7 +153,7 @@ const InteractiveVisualization: React.FC = () => {
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
     // Filter data
-    const filteredData = decadeResearchData.filter(
+    const filteredData = researchData.filter(
       (d) => selectedCountries.includes(d.country) && d.year === selectedYear
     );
 
@@ -361,11 +357,11 @@ const InteractiveVisualization: React.FC = () => {
 
     // Time series data preparation
     const timeSeriesData = selectedCountries.map((country) => {
-      const maleData = decadeResearchData
+      const maleData = researchData
         .filter((d) => d.country === country && d.sex === 'M')
         .sort((a, b) => Number.parseInt(a.year) - Number.parseInt(b.year));
 
-      const femaleData = decadeResearchData
+      const femaleData = researchData
         .filter((d) => d.country === country && d.sex === 'F')
         .sort((a, b) => Number.parseInt(a.year) - Number.parseInt(b.year));
 
@@ -514,6 +510,40 @@ const InteractiveVisualization: React.FC = () => {
 
   if (geoError) {
     console.error('Geo-detection failed:', geoError);
+  }
+
+  // Show loading state while data is being fetched
+  if (isDataLoading) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <LoadingSpinner message="Loading research data..." type="data" />
+        </div>
+      </section>
+    );
+  }
+
+  // Show error state if data fetch failed
+  if (dataError) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Unable to Load Data</h2>
+            <p className="text-gray-600 mb-4">
+              There was an error loading the research data. Please try refreshing the page.
+            </p>
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Refresh Page
+            </button>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (

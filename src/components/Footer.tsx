@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import { BarChart3, Database, ExternalLink } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
-import { ACTUAL_DATASET_INFO } from '../data';
+import { datasetStats } from '../services/data-service';
 import { evidenceSources } from '../data/evidence-sources';
 import EvidenceModal from './EvidenceModal';
 
 const Footer: React.FC = () => {
   // Use verified dataset information
-  const countryCount = ACTUAL_DATASET_INFO.uniqueCountries;
+  const countryCount = datasetStats.uniqueCountries;
   const [isEvidenceModalOpen, setIsEvidenceModalOpen] = useState(false);
 
   // Count actual evidence sources
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="bg-gray-800 rounded-lg p-3">
                 <div className="text-lg font-bold text-blue-400">
-                  {ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}
+                  {datasetStats.yearRange.start}-{datasetStats.yearRange.end}
                 </div>
                 <div className="text-xs text-gray-400">Analysis</div>
               </div>

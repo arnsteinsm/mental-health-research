@@ -249,3 +249,48 @@ This project was built using [Bolt](https://bolt.new), demonstrating the platfor
 - **International**: [findahelpline.com](https://findahelpline.com)
 
 *This project is dedicated to everyone we've lost and everyone we can still save.*
+
+## Data Quality & Completeness
+
+### Dataset Overview
+- **Total Records**: 783 mortality records from 34 European countries (2011-2022)
+- **Data Completeness**: 95.9% (783/816 theoretical maximum)
+- **Missing Combinations**: 33 country-year-gender combinations
+
+### Complete vs. Incomplete Countries
+
+**Complete Countries (25)** - 100% data coverage:
+`AT, BE, CH, CZ, DE, DK, EE, ES, FI, FR, HR, HU, IT, LT, LU, LV, NL, NO, PL, PT, RO, RS, SE, SI, SK`
+
+**Countries with Missing Data (9)**:
+- 🇬🇧 **United Kingdom**: 66.7% complete (Brexit impact: missing 2019-2022)
+- 🇱🇮 **Liechtenstein**: 58.3% complete (small population effects)
+- 🇲🇹 **Malta**: 79.2% complete (small population effects)
+- 🇨🇾 **Cyprus**: 83.3% complete (scattered missing female data)
+- 🇮🇸 **Iceland**: 91.7% complete (missing 2013-2014 female data)
+- 🇧🇬 **Bulgaria**: 95.8% complete (1 missing record)
+- 🇬🇷 **Greece**: 95.8% complete (1 missing record)
+- 🇮🇪 **Ireland**: 95.8% complete (1 missing record)
+- 🇹🇷 **Turkey**: 95.8% complete (1 missing record)
+
+### Missing Data Patterns
+- **Gender Bias**: 3.13× more likely to be missing female records (25 female vs 8 male)
+- **Small Countries**: Most affected due to statistical reliability thresholds
+- **Brexit Impact**: UK data sharing ceased after 2018
+- **Early Years**: 2011-2013 have more gaps due to initial data collection challenges
+
+### Analysis Recommendations
+
+**For Rigorous Statistical Analysis**:
+- Use only the 25 complete countries (600 records, 100% coverage)
+- Ensures unbiased country comparisons and valid statistical inference
+
+**For Maximum Sample Size**:
+- Use all 34 countries with missing data notation (783 records, 95.9% coverage)
+- Better for overall European trends and large-scale patterns
+
+**For Gender Analysis**:
+- Account for female data underrepresentation in statistical models
+- Consider weighting or stratification to address bias
+
+The app automatically displays data completeness information and allows users to understand the limitations of the analysis.
