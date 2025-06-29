@@ -711,7 +711,7 @@ const InteractiveVisualization: React.FC = () => {
                     </div>
                     {filteredCountries.length === 0 && (
                       <div className="p-4 text-center text-gray-500 text-sm">
-                        No countries found matching "{countrySearchTerm}"
+                        Choose countries and gender to view trends in alcohol mortality.
                       </div>
                     )}
                   </div>

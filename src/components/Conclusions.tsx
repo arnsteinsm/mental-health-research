@@ -97,6 +97,37 @@ const Conclusions: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Enhanced CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">Your Voice Can Change the Data</h3>
+          <p className="text-lg mb-6 max-w-3xl mx-auto">
+            This research provides a roadmap for addressing one of Europe's most pressing but hidden health crises. 
+            The time for action is now—every day of delay costs lives.
+          </p>
+          
+          {/* Enhanced action line */}
+          <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
+            Use this data to inform local initiatives, health programs, or just to start a conversation that matters.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+              <Share2 className="w-5 h-5 mr-2" />
+              Share Research
+            </button>
+            <button className="inline-flex items-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-800 transition-colors">
+              Contact Researchers
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
