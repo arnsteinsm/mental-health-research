@@ -98,7 +98,7 @@ const Conclusions: React.FC = () => {
           ))}
         </div>
 
-        {/* SINGLE Consolidated Call to Action - Combines both "Pattern is Clear" and "Spread Awareness" */}
+        {/* SINGLE Consolidated Call to Action - This is THE PATTERN section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -106,7 +106,7 @@ const Conclusions: React.FC = () => {
           viewport={{ once: true }}
           className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Clear</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Undeniable</h3>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
             Our analysis reveals a hidden crisis: alcohol-related deaths among men correlate strongly with suicide rates (r = {CORRELATION_DISPLAY.male}). 
             Men die from alcohol at {VERIFIED_GENDER_RATIO}x the rate of women. This isn't about drinking—it's about untreated mental health struggles that demand immediate attention.
@@ -165,10 +165,6 @@ const Conclusions: React.FC = () => {
               <ExternalLink className="w-5 h-5 mr-3" />
               View Source Data
             </a>
-          </div>
-
-          <div className="mt-6 text-sm text-purple-200">
-            Help spread awareness • Every share could save a life
           </div>
         </motion.div>
       </div>

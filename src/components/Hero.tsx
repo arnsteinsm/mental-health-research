@@ -46,40 +46,11 @@ const Hero: React.FC = () => {
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
-          {/* Single Powerful Finding Block */}
-          <motion.div
-            className="bg-gradient-to-r from-red-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-12"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <h2 className="text-2xl font-bold mb-4 text-yellow-300">The Pattern is Undeniable</h2>
-            <p className="text-lg leading-relaxed mb-6">
-              Analysis of {CORRECTED_DISPLAY.totalRecords} data points from {CORRECTED_DISPLAY.countries} European countries 
-              ({CORRECTED_DISPLAY.yearRange}) reveals an unmistakable truth: 
-              where alcohol deaths rise, suicide rates follow—especially among men.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">{CORRECTED_DISPLAY.genderRatio}x</div>
-                <div className="text-purple-200">Higher male alcohol mortality</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">r = {CORRECTED_DISPLAY.maleCorrelation}</div>
-                <div className="text-purple-200">Alcohol-suicide correlation</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-3">
-                <div className="text-2xl font-bold text-red-300">{CORRECTED_DISPLAY.countries}</div>
-                <div className="text-purple-200">Countries analyzed</div>
-              </div>
-            </div>
-          </motion.div>
-
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
             <button
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"

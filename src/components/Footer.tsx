@@ -44,22 +44,6 @@ const Footer: React.FC = () => {
               through a gendered lens. Built to save lives.
             </p>
             
-            {/* Hackathon Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mb-6 p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg border border-yellow-500/30"
-            >
-              <div className="flex items-center space-x-2 mb-2">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                <span className="text-yellow-300 font-semibold text-sm">Bolt Hackathon 2025</span>
-              </div>
-              <p className="text-yellow-200 text-xs leading-relaxed">
-                Built in 24 hours to raise awareness about Europe's hidden mental health crisis
-              </p>
-            </motion.div>
-            
             {/* Official Built with Bolt Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -186,8 +170,7 @@ const Footer: React.FC = () => {
           <div className="mt-4 text-xs text-gray-500 text-center">
             <p>
               This research is conducted in accordance with ethical guidelines for public health data analysis. 
-              All data sources are publicly available and properly attributed. 
-              <strong className="text-gray-400"> Every share could save a life.</strong>
+              All data sources are publicly available and properly attributed.
             </p>
           </div>
         </motion.div>
