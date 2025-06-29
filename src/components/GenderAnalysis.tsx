@@ -130,48 +130,6 @@ const GenderAnalysis: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Critical Finding Highlight - This is "The Pattern is Undeniable" with sources */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-red-600 to-purple-600 rounded-2xl p-8 text-white text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">The Pattern is Undeniable</h3>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl leading-relaxed mb-6">
-              Where alcohol deaths rise, suicide rates follow—especially among men (r = {CORRELATION_DISPLAY.male}). 
-              This isn't about drinking culture or personal weakness. It's about untreated mental health struggles 
-              that society has failed to address. Every statistic represents a life that could have been saved.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">74%</div>
-                <div className="text-sm">of male suicides involve alcohol</div>
-                <EvidenceButton 
-                  claimId="alcohol-suicide-74-31"
-                  claimTitle="Alcohol involvement in male suicide"
-                  variant="inline"
-                />
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">{VERIFIED_GENDER_RATIO}x</div>
-                <div className="text-sm">higher male alcohol mortality</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2">3x</div>
-                <div className="text-sm">less likely to seek help</div>
-                <EvidenceButton 
-                  claimId="men-help-seeking-3x"
-                  claimTitle="Male help-seeking behavior"
-                  variant="inline"
-                />
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
