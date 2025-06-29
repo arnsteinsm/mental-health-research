@@ -1,15 +1,19 @@
 import { motion } from 'framer-motion';
-import { AlertCircle, CheckCircle, Database, Upload } from 'lucide-react';
+import { AlertCircle, CheckCircle, Database, Upload, Zap } from 'lucide-react';
 import React, { useState } from 'react';
-import { populateWithSampleData } from '../utils/data-migration';
+imrawDarawData2b9847_197datacbquxjob_32b9847_197b3606c2f.json
+import { insertMentalHealthData, type MentalHealthDataInsert } from '../services/supabase-data-service';
+im{ pop{ populateWithSampleData }thSampleDautils/ta }-migrationtionononon';
 
 const DataMigrationPanel: React.FC = () => {
   const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [progress, setProgress] = useState(0);
 
   const handleSampleDataMigration = async () => {
     setMigrationStatus('loading');
     setMessage('Inserting sample data...');
+    setProgress(0);
 
     try {
       const result = await populateWithSampleData();
@@ -17,10 +21,69 @@ const DataMigrationPanel: React.FC = () => {
       if (result.success) {
         setMigrationStatus('success');
         setMessage(`Successfully inserted ${result.recordsInserted} sample records!`);
+        setProgress(100);
       } else {
         setMigrationStatus('error');
         setMessage(`Migration failed: ${result.error}`);
       }
+    } catch (error) {
+      setMigrationStatus('error');
+      setMessage(`Migration failed: ${error.message}`);
+    }
+  };
+
+  const handleCompleteDataMigration = async () => {
+    setMigrationStatus('loading');
+    setMessage('Starting complete dataset migration...');
+    setProgress(0);
+
+    try {
+      // Transform the JSON data
+      const transformedData: MentalHealthDataInsert[] = rawData.map(row => ({
+        country: row.country || '',
+        year: Number.parseInt(row.year, 10) || 0,
+        sex: (row.sex || 'M') as 'M' | 'F',
+        alcohol_rate: Number.parseFloat(row.alcohol_rate) || 0,
+        suicide_rate: Number.parseFloat(row.suicide_rate) || 0,
+        accident_rate: Number.parseFloat(row.accident_rate) || 0,
+      }));
+
+      setMessage(`Migrating ${transformedData.length} records...`);
+
+      // Insert in batches
+      const batchSize = 50;
+      const batches = [];
+      
+      for (let i = 0; i < transformedData.length; i += batchSize) {
+        batches.push(transformedData.slice(i, i + batchSize));
+      }
+
+      let totalInserted = 0;
+      for (let i = 0; i < batches.length; i++) {
+        try {
+          await insertMentalHealthData(batches[i]);
+          totalInserted += batches[i].length;
+          const progressPercent = Math.round((totalInserted / transformedData.length) * 100);
+          setProgress(progressPercent);
+          setMessage(`Migrated ${totalInserted}/${transformedData.length} records (${progressPercent}%)`);
+          
+          // Small delay to avoid rate limiting
+          if (i < batches.length - 1) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+          }
+        } catch (error) {
+          console.error(`Batch ${i + 1} failed:`, error);
+          // Continue with next batch
+        }
+      }
+
+      const countries = [...new Set(transformedData.map(d => d.country))];
+      const years = [...new Set(transformedData.map(d => d.year))].sort();
+      
+      setMigrationStatus('success');
+      setMessage(`🎉 Successfully migrated ${totalInserted} records! ${countries.length} countries, ${years.length} years (${years[0]}-${years[years.length-1]})`);
+      setProgress(100);
+
     } catch (error) {
       setMigrationStatus('error');
       setMessage(`Migration failed: ${error.message}`);
@@ -46,7 +109,7 @@ const DataMigrationPanel: React.FC = () => {
           <h4 className="font-semibold text-blue-900 mb-2">Migration Status</h4>
           <p className="text-sm text-blue-800">
             The application has been updated to use Supabase instead of the JSON file. 
-            Click below to populate the database with sample data.
+            Choose below to populate the database with sample data or the complete dataset.
           </p>
         </div>
 
@@ -66,6 +129,16 @@ const DataMigrationPanel: React.FC = () => {
               )}
               <span className="font-medium">{message}</span>
             </div>
+            {migrationStatus === 'loading' && progress > 0 && (
+              <div className="mt-2">
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className="bg-blue-600 h-2 rounded-full transition-all duration-300" 
+                    style={{ width: `${progress}%` }}
+                  ></div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -76,13 +149,22 @@ const DataMigrationPanel: React.FC = () => {
             className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             <Upload className="w-5 h-5 mr-2" />
-            {migrationStatus === 'loading' ? 'Migrating...' : 'Populate Sample Data'}
+            {migrationStatus === 'loading' ? 'Migrating...' : 'Sample Data'}
+          </button>
+          
+          <button
+            onClick={handleCompleteDataMigration}
+            disabled={migrationStatus === 'loading'}
+            className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            <Zap className="w-5 h-5 mr-2" />
+            {migrationStatus === 'loading' ? 'Migrating...' : 'Complete Dataset'}
           </button>
         </div>
 
         <div className="text-xs text-gray-500 space-y-1">
-          <p><strong>Note:</strong> This will insert sample data for 5 countries (DE, FR, ES, IT, PL) with 2021-2022 data.</p>
-          <p>For production, you would migrate the complete JSON dataset using the migration utilities.</p>
+          <p><strong>Sample Data:</strong> 20 records for 5 countries (DE, FR, ES, IT, PL) with 2021-2022 data.</p>
+          <p><strong>Complete Dataset:</strong> 6,459 records for 34 European countries (2011-2022) - This is the full research dataset!</p>
         </div>
       </div>
     </motion.div>
