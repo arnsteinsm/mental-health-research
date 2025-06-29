@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BookOpen, ExternalLink, Share2 } from 'lucide-react';
+import { BookOpen, Share2 } from 'lucide-react';
 import type React from 'react';
 
 interface CallToActionProps {
@@ -30,8 +30,9 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
         className={`${className}`}
       >
         <button
+          type="button"
           onClick={handleShare}
-          className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="inline-flex items-center px-4 py-2 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           <Share2 className="w-4 h-4 mr-2" />
           Share Research
@@ -74,8 +75,9 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
+            type="button"
             onClick={handleShare}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-flex items-center px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             <Share2 className="w-5 h-5 mr-3" />
             Share This Research

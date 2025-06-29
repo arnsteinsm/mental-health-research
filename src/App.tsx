@@ -1,14 +1,19 @@
-import { UmamiAnalytics }miAnaly@giof/tics -umami}miAnaly@giof/tics -umami} from '@giof/react-umami';
-import React
+// src/App.tsx
+
+import { UmamiAnalytics } from '@giof/react-umami';
+import { lazy, Suspense } from 'react';
 import Conclusions from './components/Conclusions';
 import CallToAction from './components/DownloadCTA';
 import ExecutiveSummary from './components/ExecutiveSummary';
 import Footer from './components/Footer';
 import GenderAnalysis from './components/GenderAnalysis';
 import Hero from './components/Hero';
-import InteractiveVisualization from './components/InteractiveVisualization';
+import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
 import ShareButton from './components/ShareButton';
+
+// Lazy load heavy components
+const InteractiveVisualization = lazy(() => import('./components/InteractiveVisualization'));
 
 function App() {
   return (
@@ -25,7 +30,9 @@ function App() {
         <ExecutiveSummary />
       </div>
       <div id="visualization">
-        <InteractiveVisualization />
+        <Suspense fallback={<LoadingSpinner />}>
+          <InteractiveVisualization />
+        </Suspense>
       </div>
       <div id="gender-analysis">
         <GenderAnalysis />

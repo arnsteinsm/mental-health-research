@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Share2, Target, Users } from 'lucide-react';
+import { ArrowRight, Share2, Target, Users } from 'lucide-react';
 import type React from 'react';
-import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
+import { CORRELATION_DISPLAY } from '../data';
 import EvidenceButton from './EvidenceButton';
 
 const Conclusions: React.FC = () => {
@@ -35,7 +35,7 @@ const Conclusions: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
+    <section className="py-20 bg-linear-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,15 +55,15 @@ const Conclusions: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {solutions.map((solution, index) => (
             <motion.div
-              key={index}
+              key={solution.evidenceId}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-xs rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-purple-600 rounded-lg">{solution.icon}</div>
+                <div className="shrink-0 p-3 bg-purple-600 rounded-lg">{solution.icon}</div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-lg font-semibold">{solution.title}</h4>
@@ -80,7 +80,7 @@ const Conclusions: React.FC = () => {
                     </span>
                   </div>
                   <p className="text-purple-200 leading-relaxed mb-3">{solution.description}</p>
-                  <div className="text-xs text-blue-300 bg-blue-500/20 p-2 rounded border border-blue-500/30">
+                  <div className="text-xs text-blue-300 bg-blue-500/20 p-2 rounded-sm border border-blue-500/30">
                     <div className="flex items-start justify-between">
                       <div>
                         <strong>Evidence:</strong> {solution.evidence}
@@ -104,7 +104,7 @@ const Conclusions: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
+          className="bg-linear-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">Your Voice Can Change the Data</h3>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
@@ -119,11 +119,17 @@ const Conclusions: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+            <button
+              type="button"
+              className="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
               <Share2 className="w-5 h-5 mr-2" />
               Share Research
             </button>
-            <button className="inline-flex items-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-800 transition-colors">
+            <button
+              type="button"
+              className="inline-flex items-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-800 transition-colors"
+            >
               Contact Researchers
               <ArrowRight className="w-5 h-5 ml-2" />
             </button>

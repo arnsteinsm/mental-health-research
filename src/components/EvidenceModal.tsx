@@ -50,7 +50,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-xs"
             onClick={onClose}
           />
 
@@ -68,6 +68,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
                 <p className="text-sm text-gray-600 mt-1">{claimTitle}</p>
               </div>
               <button
+                type="button"
                 onClick={onClose}
                 className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
               >
@@ -78,7 +79,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
             {/* Content */}
             <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
               <div className="space-y-6">
-                {sources.map((source, index) => (
+                {sources.map((source, _index) => (
                   <div key={source.id} className="border border-gray-200 rounded-lg p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
@@ -103,7 +104,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
                     <p className="text-gray-700 mb-4 leading-relaxed">{source.summary}</p>
 
                     <div className="flex items-center justify-between">
-                      <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded font-mono">
+                      <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded-sm font-mono">
                         {formatCitation(source)}
                       </div>
                       <a
@@ -125,7 +126,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
                 <h4 className="font-semibold text-blue-900 mb-2">How to Cite These Sources</h4>
                 <div className="text-sm text-blue-800 space-y-1">
                   {sources.map((source, index) => (
-                    <div key={source.id} className="font-mono text-xs bg-white p-2 rounded border">
+                    <div key={source.id} className="font-mono text-xs bg-white p-2 rounded-sm border">
                       {index + 1}. {formatCitation(source)} Retrieved from {source.url}
                     </div>
                   ))}

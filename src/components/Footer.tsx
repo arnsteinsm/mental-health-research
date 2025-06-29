@@ -1,12 +1,14 @@
+// src/components/Footer.tsx
+
 import { motion } from 'framer-motion';
 import { BarChart3, Database, ExternalLink } from 'lucide-react';
 import type React from 'react';
-import { ACTUAL_DATASET_INFO } from '../data/correlation-verification';
+import { ACTUAL_DATASET_INFO } from '../data';
 import { evidenceSources } from '../data/evidence-sources';
 
 const Footer: React.FC = () => {
   // Use verified dataset information
-  const countryCount = ACTUAL_DATASET_INFO.uniqueCountries.length;
+  const countryCount = ACTUAL_DATASET_INFO.uniqueCountries;
 
   // Count actual evidence sources
   const evidenceCount = evidenceSources.length;
@@ -40,7 +42,7 @@ const Footer: React.FC = () => {
     // Create a simple modal to show evidence sources
     const modal = document.createElement('div');
     modal.className =
-      'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm';
+      'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs';
     modal.innerHTML = `
       <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
         <div class="flex items-center justify-between p-6 border-b border-gray-200 bg-gray-50">
@@ -152,14 +154,15 @@ const Footer: React.FC = () => {
               Data Sources
             </h4>
             <div className="space-y-4">
-              {dataSources.map((source, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg p-4">
+              {dataSources.map((source, _index) => (
+                <div key={source.title} className="bg-gray-800 rounded-lg p-4">
                   {source.onClick ? (
                     <button
+                      type="button"
                       onClick={source.onClick}
                       className="flex items-start space-x-3 hover:text-blue-400 transition-colors group w-full text-left"
                     >
-                      <ExternalLink className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <ExternalLink className="w-4 h-4 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
                       <div>
                         <div className="font-medium text-sm">{source.title}</div>
                         <div className="text-xs text-gray-400 mt-1">{source.description}</div>
@@ -172,7 +175,7 @@ const Footer: React.FC = () => {
                       rel="noopener noreferrer"
                       className="flex items-start space-x-3 hover:text-blue-400 transition-colors group"
                     >
-                      <ExternalLink className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <ExternalLink className="w-4 h-4 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
                       <div>
                         <div className="font-medium text-sm">{source.title}</div>
                         <div className="text-xs text-gray-400 mt-1">{source.description}</div>

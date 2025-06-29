@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { AlertTriangle, ArrowRight, Heart, TrendingUp, Users } from 'lucide-react';
+import { AlertTriangle, Heart, TrendingUp, Users } from 'lucide-react';
 import type React from 'react';
-import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
 
 const GenderAnalysis: React.FC = () => {
@@ -45,7 +44,7 @@ const GenderAnalysis: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50">
+    <section className="py-20 bg-linear-to-br from-slate-50 to-purple-50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -87,7 +86,12 @@ const GenderAnalysis: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16 relative">
           {/* Connection Lines - Hidden on mobile */}
           <div className="hidden md:block absolute inset-0 pointer-events-none">
-            <svg className="w-full h-full" style={{ zIndex: 1 }}>
+            <svg
+              className="w-full h-full"
+              style={{ zIndex: 1 }}
+              aria-label="Connection lines between analysis factors"
+            >
+              <title>Connection lines showing relationships between analysis factors</title>
               {/* Diagonal connection lines */}
               <line
                 x1="25%"
@@ -114,7 +118,7 @@ const GenderAnalysis: React.FC = () => {
 
           {insights.map((insight, index) => (
             <motion.div
-              key={index}
+              key={insight.evidenceId}
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -123,7 +127,7 @@ const GenderAnalysis: React.FC = () => {
               style={{ zIndex: 2 }}
             >
               <div
-                className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${insight.color} text-white mb-6`}
+                className={`inline-flex p-3 rounded-lg bg-linear-to-r ${insight.color} text-white mb-6`}
               >
                 {insight.icon}
               </div>
@@ -134,8 +138,11 @@ const GenderAnalysis: React.FC = () => {
               <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                 <div className="text-xs font-semibold text-gray-700 mb-2">Interconnected with:</div>
                 <div className="flex flex-wrap gap-1">
-                  {insight.connections.map((connection, idx) => (
-                    <span key={idx} className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
+                  {insight.connections.map((connection) => (
+                    <span
+                      key={connection}
+                      className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-sm"
+                    >
                       {connection}
                     </span>
                   ))}

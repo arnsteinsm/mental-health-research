@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Copy, ExternalLink, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
+import { Check, Copy, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
 
@@ -99,8 +99,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
                 Share This Research
               </div>
               <div className="space-y-2">
-                {shareOptions.map((option, index) => (
+                {shareOptions.map((option, _index) => (
                   <button
+                    type="button"
                     key={option.name}
                     onClick={option.action}
                     className={`w-full flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors ${option.color}`}
@@ -121,7 +122,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
           {/* Main Share Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110"
+            className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -136,8 +137,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
   return (
     <div className={`relative ${className}`}>
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        className="inline-flex items-center px-6 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
       >
         <Share2 className="w-5 h-5 mr-2" />
         Share This Research
@@ -151,8 +153,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         >
           <div className="text-sm font-semibold text-gray-900 mb-3">Share this analysis</div>
           <div className="grid grid-cols-2 gap-2">
-            {shareOptions.map((option, index) => (
+            {shareOptions.map((option, _index) => (
               <button
+                type="button"
                 key={option.name}
                 onClick={() => {
                   option.action();

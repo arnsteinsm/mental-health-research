@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import type React from 'react';
-import { CORRECTED_DISPLAY } from '../data/actual-dataset-verification';
+import { CORRECTED_DISPLAY } from '../data';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+    <section className="relative min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]" />
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           alt="Silhouette representing mental health struggles"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/80 to-slate-900/80" />
+        <div className="absolute inset-0 bg-linear-to-br from-slate-900/80 via-purple-900/80 to-slate-900/80" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col justify-center min-h-screen">
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           className="max-w-5xl mx-auto text-center"
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-8 bg-linear-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -56,7 +56,8 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              type="button"
+              className="bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
               onClick={() =>
                 document.getElementById('visualization')?.scrollIntoView({ behavior: 'smooth' })
               }
@@ -64,7 +65,8 @@ const Hero: React.FC = () => {
               Explore the Data
             </button>
             <button
-              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold py-4 px-8 rounded-full hover:bg-white/20 transition-all duration-300"
+              type="button"
+              className="bg-white/10 backdrop-blur-xs border border-white/20 text-white font-semibold py-4 px-8 rounded-full hover:bg-white/20 transition-all duration-300"
               onClick={() =>
                 document.getElementById('conclusions')?.scrollIntoView({ behavior: 'smooth' })
               }

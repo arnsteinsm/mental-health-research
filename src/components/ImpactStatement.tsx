@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Target, Users } from 'lucide-react';
 import type React from 'react';
-import { CORRECTED_DISPLAY } from '../data/actual-dataset-verification';
+import { CORRECTED_DISPLAY } from '../data';
 
 const ImpactStatement: React.FC = () => {
   const coreMetrics = [
@@ -26,7 +26,7 @@ const ImpactStatement: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-red-900 via-purple-900 to-blue-900 text-white">
+    <section className="py-20 bg-linear-to-br from-red-900 via-purple-900 to-blue-900 text-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,12 +46,12 @@ const ImpactStatement: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {coreMetrics.map((metric, index) => (
             <motion.div
-              key={index}
+              key={metric.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center"
+              className="bg-white/10 backdrop-blur-xs rounded-xl p-8 border border-white/20 text-center"
             >
               <div className="text-yellow-400 mb-4 flex justify-center">{metric.icon}</div>
               <div className="text-3xl font-bold mb-2">{metric.title}</div>

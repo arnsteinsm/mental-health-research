@@ -70,7 +70,7 @@ const initialState = {
 export const useAppStore = create<AppState>()(
   devtools(
     persist(
-      (set, get) => ({
+      (set, _get) => ({
         ...initialState,
 
         // Visualization actions

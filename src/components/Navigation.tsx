@@ -1,19 +1,28 @@
 import { motion } from 'framer-motion';
 import { BarChart3, Menu, X } from 'lucide-react';
-import type React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CallToAction from './DownloadCTA';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // React 19 pattern: Use passive event listener with cleanup
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Passive listener for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -61,6 +70,7 @@ const Navigation: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
+                type="button"
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
                 className={`text-sm font-medium transition-colors hover:text-purple-600 ${
@@ -76,6 +86,7 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               scrolled ? 'text-gray-700 hover:bg-gray-100/50' : 'text-white hover:bg-white/10'
@@ -99,6 +110,7 @@ const Navigation: React.FC = () => {
           >
             {navItems.map((item) => (
               <button
+                type="button"
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
                 className="block w-full text-left px-6 py-3 text-gray-700 hover:bg-gray-50/50 transition-colors"

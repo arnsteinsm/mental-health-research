@@ -1,4 +1,4 @@
-import { ExternalLink, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
 import { getSourcesForClaim } from '../data/evidence-sources';
@@ -29,7 +29,7 @@ const EvidenceButton: React.FC<EvidenceButtonProps> = ({
 
   return (
     <>
-      <button onClick={() => setIsModalOpen(true)} className={buttonClass}>
+      <button type="button" onClick={() => setIsModalOpen(true)} className={buttonClass}>
         <FileText className="w-3 h-3 mr-1" />
         {sources.length} source{sources.length > 1 ? 's' : ''}
       </button>
