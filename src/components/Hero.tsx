@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
             This isn't just about drinking—it's about mental health.
           </motion.p>
 
-          {/* Key Finding Block */}
+          {/* Single Powerful Finding Block */}
           <motion.div
             className="bg-gradient-to-r from-red-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-12"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -57,8 +57,7 @@ const Hero: React.FC = () => {
             <p className="text-lg leading-relaxed mb-6">
               Analysis of {CORRECTED_DISPLAY.totalRecords} data points from {CORRECTED_DISPLAY.countries} European countries 
               ({CORRECTED_DISPLAY.yearRange}) reveals an unmistakable truth: 
-              where alcohol deaths rise, suicide rates follow—especially among men. This strong correlation (r = {CORRECTED_DISPLAY.maleCorrelation}) 
-              shows alcohol misuse is not merely substance abuse, but a symptom of deeper mental health vulnerabilities.
+              where alcohol deaths rise, suicide rates follow—especially among men.
             </p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div className="bg-white/10 rounded-lg p-3">
@@ -67,11 +66,11 @@ const Hero: React.FC = () => {
               </div>
               <div className="bg-white/10 rounded-lg p-3">
                 <div className="text-2xl font-bold text-red-300">r = {CORRECTED_DISPLAY.maleCorrelation}</div>
-                <div className="text-purple-200">Alcohol-suicide correlation (men)</div>
+                <div className="text-purple-200">Alcohol-suicide correlation</div>
               </div>
               <div className="bg-white/10 rounded-lg p-3">
                 <div className="text-2xl font-bold text-red-300">{CORRECTED_DISPLAY.countries}</div>
-                <div className="text-purple-200">European countries analyzed</div>
+                <div className="text-purple-200">Countries analyzed</div>
               </div>
             </div>
           </motion.div>
