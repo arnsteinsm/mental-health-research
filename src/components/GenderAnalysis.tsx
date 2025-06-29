@@ -131,35 +131,7 @@ const GenderAnalysis: React.FC = () => {
           ))}
         </div>
 
-        {/* The Numbers Tell the Story */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl p-8 shadow-lg mb-16"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Numbers Tell the Story</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">r = {CORRELATION_DISPLAY.male}</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">Men</div>
-              <div className="text-sm text-gray-600">Strong correlation between alcohol and suicide mortality</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">r = {CORRELATION_DISPLAY.female}</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">Women</div>
-              <div className="text-sm text-gray-600">Moderate correlation, significantly lower than men</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-red-600 mb-2">{VERIFIED_GENDER_RATIO}x</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">Gender Gap</div>
-              <div className="text-sm text-gray-600">Higher male alcohol mortality across all countries</div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Critical Finding Highlight */}
+        {/* Critical Finding Highlight - This is "The Pattern is Undeniable" with sources */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
