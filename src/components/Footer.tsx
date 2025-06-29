@@ -157,13 +157,23 @@ const Footer: React.FC = () => {
           <div className="mt-6 text-center">
             <div className="bg-red-900/30 border border-red-500/30 rounded-lg p-4 max-w-4xl mx-auto">
               <h5 className="font-semibold text-red-300 mb-2">🚨 Crisis Helplines</h5>
-              <p className="text-sm text-red-200 leading-relaxed">
-                If you or someone you know is struggling: <strong>Europe 116 123</strong> • 
-                <strong> Crisis Text: HOME to 741741</strong> • 
-                <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
-                  International Resources
-                </a>
-              </p>
+              <div className="text-sm text-red-200 leading-relaxed space-y-1">
+                <p>
+                  <strong>UK/Ireland:</strong> 116 123 (Samaritans) • 
+                  <strong> Germany:</strong> 0800 111 0 111 • 
+                  <strong> France:</strong> 3114
+                </p>
+                <p>
+                  <strong>Netherlands:</strong> 113 • 
+                  <strong> Spain:</strong> 717 003 717 • 
+                  <strong> Italy:</strong> 800 86 00 22
+                </p>
+                <p>
+                  <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+                    Find helplines for all countries →
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
           
