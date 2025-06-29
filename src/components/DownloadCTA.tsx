@@ -51,7 +51,7 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'header', classNa
       <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
         <BookOpen className="w-12 h-12 text-blue-600 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          Spread Awareness
+          Your Voice Can Change the Data
         </h3>
         <p className="text-gray-600 mb-6 leading-relaxed">
           Help raise awareness about this critical mental health crisis. Share this research 
