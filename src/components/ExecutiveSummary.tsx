@@ -10,6 +10,7 @@ const ExecutiveSummary: React.FC = () => {
       title: `${CORRECTED_DISPLAY.genderRatio}x Higher`,
       subtitle: "Alcohol mortality is disproportionately male",
       description: "Men die from alcohol at dramatically higher rates across all European countries.",
+      microExplanation: "Age-standardized death rates per 100,000 population",
       color: "from-red-500 to-red-600"
     },
     {
@@ -17,6 +18,7 @@ const ExecutiveSummary: React.FC = () => {
       title: `r = ${CORRECTED_DISPLAY.maleCorrelation}`,
       subtitle: "Statistically linked to suicide",
       description: "Strong correlation reveals alcohol misuse as both symptom and risk factor for mental health crises.",
+      microExplanation: "Statistical correlation between alcohol and suicide mortality",
       color: "from-purple-500 to-purple-600"
     },
     {
@@ -24,6 +26,7 @@ const ExecutiveSummary: React.FC = () => {
       title: "Hidden Crisis",
       subtitle: "Mental health signals are often missed",
       description: "Analysis reveals alcohol deaths are masking a broader male mental health crisis.",
+      microExplanation: "Alcohol misuse often masks underlying psychological distress",
       color: "from-blue-500 to-blue-600"
     }
   ];
@@ -67,9 +70,13 @@ const ExecutiveSummary: React.FC = () => {
               <h4 className="text-lg font-semibold text-blue-600 mb-4">
                 {stat.subtitle}
               </h4>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 {stat.description}
               </p>
+              {/* NEW: Micro-explanation */}
+              <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded italic">
+                {stat.microExplanation}
+              </div>
             </motion.div>
           ))}
         </div>
