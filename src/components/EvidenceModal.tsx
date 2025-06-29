@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, BookOpen, Building, FileText, BarChart3 } from 'lucide-react';
-import { EvidenceSource, formatCitation } from '../data/evidence-sources';
+import { AnimatePresence, motion } from 'framer-motion';
+import { BarChart3, BookOpen, Building, ExternalLink, FileText, X } from 'lucide-react';
+import type React from 'react';
+import { type EvidenceSource, formatCitation } from '../data/evidence-sources';
 
 interface EvidenceModalProps {
   isOpen: boolean;
@@ -13,21 +13,31 @@ interface EvidenceModalProps {
 const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources, claimTitle }) => {
   const getTypeIcon = (type: EvidenceSource['type']) => {
     switch (type) {
-      case 'academic': return <BookOpen className="w-5 h-5" />;
-      case 'institutional': return <Building className="w-5 h-5" />;
-      case 'government': return <FileText className="w-5 h-5" />;
-      case 'meta-analysis': return <BarChart3 className="w-5 h-5" />;
-      default: return <BookOpen className="w-5 h-5" />;
+      case 'academic':
+        return <BookOpen className="w-5 h-5" />;
+      case 'institutional':
+        return <Building className="w-5 h-5" />;
+      case 'government':
+        return <FileText className="w-5 h-5" />;
+      case 'meta-analysis':
+        return <BarChart3 className="w-5 h-5" />;
+      default:
+        return <BookOpen className="w-5 h-5" />;
     }
   };
 
   const getTypeColor = (type: EvidenceSource['type']) => {
     switch (type) {
-      case 'academic': return 'text-blue-600 bg-blue-50 border-blue-200';
-      case 'institutional': return 'text-green-600 bg-green-50 border-green-200';
-      case 'government': return 'text-purple-600 bg-purple-50 border-purple-200';
-      case 'meta-analysis': return 'text-red-600 bg-red-50 border-red-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
+      case 'academic':
+        return 'text-blue-600 bg-blue-50 border-blue-200';
+      case 'institutional':
+        return 'text-green-600 bg-green-50 border-green-200';
+      case 'government':
+        return 'text-purple-600 bg-purple-50 border-purple-200';
+      case 'meta-analysis':
+        return 'text-red-600 bg-red-50 border-red-200';
+      default:
+        return 'text-gray-600 bg-gray-50 border-gray-200';
     }
   };
 
@@ -43,7 +53,7 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={onClose}
           />
-          
+
           {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -78,18 +88,19 @@ const EvidenceModal: React.FC<EvidenceModalProps> = ({ isOpen, onClose, sources,
                         <div>
                           <div className="font-semibold text-gray-900">{source.title}</div>
                           <div className="text-sm text-gray-600">
-                            {source.authors ? source.authors.join(', ') : source.institution} ({source.year})
+                            {source.authors ? source.authors.join(', ') : source.institution} (
+                            {source.year})
                           </div>
                         </div>
                       </div>
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getTypeColor(source.type)}`}>
+                      <span
+                        className={`px-2 py-1 text-xs font-medium rounded-full ${getTypeColor(source.type)}`}
+                      >
                         {source.type.replace('-', ' ')}
                       </span>
                     </div>
 
-                    <p className="text-gray-700 mb-4 leading-relaxed">
-                      {source.summary}
-                    </p>
+                    <p className="text-gray-700 mb-4 leading-relaxed">{source.summary}</p>
 
                     <div className="flex items-center justify-between">
                       <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded font-mono">

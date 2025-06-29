@@ -1,45 +1,46 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Database, BarChart3 } from 'lucide-react';
+import { BarChart3, Database, ExternalLink } from 'lucide-react';
+import type React from 'react';
 import { ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 import { evidenceSources } from '../data/evidence-sources';
 
 const Footer: React.FC = () => {
   // Use verified dataset information
   const countryCount = ACTUAL_DATASET_INFO.uniqueCountries.length;
-  
+
   // Count actual evidence sources
   const evidenceCount = evidenceSources.length;
-  const academicSources = evidenceSources.filter(s => s.type === 'academic').length;
-  const institutionalSources = evidenceSources.filter(s => s.type === 'institutional').length;
-  const governmentSources = evidenceSources.filter(s => s.type === 'government').length;
+  const academicSources = evidenceSources.filter((s) => s.type === 'academic').length;
+  const institutionalSources = evidenceSources.filter((s) => s.type === 'institutional').length;
+  const governmentSources = evidenceSources.filter((s) => s.type === 'government').length;
 
   const dataSources = [
     {
-      title: "Eurostat Mortality Data",
-      url: "https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en",
-      description: "Death due to alcoholic abuse, by sex"
+      title: 'Eurostat Mortality Data',
+      url: 'https://data.europa.eu/data/datasets/rep2namroxi8l8deyq15w?locale=en',
+      description: 'Death due to alcoholic abuse, by sex',
     },
     {
-      title: "Eurostat Suicide Statistics", 
-      url: "https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en",
-      description: "Death due to suicide, by sex"
+      title: 'Eurostat Suicide Statistics',
+      url: 'https://data.europa.eu/data/datasets/dvvny3x2o5wag4yfbrkmhq?locale=en',
+      description: 'Death due to suicide, by sex',
     },
     {
-      title: "Academic Evidence Sources",
-      url: "#evidence-modal",
+      title: 'Academic Evidence Sources',
+      url: '#evidence-modal',
       description: `${evidenceCount} peer-reviewed studies (${academicSources} academic, ${institutionalSources} institutional, ${governmentSources} government)`,
       onClick: () => {
         // Create and show a modal with evidence sources
         showEvidenceModal();
-      }
-    }
+      },
+    },
   ];
 
   const showEvidenceModal = () => {
     // Create a simple modal to show evidence sources
     const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm';
+    modal.className =
+      'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm';
     modal.innerHTML = `
       <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
         <div class="flex items-center justify-between p-6 border-b border-gray-200 bg-gray-50">
@@ -55,7 +56,9 @@ const Footer: React.FC = () => {
         </div>
         <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
           <div class="grid md:grid-cols-2 gap-6">
-            ${evidenceSources.map(source => `
+            ${evidenceSources
+              .map(
+                (source) => `
               <div class="border border-gray-200 rounded-lg p-4">
                 <div class="flex items-start justify-between mb-3">
                   <div class="flex-1">
@@ -77,7 +80,9 @@ const Footer: React.FC = () => {
                   View Source
                 </a>
               </div>
-            `).join('')}
+            `
+              )
+              .join('')}
           </div>
         </div>
       </div>
@@ -96,10 +101,10 @@ const Footer: React.FC = () => {
               <span className="text-lg font-bold">Behind the Drink</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Evidence-based analysis of European mental health and substance abuse patterns 
-              through a gendered lens. Built to save lives.
+              Evidence-based analysis of European mental health and substance abuse patterns through
+              a gendered lens. Built to save lives.
             </p>
-            
+
             {/* Built with Bolt Badge - Using local SVG */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -113,9 +118,9 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-block group"
               >
-                <img 
-                  src="/white_circle_360x360.svg" 
-                  alt="Built with Bolt" 
+                <img
+                  src="/white_circle_360x360.svg"
+                  alt="Built with Bolt"
                   className="h-8 w-auto hover:scale-110 transition-transform duration-300"
                 />
               </a>
@@ -128,7 +133,9 @@ const Footer: React.FC = () => {
                 <div className="text-xs text-gray-400">Countries</div>
               </div>
               <div className="bg-gray-800 rounded-lg p-3">
-                <div className="text-lg font-bold text-blue-400">{ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}</div>
+                <div className="text-lg font-bold text-blue-400">
+                  {ACTUAL_DATASET_INFO.yearRange.start}-{ACTUAL_DATASET_INFO.yearRange.end}
+                </div>
                 <div className="text-xs text-gray-400">Analysis</div>
               </div>
               <div className="bg-gray-800 rounded-lg p-3">
@@ -148,7 +155,7 @@ const Footer: React.FC = () => {
               {dataSources.map((source, index) => (
                 <div key={index} className="bg-gray-800 rounded-lg p-4">
                   {source.onClick ? (
-                    <button 
+                    <button
                       onClick={source.onClick}
                       className="flex items-start space-x-3 hover:text-blue-400 transition-colors group w-full text-left"
                     >
@@ -159,7 +166,7 @@ const Footer: React.FC = () => {
                       </div>
                     </button>
                   ) : (
-                    <a 
+                    <a
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -190,13 +197,12 @@ const Footer: React.FC = () => {
             <div className="text-sm text-gray-400">
               Data analysis for public health advocacy • Built with Bolt
             </div>
-            
           </div>
-          
+
           <div className="mt-4 text-xs text-gray-500 text-center">
             <p>
-              This research is conducted in accordance with ethical guidelines for public health data analysis. 
-              All data sources are publicly available and properly attributed.
+              This research is conducted in accordance with ethical guidelines for public health
+              data analysis. All data sources are publicly available and properly attributed.
             </p>
           </div>
         </motion.div>

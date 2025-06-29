@@ -1,6 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Users, ArrowRight, Share2, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Share2, Target, Users } from 'lucide-react';
+import type React from 'react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
 
@@ -8,28 +8,30 @@ const Conclusions: React.FC = () => {
   const solutions = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Reach At-Risk Men Sooner",
-      description: "Develop interventions that address masculine stigma and provide alternative pathways to support.",
-      evidence: "Research shows men are 3x less likely to seek help",
-      priority: "Critical",
-      evidenceId: "male-focused-programs"
+      title: 'Reach At-Risk Men Sooner',
+      description:
+        'Develop interventions that address masculine stigma and provide alternative pathways to support.',
+      evidence: 'Research shows men are 3x less likely to seek help',
+      priority: 'Critical',
+      evidenceId: 'male-focused-programs',
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Support Mental Health at Work",
-      description: "Target male-dominated industries with comprehensive mental health support systems.",
-      evidence: "Male-dominated occupations show higher suicide rates",
-      priority: "High",
-      evidenceId: "workplace-mental-health"
+      title: 'Support Mental Health at Work',
+      description:
+        'Target male-dominated industries with comprehensive mental health support systems.',
+      evidence: 'Male-dominated occupations show higher suicide rates',
+      priority: 'High',
+      evidenceId: 'workplace-mental-health',
     },
     {
       icon: <ArrowRight className="w-6 h-6" />,
-      title: "Combine Health, Policy, and Community Support",
-      description: "Address alcohol and mental health together, not as separate issues.",
-      evidence: "74% of male suicides involve alcohol vs 31% for females",
-      priority: "Essential",
-      evidenceId: "integrated-treatment"
-    }
+      title: 'Combine Health, Policy, and Community Support',
+      description: 'Address alcohol and mental health together, not as separate issues.',
+      evidence: '74% of male suicides involve alcohol vs 31% for females',
+      priority: 'Essential',
+      evidenceId: 'integrated-treatment',
+    },
   ];
 
   return (
@@ -42,12 +44,10 @@ const Conclusions: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What the Data Demands
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">What the Data Demands</h2>
           <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-            The correlation is clear (r = {CORRELATION_DISPLAY.male}). The crisis is real. 
-            These evidence-based approaches offer a path forward.
+            The correlation is clear (r = {CORRELATION_DISPLAY.male}). The crisis is real. These
+            evidence-based approaches offer a path forward.
           </p>
         </motion.div>
 
@@ -63,19 +63,19 @@ const Conclusions: React.FC = () => {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-purple-600 rounded-lg">
-                  {solution.icon}
-                </div>
+                <div className="flex-shrink-0 p-3 bg-purple-600 rounded-lg">{solution.icon}</div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-lg font-semibold">{solution.title}</h4>
-                    <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                      solution.priority === 'Critical' 
-                        ? 'bg-red-500/20 text-red-300 border border-red-500/30' 
-                        : solution.priority === 'High'
-                        ? 'bg-orange-500/20 text-orange-300 border border-orange-500/30'
-                        : 'bg-green-500/20 text-green-300 border border-green-500/30'
-                    }`}>
+                    <span
+                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                        solution.priority === 'Critical'
+                          ? 'bg-red-500/20 text-red-300 border border-red-500/30'
+                          : solution.priority === 'High'
+                            ? 'bg-orange-500/20 text-orange-300 border border-orange-500/30'
+                            : 'bg-green-500/20 text-green-300 border border-green-500/30'
+                      }`}
+                    >
                       {solution.priority}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ const Conclusions: React.FC = () => {
                       <div>
                         <strong>Evidence:</strong> {solution.evidence}
                       </div>
-                      <EvidenceButton 
+                      <EvidenceButton
                         claimId={solution.evidenceId}
                         claimTitle={solution.title}
                         variant="inline"
@@ -108,15 +108,16 @@ const Conclusions: React.FC = () => {
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">Your Voice Can Change the Data</h3>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
-            This research provides a roadmap for addressing one of Europe's most pressing but hidden health crises. 
-            The time for action is now—every day of delay costs lives.
+            This research provides a roadmap for addressing one of Europe's most pressing but hidden
+            health crises. The time for action is now—every day of delay costs lives.
           </p>
-          
+
           {/* Enhanced action line */}
           <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
-            Use this data to inform local initiatives, health programs, or just to start a conversation that matters.
+            Use this data to inform local initiatives, health programs, or just to start a
+            conversation that matters.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
               <Share2 className="w-5 h-5 mr-2" />

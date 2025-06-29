@@ -1,17 +1,24 @@
-import React from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import ExecutiveSummary from './components/ExecutiveSummary';
-import InteractiveVisualization from './components/InteractiveVisualization';
-import GenderAnalysis from './components/GenderAnalysis';
+import { UmamiAnalytics }miAnaly@giof/tics -umami}miAnaly@giof/tics -umami} from '@giof/react-umami';
+import React
 import Conclusions from './components/Conclusions';
-import Footer from './components/Footer';
-import ShareButton from './components/ShareButton';
 import CallToAction from './components/DownloadCTA';
+import ExecutiveSummary from './components/ExecutiveSummary';
+import Footer from './components/Footer';
+import GenderAnalysis from './components/GenderAnalysis';
+import Hero from './components/Hero';
+import InteractiveVisualization from './components/InteractiveVisualization';
+import Navigation from './components/Navigation';
+import ShareButton from './components/ShareButton';
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <UmamiAnalytics
+        websiteId="e8ebe905-8944-4f81-9438-71a9d911a58c"
+        src="https://umami.marjala.com/script.js"
+        dryRun={import.meta.env.VITE_UMAMI_DRY_RUN === 'true'}
+        debug={import.meta.env.VITE_UMAMI_DEBUG === 'true'}
+      />
       <Navigation />
       <Hero />
       <div id="executive-summary">
@@ -26,16 +33,16 @@ function App() {
       <div id="conclusions">
         <Conclusions />
       </div>
-      
+
       {/* Strategic CTA Placement - Bottom Center */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <CallToAction variant="footer" />
         </div>
       </section>
-      
+
       <Footer />
-      
+
       {/* Floating Share Button */}
       <ShareButton variant="floating" />
     </div>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Share2, Copy, Check, Twitter, Linkedin, Facebook, Mail, ExternalLink } from 'lucide-react';
+import { Check, Copy, ExternalLink, Facebook, Linkedin, Mail, Share2, Twitter } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface ShareButtonProps {
   variant?: 'floating' | 'inline';
@@ -12,8 +13,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
   const [copied, setCopied] = useState(false);
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const title = "Behind the Drink: Men are dying from alcohol at 3.7x the rate of women";
-  const description = "This isn't just about drinking—it's about mental health. New analysis reveals the hidden crisis behind European alcohol mortality data.";
+  const title = 'Behind the Drink: Men are dying from alcohol at 3.7x the rate of women';
+  const description =
+    "This isn't just about drinking—it's about mental health. New analysis reveals the hidden crisis behind European alcohol mortality data.";
 
   const shareOptions = [
     {
@@ -28,32 +30,41 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
           console.error('Failed to copy link:', err);
         }
       },
-      color: copied ? 'text-green-600' : 'text-gray-600'
+      color: copied ? 'text-green-600' : 'text-gray-600',
     },
     {
       name: 'Twitter',
       icon: <Twitter className="w-4 h-4" />,
       action: () => {
         const tweetText = `${title}\n\n${description}\n\n${currentUrl}`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`, '_blank');
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-500'
+      color: 'text-blue-500',
     },
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-4 h-4" />,
       action: () => {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`, '_blank');
+        window.open(
+          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-700'
+      color: 'text-blue-700',
     },
     {
       name: 'Facebook',
       icon: <Facebook className="w-4 h-4" />,
       action: () => {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, '_blank');
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`,
+          '_blank'
+        );
       },
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       name: 'Email',
@@ -63,8 +74,8 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         const body = encodeURIComponent(`${description}\n\nRead the full analysis: ${currentUrl}`);
         window.open(`mailto:?subject=${subject}&body=${body}`);
       },
-      color: 'text-gray-600'
-    }
+      color: 'text-gray-600',
+    },
   ];
 
   if (variant === 'floating') {
@@ -73,7 +84,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ variant = 'floating', classNa
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 2, duration: 0.5, type: "spring" }}
+          transition={{ delay: 2, duration: 0.5, type: 'spring' }}
         >
           {/* Share Options */}
           {isOpen && (

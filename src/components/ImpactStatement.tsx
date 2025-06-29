@@ -1,28 +1,28 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Users, Target } from 'lucide-react';
+import { Heart, Target, Users } from 'lucide-react';
+import type React from 'react';
 import { CORRECTED_DISPLAY } from '../data/actual-dataset-verification';
 
 const ImpactStatement: React.FC = () => {
   const coreMetrics = [
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "~60,000 Deaths",
-      subtitle: "Annual male alcohol mortality in Europe",
-      description: "Each number represents a preventable loss"
+      title: '~60,000 Deaths',
+      subtitle: 'Annual male alcohol mortality in Europe',
+      description: 'Each number represents a preventable loss',
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Preventable Crisis",
-      subtitle: "Mental health masquerading as addiction",
-      description: "Alcohol deaths are symptoms, not the disease"
+      title: 'Preventable Crisis',
+      subtitle: 'Mental health masquerading as addiction',
+      description: 'Alcohol deaths are symptoms, not the disease',
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: `${CORRECTED_DISPLAY.countries} Countries`,
-      subtitle: "Consistent patterns across Europe",
-      description: "The crisis transcends borders and cultures"
-    }
+      subtitle: 'Consistent patterns across Europe',
+      description: 'The crisis transcends borders and cultures',
+    },
   ];
 
   return (
@@ -35,12 +35,10 @@ const ImpactStatement: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The Human Cost
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">The Human Cost</h2>
           <p className="text-xl text-purple-200 max-w-4xl mx-auto leading-relaxed">
-            Behind every statistic is a human story. This research reveals a hidden crisis 
-            where alcohol deaths mask deeper mental health struggles.
+            Behind every statistic is a human story. This research reveals a hidden crisis where
+            alcohol deaths mask deeper mental health struggles.
           </p>
         </motion.div>
 
@@ -55,9 +53,7 @@ const ImpactStatement: React.FC = () => {
               viewport={{ once: true }}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center"
             >
-              <div className="text-yellow-400 mb-4 flex justify-center">
-                {metric.icon}
-              </div>
+              <div className="text-yellow-400 mb-4 flex justify-center">{metric.icon}</div>
               <div className="text-3xl font-bold mb-2">{metric.title}</div>
               <div className="text-lg font-semibold text-purple-200 mb-3">{metric.subtitle}</div>
               <div className="text-sm text-purple-100 leading-relaxed">{metric.description}</div>

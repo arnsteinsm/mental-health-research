@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, BarChart3 } from 'lucide-react';
+import { BarChart3, Menu, X } from 'lucide-react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 import CallToAction from './DownloadCTA';
 
 const Navigation: React.FC = () => {
@@ -20,7 +21,7 @@ const Navigation: React.FC = () => {
     { label: 'Overview', href: '#executive-summary' },
     { label: 'Data', href: '#visualization' },
     { label: 'Analysis', href: '#gender-analysis' },
-    { label: 'Solutions', href: '#conclusions' }
+    { label: 'Solutions', href: '#conclusions' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -37,8 +38,8 @@ const Navigation: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/70 backdrop-blur-md backdrop-saturate-150 shadow-lg border-b border-white/20' 
+        scrolled
+          ? 'bg-white/70 backdrop-blur-md backdrop-saturate-150 shadow-lg border-b border-white/20'
           : 'bg-transparent'
       }`}
       style={{
@@ -69,7 +70,7 @@ const Navigation: React.FC = () => {
                 {item.label}
               </button>
             ))}
-            
+
             <CallToAction variant="header" />
           </div>
 
@@ -77,9 +78,7 @@ const Navigation: React.FC = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors ${
-              scrolled 
-                ? 'text-gray-700 hover:bg-gray-100/50' 
-                : 'text-white hover:bg-white/10'
+              scrolled ? 'text-gray-700 hover:bg-gray-100/50' : 'text-white hover:bg-white/10'
             }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
