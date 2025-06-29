@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © {currentYear} Behind the Drink Research Project. Data analysis for public health advocacy.
+              Data analysis for public health advocacy • Built with Bolt
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
