@@ -119,13 +119,7 @@ const Footer: React.FC = () => {
               Data analysis for public health advocacy • Built with Bolt
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>Open Research</span>
-              <span>•</span>
-              <span>Evidence-Based</span>
-              <span>•</span>
-              <span>Save Lives</span>
-            </div>
+            
           </div>
           
           <div className="mt-4 text-xs text-gray-500 text-center">
