@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               through a gendered lens. Built to save lives.
             </p>
             
-            {/* Built with Bolt Badge */}
+            {/* Built with Bolt Badge - Using local SVG */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 className="inline-block group"
               >
                 <img 
-                  src="https://imagedelivery.net/3RKw_J_fJQ_4KpJP3_YgXA/a24bb2c9-7d4d-4162-78e7-4b8ec9c90c00/public" 
+                  src="/white_circle_360x360.svg" 
                   alt="Built with Bolt" 
                   className="h-8 w-auto hover:scale-110 transition-transform duration-300"
                 />
