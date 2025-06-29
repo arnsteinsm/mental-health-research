@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Database, BarChart3 } from 'lucide-react';
+import { ExternalLink, Database, BarChart3, Share2, Heart } from 'lucide-react';
 import { ACTUAL_DATASET_INFO } from '../data/correlation-verification';
 import { evidenceSources } from '../data/evidence-sources';
 
@@ -85,6 +85,18 @@ const Footer: React.FC = () => {
     document.body.appendChild(modal);
   };
 
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Behind the Drink: European Mental Health Crisis',
+        text: 'Men are dying from alcohol at 3.7x the rate of women. This analysis reveals the hidden mental health crisis.',
+        url: window.location.href
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-6">
@@ -97,7 +109,7 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Evidence-based analysis of European mental health and substance abuse patterns 
-              through a gendered lens. Built to save lives.
+              through a gendered lens. Built to save lives through data-driven advocacy.
             </p>
             
             {/* Built with Bolt Badge - Using local SVG */}
@@ -191,10 +203,19 @@ const Footer: React.FC = () => {
               Data analysis for public health advocacy • Built with Bolt
             </div>
             
+            {/* Share Button in Footer */}
+            <button
+              onClick={handleShare}
+              className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              <Share2 className="w-4 h-4 mr-2" />
+              Share This Research
+            </button>
           </div>
           
           <div className="mt-4 text-xs text-gray-500 text-center">
-            <p>
+            <p className="flex items-center justify-center">
+              <Heart className="w-3 h-3 mr-1 text-red-400" />
               This research is conducted in accordance with ethical guidelines for public health data analysis. 
               All data sources are publicly available and properly attributed.
             </p>

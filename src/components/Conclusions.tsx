@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Users, ArrowRight, Share2, ExternalLink } from 'lucide-react';
+import { Target, Users, ArrowRight, Share2, ExternalLink, Heart } from 'lucide-react';
 import { CORRELATION_DISPLAY, VERIFIED_GENDER_RATIO } from '../data/correlation-verification';
 import EvidenceButton from './EvidenceButton';
 
@@ -97,6 +97,68 @@ const Conclusions: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Call to Action - Updated with New Messaging */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center"
+        >
+          <Heart className="w-12 h-12 text-white mx-auto mb-4" />
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">Your Voice Can Change These Numbers</h3>
+          <p className="text-lg mb-8 max-w-3xl mx-auto">
+            Share this data to support prevention. Every conversation started, every policy influenced, 
+            every person reached could save a life. The research is clear—now we need action.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: 'Behind the Drink: European Mental Health Crisis',
+                    text: 'Men are dying from alcohol at 3.7x the rate of women. This analysis reveals the hidden mental health crisis.',
+                    url: window.location.href
+                  });
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                }
+              }}
+              className="inline-flex items-center px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <Share2 className="w-5 h-5 mr-2" />
+              Share This Research
+            </button>
+            <button 
+              onClick={() => document.getElementById('executive-summary')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-lg hover:bg-purple-800 transition-colors"
+            >
+              Review the Evidence
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
+          </div>
+
+          {/* Crisis Support Resources */}
+          <div className="mt-8 pt-6 border-t border-white/20">
+            <p className="text-sm text-purple-200 mb-3">
+              <strong>If you or someone you know needs help:</strong>
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs">
+              <span className="bg-white/10 px-3 py-1 rounded">Europe: 116 123 (Samaritans)</span>
+              <span className="bg-white/10 px-3 py-1 rounded">Crisis Text: HOME to 741741</span>
+              <a 
+                href="https://findahelpline.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white/10 px-3 py-1 rounded hover:bg-white/20 transition-colors inline-flex items-center"
+              >
+                International Resources <ExternalLink className="w-3 h-3 ml-1" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
