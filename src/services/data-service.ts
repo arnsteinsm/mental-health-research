@@ -1,4 +1,4 @@
-// src/services/data-service.ts
+// apps/web/src/services/data-service.ts
 
 import { useQuery } from "@tanstack/react-query";
 import { aggrData, countryNames, type EnhancedDataPoint } from "../data";
