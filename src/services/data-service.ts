@@ -81,9 +81,11 @@ class APIClient {
 			const countriesResponse = await this.getAllCountries();
 			const countryList = Object.keys(countriesResponse.countries);
 
-			console.log(
-				`🌐 Fetching data for ${countryList.length} countries from API...`,
-			);
+			if (import.meta.env.DEV) {
+				console.log(
+					`🌐 Fetching data for ${countryList.length} countries from API...`,
+				);
+			}
 
 			// Fetch all countries in parallel
 			const countryDataPromises = countryList.map(async (country) => {
@@ -107,9 +109,11 @@ class APIClient {
 				throw new Error("No data retrieved from any country");
 			}
 
-			console.log(
-				`✅ Successfully fetched ${flatData.length} records from API`,
-			);
+			if (import.meta.env.DEV) {
+				console.log(
+					`✅ Successfully fetched ${flatData.length} records from API`,
+				);
+			}
 			return flatData;
 		} catch (error) {
 			console.error("❌ Failed to fetch all data from API:", error);
@@ -162,7 +166,8 @@ export class DataService {
 		// First try local data
 		try {
 			if (aggrData && aggrData.length > 0) {
-				console.log(`✅ Using local data: ${aggrData.length} records`);
+				if (import.meta.env.DEV)
+					console.log(`✅ Using local data: ${aggrData.length} records`);
 				return { data: aggrData, source: "local" };
 			}
 		} catch (error) {

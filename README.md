@@ -5,14 +5,14 @@
 
 ## 🚨 The Crisis
 
-Across Europe, men die from alcohol-related causes at **3.7×** the rate of women. But this isn’t just about drinking. Our data reveals a **hidden mental health crisis**—one where alcohol masks psychological distress, stigma, and systemic neglect.
+Across Europe, men die from alcohol-related causes at **4.4×** the rate of women. But this isn’t just about drinking. Our data reveals a **hidden mental health crisis**—one where alcohol masks psychological distress, stigma, and systemic neglect.
 
 ---
 
 ## 📊 Key Findings
 
 - **Strong Correlation (r = 0.59–0.76):** Where alcohol deaths rise, suicide rates follow—especially among men  
-- **Gender Disparity:** Male alcohol mortality is consistently 3.7× higher  
+- **Gender Disparity:** Male alcohol mortality is consistently 4.4× higher  
 - **Hidden Pattern:** 74% of male suicides involve alcohol, vs. 31% of female suicides  
 - **Systemic Issue:** Pattern holds across 15+ countries over 12 years  
 
@@ -31,6 +31,33 @@ Built in 72 hours, this project uses modern web tools to:
 ## 🧱 Built With
 
 React, TypeScript, Vite, Tailwind CSS, Framer Motion, TanStack Query, Zustand, D3.js, BigQuery, Biome, Netlify, Bolt.new
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- pnpm (recommended) or npm
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/arnsteinsm/mental-health-research.git
+cd mental-health-research
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+### Build for Production
+```bash
+pnpm build
+pnpm preview
+```
 
 ---
 

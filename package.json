@@ -1,39 +1,55 @@
 {
-  "name": "alcohol-mental-health-microsite",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
-    "check": "biome check .",
-    "check:fix": "biome check --write .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@giof/react-umami": "^2.6.12",
-    "@tanstack/react-query": "^5.81.5",
-    "d3": "^7.9.0",
-    "framer-motion": "^12.19.2",
-    "lucide-react": "^0.525.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "zustand": "^5.0.6"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.0.6",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@tanstack/react-query-devtools": "^5.81.5",
-    "@types/d3": "^7.4.3",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.0"
-  }
+	"name": "behind-the-drink-web",
+	"version": "1.0.1",
+	"description": "Interactive web application exploring Europe's hidden mental health crisis through alcohol mortality data",
+	"keywords": [
+		"mental-health",
+		"public-health",
+		"data-visualization",
+		"alcohol-research",
+		"european-data",
+		"react",
+		"typescript"
+	],
+	"homepage": "https://behind-the-drink.xyz",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/arnsteinsm/mental-health-research.git"
+	},
+	"license": "CC-BY-4.0",
+	"author": "Arnstein Marjala",
+	"type": "module",
+	"scripts": {
+		"build": "vite build",
+		"check": "biome check .",
+		"check:fix": "biome check --write .",
+		"dev": "vite",
+		"format": "biome format --write .",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@giof/react-umami": "^2.6.12",
+		"@tanstack/react-query": "^5.81.5",
+		"d3": "^7.9.0",
+		"framer-motion": "^12.19.2",
+		"lucide-react": "^0.525.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"zustand": "^5.0.6"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.6",
+		"@tailwindcss/postcss": "^4.1.11",
+		"@tanstack/react-query-devtools": "^5.81.5",
+		"@types/d3": "^7.4.3",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react": "^4.6.0",
+		"postcss": "^8.5.6",
+		"tailwindcss": "^4.1.11",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.0"
+	}
 }
