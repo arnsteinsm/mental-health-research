@@ -11,7 +11,8 @@ import GenderAnalysis from "./components/GenderAnalysis";
 import Hero from "./components/Hero";
 import LoadingSpinner from "./components/LoadingSpinner";
 import Navigation from "./components/Navigation";
-import ShareButton from "./components/ShareButton";
+
+// import ShareButton from "./components/ShareButton"; // Temporarily disabled
 
 // Lazy load heavy components
 const InteractiveVisualization = lazy(
@@ -54,8 +55,8 @@ function App() {
 
 			<Footer />
 
-			{/* Floating Share Button */}
-			<ShareButton variant="floating" />
+			{/* Floating Share Button - Temporarily disabled */}
+			{/* <ShareButton variant="floating" /> */}
 
 			{/* Data Status Indicator */}
 			<DataStatus />
