@@ -1,0 +1,5 @@
+{
+	"buildCommand": "pnpm run build",
+	"outputDirectory": "dist",
+	"ignoreCommand": "echo 'No changes to build'"
+}
